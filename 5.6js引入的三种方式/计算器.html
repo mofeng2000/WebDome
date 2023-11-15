@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function jisuan() {
+            var num=parseFloat(prompt("请输入第一个数"));
+            var fu= prompt("请输入计算符号");
+            var num2=parseFloat(prompt("请输入第二个数"));
+            var num3=0;
+
+            if (fu='+')
+            {
+                num3=num+num2;
+            }
+            else if (fu='-')
+            {
+                num3=num-num2;
+            }
+            else if (fu='/')
+            {
+                num3=num/num2;
+            }
+            else if  (fu='*')
+            {
+                num3=num*num2;
+            }
+
+            alert('计算结果为'+parseInt(num3))
+
+        }
+
+        console.log('true');
+        console.log(Boolean(true));
+        console.log(Boolean(0));
+        console.log(Boolean(NaN));
+        console.log(Boolean(null));
+        console.log(Boolean(""));
+        console.log(Boolean(undefined));
+        console.log(Boolean("1"));
+        console.log(Boolean(66));
+
+    </script>
+</head>
+<body>
+<input type="button" onclick="jisuan()" value="计算两个数字">
+</body>
+</html>

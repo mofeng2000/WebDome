@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <STYLE>
+        ul{
+            background: orange;
+        }
+        li{
+
+            background: palegoldenrod;
+            color: #fff;
+        }
+        li.on{
+            color: #000;
+            background: red;
+            height: 30px;
+        }
+
+    </STYLE>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(item,index) in num" v-on:click="isNum(index)" v-bind:class="{on : active===index}" >{{index}}{{item}}</li>
+    </ul>
+</div>
+<script src="vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: " ",
+                active:0,
+                isShow:false,
+                num: [1, 2, 3, 4]
+            },
+        methods: {
+            isNum:function (index) {
+                console.log(index)
+                this.active=index;
+                // v-bind:class="{isNum.detail==index? 'on':''}"
+            }
+        }
+        }
+    )
+</script>
+</body>
+</html>

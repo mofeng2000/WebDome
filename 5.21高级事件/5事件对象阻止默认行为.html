@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background: orange;
+
+        }
+
+    </style>
+</head>
+
+<body>
+<div>123</div>
+<a href="http://www.baidu.com">百度</a>
+<form action="http://www.baidu.com">
+    <input type="submit" value="提交" name="sub">
+</form>
+<script>
+</script>
+<script>
+    var a=document.querySelector("a");
+//    a.addEventListener("click",function (e) {
+//        e.preventDefault();//阻止默认事件不发生（链接或按钮）
+//    });
+    //阻止a标签默认跳转行为兼容写法
+    //第一种写法
+    a.onclick=function (e) {
+    if(e && e.preventDefault){
+        e.preventDefault();
+    }
+    else {
+        return window.event.returnValue;
+
+        //
+    }
+    };
+//第二种写法，但是后面的代码不会执行
+//    a.onclick=function (e) {
+//      return false;
+//    }
+
+</script>
+</body>
+
+</html>

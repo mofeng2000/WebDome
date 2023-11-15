@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<template id="cpn1">-->
+<!--&lt;!&ndash;<h2>666</h2>&ndash;&gt;-->
+<!--<div>-->
+<!--<h2>我是全局子组件子组件</h2>-->
+<!--<h3>{{count}}</h3>-->
+<!--<button @click="addcount()">+</button>-->
+<!--<button @click="ccount">-</button>-->
+<!--</div>-->
+
+<!--</template>-->
+<template id="cpn2">
+    <!--<h2>666</h2>-->
+    <div>
+        <h2>我是全局组件子组件</h2>
+        <!--<h3 :countz="count">{{count}}</h3>-->
+    </div>
+</template>
+<template id="cpn3">
+    <!--<h2>666</h2>-->
+    <div>
+        <h2>我是全局组件父组件</h2>
+    </div>
+
+</template>
+<!--<template id="cpn4">-->
+<!--&lt;!&ndash;<h2>666</h2>&ndash;&gt;-->
+<!--<div>-->
+<!--<h2>我是局部组件</h2>-->
+<!--<h3>{{count}}</h3>-->
+<!--<button @click="addcount()">+3</button>-->
+<!--<button @click="ccount">-3</button>-->
+<!--</div>-->
+
+<!--</template>-->
+<div id="app">
+
+    <cpn3>  </cpn3>
+    <mycpn1>
+
+    </mycpn1>
+
+    <h2>总数:{{message}}</h2>
+</div>
+<!--1.创建组件模板-->
+
+<script src="vue.min.js"></script>
+<script>
+    //创建全局组件
+    //    const cpn1={
+    //        data:function () {
+    //          return {
+    //              count:1
+    //          }
+    //        },
+    //        methods:{
+    //            addcount () {
+    //                this.count++
+    //                $emit('addcount1',count)
+    //            },
+    //            ccount(){
+    //                this.count--
+    //                $emit('addcount1',count)
+    //            }
+    //        },
+    //        template:"#cpn1"
+    //    }
+    //创建全局组件
+    //Vue.component('cpn3', {})
+    //注册组件，
+    //Vue.extend({})构造组件，没有注册，组件要通过注册才能使用，并且只能在本父组件使用，或者，在全局注册，可以才任何地方使用
+     const cpn1=Vue.extend({
+//        props: {
+//            countz: null
+//        },
+        //        methods: {
+        //            addcount() {
+        //                this.count = this.count + 2
+        //                $emit('addcount2', count)
+        //            },
+        //            ccount() {
+        //                this.count = this.count - 2
+        //                $emit('addcount2', count)
+        //            }
+        //        },
+        template: '#cpn2'
+        //        components:{
+        //            cpn1
+        //        }
+
+    })
+    //创建全局组件 //父组件
+    const cpn3 = Vue.component('cpn3', {
+        data: function () {
+            return {
+                count: 3
+            }
+        },
+//        methods: {
+//            addcount() {
+//                this.count = this.count + 3
+//                //   $emit('addcount3',count)
+//            },
+//            ccount() {
+//                this.count = this.count - 3
+//                //  $emit('addcount3',count)
+//            }
+//        },
+        template: '#cpn3',
+        components: {
+            mycpn1: cpn1
+        }
+    })
+    const app = new Vue({
+            el: '#app',
+            data: {
+                message: 0
+
+            },
+            methods: {},
+            computed: {},
+            //创建局部组件
+//            components: {
+//                'cpn4': {
+//                    data: function () {
+//                        return {
+//                            count: 4
+//                        }
+//                    },
+//                    methods: {
+//                        addcount() {
+//                            this.count = this.count + 4
+//                        },
+//                        ccount() {
+//                            this.count = this.count - 4
+//                        }
+//                    },
+//                    template: '#cpn4'
+//                }
+//
+//
+//            }
+            components: {
+                cpn3
+            }
+        }
+    )
+</script>
+</body>
+</html>

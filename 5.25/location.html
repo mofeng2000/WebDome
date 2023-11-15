@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button>点击 <span>5</span>秒后跳转页面</button>
+<script>
+
+    var span=document.querySelector("span");
+   var btn=document.querySelector("button");
+    var count1=4;
+   btn.onclick=function () {
+
+     var timer= setInterval(function () {
+           if(count1===0)
+           {
+               location.href="https://www.baidu.com";
+//               clearInterval(timer);
+           }
+           else {
+               span.innerHTML=count1;
+               count1--;
+           }
+
+       },1000)
+   }
+
+</script>
+</body>
+</html>

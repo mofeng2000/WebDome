@@ -1,0 +1,27 @@
+a {
+  width: 15px;
+}
+.box {
+  height: 200px;
+  width: 200px;
+  background: orange;
+}
+.box a {
+  font-size: 20px;
+}
+.box a:hover {
+  background: red;
+}
+html {
+  font-size: 20px;
+}
+.box1 {
+  width: 100px;
+  height: 300px;
+  background: blue;
+}
+.box2 {
+  background: red;
+  width: 10rem;
+  height: 1.5rem;
+}

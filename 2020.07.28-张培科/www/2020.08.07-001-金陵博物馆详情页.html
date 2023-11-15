@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2020.08.07-001-金陵博物馆详情页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="css/cui.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+    <link href="css/slick.css" rel="stylesheet">
+    <script src="js/jquery.countup.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <link href="css/animate.min.css" rel="stylesheet">
+</head>
+<style>
+    *, :after, :before {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: 0 !important;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        -webkit-tap-highlight-color: transparent;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+    }
+
+    .wp {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    @media only screen and (max-width: 456px) {
+        .wp{
+            width: 100%;
+            margin: 0 10px;
+        }
+        .bans{
+            padding-top:60%;
+        }
+
+    }
+
+    body {
+
+    }
+
+    /*header区*/
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(40, 15, 13, .6);
+        z-index: 99;
+        overflow: hidden;
+    }
+
+    .header .logo {
+        float: left;
+        width: 339px;
+        height: 73px;
+    }
+
+    .header .logo a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .header .nav {
+        float: right;
+        overflow: hidden;
+    }
+
+    header .ul-nav {
+        overflow: hidden;
+    }
+
+    .header .nav li {
+        float: left;
+        margin: 0 15px;
+        text-align: center;
+        line-height: 73px;
+    }
+
+    .header .nav li .con {
+        color: #fff;
+        padding: 0 20px;
+        font-size: 16px;
+    }
+
+    .menuBtn {
+        display: block;
+        margin-top: 12px;
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: .3s;
+        -ms-transition: .3s;
+        -moz-transition: .3s;
+        -webkit-transition: .3s;
+        -o-transition: .3s
+    }
+
+    .menuBtn b {
+        display: block;
+        height: 4px;
+        background-color: #fff;
+        margin: 4px 0;
+        transition: .3s;
+        -ms-transition: .3s;
+        -moz-transition: .3s;
+        -webkit-transition: .3s;
+        -o-transition: .3s
+    }
+
+    .menuBtn.open b {
+        display: none;
+        margin: -5px 0 0;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 30px
+    }
+
+    .menuBtn.open b:first-child {
+        display: block;
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -ms-transform: rotate(45deg)
+    }
+
+    .menuBtn.open b:last-child {
+        display: block;
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg)
+    }
+
+    .header .nav li:hover {
+        background: #fff;
+    }
+
+    .header .nav li:hover .con {
+        color: #000;
+
+    }
+
+    @media only screen and (max-width: 1920px) {
+
+    }
+
+    @media only screen and (max-width: 1200px) {
+
+    }
+
+    @media only screen and (max-width: 960px) {
+        .header {
+            background: rgba(0, 0, 0, .6);
+        }
+
+        .menuBtn {
+            display: block;
+        }
+
+        .header .nav .ul-nav {
+            float: right;
+        }
+
+        .header .nav li {
+            float: none;
+        }
+
+        .header .nav {
+            display: none;
+        }
+
+    }
+
+    @media only screen and (max-width: 768px) {
+
+    }
+
+
+    /*<!--内页ban区-->*/
+    .bans {
+        display: block;
+        height: 0;
+        padding-top: 40%;
+        background: url("images/pic-bans_01.jpg")no-repeat center;
+        background-size: cover;
+    }
+
+    /*新闻样式*/
+    .row-pnews {
+        background-image: url("images/pic05-002.png");
+        background-position: center center;
+        /*background-repeat: no-repeat;*/
+        background-size: 100% 180%;
+        /*background-attachment:fixed*/
+    }
+    @media only screen and (max-width: 470px) {
+
+        .header .logo {
+            width: 200px;
+
+        }
+
+        .logo img {
+            max-width: 100%;
+            max-height: 100%;
+            margin-top: 18px;
+        }
+        .wp{
+            width:100%;
+        }
+        .bans {
+            padding-top: 60%;
+        }
+    }
+
+
+    /*面包屑导航cur区*/
+    .cur {
+        overflow: hidden;
+
+    }
+
+    .cur a {
+        float: left;
+        margin: 0 5px;
+        line-height: 120px;
+        color: #333;
+        font-size: 16px;
+    }
+
+    .cur a:hover {
+        color: #b65453;
+    }
+
+    .cur em {
+        line-height: 120px;
+        display: block;
+        float: left;
+        font-size: 16px;
+    }
+
+    .cur .cur-span {
+        line-height: 120px;
+        color: #b65453;
+        font-size: 16px;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+    }
+    .m-acebox {
+        text-align: center;
+    }
+
+    .m-acebox h1 {
+        color: #000;
+        font-size: 24px;
+        /*font-weight: normal;*/
+        line-height: 2;
+    }
+
+    .m-acebox .date {
+        display: block;
+        font-size: 12px;
+        /*font-weight: normal;*/
+        line-height: 2;
+        margin: 15px 0;
+    }
+
+    .m-acebox .txt-body {
+        font-size: 14px;
+        color: #333;
+        line-height: 2.4;
+    }
+
+
+
+    /*友情链接列表区*/
+    .m-ftlink {
+        padding: 50px 0;
+    }
+
+    .m-ftlink .ul-links {
+        width: 60%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .m-ftlink .ul-links li {
+        text-align: center;
+        width: 20%;
+        float: left;
+
+    }
+    .m-ftlink .pic{
+
+    }
+    .m-ftlink .pic img{
+        height: 70px;
+        line-height: 70px;
+        /*max-width: 100%;*/
+        /*max-height: 100%;*/
+    }
+    .m-ftlink .con {
+        display: block;
+    }
+
+    .m-ftlink .tit {
+        margin: 10px 0;
+        color: #333;
+    }
+
+    /*@media only screen and (max-width: 1200px) {*/
+
+        /*.m-ftlink .ul-links {*/
+            /*width: 100%;*/
+            /*margin: 0 auto;*/
+        /*}*/
+    /*}*/
+
+    @media only screen and (max-width: 1200px) {
+
+        .m-ftlink .ul-links li{
+            width: 33.33%;
+        }
+        .m-ftlink .ul-links li:nth-child(1),
+        .m-ftlink .ul-links li:nth-child(2) {
+            width: 50%;
+        }
+
+        .m-ftlink .ul-links li .con {
+            margin: 15px;
+        }
+    }
+    @media only screen and (max-width: 700px) {
+        .m-ftlink .ul-links li {
+            width: 50%;
+        }
+
+        .m-ftlink .ul-links li:last-child {
+            width: 100%;
+            float: none;
+        }
+
+        .m-ftlink .ul-links {
+            width: 100%;
+        }
+
+        .wp {
+            width: 100%;
+        }
+    }
+    /*footer区*/
+    .footer {
+        padding-top: 50px;
+        background: #3a3736;
+    }
+
+    .ft-hd {
+        padding-bottom: 30px;
+        padding-top: 30px;
+        border-bottom: 1px solid #999;
+    }
+
+    .footer .col-l {
+        width: 70%;
+    }
+
+    .footer .col-l .link {
+        text-align: center;
+        float: left;
+        width: 25%;
+    }
+
+    .footer .col-l .link a {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 5px 0;
+    }
+
+    .footer .col-l .link .link-img {
+        display: inline-block;
+        float: left;
+        margin: 10px 5px;
+
+    }
+
+    .footer .tit {
+        color: #fff;
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    .footer .link a {
+        color: #fff;
+        display: block;
+        font-size: 14px;
+        line-height: 30px;
+    }
+
+    .footer .col-r {
+        width: 30%;
+        line-height: 40px;
+    }
+
+    .footer .fd-qr-a1 {
+        margin-right: 15px;
+    }
+
+    .footer .fd-qr-desc {
+        line-height: 15px;
+        text-align: center;
+        color: #fff;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    .footer .link a:hover {
+        color: #0d8ddb;
+    }
+
+    @media only screen and (max-width: 960px) {
+        .footer .col-l {
+            display: none;
+            float: none;
+        }
+
+        .footer .col-r {
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer .fd-qr {
+            float: none;
+            width: auto;
+            text-align: center;
+        }
+
+        .fd-qr {
+            text-align: center;
+            float: none;
+            padding: 10px;
+
+        }
+
+        .footer .fd-qr .fd-qr-a1,
+        .footer .fd-qr .fd-qr-a2 {
+            float: none;
+            display: inline-block;
+        }
+
+        .footer .fd-qr-a2 {
+
+            vertical-align: top;
+
+        }
+    }
+
+    @media only screen and (max-width: 750px) {
+
+    }
+
+
+</style>
+<body>
+<!--header区-->
+<div class="header">
+    <div class="wp">
+        <div class="logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
+        <div class="hdr">
+            <div class="nav">
+                <ul class="ul-nav">
+                    <li><a href="#" class="con">首页</a></li>
+                    <li><a href="#" class="con">藏品鉴赏</a></li>
+                    <li><a href="#" class="con">资讯动态</a></li>
+                    <li><a href="#" class="con">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <span class="menuBtn"></span>
+    </div>
+</div>
+<!--内页ban区-->
+<div class="bans"></div>
+<!--资讯内容区-->
+<div class="row-pnews">
+    <div class="wp">
+        <!--面包屑导航cur区-->
+        <div class="cur">
+            <div class="wp">
+                <a href="#">首页</a><em>></em>
+                <a href="#">资讯动态</a><em>></em>
+                <span class="cur-span">资讯内容</span>
+            </div>
+        </div>
+        <div class="m-acebox">
+            <h1>南京博物院公开招募志愿者公告</h1>
+            <span class="date">2020.6.13</span>
+            <p class="txt-body">
+                物馆目前有一馆、二笔，一馆已经授入使用，二馆正在建设中南京金博物馆目前有一馆，二馆。一第已经投入使用，二体正在建设中，南京金博物工山用一中一馆已经投入使用
+                一 成有中华人民共购面路 遵守充法鸭法律:
+                (二) 欧治立场整定，调护中国共产党的领导和中国特色社会主义制度，树牢“四个意识”。坚宝“四个自信”，做到“两个维护”，在思您上政治上行动上间以习近平同志为精心的竞中
+                E用有形聘内位所面的专业季质学位及工作技顺，有全招观水和大商雄说有较量的方通乃调助力购团队合作思说有较星的文平表达动力，防练覃日常办公应那软件具高道应岗位
+                E用有形聘内位所面的专业季质学位及工作技顺，有全招观水和大商雄说有较量的方通乃调助力购团队合作思说有较星的文平表达动力，防练覃日常办公应那软件具高道应岗位
+                (六) 20年全国普通高等学校情据概分查场毕业生(不肯定商生，要想生。邮队院校单业生)。直如怒取得事历学位:
+            </p>
+        </div>
+        <div class="m-ftlink">
+                <ul class="ul-links">
+                    <li>
+                        <a href="#" class="con">
+                            <div class="pic"><img src="images/pic-3-4.jpg" alt=""></div>
+                            <h4 class="tit">南京金陵博物馆</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="con">
+                            <div class="pic"><img src="images/pic-05-04.png" alt=""></div>
+                            <h4 class="tit">南京金陵博物馆</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="con">
+                            <div class="pic"><img src="images/pic-05-03.png" alt=""></div>
+                            <h4 class="tit">南京金陵博物馆</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="con">
+                            <div class="pic"><img src="images/pic-05-05.png" alt=""></div>
+                            <h4 class="tit">南京金陵博物馆</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="con">
+                            <div class="pic"><img src="images/pic-05-06.png" alt=""></div>
+                            <h4 class="tit">南京金陵博物馆</h4>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+    </div>
+</div>
+<!--友情链接列表区-->
+
+<!--底部footer区-->
+<div class="footer">
+    <div class="wp">
+        <div class="ft-hd fix">
+            <div class="col-l fix">
+                <div class="link">
+
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                </div>
+                <div class="link">
+
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                </div>
+                <div class="link">
+
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+
+                </div>
+                <div class="link">
+                    <a href="#">关于我们</a>
+                </div>
+            </div>
+            <div class="col-r">
+                <div class="fd-qr r">
+                    <div class="fd-qr-a1 l"><img src="images/pic-3jL_16.jpg" alt="">
+                        <p class="fd-qr-desc">微信公众号</p>
+                    </div>
+                    <div class="fd-qr-a1 r"><img src="images/pic-3jL_16.jpg" alt="">
+                        <p class="fd-qr-desc">微信公众号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 手机导航
+    $('.menuBtn').append('<b></b><b></b><b></b>');
+    $('.menuBtn').click(function (event) {
+        $(this).toggleClass('open');
+        $('.nav').stop().slideToggle();
+    });
+
+    var _winw = $(window).width();
+    if (_winw > 959) {
+        $('.nav li').hover(function () {
+            $(this).find('.sub').stop().slideDown();
+//            if ($(this).find('.sub').length) {
+//                $(this).addClass('ok');
+//                $('.header').addClass('on');
+//            } else {
+//                $('.header').removeClass('on');
+//            }
+        }, function () {
+            $(this).removeClass('ok');
+            $(this).find('.sub').stop().slideUp();
+        });
+        $('.nav').mouseleave(function (event) {
+            if ($('.header').hasClass('on')) {
+                $('.header').removeClass('on');
+            }
+        });
+    } else {
+
+        $('.nav .v1').click(function () {
+            if ($(this).siblings('.sub').length) {
+                $(this).parents('li').siblings('li').find('.sub').stop().slideUp();
+                $(this).parents('li').siblings('li').removeClass('on');
+                $(this).parents('li').toggleClass('on');
+                $(this).siblings('.sub').stop().slideToggle();
+                return false;
+            }
+        });
+    }
+</script>
+</body>
+</html>

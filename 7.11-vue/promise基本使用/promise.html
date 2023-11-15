@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //setTimeout使用
+//    setTimeout(() => {
+//        console.log(123);
+//        setTimeout(function () {
+//            console.log(456);
+//            var s3 = (num) => {
+//                console.log(num);
+//            }
+//            var n = s3(2);
+//        }, 1000)
+//    }, 1000)
+
+    //Promise用于解决js的异步操作，优化代码，条例清晰
+    //resolve用于返回正确信息 用then（）
+    //reject用于返回错误信息  catch（）
+    new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve()
+        },1000)
+    }).then(()=>{
+        console.log(123);
+        console.log(123);
+        console.log(123);
+        console.log(123);
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve()
+            },1000)
+        }).then(()=>{
+            console.log(456);
+            console.log(456);
+            console.log(456);
+            console.log(456);
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    reject()
+                },1000)
+            }).catch(()=>{
+                console.log(789);
+                console.log(789);
+                console.log(789);
+                console.log(789);
+            })
+        })
+    })
+</script>
+</body>
+</html>

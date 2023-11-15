@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+
+        .row>div{
+            border: 1px solid black;
+            background: orange;
+            height: 200px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!--/* push 移动 pull拉动*/-->
+    <div class="row">
+        <div class="col-lg-3 col-xs-3 col-sm-3 ">1</div>
+        <div class="col-lg-3 col-xs-3 col-sm-3" >2</div>
+        <!--在所有情况下隐藏-->
+        <div class="col-lg-3 col-xs-3 col-sm-3 hidden-lg hidden-xs hidden-sm hidden-md" style="background: blue" >1</div>
+        <!--只在大屏下隐藏-->
+        <div class="col-lg-3 col-xs-3 col-sm-3 visible-lg" style="background: blue" >1</div>
+
+        <div class="col-lg-3 col-xs-3 col-sm-3 " >2</div>
+    </div>
+</div>
+</body>
+</html>

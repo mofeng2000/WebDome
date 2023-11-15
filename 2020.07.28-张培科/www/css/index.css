@@ -1,0 +1,142 @@
+/*初始化样式*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #333;
+    font-size: 14px;
+    font-family: "微软雅黑", "Microsoft YaHei";
+    background: #efefef;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wp {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #666;
+}
+
+.imgtxt {
+    overflow: hidden;
+    margin: 0 -10px;
+
+    padding-top: 95px;
+    margin-bottom: -95px;
+}
+
+.imgtxt li {
+    float: left;
+    width: 33.3333%;
+    margin-bottom: 135px;
+}
+
+.imgtxt .con {
+    display: block;
+    margin: 0 10px;
+    background: #fff;
+    padding: 1px 35px 40px;
+}
+
+.imgtxt .con .pic {
+    position: relative;
+    height: 0;
+    padding-top: 72%;
+    margin-top: -95px;
+    overflow: hidden;
+    background: #000;
+}
+
+.imgtxt .con .pic img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    max-height: 100%;
+    max-width: 100%;
+
+}
+
+.imgtxt .con .txt {
+    padding: 25px 20px;
+    line-height: 25px;
+}
+
+.imgtxt .con .txt .tit {
+    font-size: 18px;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.imgtxt .con .txt .desc {
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: #999;
+}
+
+/*鼠标悬浮列表时的样式*/
+.imgtxt .con:hover .pic img {
+    transform: translate(-50%, -50%) scale(1.05);
+    -webkit-transform: translate(-50%, -50%) scale(1.05);
+}
+
+.imgtxt .con:hover .tit {
+    color: #2080c4;
+}
+
+.imgtxt .pic img,
+.imgtxt .con:hover .tit {
+    transition: all .2s;
+    -webkit-transition: all .2s;
+}
+
+@media only screen and (max-width: 1990px) {
+
+}
+
+@media only screen and (max-width: 1440px) {
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+}
+
+@media only screen and (max-width: 960px) {
+    .imgtxt li {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .imgtxt li {
+        float: none;
+        width: auto;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+
+}

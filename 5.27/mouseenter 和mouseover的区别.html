@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .ba{
+        width: 200px;
+        height: 200px;
+        background: pink;
+    }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: orange;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="ba">
+    <div class="son"></div>
+</div>
+<script>
+var ba=document.querySelector(".ba");
+var son=document.querySelector(".son");
+    ba.addEventListener("mouseenter",function () {
+        ba.style.width="400px";
+        ba.style.height="400px";
+
+    });
+ba.addEventListener("mouseout",function () {
+    ba.style.width="200px";
+    ba.style.height="200px";
+    ba.style.background="rgb(144,1,1)";
+
+
+})
+</script>
+</body>
+</html>

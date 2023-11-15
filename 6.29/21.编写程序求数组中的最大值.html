@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getMax(arr) {
+        var max = arr[0];
+        for (var i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i]
+            }
+        }
+        return max;
+    }
+
+    alert("最大值为" + getMax([2, 6, 1, 77, 52, 25, 7, 99]))
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{message}}</h1>
+    数值A :<input type="number" v-model="num1" ><br>
+    符号 :<input type="text" v-model="sign" ><br>
+    数值B :<input type="number" v-model="num2"><br>
+    <button @click="btnCount">计算</button>
+    <br>
+   <h3> 计算结果：{{count}}</h3>
+</div>
+<script src="vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: "简单的计算器",
+                num1:'',
+                num2:'',
+                sign:'',
+                count:0
+            },
+            methods:{
+                btnCount(){
+                    if(this.sign=='+'){
+                        this.count=parseFloat(this.num1)+parseFloat(this.num2)
+                    }
+                    else  if(this.sign=='-'){
+                        this.count=parseFloat(this.num1)-parseFloat(this.num2)
+                    }
+                    else  if(this.sign=='*'){
+                        this.count=parseFloat(this.num1)*parseFloat(this.num2)
+                    }
+                    else  if(this.sign=='/'){
+                        this.count=parseFloat(this.num1)/parseFloat(this.num2)
+                    }
+                    else  if(this.sign=='%'){
+                        this.count=parseFloat(this.num1)%parseFloat(this.num2)
+                    }
+                }
+            }
+        }
+    )
+</script>
+</body>
+</html>

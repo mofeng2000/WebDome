@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2020.09.11-001-云控软件-快抖研发中心</title>
+    <link rel="stylesheet" href="css/cui.css"/>
+    <link rel="stylesheet" href="css/slick.css"/>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ban {
+            position: relative;
+            width: 100%;
+            height: 450px;
+        }
+
+        .ban .items {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .ban .btn {
+            position: absolute;
+            bottom: 30px;
+            left: 24%;
+            transform: translateX(-50%);
+            display: inline-block;
+            font-size: 16px;
+            color: #fff;
+            width: 274px;
+            height: 52px;
+            line-height: 52px;
+            border: 1px solid #fff;
+            text-align: center;
+        }
+
+        .ban .btn:hover {
+            color: #000;
+            background: #fff;
+            border: 1px solid transparent;
+        }
+
+        .m-fixed-c {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            background: #018d75;
+            margin-top: -126px;
+            height: 250px;
+            border-radius: 5px 0 0 5px;
+
+        }
+
+        .m-fixed-c .ul-icon1 {
+            width: 50px;
+
+        }
+
+        .m-fixed-c .ul-icon1 li {
+            height: 49px;
+            width: 50px;
+            background: url("images/ABUIABAEGAAgla2Y4AUov52DhAQw9AM4xAE.png") no-repeat
+        }
+
+        .m-fixed-c .ul-icon1 li.up {
+            background-position: -330px -120px;;
+
+        }
+
+        .m-fixed-c .ul-icon1 li.qq {
+            background-position: -385px -73px;;
+
+        }
+
+        .m-fixed-c .ul-icon1 li.tel {
+            background-position: -385px -160px;;
+
+        }
+
+        .m-fixed-c .ul-icon1 li.wx {
+            background-position: -385px -120px;;
+
+        }
+
+        .m-fixed-c .ul-icon1 li.down {
+            background-position: -330px -160px;;
+
+        }
+
+        .m-fixed-c .ul-info1 {
+            width: 0;
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            height: 147px;
+            text-align: center;
+            transform: translateY(-50%);
+            transition: .5s;
+            border-radius: 4px 0 0 4px;
+            overflow: hidden;
+            background: #018d75;
+        }
+
+        .m-fixed-c .ul-info1.on {
+            width: 145px;
+        }
+
+        .m-fixed-c .ul-info1 li {
+            width: 145px;
+            color: #ccc;
+            text-align: center;
+            height: 100%;
+
+        }
+
+        .m-fixed-c .ul-info1 li .link {
+            display: block;
+            margin-top: 12px;
+            width: 100px;
+            height: 32px;
+            line-height: 32px;
+            color: #00DFB9;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid #00DFB9;
+            border-radius: 5px;
+        }
+
+        .m-fixed-c .ul-info1 li p {
+            font-size: 15px;
+            line-height: 1.6;
+            padding: 15px;
+            text-align: left
+        }
+
+        .m-fixed-c .ul-info1 li .pic {
+            background: #DEFFF9;
+            margin: 15px;
+        }
+
+        .m-fixed-c .ul-info1 li .pic img {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+
+        }
+
+        .m-fixed-b {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 144px;
+            height: 52px;
+            background: #00AEF3;
+        }
+
+        .m-fixed-b a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        .m-fixed-b a img {
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+
+        .m-fixed-l {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            height: auto;
+            width: 240px;
+            z-index: 3;
+        }
+
+        .m-fixed-l .tit {
+            height: 35px;
+            line-height: 35px;
+            font-size: 14px;
+            color: #fff;
+            padding-left: 12px;
+            background-color: #00aef3;
+        }
+
+        .m-fixed-l .tit .icon {
+            display: inline-block;
+            float: right;
+            height: 30px;
+            width: 34px;
+            margin-top: 2px;
+            background: url("images/nodeMin.png") no-repeat center;
+            background-size: contain;
+        }
+
+        .m-fixed-l .tit .icon.on {
+            background: url("images/nodeMax.png") no-repeat center;
+        }
+
+        .m-fixed-l input,
+        .m-fixed-l button {
+            border: none;
+            outline: none;
+        }
+
+        .m-fixed-l form {
+            padding: 0 10px;
+        }
+
+        .m-fixed-l .sub {
+
+            background: #EDEDED;
+            display: block;
+        }
+
+        .m-fixed-l .sub .desc {
+            word-break: break-all;
+            line-height: 18px;
+            padding: 12px 0;
+            border-bottom: 1px solid #d5d5d5;
+            margin-bottom: 10px;
+        }
+
+        .m-fixed-l .sub .desc p {
+            padding-left: 12px;
+        }
+
+        .m-fixed-l .sub .desc .p-tit {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .m-fixed-l .sub .desc .tel {
+            color: #999;
+        }
+
+        .m-fixed-l .sub .ul-inp li textarea {
+            width: 212px;
+            height: 79px;
+            margin: 12px auto 7px;
+            padding: 0 4px;
+            resize: none;
+            overflow: hidden;
+            border: none;
+            background-color: #fff;
+            text-align: left
+        }
+
+        .m-fixed-l .sub .ul-inp li {
+            border: 1px solid #d5d5d5;
+            background-color: #fff;
+            margin: 7px auto 0;
+        }
+
+        .m-fixed-l .sub .ul-inp li input {
+            height: 30px;
+            width: 182px;
+            line-height: 30px;
+
+        }
+
+        .m-fixed-l .sub .btn {
+            width: 202px;
+            margin: 12px auto 0 10px;
+            padding-bottom: 18px;
+        }
+
+        .m-fixed-l .sub .btn button {
+            height: 35px;
+            width: 90px;
+            line-height: 35px;
+            text-align: center;
+            border-radius: 2px;
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+            background-color: #00aef3;
+
+        }
+
+        .m-fixed-l .sub.on {
+            display: none;
+        }
+
+        .m-fixed-l .sub .ul-inp li .icon {
+            width: 35px;
+            height: 30px;
+            display: inline-block;
+            float: left;
+            text-align: center;
+            background-color: #fff;
+            vertical-align: top;
+            border-right: 1px solid #fff;
+            background-repeat: no-repeat;
+        }
+
+        .m-fixed-l .sub .ul-inp li textarea:focus {
+            outline: none;
+        }
+
+        .nb-invite-body {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 320px;
+            background: url("images/ban1.png") no-repeat;
+            background-size: 100% 100%;
+            width: 602px;
+            z-index: 1;
+            display: none;
+        }
+
+        .nb-invite-body.on {
+            display: block;
+        }
+
+        .nb-invite-body .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url("images/spring.png") no-repeat -49px -147px;
+            z-index: 3;
+        }
+
+        .nb-invite-body .more-l {
+            position: absolute;
+            right: 20px;
+
+            display: inline-block;
+            width: 46.411483253588514%;
+
+            height: 12.068965517241379%;
+            top: 80.3125%;
+            left: 7.000000000000001%;
+            z-index: 3;
+        }
+
+        .nb-invite-body .more-r {
+            position: absolute;
+            width: 28.833333333333332%;
+            height: 12.068965517241379%;
+            top: 80.3125%;
+            left: 63.33333333333333%;
+            z-index: 2;
+        }
+
+        .alect-inp {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            z-index: 100;
+            display: none;
+        }
+
+        /*.alect-inp.on{*/
+        /*display: block;*/
+        /*}*/
+
+        .alect-inp .alect-con {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 900px;
+            transform: translate(-50%, -50%);
+            height: 588px;
+            background: #fff;
+            z-index: 101;
+            text-align: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .alect-inp .tit-t {
+            margin-top: 8px;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            height: 40px;
+            line-height: 40px;
+            margin-bottom: 40px;
+        }
+
+        .alect-inp .con {
+            overflow: hidden;
+            margin-bottom: 70px;
+        }
+
+        .alect-inp .con .tit {
+            font-size: 14px;
+            color: rgb(102, 102, 102);
+            margin-bottom: 8px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+        }
+
+        .alect-inp .con .inp {
+            width: 415px;
+            height: 299px;
+            margin: 5px 40px;
+            float: left;
+            text-align: left;
+
+        }
+
+        .alect-inp .con .inp h4.tit {
+            color: rgb(102, 102, 102);
+            font-size: 14px;
+        }
+
+        .alect-inp .con .inp .ul-inp li {
+            margin-bottom: 16px;
+        }
+
+        .alect-inp .con .inp .inp-txt {
+            width: 100%;
+            height: 36px;
+            font-size: 12px;
+            font-family: 微软雅黑;
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            text-align: left;
+            border-radius: 2px;
+
+        }
+
+        .alect-inp .con .inp .inp-txt input {
+            width: 90%;
+            height: 100%;
+            border: 2px solid #bababa;
+            text-indent: 6px;
+            box-sizing: border-box;
+
+        }
+
+        .alect-inp .con .inp .inp-txt .icon {
+            color: red;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+
+        .alect-inp .con .inp .btn {
+            display: inline-block;
+            width: 160px;
+            height: 44px;
+            line-height: 44px;
+
+            border: 1px solid #FD1716;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+
+        .alect-inp .con .inp button {
+            height: 100%;
+            width: 100%;
+            color: #fff;
+            font-size: 14px;
+            border: 1px solid #FF6362;
+            background: #FE5454;
+        }
+
+        .alect-inp .con .pic {
+            overflow: hidden;
+            padding-left: 10px;
+        }
+
+        .alect-inp .con .pic img {
+            width: 179px;
+            height: 179px;
+            display: inline-block;
+            margin-bottom: 17px;
+        }
+
+        .alect-inp .con .pic p {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 34px;
+        }
+
+        .alect-inp .con .pic .tel {
+            font-size: 18px;
+            color: #000;
+        }
+
+        .alect-inp .tit-b {
+            font-size: 20px;
+            color: #000;
+        }
+
+        .alect-inp .close {
+            z-index: 8;
+            position: absolute;
+            top: 12px;
+            right: 26px;
+            width: 33px;
+            height: 33px;
+            background: url("images/vbg01.png") no-repeat -527px -2387px;;
+        }
+
+
+        .m-details{
+            width: 1190px;
+            padding: 10px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            margin-top: 10px;
+
+        }
+        .m-details .g-tit-z{
+
+        }
+        .m-details .g-tit-z .tit{
+            font-size: 25px;
+            color: #333;
+            font-weight:400;
+        }
+        .m-details .date{
+            padding: 35px 0;
+            overflow: hidden;
+            text-align: left;
+            box-sizing: border-box;
+
+        }
+        .m-details .date p{
+            font-size: 13px;
+            color: #adadad;
+        }
+        .m-details .tody{
+            padding-top: 20px;
+            border-bottom: 1px solid #F0EFEF;
+            border-top: 1px solid #F0EFEF;
+            margin-bottom: 20px;
+        }
+        .m-details .tody p{
+            color: #676767;
+            line-height:1.8;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .m-details .links span{
+            font-size: 13px;
+            color: #666;
+            display: inline-block;
+            margin: 0 25px 0 15px;
+        }
+        .m-details .links a{
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+
+</head>
+<body>
+<div class="ban">
+    <div href="#" style="background-image: url('images/ban3.jpg')" class="items">
+        <a href="#" class="btn">咨询免费体验系统 >>></a>
+    </div>
+</div>
+
+
+<div class="main">
+
+    <div class="m-details">
+        <div class="g-tit-z">
+            <h1 class="tit">抖音群控是什么？要怎么使用？</h1>
+        </div>
+        <div class="date">
+            <p><span class="time">发表时间：2020-08-07 13:42</span>作者：<span class="art">云控</span>来源：<span
+                    class="come">快抖云控系统</span></p>
+        </div>
+        <div class="tody">
+            <p>说到抖音，那就不得不说营销工具“<a href="#">抖音群控系统</a>”，了解它的人应该都知道他的优势：方便省力，一台服务器同时控制N个抖音账号自动化批量操作，筛选海量客户的精准营销管理系统。</p>
+            <p>
+                抖音群控系统有以下这些功能：它能够账号批量登录，同时100个账号存入系统，实现自动化批量登陆账号；群控系统能够发布动态，进行文字、图片、视频的编辑；群控系统还能够与好友进行批量互动：点赞、关注、相互转发等等；群控系统能够群发消息，关注的好友群发和粉丝群发；群控系统能够精准地寻找到符合自己条件的客户，批量进行互动。</p>
+            <p>所以，抖音群控这么多，到底有哪些区别呢？</p>
+            <p>以下列出4点：需不需要真手机，能不能脱离PC端操作，需不需要root、需不需要adb、需不需要XP框架、有没有软件更新和售后。就算你是纯小白，只要避开这几个雷点，也能少上当。群控在批量化操作的功能性上，都是差不多的。差别最大的点就在于实现群控这一操作的技术手段。与其问各个群控客服功能有哪些，不如问问他们技术做的如何。</p>
+            <p>很多人听到抖音群控，一开始觉得很好奇，很想知道这到底是什么东西。了解清楚以后往往又会认为自己其实拿着这么多账号没有用，只要专注于一个账号就行。一个账号单打独斗的模式在去年其实是可行的，但是今年的抖音账号要做起来确实没有去年容易，毕竟最快的刷量捷径行不通了。</p>
+            <p>抖音群控下多账号配合的模式，与抖音的算法息息相关。</p>
+            <p>抖音的算法是极具魅力的。这个魅力在于，抖音的流量分配是去中心化的。在微博和公众号上，如果你没有粉丝的话，你发的内容就不会有人看。但是抖音就不一样，你可以完全没有粉丝。所有的抖音的用户，你拍的任何一个视频，无论质量好还是质量坏，发布了之后一定会有播放量，从几十到上千都有可能。这个我们把它叫做流量池，抖音会根据算法给每一个作品的人分配一个流量池。之后，抖音根据你在这个流量池里的表现，决定是把你的作品推送给更多人，还是就此打住。因此，抖音的算法让每一个有能力产出优质内容的人，得到了跟大号公平竞争的机会。</p>
+            <p>只要你能持续产出有质量的视频，抖音都会给流量，并且抖音的推广是面向全国的。也就是说，就算是多账号每个账号都能给到一定的基础流量。等于说直接把自己的推广范围扩大了几十倍。有流量才能筛选出潜在客户，有了客户以后最终会走向产品的推广。抖音群控的主要功能还是批量化的操作，当账号做起来了，自动化操作代替手动确实非常节省时间和人力。</p>
+            <p>下面就为大家介快抖研发中心最新升级的抖音群控系统，是目前针对火热的短视频市场最新升级研发的产品。</p>
+                <p>目录：</p>
+            <p>一：系统+方案总署</p>
+            <p>系统:主要是批量自动化操作，手机没有改变任何东西，完全符合平台规则，安全稳定(非模拟器)</p>
+            <p>方案:主要是增加你每个视频的播放量，百分百真实用户(我们有这方面的技术方法，把你的视频推给更多的真实用户看到，效果可以想象)</p>
+            <p>整套抖音系统完全真实环境操作。</p>
+            <p>二：抖音营销系统</p>
+            <p>三：抖音批量下载</p>
+            <p>四：抖音大数据分析</p>
+            <p>五：客户同行分析</p>
+            <p>六：抖音强制增加播放</p>
+            <p>七：批量控制</p>
+        </div>
+        <div class="links">
+            <span>下一篇 </span><a href="#">手机抖音群控爆炸式引流！100个抖音一键自动加粉获客</a>
+        </div>
+    </div>
+</div>
+<div class="alect-inp ">
+    <div class="alect-con">
+
+        <a href="javascript:" class="close"></a>
+        <h3 class="tit-t">咨询留言</h3>
+        <div class="con">
+            <div class="inp">
+                <form action="">
+                    <ul class="ul-inp">
+                        <li>
+                            <h4 class="tit">
+                                姓名</h4>
+                            <div class="inp-txt">
+                                <input type="text"><span class="icon">*</span>
+                            </div>
+
+
+                        </li>
+                        <li>
+                            <h4 class="tit">
+                                联系电话</h4>
+                            <div class="inp-txt">
+                                <input type="text"><span class="icon">*</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h4 class="tit">
+                                您的需求</h4>
+                            <div class="inp-txt">
+                                <input type="text"><span class="icon">*</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="btn">
+                                <button>提交</button>
+                            </span>
+
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div class="pic">
+                <img src="images/qr.jpg" alt="">
+                <p>添加客服免费体验系统</p>
+                <h3 class="tel">咨询热线：<span style="color: rgb(230, 74, 25);">189-2381-4161</span></h3>
+            </div>
+        </div>
+
+        <h3 class="tit-b">新一代抖音云控系统 <span style="color: rgb(255, 0, 0)">智能、安全、稳定、可持续、同步抖音版本更新</span></h3>
+
+
+    </div>
+</div>
+
+<div class="nb-invite-body">
+    <a href="#" class="close"></a>
+    <a href="#" class="more-l"></a>
+    <a href="#" class="more-r"></a>
+</div>
+
+<div class="m-fixed-c">
+    <ul class="ul-icon1">
+        <li class="up"></li>
+        <li class="qq" date-index='0'></li>
+        <li class="tel" date-index='1'></li>
+        <li class="wx" date-index='2'></li>
+        <li class="down"></li>
+    </ul>
+    <ul class="ul-info1">
+        <li>
+            <p>
+                在线沟通,请点我
+                <a href="#" class="link">在线咨询</a>
+            </p>
+        </li>
+        <li>
+            <p>
+                咨询热线：
+                <br>
+                18923814161
+                <br>
+                客服qq：
+                <br>
+                3236832872
+            </p>
+        </li>
+        <li>
+            <div class="pic">
+                <img src="images/wx.jpg" alt="">
+            </div>
+
+        </li>
+    </ul>
+
+</div>
+<div class="m-fixed-l">
+    <div class="con">
+        <h3 class="tit">
+            请您留言
+            <i class="icon"></i>
+        </h3>
+        <div class="sub ">
+            <div class="desc">
+                <p class="p-tit">快抖研发中心</p>
+                <p class="tel">电话：18923814161（微信同号）</p>
+            </div>
+            <form action="">
+                <ul class="ul-inp">
+                    <li><textarea name="content" placeholder="请在此输入留言内容，我们会尽快与您联系。（必填）" class="text1"></textarea></li>
+                    <li><i class="icon"
+                           style="background-image: url('images/nodephone.png');background-position: 9px center"></i><input
+                            type="text" name=" name" placeholder="姓名"></li>
+                    <li><i class="icon"
+                           style="background-image: url('images/user.png');background-position: 9px center"></i> <input
+                            type="tel" name="tel" placeholder="电话（必填）"></li>
+                    <li><i class="icon"
+                           style="background-image: url('images/custom-select.png');background-position: 9px center"></i>
+                        <input type="text" placeholder="您的需求"></li>
+
+                </ul>
+                <div class="btn">
+                    <button>发送</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="m-fixed-b">
+    <a href="#">
+        <img src="images/iconWord0.png" alt="">
+    </a>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+
+    $(function () {
+//        $('').hover(function () {
+//            $(this).children(".ul-info1").toggleClass('on');
+//            event.stopPropagation();
+//        });
+        $('.m-fixed-c').hover((function () {
+            $(this).children('.ul-icon1').siblings('.ul-info1').toggleClass('on');
+            // console.log(e);
+            // var index=$(this).find('.ul-icon1 li:gt(0)').attr("date-index");
+            console.log(this);
+            $('.ul-icon1>li').mouseenter(function () {
+                let index = $(this).index();
+                console.log(index);
+                console.log(this);
+                $(this).parent('.ul-icon1').siblings('.ul-info1').children('li').eq(index - 1).show().siblings("li").hide();
+            })
+        }));
+        //中间定时只弹出弹出-次广告
+        setTimeout(() => {
+            $('.nb-invite-body').toggleClass('on');
+            $('.nb-invite-body .close').click(function () {
+                $(this).parent('.nb-invite-body').toggleClass('on');
+                // $(this).parent('.nb-invite-body').fadeToggle('on');
+            });
+        }, 1000)
+        //中间重复定时10秒弹出-次广告
+//        setInterval(() => {
+//            $('.nb-invite-body').toggleClass('on');
+//            $('.nb-invite-body .close').click(function () {
+//                $(this).parent('.nb-invite-body').toggleClass('on');
+//            });
+//        }, 10000);
+
+
+    })
+
+</script>
+<script>
+    $('.ban .btn').click(() => {
+        $('.alect-inp').fadeToggle()
+
+    })
+    $('.alect-inp .close').click(() => {
+        $('.alect-inp').fadeToggle()
+    })
+    $('.alect-inp ').click(() => {
+        $('.alect-inp').fadeToggle()
+    })
+    //
+    $('.alect-inp .alect-con ').click((e) => {
+        e.stopPropagation()
+    })
+</script>
+<script>
+    $('.m-fixed-l .con .tit .icon').click(function () {
+        $(this).toggleClass('on')
+        $(this).parent('.tit').siblings('.sub').slideToggle("slow");
+    })
+</script>
+<script src="js/slick.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2020.09.11-001-云控软件-快抖研发中心</title>
+    <link rel="stylesheet" href="css/cui.css"/>
+    <link rel="stylesheet" href="css/slick.css"/>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .wp {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 450px;
+        }
+
+        .banner .slick-list,
+        .banner .slick-track {
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner .items {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .banner .btn {
+            position: absolute;
+            top: 341px;
+            left: 21%;
+            margin-top: -10px;
+            margin-left: -10px;
+            display: inline-block;
+            font-size: 18px;
+            width: 253px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: rgba(31, 135, 232, 1);
+            font-weight: bold;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+        .banner .slick-arrow {
+            position: absolute;
+            width: 71px;
+            height: 71px;
+            top: 50%;
+            border: 0;
+            font-size: 0;
+            cursor: pointer;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 2;
+            outline: none;
+            margin-top: -35.5px;
+            background-color: rgba(0, 0, 0, .1);
+        }
+
+        .banner .slick-prev {
+            left: 60px;
+            background-image: url("images/left.png")
+        }
+
+        .banner .slick-next {
+            right: 60px;
+            background-image: url("images/right.png")
+        }
+
+        .m-fixed-c {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            background: #018d75;
+            margin-top: -126px;
+            height: 250px;
+            border-radius: 5px 0 0 5px;
+
+        }
+
+        .m-fixed-c .ul-icon1 {
+            width: 50px;
+
+        }
+
+        .m-fixed-c .ul-icon1 li {
+            height: 49px;
+            width: 50px;
+            background: url("images/ABUIABAEGAAgla2Y4AUov52DhAQw9AM4xAE.png") no-repeat
+        }
+
+        .m-fixed-c .ul-icon1 li.up {
+            background-position: -330px -120px;;
+
+        }
+
+        .m-fixed-c .ul-icon1 li.qq {
+            background-position: -385px -73px;;
+
+        }
+
+        .m-fixed-c .ul-icon1 li.tel {
+            background-position: -385px -160px;;
+
+        }
+
+        .m-fixed-c .ul-icon1 li.wx {
+            background-position: -385px -120px;;
+
+        }
+
+        .m-fixed-c .ul-icon1 li.down {
+            background-position: -330px -160px;;
+
+        }
+
+        .m-fixed-c .ul-info1 {
+            width: 0;
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            height: 147px;
+            text-align: center;
+            transform: translateY(-50%);
+            transition: .5s;
+            border-radius: 4px 0 0 4px;
+            overflow: hidden;
+            background: #018d75;
+        }
+
+        .m-fixed-c .ul-info1.on {
+            width: 145px;
+        }
+
+        .m-fixed-c .ul-info1 li {
+            width: 145px;
+            color: #ccc;
+            text-align: center;
+            height: 100%;
+
+        }
+
+        .m-fixed-c .ul-info1 li .link {
+            display: block;
+            margin-top: 12px;
+            width: 100px;
+            height: 32px;
+            line-height: 32px;
+            color: #00DFB9;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid #00DFB9;
+            border-radius: 5px;
+        }
+
+        .m-fixed-c .ul-info1 li p {
+            font-size: 15px;
+            line-height: 1.6;
+            padding: 15px;
+            text-align: left
+        }
+
+        .m-fixed-c .ul-info1 li .pic {
+            background: #DEFFF9;
+            margin: 15px;
+        }
+
+        .m-fixed-c .ul-info1 li .pic img {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+
+        }
+
+        .m-fixed-b {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 144px;
+            height: 52px;
+            background: #00AEF3;
+        }
+
+        .m-fixed-b a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        .m-fixed-b a img {
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+
+        .m-fixed-l {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            height: auto;
+            width: 240px;
+            z-index: 3;
+        }
+
+        .m-fixed-l .tit {
+            height: 35px;
+            line-height: 35px;
+            font-size: 14px;
+            color: #fff;
+            padding-left: 12px;
+            background-color: #00aef3;
+        }
+
+        .m-fixed-l .tit .icon {
+            display: inline-block;
+            float: right;
+            height: 30px;
+            width: 34px;
+            margin-top: 2px;
+            background: url("images/nodeMin.png") no-repeat center;
+            background-size: contain;
+        }
+
+        .m-fixed-l .tit .icon.on {
+            background: url("images/nodeMax.png") no-repeat center;
+        }
+
+        .m-fixed-l input,
+        .m-fixed-l button {
+            border: none;
+            outline: none;
+        }
+
+        .m-fixed-l form {
+            padding: 0 10px;
+        }
+
+        .m-fixed-l .sub {
+
+            background: #EDEDED;
+            display: block;
+        }
+
+        .m-fixed-l .sub .desc {
+            word-break: break-all;
+            line-height: 18px;
+            padding: 12px 0;
+            border-bottom: 1px solid #d5d5d5;
+            margin-bottom: 10px;
+        }
+
+        .m-fixed-l .sub .desc p {
+            padding-left: 12px;
+        }
+
+        .m-fixed-l .sub .desc .p-tit {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .m-fixed-l .sub .desc .tel {
+            color: #999;
+        }
+
+        .m-fixed-l .sub .ul-inp li textarea {
+            width: 212px;
+            height: 79px;
+            margin: 12px auto 7px;
+            padding: 0 4px;
+            resize: none;
+            overflow: hidden;
+            border: none;
+            background-color: #fff;
+            text-align: left
+        }
+
+        .m-fixed-l .sub .ul-inp li {
+            border: 1px solid #d5d5d5;
+            background-color: #fff;
+            margin: 7px auto 0;
+        }
+
+        .m-fixed-l .sub .ul-inp li input {
+            height: 30px;
+            width: 182px;
+            line-height: 30px;
+
+        }
+
+        .m-fixed-l .sub .btn {
+            width: 202px;
+            margin: 12px auto 0 10px;
+            padding-bottom: 18px;
+        }
+
+        .m-fixed-l .sub .btn button {
+            height: 35px;
+            width: 90px;
+            line-height: 35px;
+            text-align: center;
+            border-radius: 2px;
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+            background-color: #00aef3;
+
+        }
+
+        .m-fixed-l .sub.on {
+            display: none;
+        }
+
+        .m-fixed-l .sub .ul-inp li .icon {
+            width: 35px;
+            height: 30px;
+            display: inline-block;
+            float: left;
+            text-align: center;
+            background-color: #fff;
+            vertical-align: top;
+            border-right: 1px solid #fff;
+            background-repeat: no-repeat;
+        }
+
+        .m-fixed-l .sub .ul-inp li textarea:focus {
+            outline: none;
+        }
+
+        .nb-invite-body {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 320px;
+            background: url("images/ban1.png") no-repeat;
+            background-size: 100% 100%;
+            width: 602px;
+            z-index: 1;
+            display: none;
+        }
+
+        .nb-invite-body.on {
+            display: block;
+        }
+
+        .nb-invite-body .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url("images/spring.png") no-repeat -49px -147px;
+            z-index: 3;
+        }
+
+        .nb-invite-body .more-l {
+            position: absolute;
+            right: 20px;
+
+            display: inline-block;
+            width: 46.411483253588514%;
+
+            height: 12.068965517241379%;
+            top: 80.3125%;
+            left: 7.000000000000001%;
+            z-index: 3;
+        }
+
+        .nb-invite-body .more-r {
+            position: absolute;
+            width: 28.833333333333332%;
+            height: 12.068965517241379%;
+            top: 80.3125%;
+            left: 63.33333333333333%;
+            z-index: 2;
+        }
+
+        .alect-inp {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            z-index: 100;
+            display: none;
+        }
+
+        /*.alect-inp.on{*/
+        /*display: block;*/
+        /*}*/
+
+        .alect-inp .alect-con {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 900px;
+            transform: translate(-50%, -50%);
+            height: 588px;
+            background: #fff;
+            z-index: 101;
+            text-align: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .alect-inp .tit-t {
+            margin-top: 8px;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            height: 40px;
+            line-height: 40px;
+            margin-bottom: 40px;
+        }
+
+        .alect-inp .con {
+            overflow: hidden;
+            margin-bottom: 70px;
+        }
+
+        .alect-inp .con .tit {
+            font-size: 14px;
+            color: rgb(102, 102, 102);
+            margin-bottom: 8px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+        }
+
+        .alect-inp .con .inp {
+            width: 415px;
+            height: 299px;
+            margin: 5px 40px;
+            float: left;
+            text-align: left;
+
+        }
+
+        .alect-inp .con .inp h4.tit {
+            color: rgb(102, 102, 102);
+            font-size: 14px;
+        }
+
+        .alect-inp .con .inp .ul-inp li {
+            margin-bottom: 16px;
+        }
+
+        .alect-inp .con .inp .inp-txt {
+            width: 100%;
+            height: 36px;
+            font-size: 12px;
+            font-family: 微软雅黑;
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            text-align: left;
+            border-radius: 2px;
+
+        }
+
+        .alect-inp .con .inp .inp-txt input {
+            width: 90%;
+            height: 100%;
+            border: 2px solid #bababa;
+            text-indent: 6px;
+            box-sizing: border-box;
+
+        }
+
+        .alect-inp .con .inp .inp-txt .icon {
+            color: red;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+
+        .alect-inp .con .inp .btn {
+            display: inline-block;
+            width: 160px;
+            height: 44px;
+            line-height: 44px;
+
+            border: 1px solid #FD1716;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+
+        .alect-inp .con .inp button {
+            height: 100%;
+            width: 100%;
+            color: #fff;
+            font-size: 14px;
+            border: 1px solid #FF6362;
+            background: #FE5454;
+        }
+
+        .alect-inp .con .pic {
+            overflow: hidden;
+            padding-left: 10px;
+        }
+
+        .alect-inp .con .pic img {
+            width: 179px;
+            height: 179px;
+            display: inline-block;
+            margin-bottom: 17px;
+        }
+
+        .alect-inp .con .pic p {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 34px;
+        }
+
+        .alect-inp .con .pic .tel {
+            font-size: 18px;
+            color: #000;
+        }
+
+        .alect-inp .tit-b {
+            font-size: 20px;
+            color: #000;
+        }
+
+        .alect-inp .close {
+            z-index: 8;
+            position: absolute;
+            top: 12px;
+            right: 26px;
+            width: 33px;
+            height: 33px;
+            background: url("images/vbg01.png") no-repeat -527px -2387px;;
+        }
+
+        .m-video {
+            height: 942px;
+            background: #fff;
+            box-sizing: border-box;
+            padding: 50px 0;
+
+        }
+
+        .m-video .g-tit-z {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .m-video .g-tit-z .tit {
+            font-size: 45px;
+            color: #000;
+
+        }
+        .m-video .txt{
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .m-video .txt .txt1{
+            margin-bottom: 25px;
+        }
+        .m-video .txt-p{
+            font-size: 16px;
+            color: rgb(121, 121, 121)
+        }
+        .m-video .video-con .tit{
+            color: rgb(255, 0, 0);
+            font-size: 20px;
+        }
+        .m-video  .video-l{
+            float: left;
+            width: 710px;
+            height: 599px;
+            background: url("images/video-bg.jpg")no-repeat center;
+            background-size: cover;
+        }
+        .m-video  .video-l .video-res {
+            width: 673px;
+            height: 382px;
+            overflow: hidden;
+            margin: 24px 20px;
+            z-index:3;
+            background: #fff;
+            text-align: center;
+        }
+        .m-video  .video-l video{
+            width: 660px;
+            height: 372px;
+            overflow: hidden;
+            margin: 5px 6px;
+            z-index:5;
+            vertical-align: middle;
+        }
+        .m-video  .video-r{
+            overflow: hidden;
+            padding-left: 96px;
+        }
+        .m-video  .video-r .ul-txt li{
+            margin-bottom: 70px;
+        }
+        .m-video  .video-r .ul-txt li:last-child a{
+            position: relative;
+            text-align: center;
+            display: inline-block;
+            width: 255px;
+            height: 52px;
+            box-sizing: border-box;
+            border:1px solid #00a0e9;
+            background: -webkit-linear-gradient(bottom, #00a0e9,rgba(127,207,244,1));
+            line-height: 52px;
+            color: #fff;
+            font-size: 16px ;
+            border-radius:15px ;
+        }
+        .m-video  .video-r .ul-txt li:last-child a .sub{
+            display: none;
+            position: absolute;
+            bottom: 122%;
+            left:0;
+            width: 155px;
+            height: 177px;
+            background: #fff;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 15px;
+            /*border: 1px solid #ccc;*/
+            -moz-box-shadow:0px 0px 9px #333333; -webkit-box-shadow:0px 0px 9px #333333; box-shadow:0px 0px 9px #ccc;
+            transition: .3s;
+        }
+        .m-video  .video-r .ul-txt li:last-child a .sub::after{
+            content: " ";
+            display: inline-block;
+            border-left: 10px solid #fff;
+            border-bottom: 7px solid transparent;
+            border-top: 7px solid transparent;
+            border-right: 10px solid transparent ;
+            transform:rotate(90deg) translateX(5px);
+
+        }
+        .m-video  .video-r .ul-txt li:last-child a .sub img{
+            width: 120px;
+            height: 120px;
+
+            vertical-align: middle;
+        }
+        .m-video  .video-r .ul-txt li:last-child a .sub p{
+            color: #333;
+            font-size: 13px;
+            line-height:1;
+            margin-top: 8px;
+        }
+        .m-video  .video-r .ul-txt li:last-child a span{
+            width:100%;
+        }
+        .m-video  .video-r .ul-txt li:last-child a:hover .sub{
+            display: block;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="banner">
+    <div href="#" style="background-image: url('images/banner1.jpg')" class="items">
+        <a href="#" class="btn">咨询免费体验系统 >>></a>
+    </div>
+    <div href="#" style="background-image: url('images/banner2.jpg')" class="items"></div>
+
+</div>
+<div class="alect-inp ">
+    <div class="alect-con">
+
+        <a href="javascript:" class="close"></a>
+        <h3 class="tit-t">咨询留言</h3>
+        <div class="con">
+            <div class="inp">
+                <form action="">
+                    <ul class="ul-inp">
+                        <li>
+                            <h4 class="tit">
+                                姓名</h4>
+                            <div class="inp-txt">
+                                <input type="text"><span class="icon">*</span>
+                            </div>
+
+
+                        </li>
+                        <li>
+                            <h4 class="tit">
+                                联系电话</h4>
+                            <div class="inp-txt">
+                                <input type="text"><span class="icon">*</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h4 class="tit">
+                                您的需求</h4>
+                            <div class="inp-txt">
+                                <input type="text"><span class="icon">*</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="btn">
+                                <button>提交</button>
+                            </span>
+
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div class="pic">
+                <img src="images/qr.jpg" alt="">
+                <p>添加客服免费体验系统</p>
+                <h3 class="tel">咨询热线：<span style="color: rgb(230, 74, 25);">189-2381-4161</span></h3>
+            </div>
+        </div>
+
+        <h3 class="tit-b">新一代抖音云控系统 <span style="color: rgb(255, 0, 0)">智能、安全、稳定、可持续、同步抖音版本更新</span></h3>
+
+
+    </div>
+</div>
+<div class="wp">
+    <div class="m-video">
+        <div class="g-tit-z">
+            <h1 class="tit">快抖抖音云控系统</h1>
+        </div>
+        <div class="txt">
+            <div class="txt1">
+                <p class="txt-p">抖音云控系统是抖音群控系统的升级版，利用AI技术智能云控多个账号，可以帮助客户在短视频上实现高效营销，是一款</p>
+                <p class="txt-p">自动化智能抖音营销软件，享受短视频流量红利带来的变现收益。</p>
+            </div>
+            <div class="txt1">
+                <p class="txt-p">抖音群控系统，一个系统后台云控N多个抖音账号，批量点赞和评论、批量上传视频、批量圈粉丝涨人气、截留同行粉丝等</p>
+                <p class="txt-p">功能；助力企业商家“高效率、低成本”获取大量客户。</p>
+            </div>
+        </div>
+        <div class="video-con fix">
+            <div class="video-l">
+                <div class="video-res"> <video src="video/ABUIABA6GAAg3c3r9wUo9Nb6kAY.mp4" x5-playsinline webkit-playsinline playsinline controls="controls"></video></div>
+
+            </div>
+            <div class="video-r">
+                <ul class="ul-txt">
+                    <li><h3 class="tit">实时群控</h3>
+                        <p class="txt-p">一个系统后台一键批量控制N多个抖音账号，人工成本基本为零</p></li>
+                    <li><h3 class="tit">群控养号</h3>
+                        <p class="txt-p">抖音自动批量养号，全自动进行发布视频，点赞，评论等操作</p></li>
+                    <li><h3 class="tit">智能评论、私信</h3>
+                        <p class="txt-p">可指定需要评论抖音大号，进行评论的抖音号数量，自定义关键词 <br>触发评论/私信</p></li>
+                    <li><h3 class="tit">全自动化</h3>
+                        <p class="txt-p">贴近真人操作，避免造成抖音封号的风险.所有操作全自动化</p></li>
+                    <li>
+                        <a href="#">
+                            <div class="sub">
+                                <img src="images/qr.jpg" alt="">
+                                <p>请使用微信扫一扫</p>
+                            </div>
+                            <span>添加客服免费体验系统>>></span>
+
+                        </a>
+                    
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+
+<div class="nb-invite-body">
+    <a href="#" class="close"></a>
+    <a href="#" class="more-l"></a>
+    <a href="#" class="more-r"></a>
+</div>
+
+<div class="m-fixed-c">
+    <ul class="ul-icon1">
+        <li class="up"></li>
+        <li class="qq" date-index='0'></li>
+        <li class="tel" date-index='1'></li>
+        <li class="wx" date-index='2'></li>
+        <li class="down"></li>
+    </ul>
+    <ul class="ul-info1">
+        <li>
+            <p>
+                在线沟通,请点我
+                <a href="#" class="link">在线咨询</a>
+            </p>
+        </li>
+        <li>
+            <p>
+                咨询热线：
+                <br>
+                18923814161
+                <br>
+                客服qq：
+                <br>
+                3236832872
+            </p>
+        </li>
+        <li>
+            <div class="pic">
+                <img src="images/wx.jpg" alt="">
+            </div>
+
+        </li>
+    </ul>
+
+</div>
+<div class="m-fixed-l">
+    <div class="con">
+        <h3 class="tit">
+            请您留言
+            <i class="icon"></i>
+        </h3>
+        <div class="sub ">
+            <div class="desc">
+                <p class="p-tit">快抖研发中心</p>
+                <p class="tel">电话：18923814161（微信同号）</p>
+            </div>
+            <form action="">
+                <ul class="ul-inp">
+                    <li><textarea name="content" placeholder="请在此输入留言内容，我们会尽快与您联系。（必填）" class="text1"></textarea></li>
+                    <li><i class="icon"
+                           style="background-image: url('images/nodephone.png');background-position: 9px center"></i><input
+                            type="text" name=" name" placeholder="姓名"></li>
+                    <li><i class="icon"
+                           style="background-image: url('images/user.png');background-position: 9px center"></i> <input
+                            type="tel" name="tel" placeholder="电话（必填）"></li>
+                    <li><i class="icon"
+                           style="background-image: url('images/custom-select.png');background-position: 9px center"></i>
+                        <input type="text" placeholder="您的需求"></li>
+
+                </ul>
+                <div class="btn">
+                    <button>发送</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="m-fixed-b">
+    <a href="#">
+        <img src="images/iconWord0.png" alt="">
+    </a>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+
+    $(function () {
+//        $('').hover(function () {
+//            $(this).children(".ul-info1").toggleClass('on');
+//            event.stopPropagation();
+//        });
+        $('.m-fixed-c').hover((function () {
+            $(this).children('.ul-icon1').siblings('.ul-info1').toggleClass('on');
+            // console.log(e);
+            // var index=$(this).find('.ul-icon1 li:gt(0)').attr("date-index");
+            console.log(this);
+            $('.ul-icon1>li').mouseenter(function () {
+                let index = $(this).index();
+                console.log(index);
+                console.log(this);
+                $(this).parent('.ul-icon1').siblings('.ul-info1').children('li').eq(index - 1).show().siblings("li").hide();
+            })
+        }));
+        //中间定时只弹出弹出-次广告
+        setTimeout(() => {
+            $('.nb-invite-body').toggleClass('on');
+            $('.nb-invite-body .close').click(function () {
+                $(this).parent('.nb-invite-body').toggleClass('on');
+                // $(this).parent('.nb-invite-body').fadeToggle('on');
+            });
+        }, 1000)
+        //中间重复定时10秒弹出-次广告
+//        setInterval(() => {
+//            $('.nb-invite-body').toggleClass('on');
+//            $('.nb-invite-body .close').click(function () {
+//                $(this).parent('.nb-invite-body').toggleClass('on');
+//            });
+//        }, 10000);
+
+
+    })
+
+</script>
+<script>
+    $('.banner .btn').click(() => {
+        $('.alect-inp').fadeToggle()
+
+    })
+    $('.alect-inp .close').click(() => {
+        $('.alect-inp').fadeToggle()
+    })
+    $('.alect-inp ').click(() => {
+        $('.alect-inp').fadeToggle()
+    })
+    //
+    $('.alect-inp .alect-con ').click((e) => {
+        e.stopPropagation()
+    })
+</script>
+<script>
+    $('.m-fixed-l .con .tit .icon').click(function () {
+        $(this).toggleClass('on')
+        $(this).parent('.tit').siblings('.sub').slideToggle("slow");
+    })
+</script>
+<script src="js/slick.min.js"></script>
+<script>
+    $('.banner').slick({
+//是否显示分页条
+        dots: false,
+        arrows: true,
+        pauseOnHover: true,
+        autoplay: false,
+        speed: 1000,
+        slidesToShow: 1,
+        autoplaySpeed: 3000
+    });
+</script>
+</body>
+</html>

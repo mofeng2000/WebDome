@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            display: flex;
+            width: 600px;
+            height: 600px;
+            background: orange;
+            /*flex-direction: column;*/
+            /*flex-direction: row;*/
+            /*flex-wrap: wrap;*/
+            /**/
+            /*单行行排列*/
+            /*align-items: center;*/
+            /*align-items: flex-start;*/
+            /*align-items: flex-end;*/
+            /*align-items:stretch;*/
+
+            /*多行排列*/
+            /*align-content: center;*/
+            /*align-content: flex-start;*/
+            /*align-content: flex-end;*/
+            /*align-content: space-around;*/
+            /*align-content: space-between;*/
+             /*align-content:stretch;*/
+
+        }
+        span{
+            /*width: 150px;*/
+            height: 150px;
+            background: deepskyblue;
+            margin: 2px;
+            /*!*1三个盒子平分1个宽度*!*/
+            /*flex: 1;*/
+        }
+        /*span:nth-child(1){*/
+            /*width: 44px;*/
+        /*}*/
+        /*span:nth-child(2){*/
+
+           /*flex: 1;*/
+        /*}*/
+         /*span:nth-child(3){*/
+            /*width: 44px;*/
+        /*}    */
+        span:nth-child(1){
+            width: 40px;
+            align-self: flex-start;
+            order:-1;
+        }
+        span:nth-child(2){
+            flex: 1;
+          align-self: center;
+        }
+         span:nth-child(3){
+             width: 40px;
+             align-self: flex-end;
+             order:-2;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+
+</div>
+</body>
+</html>

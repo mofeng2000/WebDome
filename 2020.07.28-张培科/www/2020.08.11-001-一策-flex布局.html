@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2020.08.11-001-一策-flex布局</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/m-lib.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/rem.js"></script>
+    <style>
+        body {
+
+        }
+
+        .g-tit {
+            text-align: center;
+            padding: 0.5rem 0 0.3rem;
+        }
+
+        .g-tit .tit {
+            font-size: 0.4rem;
+            font-weight: 400;
+        }
+
+        .g-more {
+            text-align: center;
+            margin: 0.4rem 0;
+        }
+
+        .g-more a {
+            display: inline-block;
+            padding: 0.1rem 0.2rem;
+            background: #e72a4c;
+            color: #fff;
+            font-size: 0.2rem;
+            border-radius: 0.1rem;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 1.4rem;
+            align-items: center;
+            padding: 0 0.2rem;
+            background: #fff;
+            box-shadow: 0 0.08rem 0.05rem rgba(0, 0, 0, .1);
+            z-index: 99;
+        }
+
+        .header .left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .logo {
+            width: 1.5rem;
+        }
+
+        .header .tit {
+            padding-left: 0.3rem;
+            margin-left: 0.3rem;
+            border-left: 1px solid #ccc;
+            font-size: 0.28rem;
+            font-weight: normal;
+        }
+
+        .header .tel {
+            width: 0.5rem;
+            height: 0.52rem;
+            background: url("images1/iconx1.png") no-repeat;
+            background-size: contain;
+        }
+
+        .banner {
+
+            padding-top: 1.4rem;
+            text-align: center;
+        }
+
+        .banner .item {
+            position: relative;
+        }
+
+        .banner .item img {
+            width: 100%;
+        }
+
+        .banner .txt {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            color: #fff;
+        }
+
+        .banner .txt .icon {
+            display: inline-block;
+            width: 0.49rem;
+            height: 0.43rem;
+            background: url("images1/iconx27.png") no-repeat center;
+            background-size: contain;
+        }
+
+        .banner .txt .tit {
+            font-size: 0.6rem;
+
+        }
+
+        .banner .txt .desc {
+            font-size: 0.3rem;
+
+        }
+
+        .row-a1 {
+
+        }
+
+        .box-p {
+            text-align: center;
+        }
+
+        .box-p .desc {
+            font-size: 0.20rem;
+            color: #666;
+        }
+
+        .ul-list1 {
+            display: flex;
+            margin-top: 0.5rem;
+        }
+
+        .ul-list1 li {
+            flex: 1;
+        }
+
+        .ul-list1 .con {
+            text-align: center;
+            position: relative;
+        }
+
+        .ul-list1 .con::after {
+            content: " ";
+            display: inline-block;
+            width: 0.03rem;
+            height: 0.5rem;
+            background: #ccc;
+            position: absolute;
+            right: 0;
+            top: 10%;
+        }
+
+        .ul-list1 .icon {
+            display: inline-block;
+            width: 0.48rem;
+            height: 0.48rem;
+            background: url("images1/iconx2.png") no-repeat center;
+            background-size: contain;
+        }
+
+        .ul-list1 .con .c2 {
+            background: url("images1/iconx3.png") no-repeat center;
+        }
+
+        .ul-list1 .con .c3 {
+            background: url("images1/iconx4.png") no-repeat center;
+        }
+
+        .ul-list1 .tit {
+            color: #ed5c76;
+            font-size: 0.20rem;
+        }
+
+        .ul-list1 .desc {
+            font-size: 0.16rem;
+            color: #666;
+        }
+
+        .imgtxt1 {
+            padding-top: 0.7rem
+        }
+
+        .ul-list2 {
+            text-align: center;
+        }
+
+        .ul-list2 li {
+            border: 1px solid #3d3d3d;
+            background: #272727;
+        }
+
+        .ul-list2 .con {
+            display: flex;
+            height: 3rem;
+            background: #272727;
+        }
+
+        .ul-list2 .pic {
+            width: 3.33rem;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            background: url("images1/picx1.jpg") no-repeat center;
+            background-size: contain;
+        }
+
+        .ul-list2 .pic2 {
+            background: url("images1/picx2.jpg") no-repeat center;
+        }
+
+        .ul-list2 .pic3 {
+            background: url("images1/picx3.jpg") no-repeat center;
+        }
+
+        .ul-list2 .pic4 {
+            background: url("images1/picx4.jpg") no-repeat center;
+        }
+
+        .ul-list2 .pic .icon {
+            text-align: center;
+            display: inline-block;
+            width: 0.63rem;
+            height: 0.5rem;
+            background: url("images1/iconx5.png") no-repeat center;
+            background-size: contain;
+            margin-bottom: 0.1rem;
+        }
+
+        .ul-list2 .pic .c2 {
+            background: url("images1/iconx6.png") no-repeat center;
+        }
+
+        .ul-list2 .pic .c3 {
+            background: url("images1/iconx7.png") no-repeat center;
+        }
+
+        .ul-list2 .pic .c4 {
+            background: url("images1/iconx8.png") no-repeat center;
+        }
+
+        .ul-list2 .pic .tit {
+            font-size: 0.2rem;
+            color: #fff;
+            font-weight: normal;
+        }
+
+        .ul-list2 .txt {
+            width: 4.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid #a18a54;
+            margin: 0.1rem;
+            padding: 0.2rem;
+        }
+
+        .ul-list2 .txt a {
+            font-size: 0.2rem;
+            color: #fff;
+            flex: 1;
+        }
+
+        /*row-a2*/
+        .row-a2 {
+
+        }
+
+        .ul-list3 {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0.2rem;
+        }
+
+        .ul-list3 li {
+            display: flex;
+            text-align: center;
+
+        }
+
+        .ul-list3 li a {
+            flex: 1;
+            display: inline-block;
+            padding: 0.15rem;
+            border: 1px solid #adadad;
+            color: #333;
+            font-size: 0.20rem;
+            margin: 0 0.08rem;
+            border-radius: 0.06rem;
+        }
+
+        .ul-list3 li a.current {
+            background: #e61f42;
+            color: #fff;
+        }
+
+        .pics {
+            display: none;
+        }
+
+        .pics.on {
+            display: block;
+        }
+
+        .pics a {
+
+        }
+
+        .pics a img {
+            width: 100%;
+        }
+
+        .row-a3 {
+            height: 14rem;
+            background: url("images1/bgx1.jpg") no-repeat center;
+            background-size: contain;
+        }
+
+        .ul-list4 {
+
+        }
+
+        .ul-list4 li {
+            background: #fff;
+            margin-bottom: 0.2rem;
+        }
+
+        .ul-list4 .con {
+            padding: 0.3rem;
+        }
+
+        .ul-list4 .tit {
+            line-height: 0.66rem;
+            padding-bottom: 0.2rem;
+            font-size: 0.24rem;
+            color: #000;
+        }
+
+        .ul-list4 .tit::before {
+            display: inline-block;
+            width: 0.76rem;
+            height: 0.66rem;
+            content: url("images1/iconx9.png");
+            vertical-align: middle;
+            margin-right: 0.15rem;
+        }
+
+        .ul-list4 .c2::before {
+            content: url("images1/iconx10.png");
+        }
+
+        .ul-list4 .c3::before {
+            content: url("images1/iconx11.png");
+        }
+
+        .ul-list4 .desc {
+            font-size: 0.18rem;
+            color: #333;
+            line-height: 2;
+        }
+
+        /*row-a4*/
+        .row-a4 {
+            margin-bottom: 0.3rem;
+        }
+
+        .ul-list5 {
+            text-align: center;
+        }
+
+        .ul-list5 li {
+            background: #fff;
+            margin-bottom: 0.2rem;
+        }
+
+        .ul-list5 .con {
+            padding: 0.3rem;
+        }
+
+        .ul-list5 .tit {
+            position: relative;
+            line-height: 0.66rem;
+            font-size: 0.24rem;
+            color: #000;
+        }
+
+        .ul-list5 .tit::before {
+            position: absolute;
+            top: -0.25rem;
+            left: 50%;
+            transform: translate(-50%);
+            display: inline-block;
+            width: 0.76rem;
+            height: 0.66rem;
+            content: url("images1/iconx12.png");
+            vertical-align: middle;
+            margin-right: 0.15rem;
+        }
+
+        .ul-list5 .c2::before {
+            content: url("images1/iconx13.png");
+        }
+
+        .ul-list5 .c3::before {
+            content: url("images1/iconx14.png");
+        }
+
+        .ul-list5 .desc {
+            font-size: 0.18rem;
+            color: #333;
+            line-height: 2;
+        }
+
+        /*row-a5*/
+        .row-a5 {
+            background: url("images1/bgx2.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        .row-a5 .g-tit .tit {
+            color: #fff;
+        }
+
+        .ul-list6 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .ul-list6 li {
+            flex: 25%;
+        }
+
+        .ul-list6 .con {
+            position: relative;
+            text-align: center;
+            padding: 0.2rem;
+        }
+
+        .ul-list6 .con .icon {
+            display: inline-block;
+            width: 0.49rem;
+            height: 0.54rem;
+            background: url("images1/iconx18.png") no-repeat center;
+
+        }
+
+        .ul-list6 .tit {
+            color: #fff;
+        }
+
+        .ul-list6 .icon::after {
+            content: " ";
+            background: url("images1/iconx26.png");
+            width: 0.12rem;
+            height: 0.12rem;
+            position: absolute;
+            top: 0.4rem;
+            right: 0;
+            color: #fff;
+        }
+
+        .row-a6 {
+
+        }
+
+        .ul-list7 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .ul-list7 li {
+            width: 3rem;
+            margin: 0.2rem;
+            height: 1.95rem;
+            border: 1px solid #ccc;
+        }
+
+        .ul-list7 li .con {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .links a img {
+            width: 100%;
+        }
+
+        .info {
+            text-align: center;
+        }
+
+        .info p {
+            font-size: 0.16rem;
+            color: #333;
+        }
+
+        /*row-a7*/
+        .row-a7 {
+            margin-bottom: 1.8rem;
+        }
+
+        .row-a7 .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            float: left;
+            height: 4rem;
+            width: 0.7rem;
+        }
+
+        .info a {
+            font-size: 0.2rem;
+            margin: 0.1rem 0;
+            display: block;
+        }
+
+        .info a.on {
+            color: #e93f5e;
+        }
+
+        .tab-con {
+            overflow: hidden;
+        }
+
+        .tab-con .box {
+            display: none;
+            position: relative;
+            height: 4rem;
+            background: url("images1/map.png") no-repeat left;
+            background-size: contain;
+        }
+
+        .tab-con .box.on {
+            display: block;
+        }
+
+        .tab-con .m-list {
+            display: block;
+            position: absolute;
+            left: 1.6rem;
+            bottom: .85rem;
+            width: 3.66rem;
+            background: #fff;
+            border-radius: .2rem;
+            padding: 0.1rem;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+        }
+
+        .tab-con .m-list.t2 {
+            left: 1.8rem;
+            bottom: .95rem;
+        }
+
+        .tab-con .m-list.t3 {
+            left: 1.7rem;
+            bottom: .8rem;
+        }
+
+        .tab-con .m-list::after {
+            position: absolute;
+            left: 50%;
+            bottom: -.5rem;
+            content: " ";
+            width: 0;
+            height: 0;
+            transform: translate(-50%);
+            border-top: .25rem solid #fff;
+            border-bottom: .25rem solid transparent;
+            border-left: .1rem solid transparent;
+            border-right: .1rem solid transparent;
+            display: block;
+        }
+
+        .tab-con .tit {
+            font-size: 0.24rem;
+            color: #333;
+        }
+
+        /*.box-a1 .p4{*/
+        /*position: relative;*/
+        /*}*/
+        .tab-con .desc {
+            font-size: 0.18rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /*footer*/
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1.4rem;
+            border-radius: .7rem .7rem 0 0;
+            box-shadow: 5px 0 5px 5px rgba(0, 0, 0, .1);
+            background: #fff;
+            z-index: 1000;
+        }
+
+        .ul-list9 {
+            display: flex;
+            text-align: center;
+        }
+
+        .ul-list9 li {
+            flex: 1;
+            padding: 0.4rem;
+        }
+
+        .ul-list9 li a {
+
+        }
+
+        /*box-qr遮罩*/
+        .pop-qr {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            z-index: 1000;
+        }
+
+        .wx-qr {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 0.1rem;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            z-index: 1001;
+        }
+
+        .wx-qr img {
+            width: 100%;
+        }
+
+        .wx-qr .desc {
+            color: #000;
+            font-size: 0.18rem;
+        }
+
+        .pop-pics {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            z-index: 1000;
+        }
+
+        .m-pics {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 75%;
+            background: #fff;
+            overflow: hidden;
+            transform:translate(-50%,-50%);
+        }
+
+        .pop-pics .pics {
+            display: block;
+            height: 8.3rem;
+            overflow-y:scroll;
+        }
+        .pop-pics .top{
+            background: #e61f42;
+            padding: 0.1rem;
+        }
+        .pop-pics .js-chose{
+            float: right;
+            width: 0.3rem;
+            height: 0.3rem;
+            background: url("images1/iconx28.png")no-repeat center;
+            background-size: contain;
+        }
+        .m-pics h3{
+            font-size: 0.2rem;
+            color: #fff;
+        }
+        .m-pics .txt{
+            font-size: 0.16rem;
+            padding: 0.1rem;
+        }
+    </style>
+</head>
+<body>
+<!--头部-->
+<div class="header">
+    <div class="left">
+        <div class="logo"><a href="#"><img src="images1/logo.png" alt=""></a></div>
+        <h3 class="tit">创新无止境 <strong>·</strong> 一策不止步</h3>
+    </div>
+    <a class="tel" href="tel:111111"></a>
+</div>
+<!--banner-->
+<div class="banner">
+    <a href="#" class="item">
+        <img src="images1/ban1.jpg" alt="">
+        <div class="txt">
+            <i class="icon"></i>
+            <h3 class="tit">用营销的手段去做设计</h3>
+        </div>
+    </a>
+    <a href="#" class="item">
+        <img src="images1/ban1.jpg" alt="">
+        <div class="txt">
+            <i class="icon"></i>
+            <h3 class="tit">用营销的手段去做设计</h3>
+            <p class="desc">品牌的野心，从懂消费者开始</p>
+        </div>
+    </a>
+</div>
+<!--关于一策-->
+<div class="row-a1">
+    <div class="g-tit">
+        <h2 class="tit">关于一策</h2>
+    </div>
+    <div class="wp">
+        <div class="box-p">
+            <p class="desc">客户提供优秀设计。让设计为品牌带来利润的专业设计公司。客户提供优秀设计。让设计为品牌带来利润的专业设计公司。</p>
+            <p class="desc">与更多客户分享设计成就的价值，与更多客户分享设计成就的价值，与更多客户分享设计成就的价值，与更多客户分享设计成就的价值，</p>
+        </div>
+        <ul class="ul-list1">
+            <li>
+                <div class="con">
+                    <i class="icon c1"></i>
+                    <h3 class="tit">国际</h3>
+                    <p class="desc">国际前沿的设计标准</p>
+                </div>
+            </li>
+            <li>
+                <div class="con ">
+                    <i class="icon c2"></i>
+                    <h3 class="tit">创新</h3>
+                    <p class="desc">创新无止境</p>
+                </div>
+            </li>
+            <li>
+                <div class="con ">
+                    <i class="icon c3"></i>
+                    <h3 class="tit">前卫</h3>
+                    <p class="desc">让品牌走的时尚的前沿</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="imgtxt1">
+        <ul class="ul-list2">
+            <li>
+                <div class="con">
+                    <div class="pic pic1"><i class="icon c1"></i>
+                        <h3 class="tit">画册设计</h3></div>
+                    <div class="txt">
+                        <a href="#">画册设计印刷</a>
+                        <a href="#">产品手册设计</a>
+                        <a href="#">宣传册设计</a>
+                        <a href="#">招商手册设计</a>
+                        <a href="#">品牌画册设计</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <div class="txt">
+                        <a href="#">标识系统设计</a>
+                        <a href="#">发光招牌制作</a>
+                        <a href="#">发光招牌制作</a>
+                        <a href="#">广告工程制作</a>
+                        <a href="#">门]头/专卖店设计</a>
+                    </div>
+                    <div class="pic pic2"><i class="icon c2"></i>
+                        <h3 class="tit">VI设计</h3></div>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <div class="pic pic3"><i class="icon c3"></i>
+                        <h3 class="tit">包装设计</h3></div>
+                    <div class="txt">
+                        <a href="#">酒包装</a>
+                        <a href="#">茶叶包装</a>
+                        <a href="#">食品包装</a>
+                        <a href="#">包装设计</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <div class="txt">
+                        <a href="#">产品摄影</a>
+                        <a href="#">商业摄影</a>
+                        <a href="#">人像摄影拍摄</a>
+                        <a href="#">淘宝摄影拍摄</a>
+                        <a href="#">服装摄影拍摄</a>
+                    </div>
+                    <div class="pic pic4"><i class="icon c4"></i>
+                        <h3 class="tit">商业摄影</h3></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--案例展示-->
+<div class="row-a2">
+    <div class="g-tit">
+        <h2 class="tit">案例展示</h2>
+    </div>
+    <div class="wp">
+        <ul class="ul-list3">
+            <li><a href="javascript:void(0)" class="current">画册/产品目录设计</a></li>
+            <li><a href="javascript:void(0)">VI设计</a></li>
+            <li><a href="javascript:void(0)">标志/包装设计</a></li>
+            <li><a href="javascript:void(0)">产品/商业摄影</a></li>
+        </ul>
+    </div>
+    <div class="pics on">
+        <a href="#"> <img src="images1/picx5.jpg" alt=""></a>
+        <a href="#"> <img src="images1/picx6.jpg" alt=""></a>
+        <a href="#"> <img src="images1/picx7.jpg" alt=""></a>
+        <a href="#"> <img src="images1/picx8.jpg" alt=""></a>
+        <a href="#"> <img src="images1/picx9.jpg" alt=""></a>
+        <a href="#"> <img src="images1/picx10.jpg" alt=""></a>
+
+    </div>
+    <div class="pics">
+        <a href="javascript:"> <img src="images1/picx8.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx9.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx10.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx5.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx6.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx7.jpg" alt=""></a>
+    </div>
+    <div class="pics">
+        <a href="javascript:"> <img src="images1/picx6.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx7.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx8.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx5.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx9.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx10.jpg" alt=""></a>
+
+    </div>
+    <div class="pics">
+        <a href="javascript:"> <img src="images1/picx8.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx9.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx5.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx6.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx7.jpg" alt=""></a>
+        <a href="javascript:"> <img src="images1/picx10.jpg" alt=""></a>
+
+    </div>
+    <div class="g-more">
+        <a href="#">查看更多 +</a>
+    </div>
+</div>
+<!--服务优势-->
+<div class="row-a3">
+    <div class="g-tit">
+        <h2 class="tit">服务优势</h2>
+    </div>
+    <div class="wp">
+        <ul class="ul-list4">
+            <li>
+                <div class="con">
+                    <h3 class="tit c1">团队·精</h3>
+                    <p class="desc">-策设计团队人员多数毕业于-流设计院校， 拥有丰富的实战经验，
+                        团队成员年轻而充满朝气，具有创新意识并勇于迎接挑战。用心精于设计，精</p>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <h3 class="tit c2">团队·精</h3>
+                    <p class="desc">-策设计团队人员多数毕业于-流设计院校， 拥有丰富的实战经验，
+                        团队成员年轻而充满朝气，具有创新意识并勇于迎接挑战。用心精于设计，精</p>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <h3 class="tit c3">团队·精</h3>
+                    <p class="desc">-策设计团队人员多数毕业于-流设计院校， 拥有丰富的实战经验，
+                        团队成员年轻而充满朝气，具有创新意识并勇于迎接挑战。用心精于设计，精</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--为啥选择我们-->
+<div class="row-a4">
+    <div class="g-tit">
+        <h2 class="tit">为啥选择我们</h2>
+    </div>
+    <div class="wp">
+        <ul class="ul-list5">
+            <li>
+                <div class="con">
+                    <h3 class="tit c1">- -切以营销为核心的设计理念</h3>
+                    <p class="desc">-策设计团队人员多数毕业于-流设计院校， 拥有丰富的实战经验，
+                        团队成员年轻而充满朝气，具有创新意识并勇于迎接挑战。用心精于设计，精</p>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <h3 class="tit c2">切以营销为核心的设计理念</h3>
+                    <p class="desc">-策设计团队人员多数毕业于-流设计院校， 拥有丰富的实战经验，
+                        团队成员年轻而充满朝气，具有创新意识并勇于迎接挑战。用心精于设计，精</p>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <h3 class="tit c3">切以营销为核心的设计理念</h3>
+                    <p class="desc">-策设计团队人员多数毕业于-流设计院校， 拥有丰富的实战经验，
+                        团队成员年轻而充满朝气，具有创新意识并勇于迎接挑战。用心精于设计，精</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--服务流程-->
+<div class="row-a5">
+    <div class="g-tit">
+        <h2 class="tit">服务流程</h2>
+    </div>
+    <div class="wp">
+        <ul class="ul-list6">
+            <li>
+                <div class="con">
+                    <i class="icon c1"></i>
+                    <h3 class="tit">项目咨询/报价</h3>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <i class="icon c2"></i>
+                    <h3 class="tit">项目启动</h3>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <i class="icon c3"></i>
+                    <h3 class="tit">设计方案</h3>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <i class="icon c4"></i>
+                    <h3 class="tit">方案审核</h3>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <i class="icon c5"></i>
+                    <h3 class="tit">深化设计方案</h3>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <i class="icon c6"></i>
+                    <h3 class="tit">确定方案</h3>
+                    <h3 class="tit">项目实施</h3>
+
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <i class="icon c"></i>
+                    <h3 class="tit">项目结束</h3>
+                </div>
+            </li>
+            <li>
+                <div class="con">
+                    <i class="icon c"></i>
+                    <h3 class="tit">终身免费咨询</h3>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--合作伙伴-->
+<div class="row-a6">
+    <div class="g-tit">
+        <h2 class="tit">合作伙伴</h2>
+    </div>
+    <div class="wp">
+        <ul class="ul-list7">
+            <li><a href="#" class="con"><img src="images1/logox1.jpg" alt=""></a></li>
+            <li><a href="#" class="con"><img src="images1/logox2.png" alt=""></a></li>
+            <li><a href="#" class="con"><img src="images1/logox3.png" alt=""></a></li>
+            <li><a href="#" class="con"><img src="images1/logox4.png" alt=""></a></li>
+            <li><a href="#" class="con"><img src="images1/logox5.png" alt=""></a></li>
+            <li><a href="#" class="con"><img src="images1/logox6.png" alt=""></a></li>
+        </ul>
+        <div class="info"><a href="#"><p class="desc">下一个故事由您开启</p>
+            <p>......</p></a></div>
+    </div>
+</div>
+<!--联系我们-->
+<div class="row-a7">
+    <div class="g-tit">
+        <h2 class="tit">联系我们</h2>
+    </div>
+    <div class="wp">
+        <div class="info">
+            <a href="javascript:void(0)" class="on">· 东莞</a>
+            <a href="javascript:void(0)">· 深圳</a>
+            <a href="javascript:void(0)">· 惠州</a>
+        </div>
+        <div class="tab-con ">
+            <div class="box   ">
+                <div class="m-list t1 ">
+                    <h3 class="tit">
+                        东莞总公司
+                    </h3>
+                    <p class="desc">地址:东莞市南城区新基地产业园 <br>D座607</p>
+                    <p class="desc">固话: 0769-2198-8009</p>
+                    <p class="desc">传真: 0769-2198-8008</p>
+                    <p class="desc p4">手机: 156-2685-0372</p>
+                </div>
+            </div>
+            <div class="box   ">
+                <div class="m-list t2">
+                    <h3 class="tit">
+                        深圳总公司
+                    </h3>
+                    <p class="desc">地址:深圳市南城区新基地产业园 <br>D座607</p>
+                    <p class="desc">固话: 0769-2198-8009</p>
+                    <p class="desc">传真: 0769-2198-8008</p>
+                    <p class="desc p4">手机: 156-2685-0372</p>
+                </div>
+            </div>
+            <div class="box on ">
+                <div class="m-list t3">
+                    <h3 class="tit">
+                        惠州总公司
+                    </h3>
+                    <p class="desc">地址:惠州市南城区新基地产业园 <br>D座607</p>
+                    <p class="desc">固话: 0769-2198-8009</p>
+                    <p class="desc">传真: 0769-2198-8008</p>
+                    <p class="desc p4">手机: 156-2685-0372</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<div class="footer">
+    <ul class="ul-list9">
+        <li><a href="javascript:"><img src="images1/iconx15.png" alt=""></a></li>
+        <li><a href="javascript:"><img src="images1/iconx16.png" alt=""></a></li>
+        <li><a href="javascript:"><img src="images1/iconx1.png" alt=""></a></li>
+    </ul>
+
+</div>
+<!--底部end-->
+<div class="pop-pics" style="display:none;">
+    <div class="m-pics">
+        <div class="top">
+            <div class="js-chose"></div>
+            <h3>宏远汽车-画 册设计</h3>
+        </div>
+        <div class="txt">
+            <p><strong>客户</strong> : 汽车</p>
+            <p><strong>服务</strong> : 汽车</p>
+            <p><strong>项目展示</strong> : </p>
+        </div>
+        <div class="pics">
+            <a href="javascript:"> <img src="images1/picx8.jpg" alt=""></a>
+            <a href="javascript:"> <img src="images1/picx9.jpg" alt=""></a>
+            <a href="javascript:"> <img src="images1/picx10.jpg" alt=""></a>
+            <a href="javascript:"> <img src="images1/picx5.jpg" alt=""></a>
+            <a href="javascript:"> <img src="images1/picx6.jpg" alt=""></a>
+            <a href="javascript:"> <img src="images1/picx7.jpg" alt=""></a>
+        </div>
+    </div>
+</div>
+<div class="pop-qr">
+    <div class="wx-qr">
+        <img src="images1/qr.png" alt="">
+        <p class="desc">扫一扫加微信</p>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.ul-list3 li').click(function () {
+            var index = $(this).index();
+            $(this).children('a').toggleClass('current').parent().siblings('li').children('a').removeClass('current');
+            $('.pics').eq(index).toggleClass('on').stop().fadeIn().siblings('.pics').removeClass('on').stop().fadeOut()
+//                .children('.pics').toggleClass('on')
+        }),
+            $('.row-a7 .info a').click(function () {
+                var index = $(this).index();
+                $(this).toggleClass('on').siblings().removeClass('on');
+                $(this).parents('.info').siblings('.tab-con').children('.box').eq(index).toggleClass('on').stop().fadeIn().siblings('.box').removeClass('on').stop().fadeOut()
+                    .children('.pics').toggleClass('on')
+            }),
+            $('.ul-list9 li a').click(function () {
+                $(this).parents('.footer').siblings('.pop-qr').show();
+            }),
+            $('.wx-qr').click(function (e) {
+                e.stopPropagation()
+            }),
+            $('.pop-qr').click(function () {
+                $(this).hide();
+            }),
+
+            $('.row-a2 .pics').click(function () {
+                $('.pop-pics').show();
+            }),
+            $('.js-chose').click(function () {
+                $('.pop-pics').hide();
+            }),
+            $('.pics').click(function (e) {
+                e.stopPropagation()
+            }),
+        $('.pop-pics').click(function () {
+            $(this).hide();
+        })
+
+    })
+</script>
+<script>
+    $(function () {
+        $('.banner').slick({
+            arrows: false,
+            autopiay: true
+        })
+    })
+</script>
+</body>
+</html>

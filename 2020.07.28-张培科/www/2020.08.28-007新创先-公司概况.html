@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2020.08.24-001新创先-新闻资讯</title>
+    <link rel="stylesheet" href="css/cui.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link href="css/slick.css" rel="stylesheet">
+    <script src="js/jquery.countup.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <link href="css/animate.min.css" rel="stylesheet">
+
+
+    <style>
+        .wp {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .wp1 {
+            width: 90%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 125px;
+            width: 100%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 0 3%;
+            /*box-shadow: 0 3px 1px rgba(0, 0, 0, .3);*/
+            overflow: hidden;
+            box-sizing: border-box;
+            z-index: 999;
+        }
+
+        .logo {
+            float: left;
+            line-height: 125px;
+        }
+
+        .logo img {
+            vertical-align: middle;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .logo1 {
+            display: none;
+            float: left;
+            line-height: 125px;
+        }
+
+        .logo1 img {
+            vertical-align: middle;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .hdr {
+            overflow: hidden;
+        }
+
+        .info {
+            float: right;
+            background: #e77610;
+            border-radius: 0 30px 0 30px;
+        }
+
+        .ul-info {
+            overflow: hidden;
+        }
+
+        .ul-info li {
+            float: left;
+        }
+
+        .ul-info li:nth-child(3) span {
+            border: none;
+        }
+
+        .ul-info li span {
+            display: inline-block;
+            color: #fcf1eb;
+            font-size: 16px;
+            margin: 14px 0;
+            padding: 0 40px;
+            border-right: 1px solid #ccc;
+            line-height: 1;
+        }
+
+        .ul-info li .icon1 {
+            display: inline-block;
+            width: 17px;
+            height: 14px;
+            background: url("images/xlx-icon-02_03.png") no-repeat left;
+            background-size: contain;
+            margin-right: 10px;
+        }
+
+        .ul-info li .icon2 {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background: url("images/xlx-icon-3_03.png") no-repeat left;
+            background-size: contain;
+            margin-right: 10px;
+        }
+
+        .ul-info li .icon3 {
+            display: inline-block;
+            width: 10px;
+            height: 6px;
+            background: url("images/xlx-icon-04_03.png") no-repeat left;
+            background-size: contain;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .nav {
+            float: left;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .nav .ul-nav {
+            float: left;
+        }
+
+        .nav li {
+            float: left;
+        }
+
+        .nav li .v1 {
+            display: inline-block;
+            padding-top: 5px;
+            margin: 0 10px;
+            font-size: 18px;
+            color: #333;
+            line-height: 76px;
+            transition: .3s;
+        }
+
+        .nav li .v1:hover {
+            background: #e77610;
+            color: #fff;
+        }
+
+        .so {
+            float: right;
+            border: 1px solid #ccc;
+            border-radius: 0 20px 0 20px;
+            overflow: hidden;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+
+        .so form {
+
+        }
+
+        .so input {
+            color: #bdbdbd;
+            background: #fff;
+            padding: 13px 90px 13px 20px;
+            font-size: 14px;
+            outline: none;
+            border: none;
+            float: left;
+        }
+
+        .so button {
+            color: #fff;
+            font-weight: 600;
+            background: #e77610;
+            font-size: 14px;
+            outline: none;
+            width: 90px;
+            height: 42px;
+            text-align: center;
+            border: none;
+        }
+
+        .so button .icon {
+            display: inline-block;
+            width: 28px;
+            height: 16px;
+            background: url("images/xlx-icon-so_03.png") center no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            box-sizing: border-box;
+            margin-left: 10px;
+            padding-left: 20px;
+            border-left: 1px solid #ccc;
+        }
+
+        .menuBtn {
+            display: none;
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn b {
+            display: block;
+            height: 4px;
+            background-color: #0d6fb8;
+            margin: 4px 0;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn.open b {
+            display: none;
+            margin: -5px 0 0;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 30px
+        }
+
+        .menuBtn.open b:first-child {
+            display: block;
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg)
+        }
+
+        .menuBtn.open b:last-child {
+            display: block;
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg)
+        }
+
+        /*ban*/
+        .ban {
+            position: relative;
+            height: 0;
+            padding-top: 34%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .m-tab1 {
+            background-color: #f4f8f9;
+        }
+
+        .m-tab1 .ul-news1 {
+
+            overflow: hidden;
+        }
+
+        .m-tab1 .ul-news1 li {
+            float: left;
+        }
+
+        .m-tab1 .ul-news1 li:nth-child(2) {
+            border-right: 1px solid #e8e9e9;
+        }
+
+        .m-tab1 .ul-news1 li .tit {
+            display: inline-block;
+            color: #000;
+            font-size: 20px;
+            padding: 37px 65px;
+        }
+
+        .m-tab1 .ul-news1 li .tit.on {
+            background: #e77610;
+            color: #fff;
+        }
+
+        /*footer*/
+        .footer {
+            background: #252629;
+            padding: 60px 30px 0 30px;
+        }
+
+        .footer .wp1 {
+            margin-bottom: 60px;
+        }
+
+        .fd-l {
+            float: left;
+            width: 27%;
+        }
+
+        .fd-l .fd-logo {
+            margin-bottom: 20px;
+        }
+
+        .fd-l .fd-logo img {
+            max-width: 100%;
+            min-height: 100%;
+        }
+
+        .fd-l .ul-links1 {
+            overflow: hidden;
+        }
+
+        .fd-l .ul-links1 li {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .fd-l .ul-links1 li a {
+            display: block;
+            font-size: 14px;
+            color: #a0a0a1;
+            margin-bottom: 10px;
+            transition: .3s;
+        }
+
+        .fd-l .ul-links1 li a:hover {
+            color: #fff;
+        }
+
+        .fd-c {
+            float: left;
+            width: 36%;
+        }
+
+        .fd-c .ul-links2 {
+            padding-left: 100px;
+            border-right: 1px solid #3b3c3f;
+            border-left: 1px solid #3b3c3f;
+        }
+
+        .fd-c .ul-links2 li {
+            margin-bottom: 10px;
+        }
+
+        .fd-c .ul-links2 li a {
+            color: #a0a0a1;
+            font-size: 14px;
+            padding-left: 25px;
+        }
+
+        .fd-c .ul-links2 li a:hover {
+            color: #fff;
+        }
+
+        .fd-c .ul-links2 li a.cons {
+            background: url("images/xlx-cons1.png") no-repeat left;
+            background-size: contain;
+        }
+
+        .fd-c .ul-links2 li a.icon2 {
+            background: url("images/xlx-cons2.png") no-repeat left;
+        }
+
+        .fd-c .ul-links2 li a.icon3 {
+            background: url("images/xlx-cons3.png") no-repeat left;
+        }
+
+        .fd-c .ul-links2 li a .tel {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .fd-c .ul-links2 li:nth-child(1) {
+            margin-bottom: 15px;
+        }
+
+        .footer .copy {
+            border-top: 1px solid #3b3c3f;
+            background: #252629;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer .copy .copy-p {
+            font-size: 12px;
+            color: #989899;
+        }
+
+        .m-share {
+            padding-left: 100px;
+            margin-top: 20px;
+        }
+
+        .m-share a {
+            display: inline-block;
+            color: #a0a0a1;
+            font-size: 14px;
+            background: #3b3c3f;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            text-align: center;
+            margin-right: 20px;
+            transition: .3s;
+        }
+
+        .m-share a:hover {
+            background: #ccc;
+        }
+
+        .m-share a:hover .icon {
+            filter: grayscale(1000%);
+        }
+
+        .m-share .icon {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            background: url("images/xlx-weibo.png") no-repeat center;
+            background-size: contain;
+
+            vertical-align: middle;
+        }
+
+        .m-share .icon.c2 {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            background: url("images/xlx-qq.png") no-repeat center;
+            background-size: contain;
+        }
+
+        .m-share .icon.c3 {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            background: url("images/xlx-wx.png") no-repeat center;
+            background-size: contain;
+        }
+
+        .fd-r {
+            float: right;
+            width: 34%;
+
+        }
+
+        .fd-r .qr {
+            padding-left: 97px;
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .fd-r .qr .desc {
+            color: #a0a0a1;
+            font-size: 14px;
+        }
+
+        .fd-r .qr .qr1 {
+
+            float: left;
+        }
+
+        .fd-r .qr .qr2 {
+            float: left;
+            margin-left: 30px;
+        }
+
+        .fd-r .inp {
+            padding-left: 50px;
+            overflow: hidden;
+        }
+
+        .fd-r .inp input {
+            display: block;
+            float: left;
+            border: none;
+            background: #3b3c3f;
+            outline: none;
+            padding: 15px 60px 15px 30px;
+        }
+
+        .fd-r .inp button {
+            display: block;
+            border: none;
+            background: #e77611;
+            outline: none;
+            height: 45px;
+            padding: 0 25px;
+        }
+
+        .fd-r .inp button i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url("images/xlx-icon-so_03.png") no-repeat center;
+            background-size: contain;
+            vertical-align: middle;
+        }
+
+        .m-sidebar {
+            position: absolute;
+            right: 0;
+            top: 300px;
+            z-index: 999;
+        }
+
+        .m-sidebar .tel {
+            background: #e77610;
+            margin-bottom: 15px;
+        }
+
+        .m-sidebar .tel a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            /*padding: 15px 20px;*/
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .m-sidebar .tel a span {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin: 5px 0 5px 5px;
+            transition: .3s;
+        }
+
+        .m-sidebar .tel a:hover {
+            padding: 7px 20px;
+            width: 200px;
+            height: 35px;
+        }
+
+        .m-sidebar .tel a:hover span {
+            margin: 0;
+            margin-right: 10px;
+        }
+
+        .m-sidebar .tel a span .icon {
+            display: inline-block;
+            width: 17px;
+            height: 14px;
+            background: url("images/xlx-icon-02_03.png") no-repeat center;
+            background-size: contain;
+        }
+
+        .m-sidebar .ul-nav-ele {
+            float: right;
+            text-align: center;
+        }
+
+        .m-sidebar .ul-nav-ele li {
+            height: 50px;
+            width: 50px;
+            background: #7f7f7f;
+            border-radius: 5px 0 0 5px;
+            margin-bottom: 3px;
+        }
+
+        .m-sidebar .ul-nav-ele .con {
+            display: inline-block;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            margin-top: 8px;
+        }
+
+        .m-sidebar .ul-nav-ele .con img {
+            vertical-align: middle;
+            width: 13px;
+            height: 13px;
+            padding: 10px;
+        }
+
+        @media only screen and (max-width: 1860px) {
+
+            .menuBtn {
+                display: block;
+            }
+
+            .nav .ul-nav {
+                display: none;
+            }
+
+        }
+
+        @media only screen and (max-width: 1800px) {
+
+        }
+
+        @media only screen and (max-width: 1500px) {
+            .info,
+            .so {
+                margin-right: 20px;
+            }
+
+            .fd-c {
+                width: 38%;
+            }
+
+            .fd-r {
+                width: 32%;
+            }
+
+            .nav {
+                margin-left: 20px
+            }
+
+            .nav li .v1 {
+                font-size: 16px;
+                padding: 0 6px;
+            }
+
+            .fd-c .ul-links2 {
+                padding-left: 60px;
+            }
+        }
+
+        @media only screen and (max-width: 1400px) {
+            .fd-c .ul-links2 {
+                padding-left: 30px;
+            }
+
+            .fd-l .ul-links1 li {
+                margin-right: 10px;
+            }
+        }
+
+        @media only screen and (max-width: 1040px) {
+            .info {
+                display: none;
+            }
+
+            .info, .so
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .ul-info li span {
+                padding: 0 15px;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .logo1 {
+                display: block;
+                background: #e77610;
+                border-radius: 20px;
+
+            }
+
+            .nav li .v1 {
+                font-size: 16px;
+                padding: 0 6px;
+                line-height: 2;
+            }
+
+            .ban {
+                padding-top: 40%;
+            }
+
+            .m-news1 .ul-news2 .txt {
+                padding: 40px 80px 40px 30px;
+            }
+
+            .fd-l,
+            .fd-c {
+                display: none;
+            }
+
+            .fd-r {
+                float: none;
+                width: 400px;
+                margin: 0 auto;
+                text-align: center;
+                box-sizing: border-box;
+            }
+
+            .fd-r .qr,
+            .fd-r .inp {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .fd-r .qr1,
+            .fd-r .qr2 {
+                width: 40%;
+            }
+
+            .fd-r .inp {
+                width: 340px;
+            }
+
+            .ban {
+                max-height: 300px;
+            }
+        }
+
+        @media only screen and (max-width: 1040px) {
+            .info {
+                display: none;
+            }
+
+            .so {
+                margin-top: 40px;
+                margin-right: 40px;
+            }
+            .m-news2-l .con{
+                height:800px;
+            }
+            .m-news2-l .pic{
+                height:50%;
+                width:100%;
+                float: none;
+            }
+            .m-news2-r .con{
+                height:800px;
+            }
+            .m-news2-r .pic{
+                height:50%;
+                width:80%;
+                float: none;
+                margin: 0 auto;
+            }
+
+            .ban {
+
+            }
+
+            .m-tab1 .ul-news1 li .tit {
+                padding: 20px 30px;
+            }
+        }
+
+        @media only screen and (max-width: 776px) {
+            .header {
+                padding: 0 2%;
+            }
+
+            .logo1 {
+                margin: 0 auto;
+            }
+
+            .so {
+                display: none;
+            }
+
+            .m-news1 .ul-news2 .pic {
+                float: none;
+                width: 40%;
+                margin: 0 auto;
+            }
+
+            .m-news1 .ul-news2 .pic img {
+            }
+
+            .m-sidebar {
+                display: none;
+            }
+        }
+
+        .g-tit {
+            padding-top: 60px;
+            padding-bottom: 30px;
+        }
+
+        .g-tit::after {
+            content: " ";
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #e77610;
+        }
+
+        .g-tit h2 {
+            font-size: 54px;
+            color: #000;
+        }
+
+        .g-tit h2 span {
+            color: #e77610;
+        }
+
+        .g-tit .desc {
+            color: #e77610;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .m-hs{
+
+        }
+        .m-hs .art{
+
+        }
+        .m-hs .ul-atr{
+            overflow: hidden;
+        }
+        .m-hs .ul-atr li{
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        .m-hs .ul-atr .con{
+            overflow: hidden;
+        }
+        .m-hs .ul-atr .pic{
+            width:10%;
+            float: right;
+        }
+        .m-hs .ul-atr .pic img{
+            max-width: 100%;
+            max-height:100%;
+        }
+        .m-hs .ul-atr .info2{
+            margin-left: 20px;
+            width:20%;
+            float: right;
+        }
+        .m-hs .ul-atr .info2 .date{
+            font-size: 40px;
+            color: #e77610;
+        }
+        .m-hs .ul-atr .info2 .date span{
+            font-weight:normal;
+            text-align: center;
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 16px;
+            vertical-align: middle;
+            background: #e77610;
+        }
+        .m-hs .ul-atr .info2 .decs{
+            color: #999;
+            font-size: 16px;
+        }
+        .m-hs .ul-atr .txt{
+            margin-top: 10px;
+            overflow: hidden;
+
+        }
+        .m-hs .ul-atr .txt .desc{
+            font-size: 18px;
+            color: #555;
+            line-height:1.8;
+        }
+        .m-hs .ul-atr .txt span{
+            color: #e77610;
+        }
+        .m-img{
+            padding: 50px 0;
+        }
+        .m-img img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+<!--电梯导航-->
+<div class="m-sidebar">
+    <div class="tel">
+        <a href="#"><span><i class="icon"></i></span>86-10-51733663</a>
+    </div>
+    <ul class="ul-nav-ele">
+        <li>
+            <a href="#" class="con">
+                <img src="images/xlx-sl-qr.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#" class="con">
+                <img src="images/xlx-con.png" alt="">
+            </a>
+        </li>
+        <li class="back">
+            <a href="#" class="con  ">
+                <img src="images/xlx-back.png" alt="">
+            </a>
+        </li>
+    </ul>
+</div>
+<!--header导航-->
+<div class="header">
+    <span class="menuBtn"></span>
+    <div class="logo">
+        <a href="#"><img src="images/xlx-logo_03.png" alt=""></a>
+    </div>
+    <div class="logo1">
+        <a href="#"><img src="images/xlx-fd-logo.png" alt=""></a>
+    </div>
+    <div class="hdr">
+        <div class="info">
+            <ul class="ul-info">
+                <li><span>股票代码（600222）</span></li>
+                <li><span><i class="icon1"></i>Hotline服务热线:86-10-51733663</span></li>
+                <li><span><i class="icon2"></i>简体中文 <i class="icon3"></i></span></li>
+            </ul>
+        </div>
+        <div class="nav">
+            <ul class="ul-nav">
+                <li><a href="#" class="v1">首页</a></li>
+                <li><a href="#" class="v1">关于我们</a></li>
+                <li><a href="#" class="v1">新药筛选与评价</a></li>
+                <li><a href="#" class="v1">小分子CMC研究</a></li>
+                <li><a href="#" class="v1">临床CRO服务</a></li>
+                <li><a href="#" class="v1">CDMO服务</a></li>
+                <li><a href="#" class="v1">新闻资讯</a></li>
+                <li><a href="#" class="v1">招贤纳士</a></li>
+                <li><a href="#" class="v1">联系我们</a></li>
+            </ul>
+            <div class="so">
+                <form action="">
+                    <input type="text" placeholder="请输入关键字">
+                    <button>搜索 <i class="icon"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--内页-->
+<div class="ban" style="background-image: url('images/xlx-03-ban_01.jpg')">
+
+</div>
+<!--tab切换区-->
+<div class="m-tab1">
+    <div class="wp1">
+        <ul class="ul-news1">
+            <li><a href="#" class="tit on">公司概况 </a></li>
+            <li><a href="#" class="tit ">发展历程</a></li>
+            <li><a href="#" class="tit">团队介绍</a></li>
+            <li><a href="#" class="tit">公司架构</a></li>
+            <li><a href="#" class="tit">企业荣誉</a></li>
+            <li><a href="#" class="tit">企业文化</a></li>
+            <li><a href="#" class="tit">合作伙伴</a></li>
+        </ul>
+    </div>
+</div>
+<div class="main">
+    <!--内容区-->
+    <div class="wp1">
+        <div class="g-tit">
+            <h2><span>公司</span>概况</h2>
+            <p class="desc">股票代码(600222)</p>
+        </div>
+        <div class="m-hs">
+            <div class="art">
+                <ul class="ul-atr">
+                    <li>
+                        <div class="con">
+                            <div class="pic"><img src="images/xcx-7/icon.png" alt=""></div>
+                            <div class="info2">
+                                <h3 class="date">2005 <span>年</span></h3>
+                                <p class="decs">北京新领先医药科技创建于 2005年</p>
+                            </div>
+                            <div class="txt">
+                                <p class="desc">
+                                北京新领先医药科技发展有限公司成立于2005年，2015年实现主板上市（股票代码：600222），注册资金9155.42万元，
+                                <strong>北京新领先医药科技发展有限公司成立于2005年，2015年实现主板上市（股票代码：600222），注册资金9155.42万元，</strong>
+                                <span>领先医药科技发展有限公司</span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="con">
+                            <div class="pic"><img src="images/xcx-7/icon.png" alt=""></div>
+                            <div class="info2">
+                                <h3 class="date">2005 <span>年</span></h3>
+                                <p class="decs">北京新领先医药科技创建于 2005年</p>
+                            </div>
+                            <div class="txt">
+                                <p class="desc">
+                                药科技发展有限公司成立于2005年，2015年实现主板上市（股票代码：600222），注册资金915
+                                药科技发展有限公司成立于2005年，2015年实现主板上市（股票代码：600222），注册资金915
+                                药科技发展有限公司成立于2005年，2015年实现主板上市（股票代码：600222），注册资金915
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="con">
+                            <div class="pic"><img src="images/xcx-7/icon.png" alt=""></div>
+                            <div class="info2">
+                                <h3 class="date">2005 <span>年</span></h3>
+                                <p class="decs">北京新领先医药科技创建于 2005年</p>
+                            </div>
+                            <div class="txt">
+                            <p class="desc">
+                                药科技发展有限公司成立于2005年，2015年实现主板上市（股票代码：600222），注册资金915
+                                药科技发展有限公司成立于2005年药科技发展有限公司成立于2005年药科技发展有限公司成立于2005年，2015年实现主板上市（股票代码：600222），注册资金915
+                                药科技发展有限公司成立于2005年，2015年实现主板上市（股票代码：600222），注册资金915
+                                药科技发展有限公司成立于2005年，2015年实现主板上市（股票代码：600222），注册资金915
+                                药科技发展有限公司成立于2005年，2015年实现主板上市（股票代码：600222），注册资金915
+                            </p>
+                        </div>
+                        </div>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="m-img">
+            <img src="images/xcx-7/pic1.jpg" alt="">
+        </div>
+    </div>
+</div>
+<!--内容区-->
+<!--底部导航-->
+<div class="footer fix">
+    <div class="wp1 fix">
+        <div class="fd-l">
+            <div class="fd-logo"><img src="images/xlx-fd-logo.png" alt=""></div>
+            <ul class="ul-links1">
+                <li><a href="#">首页</a><a href="#">关于我们</a><a href="#">新药筛选与评价</a></li>
+                <li><a href="#">小分子CMC研究</a><a href="#">临床CRO服务</a><a href="#">CDMO服务</a></li>
+                <li><a href="#">新闻资讯</a><a href="#">招贤纳士</a><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="fd-c">
+            <ul class="ul-links2">
+                <li><a href="#" class="cons icon1"><span class="tel">010-61006450</span></a></li>
+                <li><a href="#" class=" cons icon2">联系地址： 北京市海淀区西北旺东路10号院东区12号楼 <br>和协科技大厦B座6层</a></li>
+                <li><a href="#" class=" cons icon3">技术市场部邮箱：trade@leadingpharm.com</a></li>
+                <li><a href="#" class=" cons icon3"> 人力资源部邮箱：hr@leadingpharm.com </a></li>
+                <li><a href="#" class="cons icon3"> 药讯编辑：hr@leadingpharm.com </a></li>
+            </ul>
+            <div class="m-share"><a href="#"><i class="icon c1"></i></a><a href="#"><i class="icon c2"></i></a><a
+                    href="#"><i
+                    class="icon c3"></i></a></div>
+        </div>
+        <div class="fd-r">
+            <div class="qr">
+                <div class="qr1"><img src="images/xlx-qr.jpg" alt="">
+                    <p class="desc">北京新领先</p></div>
+                <div class="qr2"><img src="images/xlx-qr.jpg" alt="">
+                    <p class="desc">新领先药讯</p></div>
+            </div>
+            <div class="inp">
+                <form action="">
+                    <input type="text" placeholder="请输入搜索关键字">
+                    <button><i></i></button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="copy">
+        <p class="copy-p">copyright @ 2008-2016,版权所有 北京新领先医药科技发展有限公司</p>
+    </div>
+</div>
+<script>
+    // 手机导航
+    $('.menuBtn').append('<b></b><b></b><b></b>');
+    $('.menuBtn').click(function (event) {
+
+        $(this).toggleClass('open');
+        $('.ul-nav').stop().slideToggle();
+    });
+
+    var _winw = $(window).width();
+    if (_winw > 959) {
+        $('.nav li').hover(function () {
+            $(this).find('.sub').stop().slideDown();
+//            if ($(this).find('.sub').length) {
+//                $(this).addClass('ok');
+//                $('.header').addClass('on');
+//            } else {
+//                $('.header').removeClass('on');
+//            }
+        }, function () {
+            $(this).removeClass('ok');
+            $(this).find('.sub').stop().slideUp();
+        });
+//        $('.nav').mouseleave(function (event) {
+//            if ($('.header').hasClass('on')) {
+//                $('.header').removeClass('on');
+//            }
+//        });
+    } else {
+
+//        $('.nav .v1').click(function () {
+//            if ($(this).siblings('.sub').length) {
+//                    $(this).parents('li').siblings('li').find('.sub').stop().slideUp();
+//                $(this).parents('li').siblings('li').removeClass('on');
+//                $(this).parents('li').toggleClass('on');
+//                $(this).siblings('.sub').stop().slideToggle();
+//                return false;
+//            }
+//        });
+    }
+</script>
+<script>
+    let h2 = $('.m-sidebar').offset().top;
+    let h3 = $('.main').offset().top;
+    $(window).on('scroll', function () {
+        if ($(document).scrollTop() >= 160) {
+            $('.m-sidebar').css(
+                {
+                    position: 'fixed',
+                    top: h2 - 160 + 'px',
+                }
+            )
+        }
+
+        else {
+            $('.m-sidebar').css(
+                {
+                    position: 'absolute',
+                    top: h2 + 'px'
+                }
+            )
+        }
+        if ($(document).scrollTop() >= h3) {
+            $('.m-sidebar .back').fadeIn();
+        }
+        else {
+            $('.m-sidebar .back').fadeOut();
+        }
+
+    });
+    $('.m-sidebar .back').on("click", function () {
+        //通过jquery的animate函数设置页面的滚动距离
+        //通过jquery的animate方法设置元素样式时，可以产生动画效果
+        $('html,body').animate({
+            scrollTop: 0
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bg{
+            background: black;
+        }
+
+    </style>
+</head>
+<body>
+<button>
+    开关灯
+</button>
+<script>
+    var button=document.querySelector("button");
+    button.addEventListener("click",function () {
+        document.body.classList.toggle("bg");
+        button.classList.add("one");
+//         button.classList.remove("one");
+    })
+
+</script>
+</body>
+</html>

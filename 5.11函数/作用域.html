@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //        //局部变量,在函数内定义的变量为局部变量
+        //        function text1() {
+        //            var i=1;
+        //        }
+        //        text1();
+        //        console.log(i);
+        //        //全局变量
+        //        var a=1;
+        //        //现在不谈块级元素
+        //        //在if里声明变量在外边也可以调用
+        //        if (true){
+        //            var c=0;
+        //
+        //        }
+        //        console.log(c);
+
+
+        //练习： 结果是几？
+        //        console.log(a);//方法
+        //        var a = 1;
+        //        console.log(a);//1
+        //        function a() {
+        //            return false;
+        //        }
+        //案例 1： 结果是几？
+        //        var num = 10;
+        //        fun();
+        //
+        //        function fun() {
+        //            console.log(num);//undefined
+        //            var num = 20;
+        //        }
+        //  var num ;
+        //function fun() {
+        //var num;
+        //    console.log(num);//undefined
+        //    num = 20;
+        //}
+
+        //        //案例 2： 结果是几？
+        //        var num1 = 10;
+        //
+        //        function fn() {
+        //            console.log(num1);//undefined
+        //            var num1 = 20;
+        //            console.log(num1);//20
+        //        }
+        //
+        //        fn();
+        //  var num1 =;
+        //  function fn() {
+        //var num1;
+        //            console.log(num1);//undefined
+        //             num1 = 20;
+        //            console.log(num1);//20
+        //        }
+
+        //var a = 18;
+        //f1();
+        //function f1() {
+        //    var b = 9;
+        //    console.log(a);
+        //    console.log(b);
+        //    var a = '123';
+        //}
+        //预编译
+        //        var a ;
+        //function f1() {
+        //    var b;
+        //    var a;
+        //    b = 9;
+        //    console.log(a);//undefined
+        //    console.log(b);//9
+        //     a = '123';
+        //}
+        //f1();
+
+        //// 案例4
+        // f1();
+        //console.log(c);
+        //console.log(b);
+        //console.log(a);
+        //function f1() {
+        //    var a = b = c = 9;
+        //等价于
+        //  var a=9;
+        //b=9;
+        //c=9;
+        //    console.log(a);
+        //    console.log(b);
+        //    console.log(c);
+//        }
+        //预编译
+
+        function f1() {
+            var a=9;
+             b=9;
+            c=9;
+            console.log(a);//9
+            console.log(b);//9
+            console.log(c);//9
+        }
+        f1();
+        console.log(c);//9
+        console.log(b);//9
+        console.log(a);//报错
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

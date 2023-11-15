@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{text-align:center}
+        h1{
+            font-size: 35px;
+            color: black;
+        }
+        h2{
+            font-size: 30px;
+            color: blue;
+        }
+        h4{
+            font-size: 20px;
+            color: red;
+        }
+        h3{
+            font-size: 25px;
+            color: deeppink;
+        }
+    </style>
+</head>
+<body>
+
+<h1 >欢迎来到打鼠</h1>
+<h3 id="daoji">游戏还剩30秒</h3>
+<h2 id="shijian"></h2>
+<img id ="d1" src="img/dsdk.jpg" onclick="changeImage(1)" width="180px" height="180px">
+<img id ="d2" src="img/dsdk.jpg" onclick="changeImage(2)" width="180px" height="180px">
+<img id ="d3" src="img/dsdk.jpg" onclick="changeImage(3)" width="180px" height="180px">
+<br>
+<img id ="d4" src="img/dsdk.jpg" onclick="changeImage(4)" width="180px" height="180px">
+<img id ="d5" src="img/dsdk.jpg" onclick="changeImage(5)" width="180px" height="180px">
+<img id ="d6" src="img/dsdk.jpg" onclick="changeImage(6)" width="180px" height="180px">
+<br>
+<img id ="d7" src="img/dsdk.jpg" onclick="changeImage(7)" width="180px" height="180px">
+<img id ="d8" src="img/dsdk.jpg" onclick="changeImage(8)" width="180px" height="180px">
+<img id ="d9" src="img/dsdk.jpg" onclick="changeImage(9)" width="180px" height="180px">
+<h4 id="geshu">打中地鼠个数：0</h4>
+<h4 id="defeng">得分：0</h4>
+
+<script>
+    //已知bug : 1 .无论点击任意图片，都会加分，2.当不敲打地鼠，图片不会更换，3 不知道如何写开始游戏的方法；4.地鼠图片不只是我想弹出的
+    var  shiji=document.getElementById("daoji");
+    gametime();
+    var djs=1;
+    time();
+    var dds=1000;
+    var jishijian=0;
+    var ge=0;
+    tds();
+    //随机弹出地鼠；
+    function tds() {
+            var tds1=(Math.random(0,1)*9).toFixed(0);
+        var element = document.getElementById("d"+tds1);
+        element.src="img/ds1.jpg";
+        dds=dds-30;
+        console.log(dds);
+    }
+    shuxin=setInterval("tds()",dds);//每dds秒运行一次随机弹出地鼠；
+    //显示当前时间
+    function time() {
+        var shijian=new Date();
+        var nian=shijian.getFullYear();//年
+        var yue=shijian.getMonth();//月
+        var ri=shijian.getDate();//日
+        var xiaoshi=shijian.getHours();///小时
+        var  fen=shijian.getMinutes();//分钟
+        var miao=shijian.getSeconds();//秒
+        var xingqi=shijian.getDay();//星期
+        var sj=document.getElementById("shijian");
+        if (xiaoshi>12){
+            sj.innerHTML=nian+"年"+yue+"月"+ri+"日<br>下午"+(xiaoshi-12)+"时-"+fen+"分-"+miao+"秒"+"  "+"星期"+xingqi;
+        }
+        else {
+            sj.innerHTML=nian+"年"+yue+"月"+ri+"日<br>上午"+xiaoshi+"时-"+fen+"分-"+miao+"秒"+"  "+"星期"+xingqi;
+        }
+
+    }
+     shuxin1=setInterval("time()",1000);//动态显示当前时间
+    //游戏倒计时
+    shiji.innerHTML="游戏还剩"+(30)+"秒";
+    var conunt=30;
+
+    function gametime() {
+
+        shiji.innerHTML="游戏还剩"+conunt+"秒";
+        conunt--;
+        if (conunt===0){
+            clearInterval(shuxin);
+            clearInterval(shuxin1);
+        }
+    }
+    shuxin1=setInterval("gametime()",1000);
+
+    //敲到地鼠，更换地鼠坑；
+    function changeImage(variable)
+    {
+        var element = document.getElementById("d"+variable);
+
+        if (element.src.match("d"))
+        {
+            element.src="img/dadishu1.jpg";
+            document.getElementById("defeng").innerHTML="得分："+parseInt(50+jishijian);
+            document.getElementById("geshu").innerHTML="地鼠："+parseInt(1+ge);
+            jishijian=jishijian+50;
+            ge++;
+            if (element.src.match("dadishu1")) {
+
+                element.src="img/dsdk.jpg";
+
+            }
+            else {
+                element.src="img/ds1.jpg";
+            }
+
+        }
+        else if (element.src.match(" "))
+        {
+            element.src="img/ds1.jpg";
+
+        }
+        else {
+
+            element.src="img/dsdk.jpg";
+
+    }
+
+    }
+
+</script>
+</body>
+</html>

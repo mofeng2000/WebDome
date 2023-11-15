@@ -1,0 +1,51 @@
+html, body {
+    margin: 0;
+    font: 16px/1.21 'helvetica neue', helvetica, arial, sans-serif;
+    font-weight: 300;
+}
+
+header {
+    background: #329168;
+    box-shadow: inset 0 -1px 0 #026138;
+    padding: 10px;
+}
+
+button {
+    float: left;
+    font: inherit;
+    color: #95f6cc;
+    padding: 7px 12px;
+    border: 1px solid #026138;
+    background: #127148;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+h1 {
+    color: #95f6cc;
+    text-align: center;
+    font-weight: inherit;
+    margin: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+li {
+    overflow: hidden;
+    list-style: none;
+    padding: 5px;
+}
+time {
+    float: left;
+    padding: 0 10px 0 0;
+    opacity: 0.5;
+}
+
+p {
+    margin: 0;
+}
+

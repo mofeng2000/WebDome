@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        th {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        button {
+            padding: 0 5px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <div v-if="books.length">
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th>书籍名称</th>
+                <th>出版日期</th>
+                <th>价格</th>
+                <th>购买数量</th>
+                <th>操作</th>
+            </tr>
+            <tr v-for="(item,index) in books">
+                <td>{{index}}</td>
+                <td>{{item.p1}}</td>
+                <td>{{item.p2}}</td>
+                <td>{{item.p3 | showPrice}}</td>
+                <td>
+                    <button class="btn1" @click="less(index)" v-bind:disabled="item.p4<=1">-</button>
+                    {{item.p4}}
+                    <button class="btn2" @click="add(index)">+</button>
+                </td>
+                <td>
+                    <button class="btn" @click="remove(index)">移除</button>
+                </td>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <h2>总价格:{{sumPrice | showPrice}}</h2>
+    </div>
+    <div v-else>
+        <h2 v-on="sumPrice">快去添加商品到购物车吧！</h2>
+    </div>
+</div>
+<script src="vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: " ",
+                isBtn: true,
+                books: [
+                    {p1: '算法1', p2: 2020, p3: 85.00, p4: 1},
+                    {p1: '算法2', p2: 2020, p3: 128.00, p4: 1},
+                    {p1: '算法3', p2: 2020, p3: 39.00, p4: 1},
+                    {p1: '算法4', p2: 2020, p3: 65.00, p4: 1}
+                ]
+            },
+            methods: {
+//                getPrice:function(p3){
+//                    return "￥"+p3.toFixed(2)
+//                }
+                add: function (index) {
+                    return this.books[index].p4++
+                },
+                less: function (index) {
+                    if (this.books[index].p4 <= 1) {
+//                   return this.isBtn==!isBtn
+                    }
+                    return this.books[index].p4--
+
+                },
+                remove: function (index) {
+                    this.books.splice(index, 1)
+                }
+            },
+            filters: {
+                showPrice: function (p3) {
+                    return "￥" + p3.toFixed(2)
+                }
+            },
+                computed: {
+                sumPrice: function () {
+//                    var numPrice =0;
+//                    for( var i=0 ;i<this.books.length;i++){
+//                        numPrice+=this.books[i].p3*this.books[i].p4
+//                    }
+//                    return numPrice
+//                    var numPrice =0;
+//                    this.books.forEach(function (item) {
+//                        numPrice+= item.p3*item.p4
+//                    })
+//                    return numPrice
+                    return this.books.reduce(function (preValue,book) {
+                        return preValue+book.p3*book.p4
+                    },0)
+                }
+            }
+
+
+        }
+    )
+</script>
+
+</body>
+</html>

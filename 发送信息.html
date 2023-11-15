@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text"><button >发送</button>
+<script type="text/javascript" src="jquery.min.js">
+</script>
+<script >
+    $('button').click(function(){
+        var num=11+"秒";
+        var num1 = num.slice(0,2);
+        var num2=parseInt(num1);
+        $(this).attr('disabled',true)
+        var j=setInterval(()=>{
+           // var num1 = num.replaceAll("[^0-9]", "");
+            num2--;
+            $(this).attr('disabled',true).text(num2)
+            if(num2===0){
+                clearInterval(j)
+                $(this).attr('disabled',false).text("发送")
+            }
+        },1000)
+    })
+
+
+</script>
+</body>
+</html>

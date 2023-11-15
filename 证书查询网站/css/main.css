@@ -1,0 +1,26 @@
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+#top_logo{
+	width: 1100px;
+    margin: 0 auto;
+}
+#top_logo img{
+	margin-left: -10px;
+}
+
+#footer{
+	/* width: 1028px; */
+	margin: 0 auto;
+	margin-top: 28px;
+	border-top: 13px solid #005293;
+}
+#footer p{
+	line-height: 32px;
+}
+#footer p a{
+	color: black;
+}

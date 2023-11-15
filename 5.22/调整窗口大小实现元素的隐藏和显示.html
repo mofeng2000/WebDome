@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+
+    </style>
+</head>
+<body>
+<script>
+    //window.onload 是窗口 (页面）加载事件,当文档内容完全加载完成会触发该事件(包括图像、脚本文件、CSS 文件等), 就调用的处理函数。
+    //预加载
+    window.onload=function () {
+        var box=document.querySelector(".box");
+        window.onresize=function () {
+            if(window.innerWidth<500){
+                box.style.display="none";
+            }
+            else {
+                box.style.display="block";
+            }
+            console.log(window.innerWidth)
+        }
+    };
+
+
+    //document.addEventListener('DOMContentLoaded',function(){})  
+    // DOMContentLoaded 事件触发时，仅当DOM加载完成，不包括样式表，图片，flash等等。
+//  document.addEventListener('DOMContentLoaded',function () {
+//
+//  })
+    
+</script>
+<div class="box">
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

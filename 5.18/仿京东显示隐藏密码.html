@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            position: absolute;
+            width: 300px;
+            margin: 50px auto;
+        }
+        input{
+            width: 100%;
+            height: 30px;
+            outline: none;
+            line-height: 30px;
+        }
+        img{
+            position: absolute;
+            top: 5px;
+            right: 0;
+            width: 24px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <input type="password">
+    <img src="img素材/close.png" alt="">
+</div>
+<script>
+var inp=document.querySelector("input");
+var img=document.querySelector("img");
+var flag=0;
+img.onclick=function () {
+    if(flag===1){
+        inp.type="text";
+        img.src="img素材/open.png";
+        flag=0;
+    }
+    else {
+        inp.type="password";
+        img.src="img素材/close.png";
+        flag=1;
+    }
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业1</title>
+    <style>
+        /*1.将所有带有disable属性的按钮添加鼠标禁用样式*/
+
+        /*2.将所有带有class属性，且属性值中包含icon的i标签的字号设置为12px*/
+        button{
+            width: 100px;
+            height: 100px;
+            background: orange;
+        }
+        button[datafld]{
+            width: 200px;
+            height: 100px;
+            background: blue;
+        }
+        button[class^="icon"]{
+            width: 200px;
+            height: 200px;
+            background: black;
+        }
+        button[class$="icon"]{
+            width: 300px;
+            height: 200px;
+            background: red;
+
+        }
+        button[class*="icon"]{
+            width: 300px;
+            height: 300px;
+            font-size: 12px;
+
+        }
+    </style>
+</head>
+<body>
+<button datafld="datafld">
+    确定
+</button>
+<button>
+    确定
+</button>
+<button class="icon_wd">
+    确定
+</button>
+<button class="wd_icon">
+    确定
+</button><button class="_wd__sicon_wd">
+    确定
+</button>
+</body>
+</html>

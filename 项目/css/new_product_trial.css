@@ -1,0 +1,36 @@
+.content{
+    margin-top: 20px;
+}
+.image{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background-color: #c0a16b;
+}
+img:hover{
+    border: 1px solid #c0a16b;
+}
+.image img:nth-child(1){
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+.image img:nth-child(2){
+    margin-top: 20px;
+    margin-left: 50%;
+}
+.g-tit{
+   text-align: center;
+    margin-left: 350px;
+    color: black;
+}
+.g-tit h2{
+   font-size: 32px;
+}
+.g-tit p{
+    font-size: 22px;
+    margin-top: 60px;
+}
+.g-tit p:nth-child(2){
+    margin-top: 80px;
+}

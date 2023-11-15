@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //es5 生成对象的方式
+   //1
+    var obj={
+        name:"小明"
+    };
+    console.log(obj);
+
+    //2
+    var obj2=new Object();
+    obj2.name="小爱";
+    console.log(obj2.name);
+    //3
+    function Obj3(name) {
+        this.name=name
+    }
+    var obj4=new Obj3("小冰");
+    console.log(obj4.name)
+
+    //es6定义对象
+    class obj5{
+        constructor(name){
+            this.name=name;
+        }
+
+    sing(){
+        console.log("我会ctrl")
+    }
+    }
+    var xiaoming=new obj5("小兰");
+    console.log(xiaoming.name);
+    xiaoming.sing();
+
+
+
+</script>
+
+</body>
+</html>

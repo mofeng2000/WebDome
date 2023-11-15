@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{message}}
+</div>
+<script src="vue.min.js"></script>
+<script>
+    const app = new Vue({
+            el: '#app',
+            data: {
+                message: "你好生命周期函数使用"
+
+            },
+            //beforeCreatek 在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用。
+            beforeCreate: function () {
+                console.log(this);
+                console.log(this.beforeCreate);
+                console.log(this.message);//拿不到data里的值
+                this.message = '666'
+            },
+            //在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：
+            // 数据观测 (data observer)，property 和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el property 目前尚不可用。
+            created() {
+                console.log(this);
+                console.log(this.created);
+                console.log(this.message);//能拿到data里的值，能操作data的值
+                this.message = '666'
+            },
+            //在挂载开始之前被调用：相关的 render 函数首次被调用。
+            beforeMount(e) {
+                console.log('beforeMount');
+                console.log(e);
+                console.log(this.message);//能拿到data里的值 数据已经被挂载dom
+                //  this.message='888'
+                console.log(this.message);//能拿到data里的值 数据已经被挂载dom
+            },
+            //实例被挂载后调用，这时 el 被新创建的 vm.$el 替换了。如果根实例挂载到了一个文档内的元素上，当 mounted 被调用时 vm.$el 也在文档内。
+            //  注意 mounted 不会保证所有的子组件也都一起被挂载。如果你希望等到整个视图都渲染完毕，可以在 mounted 内部使用 vm.$nextTick：
+            mounted(e) {
+                console.log('mounted');
+                console.log(e);
+                console.log(this.message);//能拿到data里的值 数据已经被挂载dom
+                this.message = '123'
+                console.log(this.message);//能拿到data里的值 数据已经被挂载dom
+            },
+            //数据更新时调用，发生在虚拟 DOM 打补丁之前。这里适合在更新之前访问现有的 DOM，比如手动移除已添加的事件监听器。
+            beforeUpdate(e) {
+                console.log('beforeUpdate');
+                console.log(e);
+                console.log(this.message);//能拿到data里的值 数据已经被挂载dom
+                //  this.message='888'
+                console.log(this.message);//能拿到data里的值 数据已经被挂载dom
+            },
+            //由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。
+
+//      /  当这个钩子被调用时，组件
+//    DOM
+//    已经更新，所以你现在可以执行依赖于
+//    DOM
+//    的操作。然而在大多数情况下，你应该避免在此期间更改状态。如果要相应状态改变，通常最好使用计算属性或
+//    watcher
+//    取而代之。
+//
+//注意
+//    updated
+//    不会保证所有的子组件也都一起被重绘。如果你希望等到整个视图都重绘完毕，可以在
+//    updated
+//    里使用
+//    vm.$nextTick：
+            updated(e) {
+                console.log('mounted');
+                console.log(e);
+                console.log(this.message);//能拿到data里的值 数据已经被挂载dom
+                this.message = '456'
+                console.log(this.message);//能拿到data里的值 数据已经被挂载dom
+            },
+            //实例销毁之前调用。在这一步，实例仍然完全可用。
+            // 。
+            beforeDestroy(e) {
+                console.log('beforeDestroy');
+                console.log(e);
+                console.log(this.message);//能拿到data里的值 不能更改data的值
+                this.message = '789'
+
+            },
+        //实例销毁后调用。该钩子被调用后，对应 Vue 实例的所有指令都被解绑，所有的事件监听器被移除，所有的子实例也都被销毁。
+            destroyed(e) {
+                console.log('destroyed');
+                console.log(e);
+                console.log(this.message);//能拿到data里的值 不能更改data的值
+
+            },
+        }
+    )
+</script>
+</body>
+</html>

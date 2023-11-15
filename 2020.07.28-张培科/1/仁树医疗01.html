@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 如果是pc请删除下面一行 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!-- 下面是初始化框架必须引入 -->
+    <link rel="stylesheet" href="http://x.5811.com.cn/css/cui.css"/>
+    <link rel="stylesheet" href="http://x.5811.com.cn/css/cui-rel.css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <style>
+        .wp {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        *, :after, :before {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: 0 !important;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+
+        /*头部*/
+        .header {
+            /*位置固定*/
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, .9);
+            /*层级*/
+            z-index: 99;
+            height: 80px;
+            padding: 0 3.38%;
+            transition: .3s;
+            background-color: #fff;
+            box-shadow: 0  2px 5px rgba(0,0,0,0.3);
+        }
+
+        /*.header.fixed {*/
+            /*!*border-bottom: 1px solid #e5e5e5;*!*/
+        /*}*/
+
+        /*下拉头部变白色透明*/
+        .small {
+            background-color: rgba(255, 255, 255, .9);
+            height: 90px;
+        }
+
+        /* 头部左边LOGO*/
+        .logo {
+            float: left;
+            line-height: 80px;
+            /*overflow: hidden;*/
+        }
+
+        .logo img {
+            /*display: inline-block;*/
+            display: none;
+            vertical-align: middle;
+            height: 60px;
+        }
+
+        /*下拉logo样式变化*/
+        .logo a {
+            position: relative;
+        }
+
+        .logo a::after {
+            content: " ";
+            position: absolute;
+            background: url(images/logo.png) no-repeat;
+            left: 0;
+            top: 23px;
+            height: 127px;
+            width: 244px;
+            display: block;
+
+        }
+
+        .header.small .logo img {
+            display: inline-block;
+        }
+
+        .header.small .logo a::after {
+            display: none;
+        }
+
+        .header.small sobox {
+            margin-left: 20px;
+        }
+
+        /*头部右边*/
+        .header .hdr {
+            float: right;
+            width: 65%;
+        }
+
+        .nav {
+            float: left;
+            padding-top: 10px;
+
+        }
+
+        .nav li {
+            float: left;
+            text-align: center;
+            position: relative;
+            margin: 0 20px;
+        }
+
+        .nav li .v1 {
+            /*行级元素转块级*/
+            display: block;
+            color: #000000;
+            font-size: 12px;
+            height: 70px;
+            padding-top: 24px;
+            background: 2px transparent;
+            /*text-transform: uppercase;*/
+        }
+
+        /*vi内标题*/
+        .nav li p {
+            font-size: 16px;
+            font-family: Medium;
+            color: #999;
+            padding: 0 20px;
+            border: 2px solid rgba(0, 0, 0, 0);
+        }
+
+        .nav li.on v1, .nav li:hover .v1 {
+            background: rgba(255, 255, 255, .9);
+            border-color: transparent;
+            border-top: 2px solid #0154a1;
+
+        }
+
+        /*.nav li.on .v1::after {*/
+        /*content: "";*/
+        /*display: block;*/
+        /*height: 2px;*/
+        /*background: #000;*/
+        /*margin-top: -5px;*/
+        /*}*/
+
+        /*.nav li.on .v1:hover::after {*/
+        /*display: none;*/
+        /*}*/
+
+        .nav li:hover .v1 {
+            background-color: #fff;
+            color: #000;
+            border-top: 2px solid #000;
+        }
+
+        /*.nav li.on p, .nav li:hover p {*/
+        /*color: #0154a1;*/
+        /*}*/
+        .nav li:hover p {
+            color: #000;
+        }
+
+        .nav li .sub {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            overflow: hidden;
+            z-index: 99;
+            width: 213px;
+        }
+
+        .nav li .sub a {
+            background: #fff;
+            position: relative;
+            display: block;
+            font-size: 14px;
+            color: #000000;
+            line-height: 43px;
+            text-align: center;
+            border-bottom: 1px solid #bebebe;
+            overflow: hidden;
+        }
+
+        .nav li:hover .sub {
+            background: #0154a1;
+        }
+
+        .nav li .sub a:hover {
+            color: #fff;
+            background: #0154a1;
+        }
+
+        .nav li .sub a:hover::after {
+            content: " ";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #00a0e8;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 50%) rotate(-45deg);
+            -webkit-transform: translate(-50%, 50%) rotate(-45deg);
+        }
+
+        /*搜索框*/
+
+        .header .sobox {
+            float: left;
+            position: relative;
+            margin-top: 25px;
+            /*限制宽度*/
+            overflow: hidden;
+        }
+
+        /*中英切换*/
+        .header .lgue {
+            margin-top: 25px;
+            margin-left: 10px;
+            float: right;
+        }
+
+        .menuBtn {
+            display: none;
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn b {
+            display: block;
+            height: 4px;
+            background-color: #0d6fb8;
+            margin: 4px 0;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn.open b {
+            display: none;
+            margin: -5px 0 0;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 30px
+        }
+
+        .menuBtn.open b:first-child {
+            display: block;
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg)
+        }
+
+        .menuBtn.open b:last-child {
+            display: block;
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg)
+        }
+
+        @media only screen and (max-width: 1500px) {
+            .header {
+                height: 70px
+            }
+
+            .logo {
+                line-height: 70px;
+                width: 160px
+            }
+
+            .nav li .v1 {
+                height: 70px;
+                padding-top: 16px
+            }
+        }
+
+        @media only screen and (max-width: 1199px) {
+            .header {
+                height: 50px;
+            }
+
+            .logo {
+                line-height: 50px;
+                width: 130px;
+                height: 38px;
+
+            }
+
+            .nav {
+                float: left;
+                position: fixed;
+                top: 50px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 99;
+                background-color: #fff;
+                border-top: 1px solid #eee;
+                display: none
+            }
+
+            .nav li:hover .v1 {
+                background-color: #fff;
+                color: #999;
+            }
+
+            .nav li.on .v1 {
+                background-color: #0d6fb8;
+                color: #fff;
+                border-color: transparent;
+            }
+
+            .nav li:hover p {
+                color: #333
+            }
+
+            .nav li .v1 {
+                position: relative;
+                height: auto;
+                padding: 10px 0
+            }
+
+            .nav li .v1 i {
+                display: block;
+                width: 32px;
+                height: 32px;
+                position: absolute;
+                right: 30px;
+                top: 15px;
+                background: url(images/s1.jpg) center center no-repeat;
+                -o-background-size: 16px 16px;
+                background-size: 16px 16px
+            }
+
+            .nav li.on .v1 i {
+                background-image: url(images/s1.jpg)
+            }
+
+            .nav li.on p {
+                color: #fff;
+                font-weight: 700
+            }
+
+            .nav li {
+                float: none;
+                padding-top: 0;
+                margin: 0;
+                width: auto
+            }
+
+            .nav li .sub {
+                position: static;
+                padding: 0;
+                text-align: center;
+                border-radius: 0;
+                background-color: #eee
+            }
+
+            .nav li .sub a {
+                line-height: 30px
+            }
+
+            .menuBtn {
+                display: block
+            }
+        }
+/*标题*/
+        .g-tit01 {
+
+            color: #9BABB4;
+            padding-top: 100px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #9BABB4;
+            margin-bottom: 30px;
+            position: fixed;
+            width: 100%;
+            background: #fff;
+
+
+
+
+        }
+        .g-tit01 .tit{
+            font-weight: 400;
+        }
+
+
+        .m-indexh{
+            width: 100%;
+        }
+        .row-hs1{
+            overflow: hidden;
+            padding-top: 190px;
+        }
+        /*左边部分*/
+        .col-main-z1{
+            float: left;
+            width: 70%;
+            padding-right: 40px;
+        }
+
+        /*左边标题*/
+        .m-txt .tit{
+            padding:10px 0 30px;
+            border-bottom: 1px solid #9BABB4;
+            margin-bottom: 5px;
+        }
+
+       /*信息*/
+        .m-txt{
+
+        }
+        .m-txt .info{
+            margin-bottom:5px;
+            overflow: hidden;
+        }
+        .m-txt  .info-l{
+            float: left;
+            padding:0 0 10px 0;
+
+        }
+        .m-txt .info-1{
+            color:#9BABB4;
+        }
+        .m-txt .info-2{
+           display: inline-block;
+            margin-left: 45px;
+        }
+        .m-txt .btn-1,
+        .m-txt .btn-2{
+            padding:0 5px;
+            background: #fff;
+        }
+        .m-txt  .info-r{
+            float: right;
+        }
+       .m-txt .desc p{
+               margin-bottom: 20px;
+       }
+        .m-txt .desc img{
+            display: block;
+           margin: 0 auto;
+            padding-bottom: 20px;
+            width:80%;
+
+        }
+        .m-txt .share{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .m-txt .share .sh-1{
+            margin:0 50px;
+            width: 28px;
+            height:28px;
+            display: inline-block;
+        }
+        .m-txt .share .sh-1 img {
+            width: 100%;
+            height:100%;
+        }
+        .m-txt .share .sh-2{
+            margin:0 50px;
+            display: inline-block;
+        }
+
+        .m-txt .share-m{
+            display: none;
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #9BABB4;
+        }
+        .m-txt .share-m .sh-1,
+        .m-txt .share-m .sh-2,
+        .m-txt .share-m .sh-3{
+            display: inline-block;
+            width: 30px;
+            height:30px;
+            margin:0 10px;
+        }
+
+        .m-txt .share-m .sh-1 img,
+        .m-txt .share-m .sh-2 img,
+        .m-txt .share-m .sh-3 img{
+            width: 100%;
+            height:100%;
+        }
+
+        .m-pages{
+            margin-bottom: 50px;
+        }
+        .pages{
+            overflow: hidden;
+        }
+        .pages li{
+            width: 50%;
+            float: left;
+        }
+        .pages .tit-pg1{
+            border: 1px solid #9BABB4;
+            color: #9BABB4;
+            padding: 10px 10px;
+            text-align: center;
+            margin-right: 20px;
+            font-weight: 550;
+        }
+        .pages .tit-pg2{
+            border: 1px solid #9BABB4;
+            color: #9BABB4;
+            padding: 10px 10px;
+            text-align: center;
+            font-weight: 550;
+        }
+
+
+
+        /*右边部分*/
+        .col-r-z1{
+            float: right;
+            width: 30%;
+        }
+        .col-r-z1  .tit1{
+            padding:10px 0;
+            border-bottom: 1px solid #9BABB4;
+            margin-bottom: 10px;
+        }
+        .col-r-z1 .info{
+            margin-bottom: 30px;
+        }
+        .col-r-z1 .ul-list-info li{
+            border-bottom: 1px dotted #9BABB4;
+        }
+        .col-r-z1 .ul-list-info .con{
+            display: inline-block;
+        }
+        .col-r-z1 .ul-list-info .tit{
+            padding:10px 0;
+            color: #596A73;
+            overflow:hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .col-r-z1 .ul-list-info .tit::before{
+
+            content: "1";
+            color: #fff;
+            display: inline-block;
+            width: 20px;
+            height:20px;
+            background: #0064A2;
+            border-radius: 10px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .col-r-z1 .ul-list-info .tit-2::before{
+            content: "2";
+            background: #1E90F3;
+        }
+        .col-r-z1 .ul-list-info .tit-3::before{
+            content: "3";
+            color: #fff;
+               background: #67B11E;
+           }
+        .col-r-z1 .ul-list-info .tit-4::before{
+            content: "4";
+            background: #C2C2C2;
+        }
+        .col-r-z1 .ul-list-info .tit-5::before{
+            content: "5";
+            background: #C2C2C2;
+        }
+        .col-r-z1 .pic{
+            height:0;
+            padding-top:49%;
+            position: relative;
+        }
+        .col-r-z1 .pic img{
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            -webkit-transform: translate(-50%,-50%);
+            max-width: 100%;
+           max-height:100%;
+        }
+
+
+        /*底部*/
+        .footer {
+            position: relative;
+            padding: 30px;
+            background: #0d6fb8;
+        }
+
+        .hd-pic {
+            position: absolute;
+            top: -18px;
+            width: 100%;
+        }
+
+        .fd-hd {
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        .col-l {
+            width: 30%;
+            float: left;
+        }
+
+        .col-l span,
+        .col-l p {
+            color: #fff;
+            font-size: 16px;
+            padding: 20px;
+        }
+
+        .col-l em {
+            color: #0d8ddb;
+            font-size: 16px;
+        }
+
+        .col-l {
+            padding: 30px;
+        }
+
+        .col-c {
+            width: 40%;
+            float: left;
+        }
+
+        .col-c .links {
+            overflow: hidden;
+        }
+
+        .col-c .links a {
+            color: #fff;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .col-c li a:hover {
+            color: #019b43;
+        }
+
+        .links li {
+            padding: 20px 30px;
+            width: 25%;
+            float: left;
+        }
+
+        .links li .on {
+            font-size: 16px;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .links li .on::before {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 23px;
+            background: #019b43;
+            left: -15%;
+        }
+
+        .col-r {
+            width: 30%;
+            float: right;
+            position: relative;
+        }
+
+        .col-r .fd-pic {
+            height: 0;
+            padding-top: 40%;
+            position: relative;
+        }
+
+        .col-r .fd-pic img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            max-width: 100%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+        }
+
+        .footer .copy {
+            position: absolute;
+            line-height: 30px;
+            border-top: 1px solid #1A0000;
+            text-align: center;
+            color: #fff;
+            bottom: 10px;
+            display: inline-block;
+            width: 100%;
+        }
+        @media only screen and (max-width: 1200px){
+            /*.share-m{*/
+                /*display: none;*/
+            /*}*/
+            .col-r-z1{
+                position: fixed;
+                right: 0;
+                top:190px;
+            }
+            .footer .ft{
+                display: none;
+            }
+            .footer .ft .con{
+            }
+            .footer .ft .con .pic1{
+                width: 25px;
+                height: 25px;
+                margin: 0;
+            }
+            .footer .ft .con .pic img{
+                width: 100%;
+                height: 100%;
+            }
+            .footer .ft span{
+                display: inline-block;
+                /*color: #fff;*/
+            }
+        }
+
+        @media only screen and (max-width: 900px) {
+            .ul-lista1 li {
+                width: 50%;
+            }
+
+            .ul-lista5 li {
+                width: 50%;
+            }
+
+            .footer .col-l,
+            .footer .col-c {
+                display: none;
+            }
+
+            .footer .col-r {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            .ul-lista1 li {
+                width: 100%;
+            }
+
+            .ul-lista5 li {
+                width: 100%;
+            }
+
+            .footer .col-l,
+            .footer .col-c {
+                display: none;
+            }
+
+            .footer .col-r {
+                float: none;
+                width: 100%;
+            }
+        }
+
+
+        @media only screen and (max-width: 767px) {
+            .col-r-z1{
+                display: none;
+                float: none;
+            }
+            .col-main-z1{
+                float: none;
+                width: 100%;
+            }
+            .col-main-z1 .m-txt .share-m{
+                display: block;
+            }
+            .col-main-z1 .m-txt .share{
+                display: none;
+            }
+
+            .pages li{
+                float: none;
+                width: 100%;
+                margin:10px 0;
+            }
+            .pages .tit-pg1{
+                margin: 0;
+            }
+            .footer .ft .con .pic1{
+                display: inline-block;
+            text-align: center;
+            }
+            .footer .ft .con .pic1 img{
+                max-width: 100%;
+                max-height:100%;
+                vertical-align: middle;
+            }
+            .footer .ft span{
+                color: #fff;
+            }
+            .footer .fd-hd{
+                display: none;
+            }
+            .footer .copy{
+                display: none;
+            }
+            .footer .ft{
+                display: block;
+                text-align: center;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<!--头部-->
+<div class="header">
+    <span class="menuBtn"></span>
+
+    <div class="logo">
+        <a href="#"><img src="images/logo.png" alt=""/>
+        </a>
+    </div>
+
+    <div class="hdr">
+        <ul class="nav">
+            <li class="on">
+                <a href="index.html" class="v1">
+                    <p>首页</p>
+                </a>
+            </li>
+            <li class="">
+                <a href="#" class="v1">
+                    <p> 服务</p>
+                    <i></i>
+                </a>
+                <div class="sub">
+                    <a href="#">公司简介</a>
+                    <a href="#">企业文化</a>
+                    <a href="#">荣誉资质</a>
+                    <a href="#">新闻动态</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p>团队</p>
+                    <i></i>
+                </a>
+                <div class="sub">
+                    <a href="">动物繁殖</a>
+                    <a href="">疾病防控</a>
+                    <a href="">宠物疾病</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p>关于</p>
+                    <i></i>
+                </a>
+                <div class="sub">
+                    <a href="">细胞株筛选平台</a>
+                    <a href="">药效评价平台</a>
+                    <a href="">中试生产平台</a>
+                </div>
+            </li>
+            <li class=""><a href="" class="sobox"><img src="images/so.png"></a></li>
+            <li class=""><a href="" class="lgue"><img src="images/en.png"></a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="m-indexh">
+    <div class="wp">
+
+        <div class="g-tit01">
+            <h1 class="tit">仁树资讯</h1>
+        </div>
+        <div class="row-hs1">
+            <!--右边-->
+            <div class="col-r-z1">
+                <h2 class="tit1">其他案例</h2>
+                <div class="info">
+                    <ul class="ul-list-info">
+                        <li>
+                            <a href="" class="con">
+                               <p class="tit tit-1">“4+7”药品采集：中国医疗行业生态体系面全面形成</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="con">
+                                <p class="tit tit-2">“4+7”药品采集：中国医疗行业生态体系面全面形成</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="con">
+                                <p class="tit tit-3">“4+7”药品采集：中国医疗行业生态体系面全面形成</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="con">
+                                <p class="tit tit-4">“4+7”药品采集：中国医疗行业生态体系面全面形成</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="con">
+                                <p class="tit tit-5">“4+7”药品采集：中国医疗行业生态体系面全面形成</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="pic">
+                    <img src="images/pic15.jpg">
+                </div>
+            </div>
+            <!--左边-->
+            <div class="col-main-z1">
+                <div class="m-txt">
+                    <h2 class="tit">仁树医疗已经完成数千万人民币A轮融资，由斯道资本和F-Prime领投，老股东华创资本继续跟投</h2>
+
+                    <div class="info">
+                        <div class="info-l">
+                            <span class="info-1">发布时间：2019.1.12</span>
+                            <div class="info-2">
+                                <span>字体：</span>
+                                <Button class="btn-1">A+</Button>
+                                <Button class="btn-2">A-</Button>
+                            </div>
+                        </div>
+                        <div class="info-r">
+                            浏览： 78
+                        </div>
+                    </div>
+
+                    <div class="desc">
+                        <p style="font-size: 16px;">仁树医疗是以眼、耳、鼻、喉为专科特色的综合门诊和日间手术中心，第一家日间手术中心于2017年7月在杭州开业，此次增资将用于开设新的医疗机构。</p>
+                        <p style="font-size: 16px;">由于麻醉技术和微创手术技术的进步，医疗服务水平和效率的提高，日间手术应运而生，并在全球各国广泛开展。在美国，当日完成治疗、无需留院的日间手术台数早已远远超过住院手术量，其中眼耳鼻喉类占到全部日间手术的24%。在中国，日间手术因其模式优越性也越来越为政府所倡导--国务院在深化医疗改革2017年重点工作任务中提出，各地要组织开展三级医院日间手术试点，而浙江省卫计委已于同年率先确定了158种日间手术病种和术式推荐目录。</p>
+                        <p style="font-size: 16px;">五官科疾病种类多、发病率高、对生活质量影响大，手术是最常见且有效的治疗手段。但公立医院手术排期长，平均手术住院5-7天，市场亟需优质的民营医疗服务。</p>
+                        <p style="font-size: 16px;">为此，仁树医疗引进并落地国际水准的医疗体系，由国内外深耕眼耳鼻喉专科医疗的专家牵头，接轨国际临床标准，开发了数十种五官科常见病、多发病、慢性病、疑难病的日间术式。同时，配合最顶尖的医疗设备与个性化的治疗方案，在保证安全、有效、便捷的原则下，使绝大多数患者能在当日完成手术、留观和恢复。</p>
+                        <img src="images/pic16.jpg" alt="">
+                        <p style="font-size: 16px;">仁树医疗创始人兼CEO许靖环女士表示：“日间手术自上世纪八十年代开始发展，至今在欧美，耳鼻喉科有70%甚至更高的择期手术都是通过日间手术来完成的。但这个比例在中国还非常少，像杭州、上海、北京这样的一线或准一线城市应该都不到5%，所以市场有很大的需求。此外，‘安全、高效、有温度’是仁树医疗秉承的核心理念，在引进国际安全管理标准、顶级品牌医疗设备的同时，亦注重结合本地优质医疗资源及技术支持。医疗团队均来自于知名三甲医院的专家级主诊医师，让国际标准体系可以因地制宜，更加适合落地国内。”</p>
+                        <p style="font-size: 16px;">在服务方面，仁树医疗“1分钟挂专家号、1小时问诊检查、1天手术出院”的高效流程，吸引了大批名医加盟和患者造访，也使得优质医疗资源利用度大大增加。截至2018年底，仁树医疗在杭州的日间手术中心已累计服务近万人次。</p>
+                        <p style="font-size: 16px;">目前，除了五官科以外，仁树医疗相继拓展了如：青少年妇科、骨科、儿外科等一系列特色名医工作室。此外，为满足患者实际需求、尤其是降低少儿手术风险，创新性地开展一次全麻、多学科联合操作多种术式的服务，极大地提升了患者体验。</p>
+                    </div>
+                    <div class="share" >
+                        <a href="#" class="sh-1">
+                            <img src="images/j-p10.png">
+                        </a>
+                        <a href="#" class="sh-2">
+                            <img src="images/j-p9.png">
+                        </a>
+                    </div>
+
+                    <div class="share-m">
+                        <a href="#" class="sh-1">
+                            <img src="images/j-p53.png">
+                        </a>
+                        <a href="#" class="sh-2">
+                            <img src="images/j-p54.png">
+                        </a>
+                        <a href="#" class="sh-3">
+                            <img src="images/j-p55.png">
+                        </a>
+                    </div>
+
+                    <div class="m-pages">
+                        <ul class="pages">
+                            <li>
+                                <a href="" con class="pg-1">
+                                    <div class="tit-pg1">
+                                        上一篇：微软面向医疗机构推出......
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" con class="pg-2">
+                                    <div class="tit-pg2">
+                                        下一篇：第十五届心脏影像及心脏......
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--底部-->
+<div class="footer">
+    <div class="hd-pic"><img src="images/pic1.jpg"></div>
+    <div class="fd-hd">
+        <div class="wp">
+            <div class="col-l">
+                <span>Tree<em>ENT</em>仁树医疗</span>
+                <p>400-683-8537</p>
+            </div>
+            <div class="col-c">
+
+                <ul class="links">
+                    <li>
+                        <a href="#" class="on">服务</a>
+                        <a href="">耳鼻喉科</a>
+                        <a href="">眼科</a>
+                        <a href="">名医工作室</a>
+                    </li>
+                    <li>
+                        <a href="">耳鼻喉科</a>
+                        <a href="">眼科</a>
+                        <a href="#" class="on">服务</a>
+                        <a href="">名医工作室</a>
+                    </li>
+                    <li>
+                        <a href="#" class="on">服务</a>
+                        <a href="">耳鼻喉科</a>
+                        <a href="">眼科</a>
+                        <a href="">名医工作室</a>
+                    </li>
+                    <li>
+                        <a href="">服务</a>
+                        <a href="">耳鼻喉科</a>
+                        <a href="">眼科</a>
+                        <a href="">名医工作室</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-r">
+                <div class="fd-pic">
+                    <img src="images/qr.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy">
+        @2017 ALL rights Reserved. TreeENT 沪ICP备17008893号 Designed by MHD° 秒合
+    </div>
+
+
+    <div class="ft">
+        <div class="con">
+        <div class="pic1">
+            <img src="images/tel.png">
+        </div>
+            <span>: 400-685-8537</span>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!--头部-->
+<script>
+    // 手机导航
+    $('.menuBtn').append('<b></b><b></b><b></b>');
+    $('.menuBtn').click(function (event) {
+        $(this).toggleClass('open');
+        $('.header').stop().slideToggle();
+    });
+
+    var _winw = $(window).width();
+    if (_winw > 959) {
+        $('.nav li').hover(function () {
+            $(this).find('.sub').stop().slideDown();
+            if ($(this).find('.sub').length) {
+                $(this).addClass('ok');
+                $('.header').addClass('on');
+            } else {
+                $('.header').removeClass('on');
+            }
+        }, function () {
+            $(this).removeClass('ok');
+            $(this).find('.sub').stop().slideUp();
+        });
+        $('.nav').mouseleave(function (event) {
+            if ($('.header').hasClass('on')) {
+                $('.header').removeClass('on');
+            }
+            ;
+        });
+    } else {
+
+        $('.nav .v1').click(function () {
+            if ($(this).siblings('.sub').length) {
+                $(this).parents('li').siblings('li').find('.sub').stop().slideUp();
+                $(this).parents('li').siblings('li').removeClass('on');
+                $(this).parents('li').toggleClass('on');
+                $(this).siblings('.sub').stop().slideToggle();
+                return false;
+            }
+        });
+    }
+</script>
+<!--头部轮播图-->
+<script>
+    $(window).on("scroll", function () {
+//        console.log(scrollTop());
+        if ($(document).scrollTop() > 0) {
+            $(".header").addClass("small");
+        } else {
+            $(".header").removeClass("small");
+        }
+    });
+</script>
+<!--logo-->
+<script>
+    var _winw = $(window).width();
+    if (_winw < 1200) {
+        //当屏幕小于1200时，添加头部样式的类.small,并且不再移除.small
+        $(".header").addClass("small");
+    } else {
+        //当屏幕大于等于1200时，才启动页面滚动效果
+        $(window).on('scroll', function () {
+            if ($(document).scrollTop() > 0) {
+                $(".header").addClass("small");
+            } else {
+                $(".header").removeClass("small");
+            }
+        });
+    }
+</script>
+</body>
+</html>

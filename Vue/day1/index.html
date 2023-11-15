@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--    {{msg}}-->
+    <!--    <div v-html="a"></div>-->
+    <!--    v-show是设置将元素的display=none,结构还在，只不过不显示而已-->
+    <!--    <div v-show="show">666</div>-->
+    <!--    v-if控制元素显示隐藏（条件渲染）-->
+    <!--    <div v-if="display">999</div>-->
+
+    <!--    <p v-if="gender===1">性别：男</p>-->
+    <!--    <p v-else>性别：女</p>-->
+    <!--    <hr>-->
+    <!--    <p v-if="score>=90"> 成绩评定A:奖励电脑</p>-->
+    <!--    <p v-else-if="score>=70"> 成绩评定B:奖励旅游</p>-->
+    <!--    <p v-else-if="score>=60"> 成绩评定C:奖励零食</p>-->
+    <!--    <p v-else> 成绩评定D:奖励不能玩手机</p>-->
+    <!--    {{count}}-->
+    <!--    <button v-on:click="count++">按钮+</button>-->
+    <!--    <button @click="count&#45;&#45;">按钮-</button>-->
+    <!--    <button @click="add">按钮++</button>-->
+    <!--    <button v-show="index>0" @click="index&#45;&#45;">上一页</button>-->
+    <!--    &lt;!&ndash;    <img v-bind:src="imgUrl" alt="" v-bind:title="msg">&ndash;&gt;-->
+    <!--    <img :src="ingUrlList[index]" alt="" :title="msg">-->
+    <!--    <button v-show="index<ingUrlList.length-1" @click="index++">下一页</button>-->
+    <!--    <p v-for="(item,index) in ingUrlList">{{item}} {{index}} </p>-->
+
+    <h3>小黑的书架</h3>
+    <ul>
+        <li v-for="(item,index) in booksList " :key="item.id">
+            <span>{{item.name}}</span>
+            <span>{{item.author}}</span>
+            <button @click="del(item.id)">删除</button>
+        </li>
+    </ul>
+    v-model为表单元素使用，双向绑定，可以快速获取和设置表单元素内容
+    <form action="">
+
+        用户:<input type="text" v-model="name">
+        <br>
+        密码:<input type="password" v-model="password">
+        <br>
+        <button>登录</button>
+    </form>
+</div>
+</body>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            msg: "Hello Vue",
+            a: "<a href='http://www.baidu.com'>百度 </a>",
+            show: true,
+            display: true,
+            gender: 1,
+            score: 80,
+            count: 0,
+            imgUrl: "img/1.jpg",
+            index: 0,
+            ingUrlList: [
+                'img/10-01.png',
+                'img/10-02.png',
+                'img/11-00.gif',
+                'img/11-01.gif',
+                'img/11-02.gif',
+                'img/11-03.gif',
+                'img/11-04.png',
+                'img/11-05.png',
+            ],
+            booksList: [
+                {id: 1, name: '《红楼梦》', author: '曹雪芹'},
+                {id: 2, name: '《西游记》', author: '吴承恩'},
+                {id: 3, name: '《水浒传》', author: '施耐庵'},
+                {id: 4, name: '《三国演义》', author: '罗贯中'}
+            ],
+            name: '',
+            password: '',
+        }, methods: {
+            add() {
+                this.count += 2;
+            },
+            del(id) {
+                this.booksList = this.booksList.filter(item => item.id != id);
+                // console.log(id)
+                // this.booksList[id] = null;
+                //console.log(this.booksList)
+            }
+            // change() {
+            //     if (this.index == (this.ingUrlList.length - 1)) {
+            //         this.index = -1;
+            //     }
+            //     this.index++;
+            // }
+        }
+    })
+</script>
+</html>

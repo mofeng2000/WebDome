@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        @keyframes roll {
+            100%{
+                transform:  rotateX(90deg);
+            }
+        }
+        li{
+            width: 300px;
+            height: 50px;
+            list-style: none;
+            float: left;
+            perspective: 500px;
+            margin: 100px 50px;
+        }
+        ul{
+            width: 1200px;
+            height: 500px;
+              background: black;
+             margin: 100px auto;
+        }
+        .box{
+            position: relative;
+            width: 120px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            color: white;
+            transform-style: preserve-3d;
+            animation: roll 0.8s  linear infinite;
+            transition: all 1s;
+        }
+        .box:hover{
+            /*transform:  rotateX(90deg);*/
+        }
+        .zheng,
+        .fan{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .zheng{
+        background: orange;
+            transform: translateZ(25px);
+
+        }
+        .fan{
+        background: pink;
+            transform: translateY(25px) rotateX(-90deg);
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li><div class="box">
+        <div class="zheng">风里雨里</div>
+        <div class="fan">洛理等你</div>
+        <div class="you"></div>
+    </div></li>
+    <li><div class="box">
+        <div class="zheng" style="background: pink">洛理等你</div>
+        <div class="fan" style="background: orange">风里雨里</div>
+    </div></li>
+    <li><div class="box">
+        <div class="zheng">风里雨里</div>
+        <div class="fan">洛理等你</div>
+    </div></li>
+    <li><div class="box">
+        <div class="zheng" style="background: pink">洛理等你</div>
+        <div class="fan" style="background: orange">风里雨里</div>
+    </div></li>
+    <li><div class="box">
+        <div class="zheng">风里雨里</div>
+        <div class="fan">洛理等你</div>
+    </div></li>
+    <li><div class="box">
+        <div class="zheng" style="background: pink">洛理等你</div>
+        <div class="fan" style="background: orange">风里雨里</div>
+    </div></li>
+</ul>
+
+</body>
+</html>

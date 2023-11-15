@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2020-08-10-001-仁树医疗</title>
+    <link rel="stylesheet" href="css/cui.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+    <link href="css/slick.css" rel="stylesheet">
+    <script src="js/jquery.countup.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <link href="css/animate.min.css" rel="stylesheet">
+    <style>
+        .wp {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .g-tit {
+            text-align: center;
+            padding: 50px 0;
+            margin: 50px 0;
+        }
+
+        .g-tit h2 {
+            position: relative;
+            font-size: 26px;
+
+        }
+
+        .g-tit h2:after {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            content: " ";
+            display: inline-block;
+            width: 24px;
+            height: 4px;
+            background: #6eb92b;
+            transform: translate(-50%);
+        }
+        .row-a2 {
+            margin: 100px 0;
+            padding: 30px 0;
+            overflow: hidden;
+            background: #f8f8f8;
+        }
+        .row-a2 .ul-hs3{
+            height: 420px;
+
+        }
+        .row-a2 .ul-hs3 li{
+            /*width: 33.33%;*/
+            /*float: left;*/
+            /*display: block;*/
+            position: relative;
+        }
+        .row-a2 .ul-hs3 .box{
+            position: relative;
+            display: block;
+            height: 380px;
+            margin: 0 15px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .row-a2 .ul-hs3 .box .pic{
+            position:absolute;
+            top: 0;
+            right: -100px;
+            transition: .3s;
+        }
+        .row-a2 .ul-hs3 .box .pic img{
+            width: 100%;
+            height: 100%;
+        }
+        .row-a2 .ul-hs3 li:hover .box .pic{
+            right: -40px;
+        }
+        .row-a2 .ul-hs3 li:hover .arr{
+            background: #0d6fb8;
+        }
+        .row-a2 .ul-hs3 li:hover .arr a{
+            color: #fff;
+        }
+        .row-a2 .ul-hs3 .box .txt{
+            padding: 50px 0 0 30px;
+        }
+
+        .row-a2 .ul-hs3 .box  h3{
+            color: #666;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .row-a2 .ul-hs3 .box .rmd{
+            color: #666;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 40px;
+        }
+        .row-a2 .ul-hs3 .box .desc{
+            color: #666;
+            font-size: 14px;
+            line-height: 30px;
+        }
+        .row-a2 .ul-hs3 .box  h3::after{
+            content: " ";
+            width: 30px;
+            height: 20px;
+            display: block;
+            border-bottom: 3px solid #6eb92b;
+            line-height: 30px;
+        }
+        .row-a2 .ul-hs3 .arr{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50% , 50%);
+            border: 1px solid #ccc;
+            text-align: center;
+            background: rgba(0,0,0,0.2);
+            border-radius: 30px;
+            width: 60px;
+            height: 60px;
+        }
+        .row-a2 .ul-hs3 .arr a{
+            display: block;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+        }
+        .ul-hs3 .slick-arrow{
+            position:absolute;
+            width:2vw;
+            height:2vw;
+            transform: rotate(45deg);
+            top:40%;
+            font-size:0;
+            cursor:pointer;
+            background-color:transparent;
+            background-position:center;
+            background-repeat:no-repeat;
+            z-index:2;
+            outline: none;
+            border:none;
+        }
+        .ul-hs3 .slick-prev{
+            left:-3%;
+            border-left: 3px solid #ccc;
+            border-top: 3px solid #ccc;
+            transform: rotate(-45deg);
+        }
+        .ul-hs3 .slick-next{
+            right:-3%;
+            border-right: 3px solid #ccc;
+            border-top: 3px solid #ccc;
+            transform: rotate(45deg);
+        }
+        .ul-hs3 .slick-dots{position:absolute;bottom:10px;left:0;right:0;text-align:center;z-index:3}
+        .ul-hs3 .slick-dots li{display:inline-block;margin:0 10px}
+        .ul-hs3 .slick-dots button{width:10px;height:14px;background:none;font-size:0;cursor:pointer;
+            border:none;border-radius:10px;border:1px solid #fff;}
+        .ul-hs3 .slick-dots li.slick-active button{background:#fff}
+        .ul-hs3 .slick-list{
+            height: 450px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="row-a2">
+    <div class="wp">
+        <ul class="ul-hs3">
+            <li class="item">
+                <a href="#" class="box">
+                    <div class="txt">
+                        <h3>徐正敏</h3>
+                        <div class="rmd">眼耳鼻喉科</div>
+                        <div class="desc"><p>复旦大学附属医院</p><p>主任医师</p></div>
+                    </div>
+                    <div class="pic"><img src="images/hs5.png" alt=""></div>
+                </a>
+                <div class="arr"><a href="#"><img src="images/hs06.png" alt=""></a></div>
+                </li>
+            <li class="item">
+                <a href="#" class="box">
+                    <div class="txt">
+                        <h3>王德发</h3>
+                        <div class="rmd">眼耳鼻喉科</div>
+                        <div class="desc"><p>复旦大学附属医院</p><p>主任医师</p></div>
+                    </div>
+                    <div class="pic"><img src="images/hs5.png" alt=""></div>
+                </a>
+                <div class="arr"><a href="#"><img src="images/hs06.png" alt=""></a></div>
+            </li>
+            <li class="item">
+                <a href="#" class="box">
+                    <div class="txt">
+                        <h3>王霞丽</h3>
+                        <div class="rmd">眼耳鼻喉科</div>
+                        <div class="desc"><p>复旦大学附属医院</p><p>主任医师</p></div>
+                    </div>
+                    <div class="pic"><img src="images/hs5.png" alt=""></div>
+                </a>
+                <div class="arr"><a href="#"><img src="images/hs06.png" alt=""></a></div>
+            </li>
+            <li class="item">
+                <a href="#" class="box">
+                    <div class="txt">
+                        <h3>徐正敏</h3>
+                        <div class="rmd">眼耳鼻喉科</div>
+                        <div class="desc"><p>复旦大学附属医院</p><p>主任医师</p></div>
+                    </div>
+                    <div class="pic"><img src="images/hs5.png" alt=""></div>
+                </a>
+                <div class="arr"><a href="#"><img src="images/hs06.png" alt=""></a></div>
+            </li>
+            <li class="item">
+                <a href="#" class="box">
+                    <div class="txt">
+                        <h3>王德发</h3>
+                        <div class="rmd">眼耳鼻喉科</div>
+                        <div class="desc"><p>复旦大学附属医院</p><p>主任医师</p></div>
+                    </div>
+                    <div class="pic"><img src="images/hs5.png" alt=""></div>
+                </a>
+                <div class="arr"><a href="#"><img src="images/hs06.png" alt=""></a></div>
+            </li>
+            <li class="item">
+                <a href="#" class="box">
+                    <div class="txt">
+                        <h3>王霞丽</h3>
+                        <div class="rmd">眼耳鼻喉科</div>
+                        <div class="desc"><p>复旦大学附属医院</p><p>主任医师</p></div>
+                    </div>
+                    <div class="pic"><img src="images/hs5.png" alt=""></div>
+                </a>
+                <div class="arr"><a href="#"><img src="images/hs06.png" alt=""></a></div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<script>
+    $('.ul-hs3').slick({
+        dots: false,
+        arrows: false,
+        autoplay: false,
+        slidesToShow: 3,
+        autoplaySpeed: 3000
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>children refs</title>
+</head>
+<body>
+
+<div id="app">
+    <cpn ref="aaa"></cpn>
+    <cpn></cpn>
+    <cpn ref="ccc"></cpn>
+    <button @click="btnclick">按钮</button>
+</div>
+
+<template id="cpn">
+    <h1>{{name}}</h1>
+
+</template>
+<script src="../vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: ""
+            },
+        methods:{
+            btnclick(){
+                //$children
+//                console.log(this.$children);
+//                console.log(this.$children[0]);
+//                console.log(this.$children[0].name);
+//                console.log(this.$children[0].showmessage);
+//                console.log(this.$children[0].showmessage())
+//                for(let c of this.$children){
+//                    console.log(c.name)
+//                    c.showmessage()
+//                }
+                //2.refs引用
+                console.log(this.$refs);
+                console.log(this.$refs.aaa.name)
+
+
+            }
+        },
+        components:{
+            cpn:{
+                template:'#cpn',
+                data(){
+                    return{
+                        name:'zpk'
+                    }
+                },
+                methods:{
+                    showmessage(){
+                        console.log(showmessage)
+                    }
+                }
+            }
+        }
+        }
+    )
+</script>
+</body>
+</html>

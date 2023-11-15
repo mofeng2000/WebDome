@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/cui.css"/>
+    <script src="js/jquery.js"></script>
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            height: 110px;
+            z-index: 99;
+            padding: 0 3%;
+            box-shadow: 0 3px 1px rgba(0, 0, 0, .3);
+            box-sizing: border-box;
+        }
+
+        .samll {
+
+        }
+
+        .header .loge1 {
+            float: left;
+            line-height: 110px;
+            overflow: hidden;
+            display: block;
+        }
+
+        .header .loge1 a {
+            display: block;
+        }
+
+        .header .loge1 img {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .nav {
+            float: left;
+            margin-left: 40px;
+        }
+
+        .nav li {
+            float: left;
+        }
+
+        .nav li .v1 {
+            color: #000;
+            display: block;
+            font-size: 18px;
+            line-height: 60px;
+            padding: 0 20px;
+            margin: 20px 0;
+            transition: .3s;
+        }
+
+        .nav li .v1 img {
+            vertical-align: middle;
+        }
+
+        .nav li .v1:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .icon {
+            height: 110px;
+            float: right;
+        }
+
+        .icon .so {
+            line-height: 30px;
+            padding: 33px 0;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .icon .so .so-a {
+            background: #009fa8;
+            display: inline-block;
+            border-radius: 17px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .icon .so .txt {
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 0 15px 15px 0;
+            margin: 3px 3px 3px 0;
+            display: inline-block;
+            background: #fff;
+            padding: 0 15px;
+            color: #666;
+
+        }
+
+        .icon .so img {
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+            padding: 0 5px;
+        }
+
+        .icon .tel {
+            padding: 33px 0;
+            float: right;
+            line-height: 30px;
+        }
+
+        .icon .tel .txt {
+            color: #333;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 0 15px 15px 0;
+            margin: 3px 3px 3px 0;
+            float: right;
+            display: inline-block;
+            background: #fff;
+            padding: 0 10px;
+        }
+
+        .icon .tel .tel-a {
+            width: 100%;
+            background: #009fa8;
+            display: inline-block;
+            border-radius: 17px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .icon .tel img {
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+            padding: 0 8px;
+        }
+
+        .menuBtn {
+            display: none;
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn b {
+            display: block;
+            height: 4px;
+            background-color: #0d6fb8;
+            margin: 4px 0;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn.open b {
+            display: none;
+            margin: -5px 0 0;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 30px
+        }
+
+        .menuBtn.open b:first-child {
+            display: block;
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg)
+        }
+
+        .menuBtn.open b:last-child {
+            display: block;
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg)
+        }
+
+        @media only screen and (max-width: 1500px) {
+            .nav {
+                margin-left: 20px
+            }
+
+            .nav li .v1 {
+                font-size: 16px;
+                padding: 0 6px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .icon {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="header fix">
+    <span class="menuBtn"></span>
+    <div class="loge1"><a href="#"><img src="images/lmt-logo_03.png" alt=""></a></div>
+    <div class="icon">
+        <div class="so"><a href="#" class="so-a"><img src="images/pic-so_03.png" alt=""> <span
+                class="txt">官方商城</span></a></div>
+        <div class="tel"><a href="#" class="tel-a"><img src="images/pic-tel_03.png" alt=""><span class="txt">招商热线：400-833-980</span></a>
+        </div>
+    </div>
+    <div class="nav">
+        <ul class="ul-nva fix">
+            <li>
+                <a href="#" class="v1">首页
+                    <ul class="sub">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    </ul>
+                </a></li>
+            <li><a href="#" class="v1">设计之家</a></li>
+            <li><a href="#" class="v1">设计系统</a></li>
+            <li><a href="#" class="v1">设计体验</a></li>
+            <li><a href="#" class="v1">招商加盟</a></li>
+            <li><a href="#" class="v1">品牌动态</a></li>
+            <li><a href="#" class="v1">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #graphContainer {
+        width: 1000px;
+        height: 700px;
+        border: 3px solid rgb(194, 185, 185);
+        margin: auto;
+    }
+
+    button{
+        width: 150px;
+        height: 50px;
+        background: rgb(122, 122, 121);
+        color: white;
+        font-size: 15px;
+        margin: 10px;
+        outline: none;
+        border: none;
+        border-radius: 15px;
+    }
+</style>
+<!--<script src="vue.js"></script>-->
+<body onload="main(document.getElementById('graphContainer'))">
+<div>
+    <button onclick="shanxi(document.getElementById('graphContainer'))">陕西省</button>
+    <button onclick="henan(document.getElementById('graphContainer'))">河南省</button>
+    <div id="graphContainer"  style="overflow:hidden;background:url('src/images/grid.gif');cursor:default;"></div>
+</div>
+<!-- 创建操作按钮放置容器 -->
+<!--<template>-->
+<!--<div id="methods">-->
+<!--    <div ref="buttons"></div>-->
+<!--</div>-->
+<!--</template>-->
+</body>
+<script>
+    mxBasePath = 'src';
+</script>
+
+<script src="mxClient.js"></script>
+<!--<script>-->
+<!--    var vue = new Vue({-->
+<!--        el: '#app',-->
+<!--        data: {-->
+<!--        },-->
+
+<!--        //钩子函数，VUE对象初始化完成后自动执行-->
+<!--        created() {-->
+<!--        },-->
+<!--        mounted(){-->
+<!--            //放大节点-->
+<!--            this.$refs.buttons.appendChild(-->
+<!--                mxUtils.button('ZoomIn', function() {-->
+<!--                    graph.zoomIn()-->
+<!--                })-->
+<!--            )-->
+
+<!--            //缩小节点-->
+<!--            this.$refs.buttons.appendChild(-->
+<!--                mxUtils.button('ZoomOut', function() {-->
+<!--                    graph.zoomOut()-->
+<!--                })-->
+<!--            )-->
+
+<!--            //还原节点-->
+<!--            this.$refs.buttons.appendChild(-->
+<!--                mxUtils.button('ZoomActual', function() {-->
+<!--                    graph.zoomActual()-->
+<!--                })-->
+<!--            )-->
+<!--        },-->
+<!--        methods: {-->
+
+<!--        }-->
+<!--    })-->
+
+<!--</script>-->
+<script type="text/javascript">
+    // Program starts here. Creates a sample graph in the
+    // DOM node with the specified ID. This function is invoked
+    // from the onLoad event handler of the document (see below).
+    var mxgraphData2 = [{
+        "nodesList": [
+            [0, "郑州市"],
+            [1, "开封市"],
+            [2, "洛阳市"],
+            [3, "安阳市"],
+            [4, "焦作市"],
+            [5, "新乡市"]
+        ],
+        "edgesList": [
+            [0, "200Km", 1],
+            [1, "300km", 2],
+            [1, "75Km", 3],
+            [3, "100Km", 4],
+            [4, "90Km", 5],
+            [4, "110Km", 6]
+        ]
+    }]
+    var mxgraphData1 = [{
+        "nodesList": [
+            [0, "宝鸡市"],
+            [1, "渭南市"],
+            [2, "西安市"],
+            [3, "汉中市"],
+            [4, "安康市"]
+        ],
+        "edgesList": [
+            [0, "200Km", 1],
+            [1, "300km", 2],
+            [1, "75Km", 3],
+            [3, "100Km", 4],
+            [4, "90Km", 5]
+        ]
+    }]
+    console.log(mxGraph)
+
+    this.mxgraphData = mxgraphData1;
+
+
+    /**
+     * 生成节点
+     */
+    function createNodes(graph, parent){
+        //遍历mxgraphData生成节点
+        var len = this.mxgraphData[0].nodesList.length;
+        for (var i = 0; i < len; i++) {
+            let text = this.mxgraphData[0].nodesList[i][1];
+            let id = `node${this.mxgraphData[0].nodesList[i][0]}`;
+            var node = graph.insertVertex(
+                parent,
+                id,
+                text,
+                0,
+                0,
+                150,
+                40,
+                "fillColor=#3CAEA3;strokeColor=white;fontStyle=1;fontColor=white;rounded=1;fontSize=15;"
+            );
+        }
+    }
+    /**
+     * 生成边
+     */
+    function createEdges(graph, parent) {
+        var len = this.mxgraphData[0].edgesList.length;
+        for (var i = 0; i < len; i++) {
+            //寻找到对应的节点id
+            var startIndex = `node${this.mxgraphData[0].edgesList[i][0]}`;
+            var endIndex = `node${this.mxgraphData[0].edgesList[i][2]}`;
+
+            //graph.getModel().getCell()  通过id找到对应的节点node
+            var v1 = graph.getModel().getCell(startIndex);
+            var v2 = graph.getModel().getCell(endIndex);
+
+            var label = this.mxgraphData[0].edgesList[i][1];
+            var eage = graph.insertEdge(parent, null, label, v1, v2, "");
+        }
+    }
+    function main(container)
+    {
+        // Checks if the browser is supported
+        if (!mxClient.isBrowserSupported())
+        {
+            // Displays an error message if the browser is not supported.
+            mxUtils.error('Browser is not supported!', 200, false);
+        }
+        else
+        {
+            // Disables the built-in context menu
+            mxEvent.disableContextMenu(container);
+            // Creates the graph inside the given container
+            var graph = new mxGraph(container);
+            //定义全局样式
+            //定义节点样式
+            var nodeStyle = {};
+            nodeStyle[mxConstants.STYLE_FILLCOLOR] = "#3CAEA3";
+            nodeStyle[mxConstants.STYLE_FONTSIZE] = 12;
+            nodeStyle[mxConstants.STYLE_STROKE_COLOR] = "white";
+            nodeStyle[mxConstants.STYLE_FONTCOLOR] = "white";
+            nodeStyle[mxConstants.STYLE_ROUNDED] = 1;
+
+            // 把定义好的样式object push到stylesheet
+            graph.getStylesheet().putCellStyle("nodeStyle", nodeStyle)
+
+            // Enables rubberband selection
+            new mxRubberband(graph);
+            var xml=
+                '<mxGraphModel>                                                                                             '+
+                '  <root>                                                                                                                                          '+
+                '    <mxCell id="0"/>                                                                                                                              '+
+                '    <mxCell id="1" parent="0"/>                                                                                                                   '+
+                '    <app appId="" appName="" protocol="" ip="" port="" context="" heartBeatUrl="" id="2">                                                         '+
+                '      <mxCell style="verticalLabelPosition=top;verticalAlign=bottom;shadow=1;fillColor=#FFFFFF" vertex="1" connectable="0" parent="1" type="app"> '+
+                '        <mxGeometry x="100" y="320" width="20" height="40" as="geometry"/>                                                                        '+
+                '      </mxCell>                                                                                                                                   '+
+                '    </app>                                                                                                                                        '+
+                '  </root>                                                                                                                                         '+
+                '</mxGraphModel>                                                                                                                                   ';
+            var doc = mxUtils.parseXml(xml);
+            var codec = new mxCodec(doc);
+            codec.decode(doc.documentElement, graph.getModel());
+
+            // Gets the default parent for inserting new cells. This
+            // is normally the first child of the root (ie. layer 0).
+            var parent = graph.getDefaultParent();
+
+            // Adds cells to the model in a single step
+            graph.getModel().beginUpdate();
+            //查看图形的xml
+            document.body.appendChild(mxUtils.button('View XML', function()
+            {
+                var encoder = new mxCodec();
+                var node = encoder.encode(graph.getModel());
+                mxUtils.popup(mxUtils.getPrettyXml(node), true);   //以窗口的方式展示处理
+            }));
+
+            //定义布局
+            var layout = new mxHierarchicalLayout(graph);
+            try
+            {
+                // //insertVertex
+                // // 参数1：parents 生成节点要插入的父级容器
+                // // 参数2：null 此处可以设置节点的id，便于识别节点，null为默认id
+                // // 参数3：label 此处设置节点的内容
+                // // 参数4：设置节点大小及节点在父级容器中的相对位置
+                // var v1 = graph.insertVertex(
+                //     parent,
+                //     null,
+                //     "Hello,",
+                //     20,
+                //     200,
+                //     100,
+                //     50,
+                //     'nodeStyle'
+                // );
+                // var v2 = graph.insertVertex(
+                //     parent,
+                //     null,
+                //     "World",
+                //     150,
+                //     200,
+                //     100,
+                //     50,
+                //     'nodeStyle'
+                // );
+                //
+                // var v3 = graph.insertVertex(
+                //     parent,
+                //     null,
+                //     "I",
+                //     300,
+                //     200,
+                //     100,
+                //     50,
+                //     'nodeStyle'
+                // );
+                //
+                // var v4 = graph.insertVertex(
+                //     parent,
+                //     null,
+                //     "Love",
+                //     450,
+                //     200,
+                //     100,
+                //     50,
+                //     'nodeStyle'
+                // );
+                //
+                // var v5 = graph.insertVertex(
+                //     parent,
+                //     null,
+                //     "You",
+                //     600,
+                //     200,
+                //     100,
+                //     50,
+                //     'nodeStyle'
+                // );
+                //
+                // var v6 = graph.insertVertex(
+                //     parent,
+                //     null,
+                //     "My girl",
+                //     750,
+                //     200,
+                //     100,
+                //     50,
+                //     'nodeStyle'
+                // );
+                // graph.insertEdge(parent, null, "", v1, v2);
+                // graph.insertEdge(parent, null, "", v2, v3);
+                // graph.insertEdge(parent, null, "", v3, v4);
+                // graph.insertEdge(parent, null, "", v4, v5);
+                // graph.insertEdge(parent, null, "", v5, v6);
+                // layout.execute(parent)
+
+                this.createNodes(graph, parent);
+                this.createEdges(graph, parent);
+                layout.execute(parent);
+            }
+            finally
+            {
+                // Updates the display
+                graph.getModel().endUpdate();
+            }
+        }
+    }
+
+    function shanxi(container) {
+        mxEvent.disableContextMenu(container);
+        // Creates the graph inside the given container
+        var graph1 = new mxGraph(container);
+        mxgraphData2 = mxgraphData1;
+        graph1.destroy();
+
+
+    }
+    function henan(container) {
+        mxEvent.disableContextMenu(container);
+        // Creates the graph inside the given container
+        var graph2 = new mxGraph(container);
+        mxgraphData = mxgraphData2;
+        graph2.destroy();
+
+    }
+</script>
+</html>
+<!--//选中所有-->
+<!--this.$refs.btn1.appendChild(-->
+<!--mxUtils.button('Select all', function() {-->
+<!--graph.selectAll()-->
+<!--})-->
+<!--)-->
+
+<!--//选择一个-->
+<!--this.$refs.btn2.appendChild(-->
+<!--mxUtils.button('Choose one', function() {-->
+<!--graph.selectCell()-->
+<!--})-->
+<!--)-->
+
+<!--//取消选择-->
+<!--this.$refs.btn3.appendChild(-->
+<!--mxUtils.button('Deselect', function() {-->
+<!--var cells = graph.getSelectionCells()-->
+<!--graph.removeSelectionCells(cells)-->
+<!--})-->
+<!--)-->
+
+<!--//删除所选-->
+<!--this.$refs.btn4.appendChild(-->
+<!--mxUtils.button('Delete', function() {-->
+<!--var cells = graph.getSelectionCells()-->
+<!--graph.removeCells(cells)-->
+<!--})-->
+<!--)-->
+
+<!--//放大节点-->
+<!--this.$refs.btn5.appendChild(-->
+<!--mxUtils.button('ZoomIn', function() {-->
+<!--graph.zoomIn()-->
+<!--})-->
+<!--)-->
+
+<!--//缩小节点-->
+<!--this.$refs.btn6.appendChild(-->
+<!--mxUtils.button('ZoomOut', function() {-->
+<!--graph.zoomOut()-->
+<!--})-->
+<!--)-->
+
+<!--//还原节点-->
+<!--this.$refs.btn7.appendChild(-->
+<!--mxUtils.button('ZoomActual', function() {-->
+<!--graph.zoomActual()-->
+<!--})-->
+<!--)-->
+
+<!--//清空画板-->
+<!--this.$refs.btn8.appendChild(-->
+<!--mxUtils.button('Clear', function() {-->
+<!--graph.removeCells(graph.getChildVertices(graph.getDefaultParent()))-->
+<!--})-->
+<!--)-->

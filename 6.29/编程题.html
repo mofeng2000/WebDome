@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+
+    //19 编写程序交换两个变量的值
+
+
+
+    var a=1;
+    var b=2;
+    var c=0;
+    c=a;
+    a=b;
+    b=c;
+    console.log("a:"+a);
+    console.log("b:"+b);
+    console.log("c:"+c);
+   // 20 编写程序判断是否是闰年
+
+    var year=parseInt(prompt("请输入月份"));
+    if(year%4==0&&year%100!=0||year%400==0){
+        alert(year+"是闰年")
+    }
+    else {
+        alert(year+"是平年")
+    }
+
+   // 21.编写程序求数组中的最大值
+
+    var num1=prompt("请输入第一个数组的数");
+    var num2=prompt("请输入第二个数组的数");
+    var num3=prompt("请输入第三个数组的数");
+
+    var arr=[num1,num2,num3];
+    var max=arr[0];
+    console.log(max);
+    for (var i=0;i<arr.length;i++){
+        if(max<arr[i]){
+            max=arr[i]
+        }
+    }
+    alert("最大值为"+max)
+    //22.编写程序使用冒泡排序对数组排序
+    var arr=[6,4,5,2];
+    var num=0;
+    for (var i=0;i<arr.length-1;i++){
+        for (var j=0;j<arr.length-1-i;j++){
+            if(arr[j]>arr[j+1]){
+                num=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=num;
+            }
+        }
+    }
+    console.log(arr)
+
+
+  //  23.编写程序定义一个函数求任意个数数字中的最大值
+
+
+    function getMax() {
+        var max=arguments[0];
+        for (var i=0;i<arguments.length;i++){
+            if(max<arguments[i]){
+                max=arguments[i]
+            }
+
+        }
+        return max
+    }
+    alert("最大值为"+getMax(6,7,8));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="info in todos">{{info.text}}</li>
+    </ul>
+
+</div>
+<script src="vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: " ",
+                todos:[
+                    {text:'学习vue'},
+                    {text:'学习vue2'},
+                    {text:'学习vue3'}
+                    ]
+            }
+        }
+    )
+</script>
+</body>
+</html>

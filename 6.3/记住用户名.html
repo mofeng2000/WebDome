@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="username"> <input type="checkbox" id="checkbox">记住用户名
+<script>
+
+var username=document.querySelector("#username");
+var checkbox=document.querySelector("#checkbox");
+if(localStorage.getItem("username")){
+    username.value=localStorage.getItem("username");
+    checkbox.checked=true;
+
+}
+checkbox.addEventListener("change",function () {
+    if (checkbox.checked)//判断复选框是否被选中
+    {
+      localStorage.setItem("username",username.value)
+    }
+    else {
+        localStorage.removeItem("username")
+    }
+
+});
+
+
+
+</script>
+</body>
+</html>

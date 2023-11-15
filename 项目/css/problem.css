@@ -1,0 +1,66 @@
+.problems_h {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    margin: 50px 0;
+}
+.problems_h a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #c81623;
+    color: white;
+    margin-right: 20px;
+    text-align: center;
+}
+.problems_b li{
+    position: relative;
+    float: left;
+    margin:6% 2% 6% 0;
+    width: 45%;
+    border: 1px solid #d9d9d9;
+}
+.problems_b li p{
+    font-size: 22px;
+    padding: 80px  0 10px 30px;
+}
+.problems_b li h3{
+    font-size: 22px;
+    padding: 10px 0 30px  30px;
+}
+.problems_b li img{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+.problems_b li .lo{
+    position: absolute;
+    top: -40px;
+    left: 50px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #c81623;
+}
+.problems_b li .lo img{
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 80%;
+    height: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

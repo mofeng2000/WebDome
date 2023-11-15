@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width:200px;
+            height:200px;
+            background: orange;
+        }
+        ul.con{
+
+            width:200px;
+            height:200px;
+            background: red;
+        }
+        ul.con li{
+            width:20%;
+            height:20%;
+
+        }
+        ul.list{
+            width:0;
+            height:300px;
+            background: blue;
+        }
+        ul.list.on{
+            width: 300px;
+        }
+        ul.list li{
+            width:20%;
+            height:20%;
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <ul class="con">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul class="list">
+        <li>q</li>
+        <li>w</li>
+        <li>e</li>
+    </ul>
+
+</div>
+
+
+<script type="text/javascript" src="jquery.min.js">
+
+
+</script>
+<script type="text/javascript">
+$('.box').hover(function () {
+    $(this).children('.list').toggleClass('on')
+    var index=$(this).index();
+    console.log(index);
+
+})
+$('.con li').hover(function () {
+    $(this).children('.list').toggleClass('on')
+    var index=$('.list li').index(this);
+    console.log(index);
+})
+$('.list li').hover(function () {
+    var index=$(this).index();
+    console.log(index);
+})
+</script>
+</body>
+</html>

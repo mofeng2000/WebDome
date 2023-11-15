@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src:  url('fonts/icomoon.eot?5hmrot');
+            src:  url('fonts/icomoon.eot?5hmrot#iefix') format('embedded-opentype'),
+            url('fonts/icomoon.ttf?5hmrot') format('truetype'),
+            url('fonts/icomoon.woff?5hmrot') format('woff'),
+            url('fonts/icomoon.svg?5hmrot#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        .dingwei{
+           display: inline-block;
+            font-family:'icomoon';
+         font-style: normal;
+        }
+        .box{
+            position: relative;
+            margin: 50px auto;
+            width: 80px;
+            height: 30px;
+            color: #D30D0A;
+            text-align: center;
+            font-size: 16px;
+
+        }
+        .xia{
+            display: inline-block;
+            font-family:'icomoon';
+            width: 20px;
+            height: 20px;
+            font-size: 20px;
+            font-style: normal;
+
+        }
+        .box:hover .xia{
+            transform:translateY(25%) rotate(-180deg);
+
+        }
+        .daohang{
+            width: 80px;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all .2s ;
+        }
+        .box:hover .daohang{
+            height: 126px;
+            width: 80px;
+            opacity: 1;
+
+        }
+        .daohang ul{
+            margin-top: 10px;
+            padding: 0;
+        }
+        .daohang ul li{
+            list-style: none;
+            width: 50px;
+            font-size: 16px;
+            height: 20px;
+            color: #333333;
+            margin-top: 5px;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <i class="dingwei"></i>
+    开封
+    <i class="xia"></i>
+
+<div class="daohang">
+    <ul>
+        <li>杞县</li>
+        <li>开封县</li>
+        <li>兰考县</li>
+        <li>通许县</li>
+    </ul>
+
+</div>
+</div>
+</body>
+</html>

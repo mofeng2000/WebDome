@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes sxzyyd {
+            0%{
+
+        }
+            25%{
+        transform: translateX(500px) rotate(360deg) scale(1.5);
+                background: red;
+
+            }
+            50%{
+                transform: translate(500px,500px) rotate(-360deg) scale(2);;
+                background: green;
+            }
+            75%{
+                transform: translate(0, 500px) rotate(360deg) scale(2.5);;
+                background: blue;
+            }
+            100%{
+                transform: translate(0 ,0) rotate(-360deg) scale(3);;
+                background: black;
+            }
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            animation-name:sxzyyd ;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+</body>
+</html>

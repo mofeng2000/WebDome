@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入你的名字，查看你未来的对象</title>
+</head>
+<body>
+
+<div id="app">
+    <h2>{{message}}</h2>
+    <input type="text" v-model="name"   v-if="isShow" @blur="inpClick()">
+    <h2 v-else>{{name}}，不好意思你未来没对象，单身一辈子</h2>
+</div>
+<script src="vue.min.js"></script>
+<script>
+    const app = new Vue({
+            el: '#app',
+            data: {
+                message:" 输入你的名字，查看你未来的对象",
+                neme:" ",
+                isShow:true
+            },
+            methods:{
+                inpClick(){
+                    this.isShow=!this.isShow;
+                }
+            }
+        }
+    )
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+
+
+    </style>
+    <script src="jQuerymin.js"></script>
+</head>
+<body>
+<div class="box"></div>
+<video src="mov.mp4" muted></video>
+<span></span>
+<script>
+    $(function ()//让我们的网页元素先加载在加载我们的js，这样不会出现我利用js拿不到元素的问题
+    {
+        $('div').hide();//jQuery控制元素隐藏 $=jQusery $ 是 jQuery 的别称
+        var video=document.querySelector("video");
+        video.play();//document控制视频自动播放
+       // 1. DOM 对象转换为 jQuery 对象： $(DOM对象)
+        $('span');
+      //  jQuery 对象转换为 DOM 对象（两种方式） $('video') [0] 0 是索引号
+//        $('video')[0].play();
+
+        $(video).get[0].play();
+
+    });
+//    $(document).ready(function ()
+//    {
+//        //此处是页面DOM加载完成的入口,等着 DOM 结构渲染完毕即可执行内部代码，不必等到所有外部资源加载完成，jQuery 帮我们完成了封装
+//
+//    })
+
+
+
+
+
+
+</script>
+</body>
+</html>

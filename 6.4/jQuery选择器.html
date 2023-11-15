@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuerymin.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+</ul>
+<ol>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+</ol>
+<div>4</div>
+<div class="box">5</div>
+<div id="box">5</div>
+<span><a href="#">0</a></span>
+<script>
+   console.log( $('div'));//拿到所有的div
+   console.log( $('li'));//拿到所有的li
+//   console.log( $('ol li'));//拿到所有的ol 下面li
+   console.log( $('ul li'));//拿到所有的ul 下面li
+   console.log( $('.box'));//拿到的div类名为box
+   console.log( $('#box'));//拿到divid为box
+   console.log( $('#box,span'));//拿到所有的span 和id为box
+   console.log( $('span>a'));//拿到所有的span下面a
+
+   $('ol li').css("background-color","red")
+
+
+</script>
+</body>
+</html>

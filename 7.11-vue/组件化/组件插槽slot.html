@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插槽</title>
+</head>
+<body>
+<div id="app">
+    <!--
+    插槽
+    插槽默认值
+    如果有有多个值，同时传入组件时，进行替换，一起作为替换元素  <cpn><button>按钮</button> <h2>888</h2></cpn>
+    -->
+    <cpn></cpn>
+    <cpn><span>666</span></cpn>
+    <cpn><button>按钮</button></cpn>
+    <cpn><button>按钮</button> <h2>888</h2></cpn>
+</div>
+<template id="cpn">
+    <div>
+        <h2>我是组件</h2>
+        <p>哈哈哈哈</p>
+        <!--<slot></slot>-->
+        <slot><button>555</button></slot>
+        <slot><button>555</button><button>444</button></slot>
+    </div>
+</template>
+<script src="../vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: " "
+            },
+        components:{
+                cpn:{
+                    template:'#cpn'
+                }
+        }
+        }
+    )
+</script>
+</body>
+</html>

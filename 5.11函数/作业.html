@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+
+ //案例2
+ var a=1;//全局变量
+ function fu1(){
+     var a=2;
+     var b='22';
+     fu2();
+     function fu2() {
+         var a=3;
+         fu3();
+         function fu3() {
+             var a=4;
+             console.log(a);//4  会找最近的变量赋值
+             console.log(b);//22 会找最近的变量赋值，在本方法找不到，就往上级找
+         }
+     }
+ }
+ fu1();
+ //作用链 就近原则
+ //
+
+
+        //案例3
+    //var a = 18;
+    //f1();
+    //function f1() {
+    //    var b = 9;
+    //    console.log(a);
+    //    console.log(b);
+    //    var a = '123';
+    //}
+    //预编译
+    //        var a ;
+    //function f1() {
+    //    var b;
+    //    var a;
+    //    b = 9;
+    //    console.log(a);//undefined
+    //    console.log(b);//9
+    //     a = '123';
+    //}
+    //f1();
+
+    //// 案例4
+    // f1();
+    //console.log(c);
+    //console.log(b);
+    //console.log(a);
+    //function f1() {
+    //    var a = b = c = 9;
+    //等价于
+    //  var a=9;
+    //b=9;
+    //c=9;
+    //    console.log(a);
+    //    console.log(b);
+    //    console.log(c);
+    //        }
+    //预编译
+
+//    function f1() {
+//    var a=9;
+//    b=9;
+//    c=9;
+//    console.log(a);//9
+//    console.log(b);//9
+//    console.log(c);//9
+//    }
+//    f1();
+//    console.log(c);//9
+//    console.log(b);//9
+//    console.log(a);//报错
+        //1创建对象
+//    var Naruto1={
+//        name:"鸣人",
+//        sex:"男",
+//        age:"19岁",
+//        skill:function () {
+//            alert("影分身术")
+//
+//        }
+//    };
+//    //调用对象
+//    console.log("这个人是谁"+"是"+Naruto1.name);
+// Naruto1.skill();
+//
+//        //2创建对象
+//        var Naruto2=new Object()
+//        Naruto2.name="鸣人";
+//        Naruto2.sex="男";
+//        Naruto2.age="19岁";
+//        Naruto2.skill=function () {
+//            alert("影分身术")
+//        };
+// console.log("这个人是谁"+"是"+Naruto2.name);
+// Naruto2.skill();
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

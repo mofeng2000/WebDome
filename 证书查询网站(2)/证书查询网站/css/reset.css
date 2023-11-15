@@ -1,0 +1,16 @@
+/*鏍峰紡娓呯┖*/
+body, h1, h2,h3,h4,h5,h6,p,dl,dd,ol,ul,form, input,textarea,th,td,select { margin:0; padding:0;}
+em,i { font-style:normal;}
+li { list-style:none;}
+a { text-decoration:none; cursor:pointer; }
+a:focus {outline:none;}
+b{ font-weight:normal;}
+img { border:none; vertical-align:top;}
+input, textarea {vertical-align: middle;outline: none; border:none; background:none;box-sizing:content-box;}
+textarea { resize:none; overflow:auto; }
+table { border-spacing:0px; border:none; border-collapse:collapse;}
+body, input, select, button, textarea { font-size: 16px;font-family:tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif;background:#fff;}
+body{
+	font-family: "寰蒋闆呴粦";
+}
+

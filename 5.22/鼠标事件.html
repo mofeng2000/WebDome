@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+    document.addEventListener("mousedown",function (e) {
+        console.log("鼠标按下");
+
+    });
+document.addEventListener("mouseup",function (e) {
+        console.log("鼠标弹起");
+
+    });
+    //禁止鼠标右键菜单
+    document.addEventListener("contextmenu",function (e) {
+        e.preventDefault();
+    })
+    //.禁止鼠标选中（selectstart 开始选中）
+    document.addEventListener("selectstrart",function (e) {
+
+        e.preventDefault();
+    })
+
+
+
+</script>
+
+</body>
+</html>

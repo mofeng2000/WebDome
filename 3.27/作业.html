@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src:  url('fonts/icomoon.eot?gtd769');
+            src:  url('fonts/icomoon.eot?gtd769#iefix') format('embedded-opentype'),
+            url('fonts/icomoon.ttf?gtd769') format('truetype'),
+            url('fonts/icomoon.woff?gtd769') format('woff'),
+            url('fonts/icomoon.svg?gtd769#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        li{
+            width: 600px;
+            height: 100px;
+            margin: 20px 0  ;
+        }
+    li:nth-child(-n+5){
+
+        background: blue;
+    }
+
+        li:nth-child(10)::after:nth-child(2){
+    content: '\ea50';
+            font-size: 18px;
+            color:red;
+        }
+
+
+
+</style>
+</head>
+<body>
+<!--/*1.已知一个ul有十个li，使用结构选择器给前五行添加蓝色背景*/-->
+<!--/*2.已知第九行的li中有一个h5和两个p标签，使用结构选择器和伪元素选择器给第十行li的第二个p添加一个右箭头字体图标*/-->
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>
+        <h5>1</h5>
+        <p>2</p>
+        <p>1</p>
+    </li>
+    <li>10</li>
+</ul>
+
+
+</body>
+</html>

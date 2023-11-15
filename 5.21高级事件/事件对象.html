@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="box">
+
+666
+</div>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>u
+    <li>4</li>
+</ul>
+<a href="http://www.baidu.com">百度</a>
+
+<!--// 事件对象-->
+
+<script>
+var box=document.querySelector(".box");
+var ul=document.querySelector("ul");
+//box.onclick=function (e) {
+//   console.log(e);
+//
+//}
+box.addEventListener("click",function (e) {
+    console.dir(e);
+    console.log(e.type);
+    console.log(e.target);//返回触发事件对象
+    
+})
+
+
+
+</script>
+
+
+</body>
+</html>

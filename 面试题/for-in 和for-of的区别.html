@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num=['1','2','3'];
+    let numobj=[{a:'1'},{b:'2'},{c:'3'}];
+    let obj={name:'1',age:18};
+   //for in数组 n可以是数组的下表索引值，num[n]可拿到数组值
+//    for (let n in num){
+//        console.log(num);
+//        console.log(n);//下表索引值
+//        console.log(num[n]);
+//    }
+    //for in数值对象 n可以是数组的全部元素，num[n]可拿到数组值
+//
+//    for (let i in numobj){
+//        console.log(i);
+//        console.log(numobj[i]);
+//        console.log(numobj[i].a);//数组对象的值
+//    }
+    //for in对象 n可以是数组的全部元素，num[n]可拿到数组值
+//    for(let i in obj){
+//        console.log(i);//对象中的建
+//        console.log(obj)//对象的值
+//    }
+
+  for (let n of num) {
+      console.log(num);//数组全部
+      console.log(n);//数组的值
+      console.log(num[n])//数组下标的值num[i]的值
+  }
+</script>
+
+</body>
+</html>

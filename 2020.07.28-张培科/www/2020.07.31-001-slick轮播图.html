@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 如果是pc请删除下面一行 -->
+    <title>2020.07.29-001-图文列表-图文并茂</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="http://x.5811.com.cn/css/cui.css"/>
+    <link rel="stylesheet" href="http://x.5811.com.cn/css/cuirel.css"/>
+    <link rel="stylesheet" href="css/slick.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+    <style>
+        .wp {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        body {
+            /*background: #ccc;*/
+        }
+        a{
+            text-decoration: none;
+        }
+
+        .imgtxt {
+            margin: 0 -10px;
+            padding: 0;
+        }
+
+        .imgtxt .item {
+
+        }
+
+        .imgtxt .slick-arrow {
+            position: absolute;
+            width: 33px;
+            height: 62px;
+            top: 40%;
+            border: 0;
+            font-size: 0;
+            cursor: pointer;
+            background-color: transparent;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 2;
+            outline: none;
+        }
+
+        .imgtxt .slick-prev {
+            left: -70px;
+            width: 70px;
+            height: 70px;
+            background-image: url("images/prev-i.png");
+            opacity: 0.5;
+
+        }
+
+        .imgtxt .slick-next {
+            width: 70px;
+            height: 70px;
+            right: -70px;
+            background-image: url("images/next-i.png");
+            opacity: 0.5;
+        }
+
+        .imgtxt .slick-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 3
+        }
+
+        .imgtxt .slick-dots li {
+            display: inline-block;
+            margin: 0 10px
+        }
+        .imgtxt .slick-dots button {
+            width: 10px;
+            height: 14px;
+            background: none;
+            font-size: 0;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 1px solid #fff;
+        }
+        .imgtxt .slick-dots li.slick-active button {
+            background: #fff
+        }
+        /*.ul-imgtxt .item {*/
+            /*width: 25%;*/
+            /*float: left;*/
+            /*overflow: hidden;*/
+        /*}*/
+
+        .imgtxt .con {
+            display: block;
+            padding: 10px;
+            overflow: hidden;
+        }
+        .imgtxt .pic {
+            position: relative;
+            height: 0;
+            padding-top: 55%;
+            overflow: hidden;
+            outline: none;
+        }
+
+        .imgtxt .pic img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+        }
+
+        .imgtxt .txt {
+            color: #666;
+            background: #f5f5f5;
+            overflow: hidden;
+            padding: 15px;
+            margin-top: -1px;
+        }
+
+        .imgtxt .tit {
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 60px;
+        }
+
+        .imgtxt .desc {
+            line-height: 25px;;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            margin-bottom: 10px;
+        }
+
+        .imgtxt .more {
+            padding-bottom: 40px;
+        }
+        /*鼠标经过*/
+        .imgtxt .item:hover .txt{
+            color: #fff;
+        background: #1e2a5e;
+        }
+        .imgtxt .item:hover .txt .tit{
+            color: #fff;
+        }
+        .imgtxt .item:hover .txt .icon img{
+            filter: brightness(1000);
+        }
+        .imgtxt .item:hover {
+            transform: scale(1.05);
+
+        }
+        .imgtxt .slick-next:hover {
+           opacity: 1;
+        }
+        .imgtxt .slick-prev:hover {
+            opacity: 1;
+        }
+
+        /*媒体查询*/
+        @media only screen and (max-width: 1200px){
+            .imgtxt .slick-prev {
+                left: -50px;
+
+
+            }
+
+            .imgtxt .slick-next {
+                right: -50px;
+
+            }
+        }
+        @media only screen and (max-width: 990px){
+            .imgtxt .slick-prev {
+                left: -40px;
+
+
+            }
+
+            .imgtxt .slick-next {
+                right: -40px;
+            }
+        }
+        @media only screen and (max-width: 789px) {
+            .imgtxt .slick-prev {
+                left: -30px;
+            }
+
+            .imgtxt .slick-next {
+                right: -30px;
+
+            }
+
+        }
+        @media only screen and (max-width: 789px) {
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="wp">
+    <ul class="imgtxt">
+        <li class="item">
+            <a href="#" class="con">
+                <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                <div class="txt">
+                    <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                    <h3 class="tit">数字经济</h3>
+                    <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                    </div>
+                    <div class="more">more+</div>
+                </div>
+            </a></li>
+        <li class="item">
+            <a href="#" class="con">
+                <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                <div class="txt">
+                    <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                    <h3 class="tit">数字经济</h3>
+                    <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                    </div>
+                    <div class="more">more+</div>
+                </div>
+            </a></li>
+        <li class="item">
+            <a href="#" class="con">
+                <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                <div class="txt">
+                    <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                    <h3 class="tit">数字经济</h3>
+                    <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                    </div>
+                    <div class="more">more+</div>
+                </div>
+            </a></li>
+        <li class="item">
+            <a href="#" class="con">
+                <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                <div class="txt">
+                    <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                    <h3 class="tit">数字经济</h3>
+                    <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                    </div>
+                    <div class="more">more+</div>
+                </div>
+            </a></li>
+        <li class="item">
+            <a href="#" class="con">
+                <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                <div class="txt">
+                    <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                    <h3 class="tit">数字经济</h3>
+                    <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                    </div>
+                    <div class="more">more+</div>
+                </div>
+            </a></li>
+        <li class="item">
+            <a href="#" class="con">
+                <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                <div class="txt">
+                    <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                    <h3 class="tit">数字经济</h3>
+                    <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                    </div>
+                    <div class="more">more+</div>
+                </div>
+            </a></li>
+        <li class="item">
+            <a href="#" class="con">
+                <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                <div class="txt">
+                    <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                    <h3 class="tit">数字经济</h3>
+                    <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                    </div>
+                    <div class="more">more+</div>
+                </div>
+            </a></li>
+        <li class="item">
+            <a href="#" class="con">
+                <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                <div class="txt">
+                    <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                    <h3 class="tit">数字经济</h3>
+                    <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                    </div>
+                    <div class="more">more+</div>
+                </div>
+            </a></li>
+    </ul>
+</div>
+<script>
+    $('.imgtxt').slick({
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 4,
+        slidesToScrool: 1,
+        speed: 300,
+        responsive:[
+            {
+            breakpoint:1199,
+            settings:{
+                slidesToShow:3
+
+            }
+        },
+            {
+                breakpoint:989,
+                settings:{
+                    slidesToShow:2
+
+                }},
+            {
+                breakpoint:767,
+                settings:{
+                    slidesToShow:2
+
+                }},
+            {
+                breakpoint:479,
+                settings:{
+                    slidesToShow:1,
+                    arrows:false
+
+                }}
+
+        ]
+    })
+</script>
+</body>
+</html>

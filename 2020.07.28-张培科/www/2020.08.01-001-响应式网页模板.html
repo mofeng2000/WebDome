@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>华东院</title>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 如果是pc请删除下面一行 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!-- 下面是初始化框架必须引入 -->
+    <link rel="stylesheet" href="css/cui.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.countup.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <link href="css/slick.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+</head>
+<style>
+    /**, :after, :before {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*-webkit-box-sizing: border-box;*/
+    /*-moz-box-sizing: border-box;*/
+    /*box-sizing: border-box;*/
+    /*outline: 0 !important;*/
+    /*-webkit-tap-highlight-color: rgba(255, 255, 255, 0);*/
+    /*-webkit-tap-highlight-color: transparent;*/
+    /*-webkit-text-size-adjust: 100%;*/
+    /*-webkit-font-smoothing: antialiased;*/
+    /*font-smoothing: antialiased;*/
+    /*}*/
+
+    .wp {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .g-tit {
+        text-align: center;
+        margin: 2vw 0;
+    }
+
+    .g-tit h3 {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1;
+        color: rgba(29, 41, 92, 0.9);
+        margin-bottom: 10px;
+    }
+
+    .g-tit .desc {
+        color: #888;
+    }
+
+
+    .header-m {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100%;
+        background: rgba(0, 0, 0, .6);
+        z-index: 999;
+        color: #fff;
+        overflow: hidden;
+    }
+    .header-m .ul-nav-m li{
+        margin: 20px 0;
+    }
+    .header-m .ul-nav-m a{
+        padding-left: 20px;
+        font-size: 18px;
+        color: #fff;
+    }
+    .header-m .btn-slide em{
+        font-size: 24px;
+        padding-right: 10px;
+        float: right;
+    }
+    .header-m .ul-nav-m .v1{
+        display: block;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #0d8ddb;
+    }
+    .header-m .ul-nav-m dl{
+
+    }
+    .header-m .ul-nav-m dl,
+    .header-m .btn-slide .icon2{
+        text-align: center;
+        display: none;
+    }
+    .header-m dl dd a{
+
+        text-align: center;
+        display: block;
+    }
+
+    .header-m .soBox-m {
+        display: block;
+        margin: 44px 20px;
+        padding: 10px;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: .3s;
+        background: #1d295c;
+    }
+    .header-m .inp-m,
+    .header-m .sub-m {
+        display: block;
+        border: none;
+        background: none;
+        color: #4a547d;
+    }
+    .header-m  .inp-m {
+        float: left;
+        width: 92%;
+        color: #fff;
+        font-size: 16px;
+        padding: 2px 0;
+        outline: none;
+
+    }
+    .header-m .sub-m{
+        width: 27px;
+        height: 25px;
+        background: url("images/icon-05_03.png")no-repeat;
+
+    }
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        padding: 0 3.38%;
+        background-color: transparent;
+        transition: .3s;
+    }
+
+    .small {
+        background-color: rgba(255, 255, 255, .9);
+    }
+
+    .header.small .logo img {
+        display: inline-block;
+    }
+
+    .header.small .logo a::after {
+        display: none;
+    }
+
+    .header.small .soBox {
+        margin-left: 20px;
+    }
+
+    .header .fixed {
+        border-bottom: 1px solid #e5e5e5
+    }
+
+    .hdr {
+        margin-right: 80px;
+    }
+
+    .logo {
+        position: relative;
+        float: left;
+        width: 110px;
+        line-height: 80px;
+        vertical-align: middle;
+    }
+
+    .logo img {
+        display: none;
+        vertical-align: middle;
+        max-width: 100%;
+        height: auto;
+
+    }
+
+    .logo a {
+
+    }
+
+    .logo a::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url("images/index-logo_03.png") no-repeat;
+        width: 244px;
+        height: 127px;
+        margin-top: 20px;
+    }
+
+    .nav {
+        float: left;
+        margin-top: 13px;
+        text-align: center;
+        position: relative
+    }
+
+    .nav li {
+        float: left;
+        text-align: center;
+        position: relative;
+        margin: 0 10px;
+
+    }
+    .nav li:nth-child(-n+1) p::after {
+        content: "";
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 1px;
+        border-bottom: 2px solid #1d295c;
+    }
+
+    .nav li .v1 {
+        display: block;
+        color: #999;
+        font-size: 12px;
+        vertical-align: middle;
+        text-transform: uppercase;
+        padding: 15px 10px;
+        border-top: 2px solid rgba(0, 0, 0, 0);
+    }
+
+    .nav li.on .v1, .nav li:hover .v1 {
+        background-color: #fff;
+        border-color: transparent;
+        border-top: 2px solid #1d295c;
+    }
+
+    .nav li.on .v1, .nav li:hover .v1 p {
+        color: #1d295c;
+    }
+
+    .nav li.on .v1, .nav li:hover p::after {
+        display: none;
+    }
+
+    .nav li.on p, .nav li:hover p {
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .nav li p {
+        font-size: 16px;
+        color: #333;
+
+    }
+
+    .nav li .sub {
+        display: none;
+        position: absolute;
+        width: 213px;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        z-index: 99;
+    }
+
+    .nav li .sub a {
+        position: relative;
+        display: block;
+        text-align: left;
+        font-size: 14px;
+        color: #333;
+        line-height: 40px;
+        padding-left: 15px;
+    }
+
+    .nav li .sub a:hover {
+        border-bottom: 1px solid #1d295c;
+        color: #fff;
+        background: #1d295c;
+    }
+
+    .header .soBox {
+        position: relative;
+        margin-top: 32px;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: .3s;
+    }
+
+    .header .langage {
+        margin-top: 32px;
+    }
+
+    .header .inp {
+        box-sizing: border-box;
+        border: none;
+        width: 180px;
+        padding-right: 42px;
+        padding-left: 10px;
+        height: 21px;
+        background: #fff;
+        border: 0;
+        outline: none;
+    }
+
+    .header .inp,
+    .header .sub {
+        display: block;
+        border: none;
+    }
+
+    .header .sub {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: #000;
+        color: #fff;
+    }
+
+    .header .langage {
+        margin-left: 10px;
+
+    }
+
+    .header .langage a {
+        float: left;
+        display: block;
+        font-size: 14px;
+    }
+
+    .header .langage .cn,
+    .header .langage .en {
+        padding: 0 5px;
+    }
+
+    .header .langage .cn {
+        background: #000;
+        color: #fff;
+    }
+
+    .header .langage .en {
+        background: #fff;
+        color: #000;
+    }
+
+    .mb2 {
+        display: none;
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: .3s;
+        -ms-transition: .3s;
+        -moz-transition: .3s;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+    }
+
+    .mb2 b {
+        display: block;
+        height: 4px;
+        background-color: #0d6fb8;
+        margin: 4px 0;
+        transition: .3s;
+        -ms-transition: .3s;
+        -moz-transition: .3s;
+        -webkit-transition: .3s;
+        -o-transition: .3s
+    }
+
+    .mb2.open b {
+        display: none;
+        margin: -5px 0 0;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 30px;
+        z-index: 1999;
+    }
+
+    .mb2.open b:first-child {
+        display: block;
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -ms-transform: rotate(45deg)
+    }
+
+    .mb2.open b:last-child {
+        display: block;
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg)
+    }
+
+    @media only screen and (max-width: 1500px) {
+        .header {
+            height: 80px
+        }
+        .logo {
+            line-height: 70px;
+            width: 160px
+        }
+
+        .nav li .v1 {
+            padding-top: 16px
+        }
+    }
+    @media only screen and (max-width: 1199px) {
+        .menuBtn.mb2{
+            display: block;
+            z-index:1000;
+        }
+        .header {
+            height: 50px
+        }
+        .logo a::after {
+            display: none;
+        }
+        .logo img {
+            display: inline-block;
+        }
+
+        .logo {
+            line-height: 50px;
+            width: 130px
+        }
+
+        .logo img {
+            height: 38px;
+
+        }
+        .header .soBox,
+        .header .langage {
+            display: none;
+        }
+        .nav {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+            display: none
+        }
+        .nav li:hover .v1 {
+            background-color: #fff;
+            color: #999
+        }
+
+        .nav li.on .v1 {
+            background-color: #0d6fb8;
+            color: #fff;
+            border-color: transparent
+        }
+
+        .nav li:hover p {
+            color: #333
+        }
+
+        .nav li .v1 {
+            position: relative;
+            height: auto;
+            padding: 10px 0
+        }
+
+        .nav li .v1 i {
+            display: block;
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            right: 30px;
+            top: 15px;
+            background: url(../images/s1.png) center center no-repeat;
+            -o-background-size: 16px 16px;
+            background-size: 16px 16px
+        }
+
+        .nav li.on .v1 i {
+            background-image: url(../images/s2.png)
+        }
+
+        .nav li.on p {
+            color: #fff;
+            font-weight: 700
+        }
+
+        .nav li {
+            float: none;
+            padding-top: 0;
+            margin: 0;
+            width: auto
+        }
+
+        .nav li.on .v1, .nav li:hover .v1 {
+            border: none;
+        }
+
+        .nav li .sub {
+            width: 100%;
+            text-align: center;
+            background-color: #eee
+        }
+
+        .nav li .sub a {
+            text-align: center;
+            line-height: 30px
+        }
+
+    }
+
+    @media only screen and (max-width: 789px) {
+        /*.header-mb1{*/
+           /*display: none;*/
+       /*}*/
+        /*.header-mb2{*/
+            /*display: block;*/
+        /*}*/
+    }
+
+    /*banner*/
+
+    .banner-box {
+        position: relative;
+    }
+
+    .banner-box .item a {
+        display: block;
+        height: 0;
+        padding-top: 47%;
+        background-size: cover;
+        max-width: 100%;
+    }
+
+    .banner-box .banner-num {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 20px 0;
+        background: rgba(29, 41, 92, 0.8);
+        color: #fff;
+        text-align: center;
+    }
+
+    .banner-box .banner-num li {
+        width: 20%;
+        float: left;
+    }
+
+    .banner-box .counter {
+        font-size: 5.64vw;
+        line-height: 1;
+    }
+
+    .banner-box .item {
+        width: 100%;
+        position: relative;
+    }
+
+    .banner-box .slick-arrow {
+        position: absolute;
+        width: 33px;
+        height: 62px;
+        top: 50%;
+        border: 0;
+        font-size: 0;
+        cursor: pointer;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 2;
+        outline: none;
+    }
+
+    .banner-box .slick-prev {
+        left: 10%;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23fff'%2F%3E%3C%2Fsvg%3E")
+    }
+
+    .banner-box .slick-next {
+        right: 10%;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23fff'%2F%3E%3C%2Fsvg%3E")
+    }
+
+    .banner-box .slick-dots {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 3
+    }
+
+    .banner-box .slick-dots li {
+        display: inline-block;
+        margin: 0 10px
+    }
+
+    .banner-box .slick-dots button {
+        width: 10px;
+        height: 14px;
+        background: none;
+        font-size: 0;
+        cursor: pointer;
+        border: none;
+        border-radius: 10px;
+        border: 1px solid #fff;
+    }
+
+    .banner-box .slick-dots li.slick-active button {
+        background: #fff
+    }
+
+    /*媒体查询*/
+    /*@media only screen and (max-width: 1440px) {*/
+    /*.ul-num .tit {*/
+    /*font-size: 50px;*/
+    /*}*/
+    /*}*/
+
+    @media only screen and (max-width: 1600px) {
+        .banner-box .slick-arrow {
+            width: 20px;
+            height: 40px;
+        }
+    }
+
+    /*轮播图*/
+
+    .imgtxt {
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .imgtxt .item {
+
+    }
+
+    .imgtxt .slick-arrow {
+        position: absolute;
+        width: 33px;
+        height: 62px;
+        top: 40%;
+        border: 0;
+        font-size: 0;
+        cursor: pointer;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 2;
+        outline: none;
+    }
+
+    .imgtxt .slick-prev {
+        left: -70px;
+        width: 70px;
+        height: 70px;
+        background-image: url("images/prev-i.png");
+        opacity: 0.5;
+
+    }
+
+    .imgtxt .slick-next {
+        width: 70px;
+        height: 70px;
+        right: -70px;
+        background-image: url("images/next-i.png");
+        opacity: 0.5;
+    }
+
+    .imgtxt .slick-dots {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 3
+    }
+
+    .imgtxt .slick-dots li {
+        display: inline-block;
+        margin: 0 10px
+    }
+
+    .imgtxt .slick-dots button {
+        width: 10px;
+        height: 14px;
+        background: none;
+        font-size: 0;
+        cursor: pointer;
+        border-radius: 10px;
+        border: 1px solid #fff;
+    }
+
+    .imgtxt .slick-dots li.slick-active button {
+        background: #fff
+    }
+
+    .imgtxt .con {
+        display: block;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    .imgtxt .pic {
+        position: relative;
+        height: 0;
+        padding-top: 55%;
+        overflow: hidden;
+        outline: none;
+    }
+
+    .imgtxt .pic img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+    }
+
+    .imgtxt .txt {
+        color: #666;
+        background: #f5f5f5;
+        overflow: hidden;
+        padding: 15px;
+        margin-top: -1px;
+    }
+
+    .imgtxt .tit {
+        color: #333;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 60px;
+    }
+
+    .imgtxt .desc {
+        line-height: 25px;;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        margin-bottom: 10px;
+    }
+
+    .imgtxt .more {
+        padding-bottom: 40px;
+    }
+
+    /*鼠标经过*/
+    .imgtxt .item:hover .txt {
+        color: #fff;
+        background: #1e2a5e;
+    }
+
+    .imgtxt .item:hover .txt .tit {
+        color: #fff;
+    }
+
+    .imgtxt .item:hover .txt .icon img {
+        filter: brightness(1000);
+    }
+
+    .imgtxt .item:hover {
+        transform: scale(1.05);
+
+    }
+
+    .imgtxt .slick-next:hover {
+        opacity: 1;
+    }
+
+    .imgtxt .slick-prev:hover {
+        opacity: 1;
+    }
+
+    /*媒体查询*/
+    @media only screen and (max-width: 1200px) {
+        .imgtxt .slick-prev {
+            left: -50px;
+        }
+
+        .imgtxt .slick-next {
+            right: -50px;
+        }
+    }
+
+    @media only screen and (max-width: 990px) {
+        .imgtxt .slick-prev {
+            left: -40px;
+
+        }
+
+        .imgtxt .slick-next {
+            right: -40px;
+        }
+    }
+
+    @media only screen and (max-width: 789px) {
+        .imgtxt .slick-prev {
+            left: -30px;
+        }
+
+        .imgtxt .slick-next {
+            right: -30px;
+
+        }
+    }
+
+    @media only screen and (max-width: 789px) {
+
+    }
+
+    /*<!--图文列表-->*/
+    .ul-list1 {
+        overflow: hidden;
+    }
+
+    .ul-list1 li {
+        width: 33.333%;
+        float: left;
+        overflow: hidden;
+    }
+
+    .ul-list1 .con {
+        position: relative;
+        margin: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .ul-list1 .pic {
+        position: relative;
+        height: 0;
+        padding-top: 55%;
+        overflow: hidden;
+        /*background: #000;*/
+    }
+
+    .ul-list1 .pic img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .ul-list1 .txt {
+        font-size: 12px;
+        position: absolute;
+        top: 45%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: #fff;
+        padding: 10px;
+        background: rgba(0, 0, 0, 1);
+        opacity: 0.6;
+        overflow: hidden;
+    }
+
+    .ul-list1 .tit {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+
+    .ul-list1 .tit a {
+        color: #fff;
+    }
+
+    .ul-list1 .desc {
+        line-height: 20px;;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: 10px;
+    }
+
+    .ul-list1 .more {
+        text-align: right;
+        margin-left: 20px;
+    }
+
+    .ul-list1 .more a {
+        color: #fff;
+        font-size: 14px;
+        padding: 5px 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    /*鼠标经过*/
+    .ul-list1 .pic img,
+    .ul-list1 .pic,
+    .ul-list1 .tit a {
+        transition: .3s;
+    }
+
+    .ul-list1 .con:hover .pic img {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .ul-list1 .con:hover .txt {
+        opacity: 1;
+        background: #b90b14;
+    }
+
+    /*媒体查询*/
+    @media only screen and (max-width: 1440px) {
+        .ul-list1 .tit {
+            font-size: 16px;
+        }
+
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .ul-list1 .txt {
+            padding: 5px;
+            line-height: 10px;
+        }
+
+    }
+
+    @media only screen and (max-width: 990px) {
+        .ul-list1 li {
+            width: 50%;
+        }
+
+        .ul-list1 .txt {
+            font-size: 12px;
+        }
+    }
+
+    @media only screen and (max-width: 789px) {
+        .ul-list1 li {
+            width: 100%;
+            float: none;
+            margin-bottom: 10px;
+        }
+
+        .ul-list1 .txt {
+
+            top: 60%;
+
+        }
+
+        .ul-list1 .tit {
+            font-size: 20px;
+        }
+
+        .ul-list1 .txt {
+            font-size: 16px;
+            line-height: 30px;
+        }
+
+        .ul-list1 .more {
+            text-align: right;
+            height: 30px;
+        }
+
+        .ul-list1 .more a {
+            display: inline-block;
+            margin-right: 20px;
+            width: 66px;
+            height: 30px;
+            font-size: 16px;
+            line-height: 30px;
+        }
+    }
+
+    /*row-a3*/
+
+    a:hover {
+        color: #0a6aa1;
+    }
+
+    .ul-list2 {
+        margin: 0 -10px;
+        display: flex;
+    }
+
+    .ul-list2 li {
+        flex: 50%;
+    }
+
+    .ul-list2 .con {
+        margin: 10px;
+        padding: 20px;
+        overflow: hidden;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        border: 1px solid #ccc;
+    }
+
+    .ul-list2 .pic {
+        position: relative;
+        height: 0;
+        padding-top: 27%;
+        overflow: hidden;
+    }
+
+    .ul-list2 .pic img {
+        vertical-align: bottom;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-height: 100%;
+
+    }
+
+    .ul-list2 .txt {
+        font-size: 14px;
+        color: #333;
+        padding: 10px;
+        overflow: hidden;
+        line-height: 25px;
+    }
+
+    .ul-list2 .tit {
+        font-weight: 400;
+        line-height: 25px;
+        margin-bottom: 10px;
+    }
+
+    .ul-list2 .tit a {
+        font-size: 20px;
+        color: #333;
+    }
+
+    .ul-list2 .desc {
+        line-height: 30px;;
+
+    }
+
+    .ul-list2 .desc a {
+        color: #666;
+        display: inline-block;
+        width: 60%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .ul-list2 .date {
+        float: right;
+
+    }
+
+    /*鼠标经过*/
+    .ul-list2 .pic img,
+    .ul-list2 .tit a {
+        transition: .3s;
+    }
+
+    .ul-list2 .con:hover .pic img {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .ul-list2 .con:hover {
+        border: 1px solid #0d8ddb;
+    }
+
+    .ul-list2 .con:hover .icon .icon-1::after {
+        background: url("images/ico4.png") no-repeat 0 8px;
+    }
+
+    .ul-list2 .tit:hover > a {
+        color: #0d8ddb;
+    }
+
+    /*媒体查询*/
+    @media only screen and (max-width: 1440px) {
+
+    }
+
+    @media only screen and (max-width: 1200px) {
+
+        .ul-list2 {
+            margin: 0 auto;
+        }
+
+        .ul-list2 .desc {
+            font-size: 14px;
+            line-height: 25px;
+
+        }
+    }
+
+    @media only screen and (max-width: 990px) {
+        .ul-list2 {
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+
+        .ul-list2 li {
+            flex: 100%;
+            margin: 0 auto;
+        }
+
+        .ul-list2 .txt {
+            text-align: center;
+        }
+    }
+
+    @media only screen and (max-width: 789px) {
+        .ul-list2 {
+            flex-wrap: wrap;
+        }
+
+        .ul-list2 li {
+            flex: 100%;
+
+            margin-bottom: 10px;
+        }
+
+        .ul-list2 .tit {
+            font-size: 28px;
+        }
+
+        .ul-list2 .txt {
+            font-size: 16px;
+            line-height: 30px;
+        }
+    }
+
+    /*row-a4*/
+
+    .ul-list3 {
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+
+    .ul-list3 li {
+        width: 33.33%;
+        float: left;
+    }
+
+    .ul-list3 .con:nth-child(1) {
+        display: block;
+        width: 100%;
+        background: url("images/pic-ic1.jpg");
+        padding: 30px 20px;
+        background-size: 100% 100%;
+    }
+
+    .ul-list3 li:nth-child(2) .con {
+        background-image: url("images/pic-ic2.jpg");
+    }
+
+    .ul-list3 li:nth-child(3) .con {
+        background-image: url("images/pic-ic3.jpg");
+    }
+
+    .ul-list3 .tit {
+        font-size: 2.5vw;
+        color: #fff;
+    }
+
+    .ul-list3 .more {
+        color: #fff;
+        display: block;
+        font-size: 14px;
+        margin-bottom: 50px;
+    }
+
+    @media only screen and (max-width: 990px) {
+        .ul-list3 li {
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .ul-list3 li:nth-child(3) .con {
+            width: 100%;
+        }
+    }
+
+    /*<!--底部导航-->*/
+    .footer {
+        padding-top: 50px;
+        background: #1d3348;
+        color: #7f92a3;
+    }
+
+    .ft-nav {
+        font-size: 14px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #999;
+    }
+
+    .ft-nav .fd-links {
+        width: 60%;
+    }
+
+    .fd-links .link-a1 {
+
+    }
+
+    .fd-links .link-a1 a {
+        display: inline-block;
+        color: #999;
+        line-height: 30px;
+        margin: 0 20px;
+    }
+
+    .fd-links .link-a1 .tit {
+        color: #fff;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 400;
+        margin-right: 20px;
+    }
+
+    .footer .link a {
+        color: #999;
+        display: block;
+        font-size: 14px;
+        line-height: 30px;
+    }
+
+    .footer .fd-qr {
+        text-align: center;
+        width: 40%;
+    }
+
+    .footer .fd-qr-a1 {
+
+        padding: 10px;
+    }
+
+    .footer .fd-qr-a1 img {
+
+    }
+
+    .fd-qr .fd-qr-desc {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .fd-qr .fd-qr-a2 {
+        display: inline-block;
+        margin-left: 10px;
+        padding: 5px 10px;
+        color: #fff;
+        background: #1a83f6;
+    }
+
+    .footer .link-a1 a:hover {
+        color: #fff;
+    }
+
+    @media only screen and (max-width: 929px) {
+        .footer .fd-links {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .footer .link-a1 {
+            width: 100%;
+            text-align: center;
+            float: left;
+            margin-bottom: 10px;
+        }
+
+        .footer .link-a1 .tit {
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .footer .link-a1 a {
+            text-align: center;
+            display: inline-block;
+        }
+
+        .footer .fd-qr {
+            width: 100%;
+            display: block;
+            text-align: center;
+            float: none;
+            padding: 10px;
+            overflow: hidden;
+
+        }
+
+        .footer .fd-qr .fd-qr-a1 {
+            display: block;
+        }
+
+        .footer .fd-qr .fd-qr-a2 {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
+
+</style>
+<body>
+<!--头部-->
+
+<div class="header">
+    <span class="menuBtn mb2"  style="display: none"></span>
+    <div class="logo">
+        <a href="#"><img src="images/index-logo_03.png" alt=""/></a>
+    </div>
+    <div class="hdr r">
+        <ul class="nav ">
+            <li class="">
+                <a href="#" class="v1">
+                    <p>首页</p>
+                </a>
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p> 业务体系</p>
+                    <i></i>
+                </a>
+                <div class="sub">
+                    <a href="">公司简介</a>
+                    <a href="">企业文化</a>
+                    <a href="">荣誉资质</a>
+                    <a href="">新闻动态</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p>品牌中心</p>
+                    <i></i>
+                </a>
+                <div class="sub">
+                    <a href="">动物繁殖</a>
+                    <a href="">疾病防控</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p>业务服务</p>
+                    <i></i>
+                </a>
+                <div class="sub">
+                    <a href="">细胞株筛选平台</a>
+                    <a href="">药效评价平台</a>
+                    <a href="">中试生产平台</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p>成功案例</p>
+                    <i></i>
+                </a>
+                <div class="sub">
+                    <a href="">商务联系</a>
+                    <a href="">商业伙伴</a>
+                    <a href="">学术合作</a>
+                </div>
+            </li>
+        </ul>
+        <div class="soBox l">
+            <form action>
+                <input type="text" class="inp">
+                <button class="sub">搜索</button>
+            </form>
+        </div>
+        <div class="langage r">
+            <a href="#" class="cn">中</a>
+            <a href="#" class="en">EN</a>
+        </div>
+
+
+    </div>
+</div>
+<span class="menuBtn mb2 "></span>
+<div class="header-m">
+    <div class="inner">
+
+        <div class="soBox-m">
+            <form action>
+                <input type="text" class="inp-m" placeholder="输入关键字搜索">
+                <button class="sub-m"></button>
+            </form>
+        </div>
+        <ul class="ul-nav-m">
+            <li>
+                <a href="#">首页</a>
+            </li>
+            <li>
+                <span class="btn-slide">
+                    <em class="icon1 iconfont"><</em>
+                    <em class="icon2 iconfont">></em>
+                </span>
+                <a href="#" class="v1">业务体系</a>
+                <dl>
+                    <dd>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <span class="btn-slide">
+                    <em class="icon1 iconfont"><</em>
+                    <em class="icon2 iconfont">></em>
+                </span>
+                <a href="#" class="v1">业务体系</a>
+                <dl>
+                    <dd>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <span class="btn-slide">
+                    <em class="icon1 iconfont"><</em>
+                    <em class="icon2 iconfont">></em>
+                </span>
+                <a href="#" class="v1">业务体系</a>
+                <dl>
+                    <dd>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <span class="btn-slide">
+                    <em class="icon1 iconfont"><</em>
+                    <em class="icon2 iconfont">></em>
+                </span>
+                <a href="#" class="v1">业务体系</a>
+                <dl>
+                    <dd>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <span class="btn-slide">
+                    <em class="icon1 iconfont"><</em>
+                    <em class="icon2 iconfont">></em>
+                </span>
+                <a href="#" class="v1">业务体系</a>
+                <dl>
+                    <dd>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <span class="btn-slide">
+                    <em class="icon1 iconfont"><</em>
+                    <em class="icon2 iconfont">></em>
+                </span>
+                <a href="#" class="v1">业务体系</a>
+                <dl>
+                    <dd>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                        <a href="#" class="v2">工业互联网</a>
+                    </dd>
+                </dl>
+            </li>
+
+        </ul>
+
+    </div>
+</div>
+<!--banner-->
+<div class="banner-box">
+    <div class="banner">
+        <div class="item"><a href="#" style="background-image:url('images/banner1.jpg')"> </a></div>
+        <div class="item"><a href="#" style="background-image:url('images/banner2.jpg')"> </a></div>
+        <div class="item"><a href="#" style="background-image:url('images/banner3.jpg')"> </a></div>
+    </div>
+    <div class="banner-num">
+        <div class="wp">
+            <ul class="ul-num">
+                <li>
+                    <div class="num">
+                        <em class="counter ">108</em>
+                        <span>个</span>
+                        <p class="desc">重点课题</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="num">
+                        <em class="counter">108</em>
+                        <span>个</span>
+                        <p class="desc">重点课题</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="num">
+                        <em class="counter">108</em>
+                        <span>个</span>
+                        <p class="desc">重点课题</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="num">
+                        <em class="counter">108</em>
+                        <span>个</span>
+                        <p class="desc">重点课题</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="num">
+                        <em class="counter">108</em>
+                        <span>个</span>
+                        <p class="desc">重点课题</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--轮播图-->
+<div class="row-a1">
+    <div class="wp">
+        <div class="g-tit wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+            <h3>业务体系</h3>
+            <div class="desc">
+                在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互
+            </div>
+        </div>
+        <ul class="imgtxt">
+            <li class="item wow fadeInUp" style="animation-duration:1s ;animation-delay:0.4s">
+                <a href="#" class="con">
+                    <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                    <div class="txt">
+                        <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                        <h3 class="tit">数字经济</h3>
+                        <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                            数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                            数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        </div>
+                        <div class="more">more+</div>
+                    </div>
+                </a></li>
+            <li class="item">
+                <a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.5s">
+                    <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                    <div class="txt">
+                        <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                        <h3 class="tit">数字经济</h3>
+                        <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                            数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                            数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        </div>
+                        <div class="more">more+</div>
+                    </div>
+                </a></li>
+            <li class="item wow fadeInUp" style="animation-duration:1s ;animation-delay:0.6s">
+                <a href="#" class="con">
+                    <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                    <div class="txt">
+                        <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                        <h3 class="tit">数字经济</h3>
+                        <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                            数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                            数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        </div>
+                        <div class="more">more+</div>
+                    </div>
+                </a></li>
+            <li class="item wow fadeInUp" style="animation-duration:1s ;animation-delay:0.7s">
+                <a href="#" class="con">
+                    <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                    <div class="txt">
+                        <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                        <h3 class="tit">数字经济</h3>
+                        <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                            数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                            数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        </div>
+                        <div class="more">more+</div>
+                    </div>
+                </a></li>
+            <li class="item wow fadeInUp" style="animation-duration:1s ;animation-delay:0.8s">
+                <a href="#" class="con">
+                    <div class="pic"><img src="images/pic-a1.jpg" alt=""></div>
+                    <div class="txt">
+                        <div class="icon"><img src=images/pic-a8.png alt=""></div>
+                        <h3 class="tit">数字经济</h3>
+                        <div class="desc">数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                            数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                            数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G数字经济研究聚集5G
+                        </div>
+                        <div class="more">more+</div>
+                    </div>
+                </a></li>
+        </ul>
+    </div>
+</div>
+<!--图文列表-->
+<div class="row-a2">
+    <div class="wp">
+        <div class="g-tit wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+            <h3>业务体系</h3>
+            <div class="desc">
+                在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互
+            </div>
+        </div>
+        <ul class="ul-list1">
+            <li>
+                <div class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.4s">
+
+                    <div class="pic"><a href="#"><img src="images/imgtxt3.jpg" alt=""></a></div>
+                    <div class="txt">
+                        <h3 class="tit"><a href="#">喷射器及真空系统的设计方面量</a></h3>
+                        <div class="desc">设计方面的量身定做是我们的设计理念，精确设计85155</div>
+                        <div class="more"><a href="#">了解更多</a></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="con  wow fadeInUp" style="animation-duration:1s ;animation-delay:0.5s">
+                    <div class="pic"><a href="#"><img src="images/imgtxt3.jpg" alt=""></a></div>
+                    <div class="txt">
+                        <h3 class="tit"><a href="#">喷射器及真空系统的设计方面量</a></h3>
+                        <div class="desc">设计方面的量身定做是我们的设计理念，精确设计66666.</div>
+                        <div class="more"><a href="#">了解更多</a></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="con  wow fadeInUp" style="animation-duration:1s ;animation-delay:0.6s">
+                    <div class="pic"><a href="#"><img src="images/imgtxt3.jpg" alt=""></a></div>
+                    <div class="txt">
+                        <h3 class="tit"><a href="#">喷射器及真空系统的设计方面量</a></h3>
+                        <div class="desc">设计方面的量身定做是我们的设计理念，精确设计打士大夫但是</div>
+                        <div class="more"><a href="#">了解更多</a></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row-a3">
+
+    <div class="wp">
+        <div class="g-tit wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+            <h3>业务体系</h3>
+            <div class="desc">
+                在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互
+            </div>
+        </div>
+        <ul class="ul-list2">
+            <li>
+                <div class="con  wow fadeInUp" style="animation-duration:1s ;animation-delay:0.4s">
+                    <h3 class="tit"><a href="#">新闻</a></h3>
+                    <div class="pic"><a href="#"><img src="images/bg-it2_08.jpg" alt=""></a></div>
+                    <div class="txt">
+                        <div class="desc"><a href="#">关于泰尔(深圳)检测认证服务有限公司涉嫌侵权的声明 </a><span class="date">07-25</span>
+                        </div>
+                        <div class="desc"><a href="#">关于泰尔(深圳)检测认证服务有限公司涉嫌侵权的声明 </a><span class="date">07-25</span>
+                        </div>
+                        <div class="desc"><a href="#">关于泰尔(深圳)检测认证服务有限公司涉嫌侵权的声明 </a><span class="date">07-25</span>
+                        </div>
+                        <div class="desc"><a href="#">关于泰尔(深圳)检测认证服务有限公司涉嫌侵权的声明 </a><span class="date">07-25</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="con  wow fadeInUp" style="animation-duration:1s ;animation-delay:0.5s">
+                    <h3 class="tit"><a href="#">品牌活动</a></h3>
+                    <div class="pic"><a href="#"><img src="images/bg-it2_11.png" alt=""></a></div>
+                    <div class="txt">
+                        <div class="desc"><a href="#">关于泰尔(深圳)检测认证服务有限公司涉嫌侵权的声明 </a><span class="date">07-25</span>
+                        </div>
+                        <div class="desc"><a href="#">关于泰尔(深圳)检测认证服务有限公司涉嫌侵权的声明 </a><span class="date">07-25</span>
+                        </div>
+                        <div class="desc"><a href="#">关于泰尔(深圳)检测认证服务有限公司涉嫌侵权的声明 </a><span class="date">07-25</span>
+                        </div>
+                        <div class="desc"><a href="#">关于泰尔(深圳)检测认证服务有限公司涉嫌侵权的声明 </a><span class="date">07-25</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row-a4">
+
+    <div class="wp">
+        <div class="g-tit wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+            <h3 class="tit">业务体系</h3>
+            <div class="desc">
+                在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互联网在工业互
+            </div>
+        </div>
+        <ul class="ul-list3">
+            <li><a href="#" class="con  wow fadeInUp" style="animation-duration:1s ;animation-delay:0.4s">
+                <h3 class="tit">新闻</h3>
+                <span class="more">查看详情></span>
+            </a>
+            </li>
+            <li><a href="#" class="con  wow fadeInUp" style="animation-duration:1s ;animation-delay:0.4s">
+                <h3 class="tit">新闻</h3>
+                <span class="more">查看详情></span>
+            </a>
+            </li>
+            <li><a href="#" class="con  wow fadeInUp" style="animation-duration:1s ;animation-delay:0.4s">
+                <h3 class="tit">新闻</h3>
+                <span class="more">查看详情></span>
+            </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--底部导航-->
+<div class="footer">
+    <div class="wp">
+        <div class="ft-nav fix">
+            <div class="fd-links l ">
+                <div class="link-a1 ">
+                    <h3 class="tit">友情链接</h3>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                </div>
+                <div class="link-a1 ">
+                    <h3 class="tit">挂靠单位</h3>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+
+                </div>
+                <div class="link-a1">
+                    <h3 class="tit">政府机构</h3>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+
+                </div>
+            </div>
+            <div class="fd-qr r">
+                <div class="fd-qr-a1 "><img src="images/img3-01.jpg" alt="">
+                    <p class="fd-qr-desc">扫一扫关注微信</p>
+                </div>
+                <div class="fd-qr-a2 ">立即查询</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 手机导航
+    $('.mb2').append('<b></b><b></b><b></b>');
+    $('.mb2').click(function (event) {
+       $(this).toggleClass('open');
+        $('.header-m').stop().slideToggle();
+    });
+    var _winw = $(window).width();
+
+    if (_winw > 959) {
+        $('.nav li').hover(function () {
+            $(this).find('.sub').stop().slideDown();
+//            if ($(this).find('.sub').length) {
+//                $(this).addClass('ok');
+//                $('.header').addClass('on');
+//            } else {
+//                $('.header').removeClass('on');
+//            }
+        }, function () {
+            $(this).removeClass('ok');
+            $(this).find('.sub').stop().slideUp();
+        });
+//        $('.nav').mouseleave(function (event) {
+//            if ($('.header').hasClass('on')) {
+//                $('.header').removeClass('on');
+//            }
+//        });
+    }
+    if (_winw > 959) {
+        $('.ul-nav-m li').hover(function () {
+            $(this).children('dl').stop().slideDown()
+                //.parents().siblings().children('dl').stop().slideUp();
+        }, function () {
+            $(this).removeClass('ok');
+            $(this).children('dl').stop().slideUp();
+        });
+        $('.nav li').mouseleave(function (event) {
+            if ($('.header').hasClass('on')) {
+                $('.header').removeClass('on');
+            }
+        });
+    } else {
+        $('.nav .v1').click(function () {
+            if ($(this).siblings('.sub').length) {
+                $(this).parents('li').siblings('li').find('.sub').stop().slideUp();
+                $(this).parents('li').siblings('li').removeClass('on');
+                $(this).parents('li').toggleClass('on');
+                $(this).siblings('.sub').stop().slideToggle();
+                return false;
+            }
+        });
+    }
+
+
+</script>
+<script>
+    $('.banner').slick({
+        dots: false,
+        arrows: true,
+        autoplay: true,
+        slidesToShow: 1,
+        autoplaySpeed: 3000
+    });
+</script>
+<script>
+    $('.imgtxt').slick({
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 4,
+        slidesToScrool: 1,
+        speed: 300,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 3
+
+                }
+            },
+            {
+                breakpoint: 989,
+                settings: {
+                    slidesToShow: 2
+
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2
+
+                }
+            },
+            {
+                breakpoint: 479,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false
+
+                }
+            }
+
+        ]
+    })
+</script>
+<script>
+    $('.counter').countUp();
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 0,
+        mobile: false,
+        live: true
+    });
+    if (!(/msie[6|7|8|9]/i.test(navigation.userAgent))) {
+        wow.init();
+    }
+</script>
+<script>
+    $(function () {
+        var _winw = $(window).width();
+        if (_winw < 1200) {
+            $('.header').removeClass('small');
+        }
+        else {
+            $(window).on('scroll', function () {
+                if ($(document).scrollTop() > 0) {
+                    $('.header').addClass('small');
+                }
+                else {
+                    $('.header').removeClass('small');
+                }
+            })
+        }
+    })
+
+
+</script>
+</body>
+</html>

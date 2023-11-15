@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<div class="box">
+    <input type="button" id="but" value="时间" style="background: #cdcdcd">
+</div>
+
+<script>
+    /*给定一个字符串,如: "aadfgghjkkfsssss3444343” , 问题如下:*/
+    var str = 'aadfgghjkkfsssss3444343';
+    /*1、字符串的长度*/
+    console.log(str.length);
+    /*2、取出指定位置的字符,如: 0,3,5,9等*/
+    console.log(str.charAt(0));
+    console.log(str.charAt(3));
+    console.log(str.charAt(5));
+    console.log(str.charAt(9));
+
+    /*3、查找指定字符是否在以上字符串中存在，如:i,c , b等*/
+    console.log(str.indexOf('i'));
+    console.log(str.indexOf('c'));
+    console.log(str.indexOf('b'));
+    /*4、替换指定的字符,如: g替换为22,ss替换为b等操作方法*/
+    console.log(str.replace('g', '22'));
+    console.log(str.replace('ss', 'b'));
+
+    /*5、截取指定开始位置到结束位置的字符串,如:取得1-5的字符串*/
+    console.log(str.slice(0, 5));
+    /*6、找出以上字符串中出现次数最多的字符和出现的次数*/
+
+    var obj = {};//定义对象存储str字符串
+    var str2 = 'aadfgghjkkfsssss3444343';
+    var num = 0;//存储最大次数
+    //循环存储str 到str2
+    for (var i = 0; i < str2.length; i++) {
+        var str1 = str2.charAt(i);//循环存储str 到str2
+        if (obj[str1])//判断obj 里是否str1的字符
+        {
+            obj[str1]++;//有就值加一
+        }
+        else {
+            obj[str1] = 1;//没有就添加一个，赋值为1
+        }
+    }
+    var zifu = '';//存储最多的字符
+    for (var j in obj)//遍历对象
+    {
+        if (num < obj[j])//判断值的最大一个
+        {
+            num = obj[j];//赋值最大值
+            zifu = j;//赋值键
+
+        }
+    }
+    console.log("出现次数最多的字符" + j + "和出现的次数" + num);
+
+
+    //        2 写出值传递和引用传递的案例，并分析其执行结果的原因
+    //函数的形参也可以看做是一个变量，当我们把一个值类型变量作为参数传给函数的形参时，
+    // 其实是把变量在栈 空间里的值复制了一份给形参，那么在方法内部对形参做任何修改，都不会影响到的外部变量。
+    function fn(a) {
+        a++;
+        console.log(a);//11 传入的形参加1
+    }
+
+    var x = 10;
+    fn(x);
+    console.log(x);//10 值仍为实参，不会经过方法，改变数值，只是在内存地址里复制一份
+    //函数的形参也可以看做是一个变量，当我们把引用类型变量传给形参时，
+    // 其实是把变量在栈空间里保存的堆地 址复制给了形参，形参和实参其实保存的是同一个堆地址，所以操作的是同一个对象。
+
+    function Person(name) //构造函数 ：是一种特殊的函数，主要用来初始化对象，即为对象成员变量赋初始值，
+    // 它总与new 运算符一起 使用。我们可以把对象中一些公共的属性和方法抽取出来，然后封装到这个函数里面。
+    //构造函数对象
+
+    // 创建构造函数对象
+    {
+        this.name = name;//给name赋值
+    }
+
+    function f1(x) { // x = p
+        console.log(x.name); // 2. 这个输出什么 ? 刘德华 第一次传入的名字对象是刘德华，
+        x.name = "张学友";
+        console.log(x.name); // 3. 这个输出什么 ? 张学友 x.name被赋值了，会改变的
+    }
+
+    var p = new Person("刘德华");
+    console.log(p.name); // 1. 这个输出什么 ? 刘德华 会直接进入对象赋值给name
+    f1(p);
+    console.log(p.name); // 4. 这个输出什么 ? 张学友 在执行了方法以后，n.name=p.name ,被赋值为张学友
+
+    //        3 写一个案例，要求使用事件注册的方式，点击按钮，在网页中显示当前时间，格式如：2020年5月14日星期四 08时37分15秒
+    var btn = document.getElementById('but');//① 获取事件源（按钮
+    btn.onclick = function () //② 注册事件（绑定事件），使用 onclick
+    {
+        var date = new Date("2020-5-14 08:37:15");
+        var y = date.getFullYear();//获取当年
+        var M = date.getMonth() + 1;//获取当月，由于月份是由0开始的，所以要加一
+        var d = date.getDate();//获取当日,
+        var x = date.getDay();//获取当前星期,由于日期是数字，所以要通过数组来获取
+        var arr = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        var h = date.getHours();//获取当前小时
+        var m = date.getMinutes();//获取当前分钟
+        var s = date.getSeconds();//获取当前秒
+        h = h < 10 ? "0" + h : h;
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+        btn.value = y + "年" + M + "月" + d + "日 " + h + ":" + m + ":" + s + "  " + arr[x];//③ 编写事件处理程序，写一个函数替换value
+//        btn.innerHTML=y+"年"+M+"月"+d+"日 "+h+":"+m+":"+s+"  "+arr[x];
+//        btn.innerText=y+"年"+M+"月"+d+"日 "+h+":"+m+":"+s+"  "+arr[x];
+//
+    }
+
+
+</script>
+</body>
+</html>

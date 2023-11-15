@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <STYLE>
+        img{
+            width: 300px;
+        }
+    </STYLE>
+</head>
+<body>
+<button id="btn1">按钮1</button>
+<button id="btn2">按钮2</button>
+<img src="" alt="" title="刘德华">
+
+<script>
+    var btn1=document.getElementById("btn1");
+    var btn2=document.getElementById("btn2");
+    var img=document.querySelector("img");
+    btn1.onclick=function () {
+        img.src="img素材/ldh.jpg";
+
+    };
+    btn2.onclick=function () {
+        img.src="img素材/zxy.jpg";
+        img.title="张学友";
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuerymin.js"></script>
+</head>
+<body>
+<button>1</button>
+<button>1</button>
+<button>1</button>
+<button>1</button>
+<button>1</button>
+<button>1</button>
+<script>
+    $(function () {
+        $("button").click(function () {
+            $(this).css("background","red").siblings().css("background","")//链式写法
+        })
+    })
+</script>
+</body>
+</html>

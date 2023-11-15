@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <form action="">
+        <input type="text" v-model="message" v-on:keyup.d="press" value="name">
+        <p>{{message}}</p>
+    </form>
+
+</div>
+<script src="../vue.min.js"></script>
+<script>
+    Vue.config.keyCodes={
+        d:68,
+        a:65
+    };
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: "123"
+            },
+            methods:{
+                press:function (e) {
+                    console.log(e.keyCode);
+                    alert(123)
+                }
+            }
+        }
+    )
+</script>
+</body>
+</html>

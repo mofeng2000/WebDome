@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+    <script src="jQuerymin.js"></script>
+</head>
+<body>
+<div>666</div>
+<input type="text">
+<script>
+    $(function () {
+//        $('div').on('click',function () {
+//            alert("666")
+//        });
+//
+//        $('div').click();//第一种简写形式
+//        $('div').trigger('type');//第二种自动触发模式
+        $('input').triggerHandler('click');//triggerHandler模式不会触发元素的默认行为，这是和前面两种的
+
+
+    })
+
+
+</script>
+</body>
+</html>

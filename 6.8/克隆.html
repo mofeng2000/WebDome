@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jQuerymin.js"></script>
+<script>
+    $(function () {
+        var obj={
+            id:2,
+            name:"小明",
+            age:18,
+            run:{
+                height:20
+            }
+
+        };
+        var targetObj={
+            id:1,
+            sex:1
+
+        };
+        $.extend(targetObj,obj);//浅拷贝
+        console.log(targetObj);
+        console.log(obj);
+        $.extend(true,targetObj,obj);//深拷贝 深拷贝，前面加true， 完全克隆，修改目标对象不会影响被拷贝对象
+        console.log(targetObj);
+        console.log(obj);
+
+    })
+
+</script>
+</body>
+</html>

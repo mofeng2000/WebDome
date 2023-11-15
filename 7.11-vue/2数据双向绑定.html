@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+button{
+    margin-left: 50px;
+}
+
+</style>
+<script src="vue.min.js"></script>
+<body>
+<div id="app">
+
+<h2>计数:{{message}}</h2>
+    <button @click=message++>+</button>
+    <button  @click=message-->-</button>
+<!--<button @click="sum1">+</button>-->
+<!--<button  @click="sum2">-</button>-->
+</div>
+
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            message:0
+        },
+        methods:{
+            sum1:function () {
+               this.message++
+            },
+            sum2:function () {
+                this.message--
+            }
+        }
+
+
+    })
+
+
+</script>
+</body>
+</html>

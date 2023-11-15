@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>焦点访谈：中国底气 新思想夯实大国粮仓</title>
+</head>
+<style>
+    body {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .header .top {
+        margin-bottom: 30px;
+        line-height: 38px;
+    }
+
+    .header .con {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #999;
+    }
+
+    .bady .con {
+
+    }
+
+    p {
+        text-indent: 5px;
+        line-height: 30px;
+    }
+</style>
+<body>
+<div class="header">
+    <div class="top">
+        <img src="img/news_logo.png" alt="">
+        新浪政务>正文
+    </div>
+    <div class="con">
+        <h1>焦点访谈：中国底气 新思想夯实大国粮仓</h1>
+    </div>
+
+    <div class="bottom">
+        <span style="color: #999">2023年03月02日 21:50 </span> 央视网
+    </div>
+    <hr>
+</div>
+<div class="bady">
+    <div class="top">
+        <video src="video/1.mp4" controls width="950px"></video>
+    </div>
+    <div class="con">
+        <p>
+            <b>央视网消息</b>
+            （焦点访谈）：党的十八大以来，以习近平同志为核心的党中央始终把解决粮食安全问题作为治国理政的头等大事，重农抓粮一系列政策举措有力有效，我国粮食产量站稳1.3万亿斤台阶，实现谷物基本自给、口粮绝对安全。我们把饭碗牢牢端在自己手中，为保障经济社会发展提供了坚实支撑，为应对各种风险挑战赢得了主动。连续八年1.3万亿斤，这个沉甸甸的数据是如何取得的呢？
+
+            　　人勤春来早，春耕农事忙。立春之后，由南到北，我国春耕春管工作陆续展开，春天的田野处处生机盎然。
+        </p>
+        <p>　人勤春来早，春耕农事忙。立春之后，由南到北，我国春耕春管工作陆续展开，春天的田野处处生机盎然。</p>
+        <p>
+
+            　　今年，我国启动了新一轮千亿斤粮食产能提升行动，这是一个新的起点。2015年以来，我国粮食产量连续8年稳定在1.3万亿斤以上，人均粮食占有量始终稳稳高于国际公认的400公斤粮食安全线。从十年前的约12200亿斤到2022年的约13700亿斤，粮食产量提高了1500亿斤。
+        </p>
+
+
+    </div>
+</div>
+<script>
+    var arr = [1, 2, 3, 4];
+    arr.forEach(function (e) {
+        console.log(e);
+    })
+    arr.forEach((e) => {
+        console.log(e);
+    })
+
+    var string = "Hello String";
+    console.log(string.length);
+    console.log(string.charAt(4));//获取指定位置字符
+    console.log(string.indexOf("o"));//检索字符串的所在位置
+    console.log(string.trim());//去除字符串两边的字符
+    console.log(string.substring(1, 4));//截取字符串含头不含含尾
+    //自定对象
+    var user = {
+        name: "张三",
+        age: 20,
+        // eat: function (){
+        //     alert("吃饭!");
+        // }
+        eat() {
+            alert("吃饭!");
+        }
+    }
+    // user.eat()
+    //定义Json
+    var jsonStr = '{"name":"李四","age":18,"addr":["北京","上海","西安"]}';
+    //json字符串--js对象
+    var obj = JSON.parse(jsonStr);
+    console.log(obj.name);
+    //js对象->json字符串
+    console.log(JSON.stringify(obj));
+
+    let flag = confirm("您确定删除该记录吗？");
+    console.log(flag)
+    //定时器 周期性的执行某一个函数
+    var i=0;
+    // setInterval(function (){
+    //     i++;
+    //     console.log("定时器执行了"+i+"次")
+    // },2000)
+    //定时器 - setTimeout--- 延迟指定时间执行一次
+    setTimeout(function (){
+        console.log(666);
+    },2000)
+    console.log( location.href)
+
+</script>
+
+</body>
+</html>

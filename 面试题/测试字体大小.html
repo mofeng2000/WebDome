@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1{
+            width:100px;
+            height:100px;
+            background: red;
+        }
+        .box1 i{
+            font-size: 8px;
+            color: black;
+        }
+        .box2{
+            width:100px;
+            height:100px;
+            background: orange;
+        }
+        .box2 p{
+            font-size: 8px;
+            color: black;
+        }
+        .box3{
+            width:100px;
+            height:100px;
+            background: green;
+        }
+        .box3 span{
+            font-size: 8px;
+            color: black;
+            line-height:1;
+        }
+        .box3 span::before{
+            content: "Institute for strategic development of natural resource";
+            display: block;
+            width:200px;
+            height: 6px;
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="box1">
+    <i>123</i>
+</div>
+<div class="box2">
+    <p></p>
+</div>
+<div class="box3">
+    <span></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 如果是pc请删除下面一行 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!-- 下面是初始化框架必须引入 -->
+    <link rel="stylesheet" href="http://x.5811.com.cn/css/cui.css"/>
+    <link rel="stylesheet" href="http://x.5811.com.cn/css/cui-rel.css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!--轮播-->
+    <link href="https://cdn.bootcss.com/slick-carousel/1.6.0/slick.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <!--数字-->
+    <script src="js/jquery.countup.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!--动画-->
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+    <script src="js/wow.min.js"></script>
+
+    <style>
+        .wp {
+            width: 90%;
+            margin: 0 auto;
+        }
+        *, :after, :before {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: 0 !important;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+
+        /*头部*/
+        .header {
+            /*位置固定*/
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /*background-color: rgba(255, 255, 255, .9);*/
+            /*层级*/
+            z-index: 999;
+            height: 80px;
+            padding: 0 3.38%;
+            transition: .3s;
+            background-color:#fff;
+        }
+        .header.fixed {
+            border-bottom: 1px solid #e5e5e5;
+        }
+        /* 头部左边LOGO*/
+        .logo {
+            margin-left: 230px;
+            float: left;
+            line-height: 80px;
+        }
+
+        .logo img {
+            vertical-align: middle;
+            height: 60px;
+        }
+
+        /*头部右边*/
+        .header .hdr {
+            float:left;
+        }
+        .nav {
+            margin-left: 100px;
+            float: left;
+            padding-top: 10px;
+        }
+        .nav li {
+            float: left;
+            text-align: center;
+            position: relative;
+            margin-right: 60px;
+        }
+        .nav li .v1 {
+            /*行级元素转块级*/
+            display: block;
+            height: 70px;
+            padding-top: 24px;
+
+        }
+        /*vi内标题*/
+        .nav li p {
+            font-size: 14px;
+            font-family: Medium;
+            color: #000000;
+            padding: 0 20px;
+        }
+        .nav li.on v1, .nav li:hover .v1 {
+            background: rgba(255, 255, 255, .9);
+            border-color: transparent;
+            border-top: 2px solid #0154a1;
+
+        }
+
+        /*.nav li.on .v1::after {*/
+            /*content: "";*/
+            /*display: block;*/
+            /*height: 2px;*/
+            /*background: #000;*/
+            /*margin-top: -5px;*/
+        /*}*/
+
+        /*.nav li.on .v1:hover::after {*/
+            /*display: none;*/
+        /*}*/
+
+        .nav li:hover .v1 {
+            background-color: #fff;
+            color: #000;
+            border-top: 2px solid #000;
+        }
+
+        .nav li.on p, .nav li:hover p {
+            color: #000;
+        }
+        .nav li:hover p{
+            color:#000;
+        }
+
+        .nav li .sub {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            overflow: hidden;
+            z-index: 99;
+            width: 213px;
+        }
+
+        .nav li .sub a {
+            background: #fff;
+            position: relative;
+            display: block;
+            font-size: 14px;
+            color: #000000;
+            line-height: 43px;
+            text-align: center;
+            border-bottom: 1px solid #bebebe;
+            overflow: hidden;
+        }
+
+        .nav li:hover .sub {
+            background: #0154a1;
+        }
+
+        .nav li .sub a:hover {
+            color: #fff;
+            background: #0154a1;
+        }
+
+        .nav li .sub a:hover::after {
+            content: " ";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #00a0e8;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 50%) rotate(-45deg);
+            -webkit-transform: translate(-50%, 50%) rotate(-45deg);
+        }
+
+        .menuBtn {
+            display: none;
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn b {
+            display: block;
+            height: 4px;
+            background-color: #0d6fb8;
+            margin: 4px 0;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn.open b {
+            display: none;
+            margin: -5px 0 0;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 30px
+        }
+
+        .menuBtn.open b:first-child {
+            display: block;
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg)
+        }
+
+        .menuBtn.open b:last-child {
+            display: block;
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg)
+        }
+
+        @media only screen and (max-width: 1500px) {
+            .header {
+                height: 70px
+            }
+
+            .logo {
+                line-height: 70px;
+                width: 160px
+            }
+
+            .nav li .v1 {
+                height: 70px;
+                padding-top: 16px
+            }
+        }
+
+        @media only screen and (max-width: 1199px) {
+            .header {
+                height: 50px;
+
+            }
+            .m-artical .pic{
+                margin: 0 auto;
+                width: 50%;
+            }
+            .navsub {
+                margin:0 auto;
+                float: none;
+            }
+            .logo {
+                line-height: 50px;
+                width: 130px;
+                height: 38px;
+
+            }
+
+            .nav {
+                float: left;
+                position: fixed;
+                top: 50px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 99;
+                background-color: #fff;
+                border-top: 1px solid #eee;
+                display: none
+            }
+
+            .nav li:hover .v1 {
+                background-color: #fff;
+                color: #999;
+            }
+
+            .nav li.on .v1 {
+                background-color: #0d6fb8;
+                color: #fff;
+                border-color: transparent;
+            }
+
+            .nav li:hover p {
+                color: #333
+            }
+
+            .nav li .v1 {
+                position: relative;
+                height: auto;
+                padding: 10px 0
+            }
+
+            .nav li .v1 i {
+                display: block;
+                width: 32px;
+                height: 32px;
+                position: absolute;
+                right: 30px;
+                top: 15px;
+                background: url(images/s1.jpg) center center no-repeat;
+                -o-background-size: 16px 16px;
+                background-size: 16px 16px
+            }
+
+            .nav li.on .v1 i {
+                background-image: url(images/s1.jpg)
+            }
+
+            .nav li.on p {
+                color: #fff;
+                font-weight: 700
+            }
+
+            .nav li {
+                float: none;
+                padding-top: 0;
+                margin: 0;
+                width: auto
+            }
+
+            .nav li .sub {
+                position: static;
+                padding: 0;
+                text-align: center;
+                border-radius: 0;
+                background-color: #eee
+            }
+
+            .nav li .sub a {
+                line-height: 30px
+            }
+
+            .menuBtn {
+                display: block
+            }
+        }
+        .hdr .tel{
+            float: right;
+        }
+        .hdr .tel pic{
+        }
+        .hdr .tel .pic img{
+            margin-top: 30px;
+            max-width: 100%;
+            max-height:100%;
+        }
+        .hdr .tel .num{
+            margin-top: -42px;
+            margin-left: 34px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+            /*轮播*/
+        .ban{
+            margin-top: 80px;
+            display: block;
+            height: 400px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+        }
+        .row-well{
+            padding:0 60px;
+        }
+        /*通用标题*/
+        .g-tita1 {
+            margin: 70px 0;
+        }
+        .g-tita1 h2{
+            font-size: 24px;
+            font-weight:1200;
+            text-align: center;
+            background-image: url(images/tit.png);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .g-tita1 h2 em{
+            color: #1A0000;
+        }
+
+      .g-tita1 h2 span{
+          color: #BA2833;
+      }
+
+
+        /*<!--报考政策-->*/
+            .m-hotinfo{
+                overflow: hidden;
+                border-radius: 0 30px;
+                box-shadow:0 5px 10px rgba(0,0,0,.3);
+            }
+
+        /*<!--报考政策左-->*/
+       .m-hotinfo .link{
+            float: left;
+            width: 30%;
+            background: #CC3C46;
+           height: 250px;
+           padding:20px;
+            }
+        .link .tit1{
+                color: #fff;
+                text-align: center;
+                font-size: 22px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #dee4e8;
+
+            }
+        .m-hotinfo .ul-list1{
+            overflow: hidden;
+            margin-top: 10px;
+
+
+        }
+        .m-hotinfo .ul-list1 li{
+            float: left;
+            width: 50%;
+
+        }
+        .m-hotinfo .ul-list1 li .con{
+            background: #fff;
+            width:100px;
+            height:30px;
+            display: block;
+            margin:10px;
+        }
+        .m-hotinfo .ul-list1 li p{
+            color:#535353;
+            text-align: center;
+        }
+        .m-hotinfo .ul-list2 li .con:hover span,
+        .m-hotinfo .ul-list2 li .con:hover em
+        {
+            color:  #CC3C46;
+        }
+            /*<!--报考政策右>*/
+        .m-hotinfo .info{
+            float: right;
+            width:70%;
+            padding-left: 20px;
+        }
+        .m-hotinfo .tit2{
+            color:#535353;
+            font-size: 20px;
+            border-left: 2px solid #585858;
+            margin:20px 0;
+            background-image: url("images/arrow.png");
+            /*background-position: center;*/
+            background-repeat: no-repeat;
+        }
+        .m-hotinfo  .ul-list2 li{
+            width: 50%;
+            float: left;
+        }
+        .m-hotinfo  .ul-list2 li .pic2{
+            float: left;
+        }
+        .m-hotinfo .info .ul-list2 li span{
+            color:#535353;
+            font-size: 13px;
+        }
+        .m-hotinfo .info .ul-list2 li em{
+            margin-left: 50px;
+            color: #7B7B7B;
+        }
+        /*.m-hotinfo .info .more{*/
+            /*float: right;*/
+            /*display: inline-block;*/
+        /*}*/
+        .m-trymsg  .trymsg{
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+             .m-trymsg  .trymsg li{
+                 width:20%;
+                 float:left;
+
+             }
+        .m-trymsg  .trymsg li .stu,
+        .m-trymsg  .trymsg li .name,
+        .m-trymsg  .trymsg li .btn,
+        .m-trymsg  .trymsg li .tel{
+            width:200px;
+            height:50px;
+            border: 1px solid #CC3C46;
+            /*background: rgba(0,0,0,.9);*/
+            background: #FFF2F3;
+            font-size: 14px;
+            color:#535353;
+            padding: 5px;
+        }
+        .m-trymsg  .trymsg li .btn a{
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+        }
+        .m-trymsg  .trymsg li .btn{
+            background: #CC3C46;
+        }
+        /*在职MBA*/
+        .row-a2{
+            background: url("images/background-1.png");
+            overflow: hidden;
+           padding-bottom: 60px;
+        }
+        /*左边*/
+           .col-l{
+               float: left;
+               width:35%;
+               background: #fff;
+           }
+        .col-l  .tit{
+            background: #D9D9D9;
+            padding: 10px;
+        }
+
+        .col-l .ul-list1 li{
+            width:70%;
+        }
+        .col-l .ul-list1 .con{
+           margin: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .col-l .ul-list1 .con .pic{
+            float: left;
+            margin-right: 20px;
+        }
+        .col-r .ul-list3 .con .pic{
+            float: right;
+            margin-left: 20px;
+        }
+        .col-l .ul-list1 .con p{
+            color: #6A6A6A;
+           padding-left: 10px;
+        }
+        /*中间*/
+        .col-c  {
+            width: 30%;
+            background: #CC3C46;
+            margin-top: -30px;
+            margin-bottom: 10px;
+
+        }
+        .col-c .num{
+
+            margin:20px;
+            padding: 10px;
+        }
+        .col-c   .num span{
+            font-size: 40px;
+            display: block;
+            text-align: center;
+            color: #fff;
+        }
+        .col-c  .num p{
+            font-size: 25px;
+            text-align: center;
+            color: #fff;
+        }
+        /*右边*/
+        .col-r{
+            float: right;
+            width:35%;
+            background: #fff;
+        }
+        .col-r .tit02{
+            background:#E9C878 ;
+            padding: 10px;
+        }
+        .col-r .ul-list3 li{
+            width:70%;
+        }
+        .col-r .ul-list3 .con{
+            overflow: hidden;
+            text-align: center;
+            margin: 9px;
+        }
+        .col-r .ul-list3 .con .pic{
+            float: right;
+            margin-top: -30px;
+        }
+        .col-r .ul-list3 .con p{
+            color: #6A6A6A;
+            margin-top: 10px;
+        }
+        /*院校介绍*/
+        .col-1 .ul-list1{
+            overflow: hidden;
+        }
+        .col-1 .ul-list1 li{
+            width: 16.666%;
+            float: left;
+            margin-bottom: 30px;
+
+        }
+        .col-1 .ul-list1 li p{
+            display: block;
+            height:45px;
+            width: 150px;
+            font-size: 16px;
+            color: #6A6A6A;
+            background: #F1F3F9;
+            margin:0 10px;
+            text-align: center;
+            padding-top: 10px;
+        }
+        .col-2{
+            overflow: hidden;
+            display: flex;
+            height: 1000px;
+        }
+        .col-2 .pic{
+           flex: 20%;
+             z-index: 999;
+            height: 450px;
+            background: #fff;
+        }
+        .col-1 .pic img{
+            max-width: 100%;
+            max-height:100%;
+            z-index: 9999;
+        }
+        .col-2 .txt{
+            position: static;
+            /*float: right;*/
+            height: 450px;
+            z-index: 1;
+            flex: 80%;
+            padding:30px;
+            box-shadow:0 0 6px rgba(0,0,0,.3);
+            transform: translate(-30px,25px);
+            overflow: hidden;
+        }
+        .col-2 .tit{
+            color: #1A0000;
+            margin: 20px 0;
+        }
+        .col-2 .desc{
+            color: #6A6A6A;
+            margin: 20px 0;
+        }
+        .col-2 .more a{
+            display: block;
+            color: #fff;
+            background: #CC3C46;
+            height:40px;
+            width:125px;
+
+        }
+
+
+
+    </style>
+
+        </head>
+<body>
+<!--头部-->
+<div class="header">
+    <span class="menuBtn"></span>
+    <div class="logo">
+        <a href="#"><img src="images/mlogo.jpg" alt=""/>
+        </a>
+    </div>
+
+    <div class="hdr">
+        <ul class="nav">
+            <li class="on"><a href="index.html" class="v1"><p>报考条件</p></a></li>
+
+            <li class="">
+                <a href="#" class="v1">
+                    <p> 报名时间</p>
+                    <i></i>
+                </a>
+                <div class="sub">
+                    <a href="#">公司简介</a>
+                    <a href="#">企业文化</a>
+                    <a href="#">荣誉资质</a>
+                    <a href="#">新闻动态</a>
+                </div>
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p>报名流程</p>
+                    <i></i>
+                </a>
+                <div class="sub">
+                    <a href="">动物繁殖</a>
+                    <a href="">疾病防控</a>
+                    <a href="">宠物疾病</a>
+                </div>
+            </li>
+        </ul>
+        <div class="tel">
+            <div class="pic"><a href=""><img src="images/tel.jpg"></a></div>
+            <div class="num">400-00-000</div>
+        </div>
+    </div>
+</div>
+<!--轮播-->
+<div class="ban" style="background-image:url(images/mban.jpg);"></div>
+<div class="row-well">
+<!--报考政策-->
+    <div class="row-a1">
+        <div class="wp">
+            <div class="g-tita1">
+                <h2><em>2020国际免联考MBA</em><span>报考政策</span></h2>
+            </div>
+            <div class="m-hotinfo">
+                <div class="link">
+                    <h3 class="tit1">免联考MBA报考指南</h3>
+                    <ul class="ul-list1">
+                       <li><a class="con"><p>报考条件</p></a></li>
+                        <li><a class="con"><p>报考条件</p></a></li>
+                        <li><a class="con"><p>报考条件</p></a></li>
+                        <li><a class="con"><p>报考条件</p></a></li>
+                        <li><a class="con"><p>报考条件</p></a></li>
+                        <li><a class="con"><p>报考条件</p></a></li>
+
+                    </ul>
+                </div>
+                <div class="info">
+                    <div class="tit2">99%学员都关心的问题  </div>
+                    <!--<div class="more"><a href="">更多</a></div>-->
+                    <ul class="ul-list2">
+                            <li>
+                                <div class="con">
+                                    <div class="pic2"><img src="images/dian.jpg"></div>
+                                    <span>免联考和全国联考有什么区别</span>
+                                    <em>></em></div>
+                            </li>
+
+                        <li>
+                            <div class="con">
+                                <div class="pic2"><img src="images/dian.jpg"></div>
+                                <span>免联考和全国联考有什么区别</span>
+                                <em>></em></div>
+                        </li>
+                        <li>
+                            <div class="con">
+                                <div class="pic2"><img src="images/dian.jpg"></div>
+                                <span>免联考和全国联考有什么区别</span>
+                                <em>></em></div>
+                        </li>
+                        <li>
+                            <div class="con">
+                                <div class="pic2"><img src="images/dian.jpg"></div>
+                                <span>免联考和全国联考有什么区别</span>
+                                <em>></em></div>
+                        </li>
+                        <li>
+                            <div class="con">
+                                <div class="pic2"><img src="images/dian.jpg"></div>
+                                <span>免联考和全国联考有什么区别</span>
+                                <em>></em></div>
+                        </li>
+                        <li>
+                            <div class="con">
+                                <div class="pic2"><img src="images/dian.jpg"></div>
+                                <span>免联考和全国联考有什么区别</span>
+                                <em>></em></div>
+                        </li>
+                        <li>
+                            <div class="con">
+                                <div class="pic2"><img src="images/dian.jpg"></div>
+                                <span>免联考和全国联考有什么区别</span>
+                                <em>></em></div>
+                        </li>
+                        <li>
+                            <div class="con">
+                                <div class="pic2"><img src="images/dian.jpg"></div>
+                                <span>免联考和全国联考有什么区别</span>
+                                <em>></em></div>
+                        </li>    <li>
+                        <div class="con">
+                            <div class="pic2"><img src="images/dian.jpg"></div>
+                            <span>免联考和全国联考有什么区别</span>
+                            <em>></em></div>
+                    </li>
+                        <li>
+                            <div class="con">
+                                <div class="pic2"><img src="images/dian.jpg"></div>
+                                <span>免联考和全国联考有什么区别</span>
+                                <em>></em></div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="g-tita1">
+                <h2><span>免费试听</span><em>在职MBA课程</em></h2>
+            </div>
+            <div class="m-trymsg">
+                <ul class="trymsg">
+                    <li>
+                        <select class="stu">
+                            <option value="0">最高学历</option>
+                            <option value="1">本科</option>
+                            <option value="2">专科</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="stu">
+                            <option value="0">工作经验</option>
+                            <option value="1">有</option>
+                            <option value="2">无</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input type="text" class="name" placeholder="您的姓名">
+                    </li>
+                    <li>
+                        <input type="text" class="tel" placeholder="您的电话">
+                    </li>
+                    <li>
+                        <div class="btn"><a href="">预约试听</a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--在职MBA-->
+    <div class="row-a2">
+        <div class="wp">
+            <div class="g-tita1">
+                <h2><em>哪些人</em><span>适合读</span><em>在职MBA？</em></h2>
+            </div>
+            <div class="col-l">
+            <h3 class="tit">您是否</h3>
+            <ul class="ul-list1">
+                <li>
+                    <div class="con">
+                            <div class="pic"><img src="images/cuo.jpg"></div>
+                            <p>工作忙，没世间备考</p>
+                        </div>
+                </li>
+                <li>
+                    <div class="con">
+                        <div class="pic"><img src="images/cuo.jpg"></div>
+                        <p>工作忙，没世间备考?</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="con">
+                        <div class="pic"><img src="images/cuo.jpg"></div>
+                        <p>工作忙，没世间备考?</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="con">
+                        <div class="pic"><img src="images/cuo.jpg"></div>
+                        <p>工作忙，没世间备考?</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="con">
+                        <div class="pic"><img src="images/cuo.jpg"></div>
+                        <p>工作忙，没世间备考?</p>
+                    </div>
+                </li>  <li>
+                <div class="con">
+                    <div class="pic"><img src="images/cuo.jpg"></div>
+                    <p>工作忙，没世间备考?</p>
+                </div>
+            </li>
+                <li>
+                    <div class="con">
+                        <div class="pic"><img src="images/cuo.jpg"></div>
+                        <p>工作忙，没世间备考?</p>
+                    </div>
+                </li>
+
+            </ul>
+            </div>
+            <div class="col-c">
+                <ul class="ul-list2">
+                <li>
+                    <div class="num">
+                        <span>01</span><p>企业中高层管理人员</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="num">
+                        <span>02</span><p>企业中高层管理人员</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="num">
+                        <span>03</span><p>企业中高层管理人员</p>
+                    </div>
+                </li>
+
+            </ul>
+            </div>
+           <div class="col-r">
+               <h3 class="tit02">解决方案</h3>
+               <ul class="ul-list3">
+               <li>
+                   <div class="con">
+                       <p>面试入学</p>
+                       <div class="pic"><img src="images/dui.jpg"></div>
+                   </div>
+               </li>
+               <li>
+                   <div class="con">
+                       <p>面试入学</p>
+                       <div class="pic"><img src="images/dui.jpg"></div>
+                   </div>
+               </li>
+               <li>
+                   <div class="con">
+                       <p>面试入学</p>
+                       <div class="pic"><img src="images/dui.jpg"></div>
+                   </div>
+               </li>
+               <li>
+                   <div class="con">
+                       <p>面试入学</p>
+                       <div class="pic"><img src="images/dui.jpg"></div>
+                   </div>
+               </li>
+               <li>
+                   <div class="con">
+                       <p>面试入学</p>
+                       <div class="pic"><img src="images/dui.jpg"></div>
+                   </div>
+               </li>
+               <li>
+                   <div class="con">
+                       <p>面试入学</p>
+                       <div class="pic"><img src="images/dui.jpg"></div>
+                   </div>
+               </li>
+               <li>
+                   <div class="con">
+                       <p>面试入学</p>
+                       <div class="pic"><img src="images/dui.jpg"></div>
+                   </div>
+               </li>
+           </ul>
+           </div>
+
+        </div>
+    </div>
+<!--院校介绍-->
+    <div class="row-a3">
+        <div class="wp">
+            <div class="g-tita1">
+                <h2><em>院校</em><span>介绍</span></h2>
+            </div>
+            <div class="col-1">
+               <ul class="ul-list1">
+                   <li>
+
+                   <p>剑桥大学</p>
+               </li>
+                   <li>
+                       <p>剑桥大学</p>
+                   </li>
+                   <li>
+                       <p>剑桥大学</p>
+                   </li>
+                   <li>
+                       <p>剑桥大学</p>
+                   </li>
+                   <li>
+                       <p>剑桥大学</p>
+                   </li>
+                   <li>
+                       <p>剑桥大学</p>
+                   </li>
+               </ul>
+
+            </div>
+            <div class="col-2">
+                <div class="pic"><img src="images/pic-06-09_15.png"></div>
+                <div class="txt">
+                    <h3 class="tit">剑桥大学</h3>
+                    <div class="desc">剑桥大学（Universiyt of Cambrridge是一所世界顶尖的公立研究大学，采用书院联邦制，坐落于英国剑桥。与牛津大学并称“牛剑”
+                        与牛津大学，伦敦大学学院，帝国理工学院，伦敦政治经济学院同属“G5超级精英学校”。剑桥大学是世界上第二所最古老的学校，前身是一所于1209年成立的学者协会。
+                    </div>
+                    <div class="more"><a href="">在线咨询报读条件</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--头部-->
+<script>
+    // 手机导航
+    $('.menuBtn').append('<b></b><b></b><b></b>');
+    $('.menuBtn').click(function (event) {
+        $(this).toggleClass('open');
+        $('.header').stop().slideToggle();
+    });
+
+    var _winw = $(window).width();
+    if (_winw > 959) {
+        $('.nav li').hover(function () {
+            $(this).find('.sub').stop().slideDown();
+            if ($(this).find('.sub').length) {
+                $(this).addClass('ok');
+                $('.header').addClass('on');
+            } else {
+                $('.header').removeClass('on');
+            }
+        }, function () {
+            $(this).removeClass('ok');
+            $(this).find('.sub').stop().slideUp();
+        });
+        $('.nav').mouseleave(function (event) {
+            if ($('.header').hasClass('on')) {
+                $('.header').removeClass('on');
+            }
+            ;
+        });
+    } else {
+
+        $('.nav .v1').click(function () {
+            if ($(this).siblings('.sub').length) {
+                $(this).parents('li').siblings('li').find('.sub').stop().slideUp();
+                $(this).parents('li').siblings('li').removeClass('on');
+                $(this).parents('li').toggleClass('on');
+                $(this).siblings('.sub').stop().slideToggle();
+                return false;
+            }
+        });
+    }
+</script>
+<!--头部轮播图-->
+<script>
+    $(window).on("scroll",function(){
+//        console.log(scrollTop());
+        if($(document).scrollTop()>0){
+            $(".header").addClass("small");
+        }else{
+            $(".header").removeClass("small");
+        }
+    });
+</script>
+<!--logo-->
+<script>
+    var _winw =$(window).width();
+    if(_winw<1200){
+        //当屏幕小于1200时，添加头部样式的类.small,并且不再移除.small
+        $(".header").addClass("small");
+    }else{
+        //当屏幕大于等于1200时，才启动页面滚动效果
+        $(window).on('scroll',function(){
+            if($(document).scrollTop()>0){
+                $(".header").addClass("small");
+            }else{
+                $(".header").removeClass("small");
+            }
+        });
+    }
+</script>
+</body>
+</html>

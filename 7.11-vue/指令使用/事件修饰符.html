@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">{{message}}
+    <a href="https://www.mi.com" v-on:click.prevent>mi</a>
+    <form action="v-bind使用.html" method="get">
+        <input type="text" v-on:keyup.enter='submit'>
+        <!--<input type="text" v-on:keyup.esc="esc">-->
+        <!--<input type="text" v-on:keyup.tab="esc">-->
+        <!--<input type="text" v-on:keyup.space="esc">-->
+        <!--<input type="text" v-on:keyup.up="esc">-->
+        <!--<input type="text" v-on:keyup.down="esc">-->
+        <!--<input type="text" v-on:keyup.left="esc">-->
+        <!--<input type="text" v-on:keyup.right="esc">-->
+        <!--<input type="text" v-on:keyup.delete="esc">-->
+        <!--<input @keyup.alt.67="doSth">-->
+        <!--<input type="text">-->
+    </form>
+
+
+</div>
+<script src="../vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: "123 "
+            },
+            methods:{
+                submit:function () {
+//                   alert(123)
+                },
+                esc:function () {
+                    alert(456)
+                }
+            }
+        }
+    )
+</script>
+</body>
+</html>

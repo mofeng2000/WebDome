@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            padding: 10px 10px;
+            margin: 5px;
+            border: 20px solid red;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            padding: 10px 10px;
+            margin: 5px;
+            border: 20px solid red;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box2"></div>
+</div>
+<script src="jQuerymin.js">
+</script>
+<script>
+    $(function () {
+        //width（）
+//       console.log( $('.box1').width());//获取元素的宽度 不包含边框 内边距外边距
+//       console.log( $('.box1').height());//获取元素的高度 不包含边框 内边距外边距
+//        $('.box1').width(300);//设置元素的宽度 不包含边框 内边距外边距
+//        $('.box1').height(300);//设置元素的高度 不包含边框 内边距外边距//
+        //innerWidth（）
+//    console.log( $('.box1').innerWidth());//获取元素的宽度 不包含边框外边距 包括  内边距
+//       console.log( $('.box1').innerHeight());//获取元素的高度 不包含边框 外边距 包括  内边距
+//        $('.box1').innerWidth(300);//设置元素的宽度 不包含边框外边距 包括  内边距
+//        $('.box1').innerHeight(300);//设置元素的高度 不包含边框 外边距 包括  内边距
+        //outerWidth（）
+// console.log( $('.box1').outerWidth());//获取元素的宽度 不包含外边距 包含边框 内边距
+//       console.log( $('.box1').outerHeight());//获取元素的高度不包含外边距 包含边框 内边距
+//        $('.box1').outerWidth(300);//设置元素的宽度 不包含外边距 包含边框 内边距
+//        $('.box1').outerHeight(300);//设置元素的高度不包含外边距 包含边框 内边距
+        //outerWidth（true）
+        // console.log( $('.box1').outerWidth（true）);//获取元素的宽度 不包含外边距 包含边框 内边距
+//       console.log( $('.box1').outerHeight(true));//获取元素的高度不包含外边距 包含边框 内边距
+
+        //offset()、position()、scrollTop()/scrollLeft()
+//        console.log( $('.box2').offset());//位置对象
+//        console.log( $('.box2').offset().left);//位置左边宽带
+//       console.log( $('.box2').offset().top);//位置上边高度
+
+        //position() . position() 获取元素偏移 ① position() 方法用于返回被选元素相对于带有定位的父级偏移坐标，如果父级都没有定位，则以文档为准
+                console.log( $('.box2').position());//位置对象
+        console.log( $('.box2').position().left);//位置左边宽带
+       console.log( $('.box2').position().top);//位置上边高度
+        // scrollTop()/scrollLeft() 设置或获取元素被卷去的头部和左侧
+        console.log( $('.box2').scrollTop());//位置对象
+        console.log( $('.box2').scrollLeft());//位置左边宽带
+
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        //构造函数
+//
+        function Hero(name,type,blood,attack) {
+            this.name=name;
+            this.type=type;
+            this.blood=blood;
+            this.attack=attack;
+        }
+        var obj1=new Hero("廉颇","力量型","500血量","攻击：近战");
+//        var obj2=new Hero("后羿","射手型","100血量","攻击：远程");
+//        console.log(obj1);
+//        console.log(obj1.name);
+//        console.log(obj2);
+//        console.log(obj2.name);
+        //for in循环，遍历输出结果
+//var arr=[1,2,3,4,5];
+//        for (var bl in  arr){
+//            console.log(arr[bl]);
+//        }
+//for in循环，遍历输出对象键值
+        for (var key in obj1){
+            console.log("key"+key+"value"+obj1[key]);
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

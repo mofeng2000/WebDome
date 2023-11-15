@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">{{message}}</div>
+<div id="box1">
+    <ul>
+        <li v-for="item in movies">{{item}}</li>
+    </ul>
+
+</div>
+
+<script src="vue.min.js"></script>
+<script>
+    const app = new Vue({
+        el: '#box',
+        data: {
+            message: "我无敌，你随意",
+            movies: ['123', 456, '789', '666']
+        }
+    })
+    const app1 = new Vue({
+            el: '#box1',
+            data: {
+                message: "我无敌，你随意",
+                movies: ['123', 456, '789', '666']
+
+            }
+        }
+    )
+</script>
+<div id="app">{{message}}</div>
+<script src="vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: " "
+            }
+        }
+    )
+</script>
+vue
+</body>
+</html>

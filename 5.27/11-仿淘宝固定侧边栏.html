@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+
+        .imgtxt {
+            height: 250px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="slider-bar">
+    <span class="goBack">返回顶部</span>
+</div>
+<div class="header w">头部区域</div>
+<div class="banner w">banner区域</div>
+<div class="main w">主体部分</div>
+<script>
+    var banner = document.querySelector(".banner");
+    var bannertop = banner.offsetTop;
+    var maintop = document.querySelector(".main").offsetTop;
+    var goBack = document.querySelector(".goBack");
+    var sliderbar = document.querySelector(".slider-bar");
+    var sliderbartop = sliderbar.offsetTop;
+
+    document.addEventListener("scroll", function () {
+        if (window.pageYOffset >= bannertop) {
+            sliderbar.style.position = "fixed";
+            sliderbar.style.top = sliderbartop - bannertop + "px";
+        }
+        else {
+            sliderbar.style.position = "absolute";
+            sliderbar.style.top = "300px";
+        }
+        if (window.pageYOffset >= maintop) {
+            goBack.style.display = "block";
+            console.log(goBack.style.display)
+        }
+        else {
+
+            goBack.style.display = "none";
+            console.log(goBack.style.display);
+        }
+
+
+    });
+    goBack.addEventListener("click", function () {
+        console.log(window.pageXOffset);
+        run(window, 0);
+    });
+    function run(obj, num, hanshu) {
+        clearInterval(obj.times);
+        //获取缓慢移动位置
+        obj.times = setInterval(function () {
+            var stap = (num - obj.pageXOffset) / 10;
+            stap = stap < 0 ? Math.floor(stap) : Math.ceil(stap);
+            //offsetLeft拿到当前位置
+            window.scroll (0,window.pageXOffset+stap);
+            if (obj.pageXOffset === num) {
+                clearInterval(obj.times);
+                hanshu && hanshu();
+            }
+        }, 80)
+    }
+
+
+    // 页面被卷去的头部兼容性解决方案
+    // function getScroll() {
+    //    return {
+    //        left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft||0,
+    //        top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+    //    };
+    //    }
+    //    使用的时候  getScroll().left
+
+    //他们主要用法：
+    //    1. offset系列 经常用于获得元素位置    offsetLeft  offsetTop
+    //    2. client 经常用于获取元素大小  clientWidth  clientHeight
+    //    3. scroll 经常用于获取滚动距离  scrollTop  scrollLeft
+    //    4. 注意页面滚动的距离通过 window.pageXOffset  获得
+
+
+</script>
+</body>
+
+</html>

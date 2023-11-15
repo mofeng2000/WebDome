@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div id="app" @click:stop="add">-->
+<div id="app" >
+    <div  >
+       {{message}}
+        <button @click="add1">+</button>
+    </div>
+
+</div>
+<script src="../vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: 0
+            },
+            methods:{
+//                add:function () {
+//                    this.message++
+//                },
+                add1:function (e) {
+//                   e.stopPropagation()
+                  return this.message++;
+                }
+
+            }
+        }
+    )
+</script>
+</body>
+</html>

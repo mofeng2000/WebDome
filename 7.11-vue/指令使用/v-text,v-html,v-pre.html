@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    <p v-text="message"></p>
+    <p v-html="message1"></p>
+    <p v-pre>{{message}}</p>
+</div>
+<script src="../vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: "123",
+                message1: "<h3>888</h3>"
+            }
+        }
+    )
+</script>
+</body>
+</html>

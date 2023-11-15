@@ -1,0 +1,32 @@
+.resume{
+    width: 1000px;
+    margin-top: 10px;
+    padding: 50px 50px;
+}
+
+.resume h3{
+    font-size: 36px;
+    color: #8a6d3b;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.resume p{
+    font-size: 24px;
+    color: #8a6d3b;
+}
+
+.server{
+    width: 1000px;
+    margin-top: 10px;
+    padding: 50px 50px;
+}
+.server h3{
+    font-size: 36px;
+    color: #A0B959;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.server p{
+    font-size: 24px;
+    color: #A0B959;
+}

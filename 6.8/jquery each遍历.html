@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="jQuerymin.js"></script>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<script>
+//    $('div').css('color',"red");
+var arr=['red','greed','orange'];
+    $('div').each(function (index,ele) {
+        $('div').css('color',arr[index]);
+//        ele.style.color=arr[index];
+    });
+    $.each(arr,function(index,ele){
+        console.log(arr[index]);//arr[index]=ele
+        console.log(ele)
+    });
+    var obj= {
+        name:"小明",
+        age:18
+    };
+$.each(obj,function(index,ele){
+console.log(index);//键 name
+console.log(ele);//值
+
+
+});
+</script>
+</body>
+</html>

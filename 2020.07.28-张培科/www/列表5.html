@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta name="format-detection" content="telephone=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 如果是pc请删除下面一行 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+        <title>CSS限制字符行数加省略号</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+          <link rel="stylesheet" href="http://x.5811.com.cn/css/cui.css" />
+          <link rel="stylesheet" href="http://x.5811.com.cn/css/cui-rel.css" />
+          <!--<script type="text/javascript" src="http://x.5811.com.cn/js/jquery.js"></script>-->
+		<style>
+			.wp{
+        width: 90%;
+        margin: 0 auto;
+      }
+      .ul-list{
+        overflow: hidden;
+      }
+      .ul-list li{
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+      .ul-list .con{
+        overflow: hidden;
+        padding: 20px;
+        box-shadow: 0 5px 10px #ddd;
+        position:relative;
+        border: 1px solid #ccc;
+      }
+
+
+      .ul-list .pic{
+        float: right;
+        overflow: hidden;
+      }
+      .ul-list .pic img{
+        overflow: hidden;
+        width: 100%;
+      }
+      .ul-list .txt{
+        overflow: hidden;
+        /*height: 100px;*/
+        /*限制文本显示几行*/
+      }
+      .ul-list .icos{
+       float: right;
+        margin-right: 20px;
+
+      }
+      .ul-list .icos a{
+        display:inline-block ;
+        width: 25px;
+        height: 20px;
+      }
+      .ul-list .icos .icon1 {
+        width: 28px;
+        background: url("images/ico1.png")no-repeat 0 0;
+      }
+      .ul-list .icos .icon2 {
+        background: url("images/ico3.png")no-repeat 0 0;
+        margin: 0 8px;
+      }
+      .ul-list .date{
+        display: block;
+        color: #ccc;
+        margin-bottom: 15px;
+      }
+      .ul-list .tit{
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom:15px;
+        word-break:keep-all;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        overflow:hidden;
+      }
+      .ul-list .desc{
+        line-height: 25px;
+        height: 50px;
+        display: -webkit-box;
+        -webkit-line-clamp:2;
+        -webkit-box-orient: vertical;
+        overflow:hidden;
+        text-overflow: ellipsis;
+      }
+      /*鼠标悬浮效果*/
+      .ul-list .con {
+         transition: .3s;
+       }
+      .ul-list .con:hover{
+        color: #fff!important;
+        background-image: linear-gradient(#068980, #44a365);
+      }
+      .ul-list .con:hover .date{
+        color: #fff!important;
+      }
+      .ul-list .con:hover .icos .icon2{
+           background: url("images/ico4.png");
+         }
+      .ul-list .con:hover .icos .icon1{
+       display: none;
+      }
+      /*媒体查询*/
+      @media only screen and (max-width: 1440px) {
+      }
+
+      @media only screen and (max-width: 1200px) {
+        .ul-list .txt {
+          font-size: 14px;
+        }
+        .ul-list .txt .tit {
+          font-size: 16px;
+        }
+        .ul-list .pic{
+          float: none;
+          width: 600px;
+          margin: 10px auto;
+        }
+      }
+
+      @media only screen and (max-width: 990px) {
+        .ul-list .txt {
+          font-size: 12px;
+        }
+        .ul-list .tit {
+          font-size: 14px;
+        }
+        .ul-list .pic{
+          float: none;
+          width: 400px;
+        }
+        .ul-list .con {
+          margin: 0 10px;
+        }
+      }
+
+      @media only screen and (max-width: 789px) {
+        .ul-list .pic{
+          float: none;
+          width: 200px;
+        }
+        .ul-list .tit {
+          font-size: 14px;
+        }
+      }
+      @media only screen and (max-width: 460px) {
+        .ul-list .pic{
+          float: none;
+          width: 400px;
+        }
+      }
+
+
+
+		</style>
+    </head>
+<body>
+
+<div class="wp">
+  <ul class="ul-list">
+    <li><div class="con">
+    <div class="pic"><img src="images/lb4.png" alt=""></div>
+    <div class="txt">
+      <div class="info">
+        <div class="icos"><a href="#" class="icon1"></a><a href="#" class="icon2"></a></div>
+        <span class="date">2018-10-19</span>
+      </div>
+      <h3 class="tit">贝乐赞助大众女子队</h3>
+      <p class="desc">CSS限制字符行数加省略号CSS限制字符行数加数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行字符行数加省略号
+        CSS限制字符行数加省略号CSS限制字符行数加数加省略号</p>
+    </div>
+  </div>
+    </li>
+    <li><div class="con">
+      <div class="pic"><img src="images/lb4.png" alt=""></div>
+      <div class="txt">
+        <div class="info">
+          <div class="icos"><a href="#" class="icon1"></a><a href="#" class="icon2"></a></div>
+          <span class="date">2018-10-19</span>
+        </div>
+        <h3 class="tit">贝乐赞助大众女子队</h3>
+        <p class="desc">CSS限制字符行数加省略号CSS限制字符行数加数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行字符行数加省略号
+          CSS限制字符行数加省略号CSS限制字符行数加数加省略号</p>
+      </div>
+    </div>
+    </li>
+    <li><div class="con">
+      <div class="pic"><img src="images/lb4.png" alt=""></div>
+      <div class="txt">
+        <div class="info">
+          <div class="icos"><a href="#" class="icon1"></a><a href="#" class="icon2"></a></div>
+          <span class="date">2018-10-19</span>
+        </div>
+        <h3 class="tit">贝乐赞助大众女子队</h3>
+        <p class="desc">CSS限制字符行数加省略号CSS限制字符行数加数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行字符行数加省略号
+          CSS限制字符行数加省略号CSS限制字符行数加数加省略号</p>
+      </div>
+    </div>
+    </li>
+    <li><div class="con">
+      <div class="pic"><img src="images/lb4.png" alt=""></div>
+      <div class="txt">
+        <div class="info">
+          <div class="icos"><a href="#" class="icon1"></a><a href="#" class="icon2"></a></div>
+          <span class="date">2018-10-19</span>
+        </div>
+        <h3 class="tit">贝乐赞助大众女子队</h3>
+        <p class="desc">CSS限制字符行数加省略号CSS限制字符行数加数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行字符行数加省略号
+          CSS限制字符行数加省略号CSS限制字符行数加数加省略号</p>
+      </div>
+    </div>
+    </li>
+
+  </ul>
+</div>
+
+</body>
+</html>

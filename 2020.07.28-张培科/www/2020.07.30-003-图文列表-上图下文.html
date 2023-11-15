@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="format-detection" content="telephone=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!-- 如果是pc请删除下面一行 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <title>2020.07.29-001-图文列表-图文并茂</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="http://x.5811.com.cn/css/cui.css"/>
+  <link rel="stylesheet" href="http://x.5811.com.cn/css/cui-rel.css"/>
+  <!--<script type="text/javascript" src="http://x.5811.com.cn/js/jquery.js"></script>-->
+</head>
+<style>
+  .wp {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  body {
+    /*background: #ccc;*/
+  }
+  .ul-list1{
+    overflow: hidden;
+    margin: 0 -10px;
+  }
+  .ul-list1 li {
+    box-sizing: border-box;
+    width: 25%;
+    float: left;
+    overflow: hidden;
+  }
+  .ul-list1 .con {
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+  }
+
+  .ul-list1 .pic{
+    position: relative;
+    height: 0;
+    padding-top: 61.7%;
+    overflow: hidden;
+    /*background: #000;*/
+
+  }
+  .ul-list1 .pic img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    max-height: 100%;
+    vertical-align: bottom;
+    padding-right: -1px;
+    overflow: hidden;
+  }
+  .ul-list1 .txt {
+    color: #666;
+    background:#f5f5f5;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+  }
+  .ul-list1 .tit{
+
+  }
+  .ul-list1 .tit a{
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+  .ul-list1 .desc{
+    line-height: 25px;;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+    margin-bottom: 10px;
+  }
+  .ul-list1 .more{
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .ul-list1 .more a{
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    padding: 10px 20px;
+   border-radius: 20px;
+    background: #f75b2c;
+  }
+
+  /*鼠标经过*/
+  .ul-list1 .pic img,
+  .ul-list1 .tit a ,
+  .ul-list1 .more a  {
+    transition: .3s;
+  }
+  .ul-list1 .con:hover .pic img{
+    transform:translate(-50%,-50%) scale(1.05);
+
+  }
+  .ul-list1 .con:hover .txt{
+    background:#00ab69 ;
+    color: #fff;
+  }
+  .ul-list1 .con:hover .tit a{
+    color: #fff;
+  }
+  .ul-list1 .con:hover .more a{
+    background: #fff;
+    color: #00ab69;
+  }
+  /*媒体查询*/
+  @media only screen and (max-width: 1440px){
+    .ul-list1 .tit{
+      font-size: 16px;
+    }
+  }
+  @media only screen and (max-width: 1200px){
+    .ul-list1 .txt{
+      padding: 5px;
+      line-height: 20px;
+    }
+
+  }
+  @media only screen and (max-width: 990px){
+    .ul-list1 li{
+      width: 50%;
+    }
+    .ul-list1 .txt{
+      font-size: 12px;
+    }
+    .ul-list1 .more a{
+      padding: 15px 20px;
+    }
+  }
+  @media only screen and (max-width: 789px) {
+    .ul-list1 li {
+      width: 100%;
+      float: none;
+      margin-bottom: 10px;
+    }
+    .ul-list1 .txt {
+
+      top: 60%;
+
+    }
+    .ul-list1 .tit{
+      font-size: 20px;
+    }
+    .ul-list1 .txt{
+      font-size: 16px;
+      line-height: 30px;
+    }
+    .ul-list1 .more a{
+      font-size: 16px;
+      line-height: 30px;
+      padding: 20px 30px;
+    }
+  }
+</style>
+<body>
+<div class="wp">
+  <ul class="ul-list1">
+    <li><div class="con">
+      <div class="pic"><a href="#"><img src="images/pic13_03.jpg" alt=""></a></div>
+      <div class="txt">
+        <a href="#">
+          <h3 class="tit"><a href="#">北京外国语大学</a></h3>
+          <div class="desc">国家首批221重点工程高校，国家首批221重点工程高校</div>
+          <div class="more"><a href="#">点击咨询</a></div>
+        </a>
+      </div>
+    </div>
+    </li>
+    <li><div class="con">
+      <div class="pic"><a href="#"><img src="images/pic13_03.jpg" alt=""></a></div>
+      <div class="txt">
+        <a href="#">
+          <h3 class="tit"><a href="#">北京外国语大学</a></h3>
+          <div class="desc">国家首批221重点工程高校，国家首批221重点工程高校</div>
+          <div class="more"><a href="#">点击咨询</a></div>
+        </a>
+      </div>
+    </div>
+    </li>
+    <li><div class="con">
+      <div class="pic"><a href="#"><img src="images/pic13_03.jpg" alt=""></a></div>
+      <div class="txt">
+        <a href="#">
+          <h3 class="tit"><a href="#">北京外国语大学</a></h3>
+          <div class="desc">国家首批221重点工程高校，国家首批221重点工程高校</div>
+          <div class="more"><a href="#">点击咨询</a></div>
+        </a>
+      </div>
+    </div>
+    </li>
+    <li><div class="con">
+      <div class="pic"><a href="#"><img src="images/pic13_03.jpg" alt=""></a></div>
+      <div class="txt">
+        <a href="#">
+          <h3 class="tit"><a href="#">北京外国语大学</a></h3>
+          <div class="desc">国家首批221重点工程高校，国家首批221重点工程高校</div>
+          <div class="more"><a href="#">点击咨询</a></div>
+        </a>
+      </div>
+    </div>
+    </li>
+
+  </ul>
+</div>
+
+</body>
+</html>

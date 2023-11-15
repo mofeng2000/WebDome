@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        .map {
+            height: 800px;
+            width: 100%;
+        }
+    </style>
+<!--    <script src="main.js"></script>-->
+    <link rel="stylesheet" href="css/ol.css">
+    <title>OpenLayers example</title>
+</head>
+<body>
+<h2>My Map</h2>
+<div id="map" class="map"></div>
+<script type="text/javascript" src="js/ol.js"></script>
+<script type="text/javascript" src="XYZ.js"></script>
+
+<script type="text/javascript">
+    var map = new ol.Map({
+        target: 'map',
+        layers: [
+            new ol.layer.Tile({
+                source:  new XYZ({
+                    url: "https://wprd0{1-4}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={x}&y={y}&z={z}"
+                }),
+            })
+        ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([37.41, 8.82]),
+            zoom: 4
+        })
+    });
+
+</script>
+
+</body>
+</html>

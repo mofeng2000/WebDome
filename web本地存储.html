@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>表单示例</h2>
+<form>
+    <label for="lname">姓氏:</label><br>
+    <input type="text" id="lname" name="lname" value="" onchange="save(this)">
+    <label for="fname">名字:</label><br>
+    <input type="text" id="fname" name="fname" value="getValue(this)" onchange="save(this)"><br>
+</form>
+<script>
+    localStorage= window.localStorage
+    function save(input) {
+        localStorage.setItem(input.id, input.value)
+    }
+    document.getElementById("fname").value=localStorage.getItem("fname")
+    document.getElementById("lname").value=localStorage.getItem("lname")
+</script>
+</body>
+</html>

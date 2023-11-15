@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <!--<script src="js/index.js"></script>-->
+    <script src="js/bootstrap.js"></script>
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+<!--导航区-->
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <a class="navbar-brand loge" href="#"><img src="images/趣乐论坛loge4.png" alt=""></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="games.html">游戏区<span class="sr-only">(current)</span></a></li>
+                    <li><a href="moves.html">电影区</a></li>
+                    <li><a href="gaoxiao.html">搞笑区</a></li>
+                    <!--&lt;!&ndash;<li class="dropdown">&ndash;&gt;//下拉菜单-->
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                    <!--<li><a href="#">Action</a></li>-->
+                    <!--<li><a href="#">Another action</a></li>-->
+                    <!--<li><a href="#">Something else here</a></li>-->
+                    <!--<li role="separator" class="divider"></li>-->
+                    <!--<li><a href="#">Separated link</a></li>-->
+                    <!--<li role="separator" class="divider"></li>-->
+                    <!--<li><a href="#">One more separated link</a></li>-->
+                    <!--</ul>-->
+                    <!--</li>-->
+                    <li><a href="song.html"> 音乐区</a></li>
+                    <li><a href="images.html"> 图片区</a></li>
+                    <li><a href="xiaoshuo.html"> 小说区</a></li>
+                    <li><a href="gengduo.html"> 更多</a></li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="请输入你要搜索的内容">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" data-toggle="modal" data-target="#myModal">登录</a></li>
+                    <li><a href="register.html">注册</a></li>
+                    <!--<li class="dropdown">-->
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                    <!--<li><a href="#">Action</a></li>-->
+                    <!--<li><a href="#">Another action</a></li>-->
+                    <!--<li><a href="#">Something else here</a></li>-->
+                    <!--<li role="separator" class="divider"></li>-->
+                    <!--<li><a href="#">Separated link</a></li>-->
+                    <!--</ul>-->
+                    <!--</li>-->
+                </ul>
+                <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">登录信息</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">邮箱地址</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                               placeholder="请输入完整的邮箱">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">密码</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1"
+                                               placeholder="请输入密码">
+                                    </div>
+                                    <!--<div class="form-group">-->
+                                    <!--<label for="exampleInputFile">File input</label>-->
+                                    <!--<input type="file" id="exampleInputFile">-->
+                                    <!--<p class="help-block">Example block-level help text here.</p>-->
+                                    <!--</div>-->
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Check me out
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-default">登录</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <!--<button type="button" class="btn btn-primary">保存</button>-->
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+<!--轮播 热搜区-->
+<div class="lunbo">
+    <div id="carousel-example-generic" class="carousel slide lunbotu " data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="images/0.gif" alt="...">
+                <div class="carousel-caption">
+                    爆笑时刻
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/1.gif" alt="...">
+                <div class="carousel-caption">
+                    震惊某男竟然上课干这种事情
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/2.gif" alt="...">
+                <div class="carousel-caption">
+                    震惊某小动物竟然比赛干这种事情
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/3.gif" alt="...">
+                <div class="carousel-caption">
+                    震惊海绵宝宝竟然干这种事情
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/4.gif" alt="...">
+                <div class="carousel-caption">
+                    震惊海绵宝宝竟然干这种事情
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/5.gif" alt="...">
+                <div class="carousel-caption">
+                    震惊海绵宝宝竟然干这种事情
+                </div>
+            </div>
+            ...
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="indexnew">
+    <div class="indexnewti"><a id="new1" class="hover">最新推荐</a></div>
+    <ul>
+        <li><a href="#" title="中国女孩被美国夫妇领养，全家把她宠成公主，9年后模样令人惊艳">中国女孩被美国夫妇领养，</a> <span>[2020-06-15]</span></li>
+        <li><a href="#" title="王诗龄每月开销65万被吐槽">王诗龄每月开销65万被吐槽</a> <span>[2020-06-15]</span></li>
+        <li><a href="#" title="中国女孩被美国夫妇领养，全家把她宠成公主，9年后模样令人惊艳">中国女孩被美国夫妇领养</a> <span>[2020-06-15]</span></li>
+        <li><a href="#" title="王诗龄每月开销65万被吐槽">王诗龄每月开销65万被吐槽</a> <span>[2020-06-15]</span></li>
+        <li><a href="#" title="中国女孩被美国夫妇领养，全家把她宠成公主，9年后模样令人惊艳">中国女孩被美国夫妇领养</a> <span>[2020-06-15]</span></li>
+        <li><a href="#" title="王诗龄每月开销65万被吐槽">王诗龄每月开销65万被吐槽</a> <span>[2020-06-15]</span></li>
+        <li><a href="#" title="中国女孩被美国夫妇领养，全家把她宠成公主，9年后模样令人惊艳">中国女孩被美国夫妇领养</a> <span>[2020-06-15]</span></li>
+        <li><a href="#" title="王诗龄每月开销65万被吐槽">王诗龄每月开销65万被吐槽</a> <span>[2020-06-15]</span></li>
+        <li><a href="#" title="中国女孩被美国夫妇领养，全家把她宠成公主，9年后模样令人惊艳">中国女孩被美国夫妇领养</a> <span>[2020-06-15]</span></li>
+        <li><a href="#" title="王诗龄每月开销65万被吐槽">王诗龄每月开销65万被吐槽</a> <span>[2020-06-15]</span></li>
+    </ul>
+
+</div>
+
+ </div>
+<!--内容区-->
+<div class="wrapper">
+
+
+
+</div>
+</body>
+</html>

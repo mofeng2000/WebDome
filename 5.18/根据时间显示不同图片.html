@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="" alt="">
+<p id="p1"></p>
+
+<script>
+    var img=document.querySelector("img");
+    var p1=document.querySelector("p");
+    var date=new Date();
+    var h=date.getHours();
+    if(h<12){
+        img.src="img素材/z.gif";
+        p1.innerHTML="早上好！"
+    }
+    else  if(h<18){
+        img.src="img素材/x.gif";
+        p1.innerHTML="下午好！"
+    }
+
+    else{
+        img.src="img素材/.gif";
+        p1.innerHTML="晚上好！"
+    }
+</script>
+</body>
+</html>

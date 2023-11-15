@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+        .box{
+            width:520px ;
+            height: 280px;
+            position: relative;
+            margin: 0 auto;
+        }
+       .tu{
+            position: absolute;
+            margin: 0 auto;
+            text-align: center;
+        }
+       .box1 ,
+       .box2{
+           width: 20px;
+           height: 30px;
+           background:rgba(0,0,0,.3 ) ;
+           position: absolute;
+           line-height: 30px;
+           color: white;
+
+           top: 50%;
+           margin-top: -15px;
+       }
+       .box2 a,
+       .box1 a{
+           color: white;
+       }
+        .box2:hover,
+        .box1:hover{
+            background: rgba(0,0,0,.5);
+        }
+        .box1{
+            border-radius: 0 15px 15px 0;
+            left: 0;
+            text-align: left;
+        }
+        .box2{
+            border-radius: 15px 0 0 15px ;
+            text-align: right;
+            right: 0;
+        }
+        .box3{
+            width: 70px;
+            height: 14px;
+            position: absolute;
+            bottom: 15px;
+            left: 228px;
+            float: left;
+            background: rgba(255,255,255,.3);
+        }
+        .box3 ul{
+            float: left;
+        }
+        .box3 ul li{
+            float: left;
+        }
+        .box3 ul li a{
+            width: 8px;
+            height: 8px;
+            float: left;
+            margin: 3px 3px 2px 2px;
+            z-index: 2;
+            background: white;
+            border-radius: 50%;
+        }
+        .box3 ul li a:hover{
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+
+
+    <img src="images/taobao.jpg" alt="" class="tu">
+    <div class="box1"><a href="#"><</a></div>
+    <div class="box2"><a href="#">></a></div>
+    <div class="box3">
+        <ul>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>

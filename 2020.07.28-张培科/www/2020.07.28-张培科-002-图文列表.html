@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="format-detection" content="telephone=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!-- 如果是pc请删除下面一行 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <title>学会1个举一反三10个</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="http://x.5811.com.cn/css/cui.css"/>
+  <link rel="stylesheet" href="http://x.5811.com.cn/css/cui-rel.css"/>
+  <!--<script type="text/javascript" src="http://x.5811.com.cn/js/jquery.js"></script>-->
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .wp {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  a{
+    color: #666;
+  }
+  a:hover {
+    color: #0a6aa1;
+  }
+  body {
+    /*background: #ccc;*/
+  }
+  .ul-list1{
+    overflow: hidden;
+    margin: 0 -20px;
+  }
+  .ul-list1 li {
+    width: 33.333%;
+    float: left;
+  }
+  .ul-list1 .con {
+    margin: 20px;
+    border-bottom: 7px solid transparent;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+
+  .ul-list1 .pic {
+    position: relative;
+    height: 0;
+    padding-top: 55%;
+    /*cursor: pointer;*/
+  }
+  .ul-list1 .pic .pic-1::after{
+    content: " ";
+    display: block;
+    background: url("images/ico2.png")no-repeat center center rgba(0,0,0,.3);
+    width: 100%;
+    height: 100%;
+    background-size:100px ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index:99;
+  }
+  .ul-list1 .pic .pic-1 img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    max-height: 100%;
+    vertical-align:bottom;
+    /*z-index:1;*/
+  }
+
+  .ul-list1 .txt {
+    color: #959595;
+    padding: 15px;
+  }
+  .ul-list1 .tit{
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 25px;
+    margin-bottom: 10px;
+    color: #333;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+  }
+  .ul-list1 .desc{
+    line-height: 25px;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+  .ul-list1 .info{
+    float: right;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+  }
+  .ul-list1 .info img{
+    padding:0  15px;
+  }
+  .ul-list1 .info .info-1{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url("images/ico3.png") no-repeat 0 0 ;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  /*鼠标经过*/
+  .ul-list1 .pic .pic-1 img,
+  .ul-list1 .info-1 {
+    transition: .3s;
+  }
+  /*.ul-list1 .con:hover .pic img{*/
+  /*transform: translate(-50%,-50%) scale(1.05);*/
+    /*border: none;*/
+  /*}*/
+  .ul-list1 .con:hover .info-1{
+    background: url("images/ico4.png") no-repeat 0 0;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  .ul-list1 .con:hover{
+    border-bottom: 7px solid #f4c402;
+  }
+  .ul-list1 .con:hover .pic img{
+    z-index: 0;
+
+  }
+  .ul-list1 .con:hover .pic-1::after{
+   opacity: 1;
+
+  }
+  .ul-list1 .txt .tit:hover{
+    color: #0a6aa1;
+  }
+
+  /*媒体查询*/
+  @media only screen and (max-width: 1440px) {
+    .ul-list1 .tit {
+      font-size: 18px;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .ul-list1 .txt {
+      font-size: 14px;
+    }
+  }
+
+  @media only screen and (max-width: 990px) {
+    .ul-list1 .txt {
+      font-size: 12px;
+    }
+    .ul-list1 li {
+     flex: 50%;
+      margin-bottom: 20px;
+    }
+    .ul-list1 .con {
+      margin: 0 10px;
+    }
+  }
+
+  @media only screen and (max-width: 789px) {
+    .ul-list1 .txt {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 460px) {
+    .ul-list1 li {
+     flex: 100%;
+    }
+  }
+</style>
+<body>
+<div class="wp">
+  <ul class="ul-list1">
+    <li><div class="con">
+      <div class="pic"><a href="https://baidu.com" class="pic-1"><img src="images/7.png" alt=""></a>
+      </div>
+      <div class="txt">
+        <h3 class="tit"><a href="#">朝辞白帝彩云间</a> </h3>
+        <div class="desc">一览无余的落地窗设计，让白帝城的景色尽收 尽收眼底，是您私人时间的享</div>
+        <div class="info"><a href="#" class="info-1"></a>2910 <a href=""><img src="images/ico1.png" alt=""></a>2010 </div>
+      </div>
+    </div>
+    </li>
+    <li><div class="con">
+      <div class="pic"><a href="https://baidu.com" class="pic-1"><img src="images/7.png" alt=""></a>
+      </div>
+      <div class="txt">
+        <h3 class="tit"><a href="#">朝辞白帝彩云间</a> </h3>
+        <div class="desc">一览无余的落地窗设计，让白帝城的景色尽收 尽收眼底，是您私人时间的享</div>
+        <div class="info"><a href="#" class="info-1"></a>2910 <a href=""><img src="images/ico1.png" alt=""></a>2010 </div>
+      </div>
+    </div>
+    </li>
+    <li><div class="con">
+      <div class="pic"><a href="https://baidu.com" class="pic-1"><img src="images/7.png" alt=""></a>
+      </div>
+      <div class="txt">
+        <h3 class="tit"><a href="#">朝辞白帝彩云间</a> </h3>
+        <div class="desc">一览无余的落地窗设计，让白帝城的景色尽收 尽收眼底，是您私人时间的享</div>
+        <div class="info"><a href="#" class="info-1"></a>2910 <a href=""><img src="images/ico1.png" alt=""></a>2010 </div>
+      </div>
+    </div>
+    </li>
+    <li><div class="con">
+      <div class="pic"><a href="https://baidu.com" class="pic-1"><img src="images/7.png" alt=""></a>
+      </div>
+      <div class="txt">
+        <h3 class="tit"><a href="#">朝辞白帝彩云间</a> </h3>
+        <div class="desc">一览无余的落地窗设计，让白帝城的景色尽收 尽收眼底，是您私人时间的享</div>
+        <div class="info"><a href="#" class="info-1"></a>2910 <a href=""><img src="images/ico1.png" alt=""></a>2010 </div>
+      </div>
+    </div>
+    </li>
+    <li><div class="con">
+      <div class="pic"><a href="https://baidu.com" class="pic-1"><img src="images/7.png" alt=""></a>
+      </div>
+      <div class="txt">
+        <h3 class="tit"><a href="#">朝辞白帝彩云间</a> </h3>
+        <div class="desc">一览无余的落地窗设计，让白帝城的景色尽收 尽收眼底，是您私人时间的享</div>
+        <div class="info"><a href="#" class="info-1"></a>2910 <a href=""><img src="images/ico1.png" alt=""></a>2010 </div>
+      </div>
+    </div>
+    </li>
+    <li><div class="con">
+      <div class="pic"><a href="https://baidu.com" class="pic-1"><img src="images/7.png" alt=""></a>
+      </div>
+      <div class="txt">
+        <h3 class="tit"><a href="#">朝辞白帝彩云间</a> </h3>
+        <div class="desc">一览无余的落地窗设计，让白帝城的景色尽收 尽收眼底，是您私人时间的享</div>
+        <div class="info"><a href="#" class="info-1"></a>2910 <a href=""><img src="images/ico1.png" alt=""></a>2010 </div>
+      </div>
+    </div>
+    </li>
+
+  </ul>
+</div>
+
+</body>
+</html>

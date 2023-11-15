@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //程序开始时间
+        var now0=Date.now();
+        //Math数学对象
+        var pai=Math.PI;//圆周率
+        console.log(pai);
+        //向下取整,往小的取数
+        var f=Math.floor(1.6);
+        console.log(f);//1
+        console.log(Math.floor(-1.2));// -2
+        //向上取整，往大的取数
+        var c=Math.ceil(1.2);
+        console.log(c);//2
+        console.log(Math.ceil(-1.2));//-1
+        //四设五人
+        console.log(Math.round(-1.2));//-1
+        console.log(Math.round(-1.6));//-2
+        console.log(Math.round(-1.5));//-1，特例
+        //绝对值
+        console.log(Math.abs(-1.5));//1.5
+        //最大值
+        console.log(Math.max(4,6));
+        //最小值
+        console.log(Math.min(5,3));
+        //随机数
+        //获取两个数之间的数包括他俩
+        function suiji(min,max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+        }
+        console.log(suiji(1,5));
+        //封装自己数学对象
+        var myMath={
+            Pai:Math.PI,
+            //不知道参数个数，不定形参，利用 argumnets(类数组对象)
+            getMax:function () {
+                var max=arguments[0];
+                for (var i=0;i<arguments.length;i++){
+                    if (arguments[i]>max){
+                        max=arguments[i];
+                    }
+                }
+                return max;
+            },
+            getMin:function () {
+                var min=arguments[0];
+                for (var i=0;i<arguments.length;i++){
+                    if (arguments[i]<min){
+                        min=arguments[i];
+                    }
+                }
+                return min;
+            }
+        };
+        console.log(myMath.Pai);
+        var Max=myMath.getMax(1,5,8,'66',"米","0");//字符串会转换成数字，为66 ，
+        var Max1=myMath.getMax(1,5,66,'66',"米","0");//汉字字符串会变成比较大的具体情况具体分析，为66
+        var Max2=myMath.getMax(1,5,8,'66',"米","0","粒粒");//汉字字符串会变成比较大的,具体情况具体分析，汉字越多数值越大，为粒粒
+        console.log(Max);
+        console.log(Max1);//字符串会转换成数字，为米
+        console.log(Max2);//字符串会转换成数字，为米
+        console.log(myMath.getMin(1,5,9,'3'));//1
+        console.log(myMath.getMin(1,5,9,'3',""));//空白
+        console.log(myMath.getMin(1,5,9,'3',"f"));//1 ,字母字符串不参与比较
+        //猜数字
+//        while (true){
+//            var num=prompt("请输入一个数");
+//            var shu=suiji(1,10);
+//            console.log(shu);
+//            if(shu>num){
+//                alert("猜小了");
+//            }
+//            else if(shu<num){
+//                alert("猜大了");
+//            }
+//            else {
+//                alert("猜对了");
+//                 break;
+//            }
+//        }
+        //随机拿数组的值
+//        var shuzu=[1,2,3,4,5];
+//            var shuzu1=suiji(0,shuzu.length-1);
+//            console.log(shuzu[shuzu1]);
+//            console.log(shuzu[suiji(0,shuzu.length-1)]);
+        //拿到当前时间日期星期
+        var date=new Date();
+        console.log(date);//未格式化的时间
+//        var y=date.getFullYear();//获取当年
+//        var M=date.getMonth()+1;//获取当月，由于月份是由0开始的，所以要加一
+//        var d=date.getDate();//获取当日,
+//       var x=date.getDay();//获取当前星期,由于日期是数字，所以要通过数组来获取
+//       var arr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+//        var h=date.getHours();//获取当前小时
+//        var m=date.getMinutes();//获取当前分钟
+//        var s=date.getSeconds();//获取当前秒
+//        console.log(y+"年"+M+"月"+d+"日 "+h+":"+m+":"+s+"  "+arr[x]);
+        //提取时间成方法
+        function getdate(date) {
+            var y=date.getFullYear();//获取当年
+            var M=date.getMonth()+1;//获取当月，由于月份是由0开始的，所以要加一
+            var d=date.getDate();//获取当日,
+            var x=date.getDay();//获取当前星期,由于日期是数字，所以要通过数组来获取
+            var arr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+            var h=date.getHours();//获取当前小时
+            var m=date.getMinutes();//获取当前分钟
+            var s=date.getSeconds();//获取当前秒
+            h=h<10? "0"+h:h;
+            m=m<10? "0"+m:m;
+            s=s<10? "0"+s:s;
+
+            return y+"年"+M+"月"+d+"日 "+h+":"+m+":"+s+"  "+arr[x];
+        }
+        console.log(getdate(new Date("2020-5-14 8:48:6")));
+        //时间戳，世界标准时间
+        var date1=new Date();
+        console.log(date1.getTime());//gettime()是1970 1月 1日到现在的毫秒数
+        console.log(date1.valueOf());//valueOf()是1970 1月 1日到现在的毫秒数
+
+        var now1=+new Date();
+        console.log(now1);//valueOf()是1970 1月 1日到现在的毫秒数
+
+        //h5新增的获取方法
+        var now2=Date.now();
+        now2=now2-now0;
+        console.log(now2);
+        //倒计时
+        function timedown(dateStr) {
+            var date=new Date();
+            var  date2=new Date(dateStr);
+            var cha=(date2.getTime()-date.getTime())/1000;
+            d=parseInt(cha/3600/24);
+            h=parseInt(cha/3600%24);
+            m=parseInt(cha/60%60);
+            s=parseInt(cha%60);
+            return d+"天"+h+"时"+m+"分"+s+"秒";
+
+        }
+        console.log(timedown("2020-5-14 10:0:0"));
+
+//检测是否为数组
+//        instanceof 运算符，可以判断一个对象是否属于某种类型
+// Array.isArray()用于判断一个对象是否为数组，isArray() 是 HTML5 中提供的方法
+            var arr=[];//数组
+            var ojb={};//对象
+            var is= arr instanceof Array;
+            console.log(is);//true
+            console.log(Array.isArray(arr));//true
+//            数组对象的方法
+            //push()末尾添加元素   //返回值为新的长度
+        var arr1=[1,2,5,4];
+        console.log(arr1.push(3));//5
+        console.log(arr1);
+        // unshift()开头添加元素   //返回值为新的长度
+        var arr2=[1,2,5,4];
+        console.log(arr2.unshift(3));//5
+        console.log(arr2);
+
+        //pop（）删除最后一个元素
+        console.log(arr2.pop());
+        //shift（）删除开头一个元素
+        console.log(arr2.shift());
+
+        //筛选数组
+        var arr3=[1500, 1200, 2000, 2100, 1800];
+        var newarr=[];
+        for (var i=0;i<arr3.length;i++){
+            if(arr3[i]<2000){
+                newarr.push(arr3[i]);
+            }
+
+        }
+    console.log(newarr);
+        // 数组排序
+        console.log(arr3.sort());//正序
+        console.log(arr3.sort(function (a,b) {
+            return b-a;
+        }));//倒序
+
+        //颠倒数组元素
+        console.log(arr3.reverse());
+        //
+        //数组索引方法 indexOf()查找第一个元素索引 lasrIndexOf()查找最后一个元素索引
+        console.log(arr3.indexOf(2000));//3,返回的是下标
+        console.log(arr3.lastIndexOf(1800));//3,返回的是下标
+
+        //案例： 数组去重（重点案例）
+        var newarr4=[];
+        var arr4=['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b'];
+        for (var j=0;j<arr4.length;j++){
+            if (newarr4.indexOf(arr4[j])===-1){
+                newarr4.push(arr4[j])
+            }
+
+        }
+        console.log(newarr4);
+
+        console.log(arr4.toString());
+        console.log(arr4.join("!"));
+
+        //课下查询
+        //1  concat 连接两个或多个数组 ，返回一个新数组
+        var arr5=[1,2,3,4];
+        var arr6=[2,4,6];
+        var arr7=arr5.concat(arr6);
+
+        console.log(arr7);
+        //slice() 截取数组 返回一个新数组
+        console.log(arr5.slice(1,3));//(1,3)是下标 =[1,3); 不包括后面的
+        //splice()  方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组。
+        //指定修改的开始位置（从0计数）。如果超出了数组的长度，则从数组末尾开始添加内容；如果是负值，则表示从数组末位开始的第几位
+        // （从-1计数，这意味着-n是倒数第n个元素并且等价于array.length-n）；如果负数的绝对值大于数组的长度，则表示开始位置为第0位。
+        //返回值 由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。
+        console.log(arr5.splice(1,2));//(1,2) 1为开始位置 2是个数
+
+        //字符串的内置函数
+        var str="abcoefoxyozzopp";
+        var count1=0;
+        index=str.indexOf('o');
+        while (index!==-1){
+            console.log('o的位置为'+index);
+            index=str.indexOf('o',index+1);
+            count1++;
+        }
+
+        console.log("o的次数"+count1);
+
+        // 返回数字字符串的位置
+        var str2="01251551054452120";
+        var count2=0;//定义一个计数器
+        //利用 indexof() 查询位置
+        index1=str2.indexOf("0");//查到第一个字符串的位置
+        while (index1!==-1)//只要返回结果不等于-1就一直循环
+        {
+            console.log("0的位置为"+index1);
+            index1=str2.indexOf(0,index1+1);
+            count2++;
+
+        }
+        console.log("0的次数"+count2);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

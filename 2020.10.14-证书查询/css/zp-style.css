@@ -1,0 +1,401 @@
+/***全局样式***/
+body, ul, li, dl, dt, dd, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+}
+
+body {
+    background: #f2f2f2;
+    padding-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #555;
+}
+
+a:hover, a:active {
+    color: #F30;
+}
+
+.clear {
+    clear: both;
+}
+
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+}
+/*.row-a1 start*/
+/***头部***/
+
+#header {
+    overflow: hidden;
+    height: 95px;
+    background-color: #edf1f4;
+}
+
+#header #logo {
+    height: 100%;
+}
+
+#header .logo-img {
+    float: left;
+    line-height: 95px;
+    padding-left: 20px;
+}
+
+#header .logo-img img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+#header .logo-txt {
+    overflow: hidden;
+    padding: 22px 0 0 8px;
+}
+
+#header .logo-txt .desc {
+    font-size: 18px;
+    color: #224d84;
+    letter-spacing: 6.7px;
+    font-weight: normal;
+}
+
+#header .logo-txt .tit {
+    font-size: 26px;
+    color: #224d84;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+/***首 页***/
+#container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background: #ffffff;
+    padding-bottom: 15px;
+}
+
+/*.row-a1 end*/
+
+
+/*.row-a2 start*/
+
+#ban {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: url("../images/banner1.jpg")no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 150px;
+}
+
+#ban .txt {
+    display: block;
+    position: absolute;
+    left: 54.5%;
+    top: 50%;
+    transform: translate(-54.5%, -50%);
+}
+
+#ban .txt .tit1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f0f0fc;
+}
+
+#ban .txt .tit2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fbecf3;
+    letter-spacing: 4px;
+}
+
+/*.row-a2 end*/
+
+/*.row-a3 start*/
+#center {
+    max-width: 1200px;
+    margin: 20px  36px 0;
+}
+
+#left {
+    float: left;
+    width: 65%;
+    overflow: hidden;
+}
+
+#zsys_title {
+    padding-top: 5px;
+    border-bottom: 1px solid #c5ccd1;
+    margin-bottom: 10px;
+}
+
+#zsys_title .tit {
+    font-size: 17px;
+    color: #1c3f7e;
+    line-height: 23px;
+    font-weight: bold;
+}
+
+#zsys_title .tit span {
+    color: #6d6d6d;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.banner {
+    overflow: hidden;
+    margin-left: -16px;
+}
+
+.banner .item {
+    width: 100%;
+    position: relative;
+    display: block;
+    margin-left: 16px;
+}
+
+.banner .item:focus {
+    outline: none;
+}
+
+.banner .item img {
+    width: 100%;
+
+}
+
+.banner .slick-arrow {
+    position: absolute;
+    width: 33px;
+    height: 62px;
+    top: 50%;
+    border: 0;
+    font-size: 0;
+    cursor: pointer;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    outline: none;
+    transform: translateY(-50%);
+}
+
+.banner .slick-prev {
+    left: 2%;
+    background-image: url("../images/headerprev.png");
+}
+
+.banner .slick-next {
+    right: -1%;
+    background-image: url("../images/headernext.png");
+}
+
+
+#search_box {
+    background: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#right {
+    overflow: hidden;
+    padding: 5px 0 0 20px;
+    font-size: 14px;
+
+}
+.search_box{
+    height: 281.56px;
+}
+
+#search_title {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 45px;
+    width: 289px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Microsoft YaHei" ! important;
+    background: url("../images/a.png") no-repeat;
+    border-bottom: 1px solid #ddd;
+}
+
+#search_con {
+    padding: 15px 0 0 35px;
+    height: 223.56px;
+    box-sizing: border-box;
+}
+
+#search_con p {
+    margin-bottom: 10px;
+}
+
+#search_con p input {
+    border: 1px solid #a0a8b1;
+    height: 25px;
+    line-height: 25px;
+    width: 226px;
+    vertical-align: middle;
+}
+
+#search_bt {
+    margin-top: 15px;
+    padding-bottom: 12px;
+}
+
+#center2 {
+    width: 930px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+#ksmk_title {
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-top: 5px;
+    border-bottom: 1px solid #c5ccd1;
+}
+
+#ksmk_content img {
+    display: inline;
+    float: left;
+    margin: 5px 3px 0px 2px;
+}
+
+/*.row-a3 end*/
+
+/*.row-a7 start*/
+.row-a7{
+    margin-top: 20px;
+
+}
+.banner2{
+    padding: 0 -36px;
+}
+.banner2 .item {
+    width: 100%;
+    position: relative;
+    display: block;
+    padding: 0 36px;
+}
+
+.ul-imgs {
+    overflow: hidden;
+    margin-right: -10px;
+}
+
+.ul-imgs li {
+    width: 20%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.ul-imgs .pic {
+    margin-right: 10px;
+    border: 1px solid #dadada;
+    padding: 10px;
+
+}
+
+.ul-imgs .pic img {
+    width: 100%;
+    height: 158.56px;
+}
+.ul-imgs .pic:hover img{
+    transform: scale(1.03);
+    overflow: hidden;
+}
+.banner2 .item:focus {
+    outline: none;
+}
+
+.banner2 .item img {
+    width: 100%;
+    transition: .3s;
+}
+
+.banner2 .slick-arrow {
+    position: absolute;
+    width: 69px;
+    height: 69px;
+    top: 50%;
+    border: 0;
+    font-size: 0;
+    cursor: pointer;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+    outline: none;
+    transform: translateY(-50%);
+}
+.banner2 .slick-arrow:hover{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.banner2 .slick-prev {
+    left: 1px;
+    background-image: url("../images/prve.png");
+}
+
+.banner2 .slick-next {
+    right:5px;
+    background-image: url("../images/next.png");
+}
+
+/*.row-a7 end*/
+#footer {
+    max-width: 1200px;
+    margin: 0 36px;
+    height: 115px;
+    margin-top: 25px;
+    background: #f2f2f2;
+    border-top: #00558F 3px solid;
+    padding-top: 5px;
+}
+
+#footer table {
+    line-height: 1.8em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#footer table tr {
+
+}
+
+#footer p {
+    text-align: center;
+}
+
+#footer p a {
+    color: #2ea0fb;
+}
+
+/***readnews页***/
+
+
+@media only screen and (max-width: 556px) {
+    #ban .txt{
+        left: 60%;
+
+    }
+
+}
+
+

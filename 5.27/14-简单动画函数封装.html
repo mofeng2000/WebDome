@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+<div></div>
+<span>夏雨荷</span>
+<button>
+    点击一下 夏雨荷动500px
+</button>
+<button>
+    点击一下 夏雨荷动800px
+</button>
+<script>
+    var div=document.querySelector("div");
+    var span=document.querySelector("span");
+    var button=document.querySelectorAll("button");
+
+      function run(obj,num ,hanshu) {
+          clearInterval(obj.times);
+          //获取缓慢移动位置
+          var stap=(num-span.offsetLeft)/10;
+          stap=stap<0?Math.floor(stap):Math.ceil(stap);
+        //offsetLeft拿到当前位置
+          obj.times=setInterval(function () {
+                obj.style.left=obj.offsetLeft+stap+"px";
+                if(obj.offsetLeft===num){
+                    clearInterval(obj.times);
+//                    if(hanshu){
+//                        hanshu();
+//                    }
+                    hanshu()&&hanshu();
+
+                }
+            },80)
+        }
+        run(div,400);
+      button[0].onclick=function () {
+          run(span,500)
+      } ;
+      button[1].onclick=function () {
+          run(span,800 ,function () {
+             span.style.background="orange";
+          })
+      }
+
+
+
+
+</script>
+</body>
+
+</html>

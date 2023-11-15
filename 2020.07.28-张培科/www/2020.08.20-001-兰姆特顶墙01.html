@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2020.08.20-001-兰姆特顶墙01</title>
+    <link rel="stylesheet" href="css/cui.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link href="css/slick.css" rel="stylesheet">
+    <script src="js/jquery.countup.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <link href="css/animate.min.css" rel="stylesheet">
+    <style>
+        .wp {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .g-tit {
+            padding: 140px 0 50px;
+            text-align: center;
+        }
+
+        .g-tit .g-tit-h2 {
+            color: #bdbdbd;
+            font-size: 34px;
+            text-transform: uppercase;
+        }
+
+        .g-tit .g-tit-h3 {
+            color: #333;
+            font-size: 22px;
+
+        }
+        .m-sidebar {
+            position: absolute;
+            top: 240px;
+            right: 0;
+        }
+        .m-sidebar li .con {
+            display: inline-block;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ccc;
+            background: #fff;
+            margin: 5px 0;
+        }
+
+        .m-sidebar li .con .tit {
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .m-sidebar li .con img {
+            max-height: 100%;
+            max-height: 100%;
+        }
+
+        .m-sidebar li.back {
+            display: none;
+        }
+
+        .m-sidebar li .con:hover {
+            background: #009fa8;
+            border: 1px solid transparent;
+        }
+
+        .m-sidebar li .con:hover .tit {
+            color: #fff;
+
+        }
+
+        .m-sidebar li .con:hover img {
+            filter: brightness(1000%);;
+        }
+
+        /*<!--头部导航-->*/
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            height: 110px;
+            z-index: 99;
+            padding: 0 3%;
+            box-shadow: 0 3px 1px rgba(0, 0, 0, .3);
+            box-sizing: border-box;
+        }
+
+        .samll {
+
+        }
+
+        .header .loge1 {
+            float: left;
+            line-height: 110px;
+            overflow: hidden;
+            display: block;
+        }
+
+        .header .loge1 a {
+            display: block;
+        }
+
+        .header .loge1 img {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .nav {
+            float: left;
+            margin-left: 40px;
+        }
+
+        .nav li {
+            float: left;
+        }
+
+        .nav li .v1 {
+            color: #000;
+            display: block;
+            font-size: 18px;
+            line-height: 60px;
+            padding: 0 20px;
+            margin: 20px 0;
+            transition: .3s;
+        }
+
+        .nav li .v1 img {
+            vertical-align: middle;
+        }
+
+        .nav li .v1:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .icon {
+            height: 110px;
+            float: right;
+        }
+
+        .icon .so {
+            line-height: 30px;
+            padding: 33px 0;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .icon .so .so-a {
+            background: #009fa8;
+            display: inline-block;
+            border-radius: 17px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .icon .so .txt {
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 0 15px 15px 0;
+            margin: 3px 3px 3px 0;
+            display: inline-block;
+            background: #fff;
+            padding: 0 15px;
+            color: #666;
+
+        }
+
+        .icon .so img {
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+            padding: 0 5px;
+        }
+
+        .icon .tel {
+            padding: 33px 0;
+            float: right;
+            line-height: 30px;
+        }
+
+        .icon .tel .txt {
+            color: #333;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 0 15px 15px 0;
+            margin: 3px 3px 3px 0;
+            float: right;
+            display: inline-block;
+            background: #fff;
+            padding: 0 10px;
+        }
+
+        .icon .tel .tel-a {
+            width: 100%;
+            background: #009fa8;
+            display: inline-block;
+            border-radius: 17px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .icon .tel img {
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+            padding: 0 8px;
+        }
+
+        .menuBtn {
+            display: none;
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn b {
+            display: block;
+            height: 4px;
+            background-color: #0d6fb8;
+            margin: 4px 0;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn.open b {
+            display: none;
+            margin: -5px 0 0;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 30px
+        }
+
+        .menuBtn.open b:first-child {
+            display: block;
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg)
+        }
+
+        .menuBtn.open b:last-child {
+            display: block;
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg)
+        }
+
+        @media only screen and (max-width: 1500px) {
+            .nav {
+                margin-left: 20px
+            }
+
+            .nav li .v1 {
+                font-size: 16px;
+                padding: 0 6px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .icon {
+                display: none;
+            }
+        }
+
+        .ban {
+            margin-top: 110px;
+            display: block;
+            height: 0;
+            padding-top: 30%;
+            background: url("images/banner.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        /*curso*/
+        .curso {
+            overflow: hidden;
+            padding: 20px 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .curso .cur {
+            float: left;
+            line-height: 42px;
+        }
+
+        .curso .ul-cur {
+            overflow: hidden;
+        }
+
+        .curso .ul-cur li {
+            float: left;
+
+        }
+
+        .curso .ul-cur li a {
+            font-size: 14px;
+            color: #333;
+        }
+        .curso .ul-cur li a .tit{
+            font-size: 14px;
+        }
+
+        .curso .ul-cur li a:hover {
+            color: #ff0000;
+        }
+
+        .curso .ul-cur li span {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .curso .so {
+            line-height: 42px;
+            float: right;
+            overflow: hidden;
+            border: 1px solid #999;
+            border-radius: 50px;
+        }
+
+        .curso .so input {
+            padding: 5px 80px 5px 10px;
+            display: inline-block;
+            border: none;
+            outline: none;
+            line-height: 28px;
+        }
+
+        .curso .so button {
+            height: 30px;
+            width: 30px;
+            display: inline-block;
+            outline: none;
+            border: none;
+            border-radius: 50%;
+            background: #009fa8;
+            vertical-align: middle;
+            margin: 5px;
+        }
+
+        .curso .so button i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url("images/so2_03.png") no-repeat center;;
+            background-size: contain;
+            vertical-align: middle;
+        }
+
+        .m-nav2 {
+            overflow: hidden;
+            background: #f7f7f7;
+            border-radius: 30px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            margin: 30px 0 50px;
+        }
+
+        .m-nav2 .nav2-l {
+            float: left;
+        }
+
+        .m-nav2 .nav2-l a {
+            color: #666;
+            font-size: 16px;
+            padding-left: 30px;
+            background: url("images/icon-08_07.png") no-repeat left;
+            background-size: contain;
+        }
+
+        .m-nav2 .nav2-r {
+            float: right;
+        }
+
+        .m-nav2 .nav2-r .nav-a {
+            color: #666;
+            font-size: 16px;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .m-nav2 .nav2-r .nav-a.on {
+            color: #fff;
+            background: #009fa8;
+        }
+
+        /*row-a1*/
+        .row-a1 {
+            background: url("images/row-bg01.png") no-repeat center;
+            background-size: cover;
+        }
+
+        .m-list1 {
+            overflow: hidden;
+            padding: 50px 0;
+        }
+
+        .m-list1 .pic {
+            float: left;
+            width: 35%;
+        }
+
+        .m-list1 .pic img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .m-list1 .txt {
+            overflow: hidden;
+            padding: 40px;
+        }
+
+        .m-list1 .tit-1 {
+            font-size: 38px;
+            color: #bdbdbd;
+            text-transform: uppercase;
+        }
+
+        .m-list1 .tit-2 {
+            font-size: 22px;
+            color: #342c2a;
+        }
+
+        .m-list1 .tit-3 {
+            font-size: 18px;
+            color: #0e979f;
+            padding: 20px 0;
+        }
+
+        .m-list1 .tit-3::before {
+            content: ' ';
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: #0e979f;
+            margin-bottom: 20px;
+        }
+
+        .m-list1 .desc {
+            color: #606060;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .row-a2 {
+            background: url("images/pic-row-a2-bg_02.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        .row-a2 .g-tit-h2,
+        .row-a2 .g-tit-h3 {
+            color: #fff;
+        }
+
+        .ul-list2 {
+            overflow: hidden;
+            padding-bottom: 60px;
+        }
+
+        .ul-list2 li {
+            width: 16.6%;
+            float: left;
+
+        }
+
+        .ul-list2 li .con {
+            display: block;
+            text-align: center;
+            margin: 0 15px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            transition: .3s;
+            height: 200px;
+        }
+
+        .ul-list2 .brand {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .ul-list2 .tit {
+            color: #009fa8;
+            font-size: 16px;
+            height: 18px;
+            line-height: 18px;
+            transition: .3s;
+        }
+
+        .ul-list2 .tit::after,
+        .ul-list2 .tit::before {
+            content: ' ';
+            display: inline-block;
+            width: 30px;
+            height: 1px;
+            background: #ccc;
+            vertical-align: middle;
+            margin: 0 5px;
+            transition: .3s;
+
+        }
+
+        .ul-list2 .pic img {
+            transition: .3s;
+            max-width: 100%;
+            max-height: 100%;
+            padding: 20px;
+        }
+
+        .ul-list2 .desc {
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;;
+            transition: .3s;
+        }
+
+        .ul-list2 li .con:hover {
+            background: none;
+            border: 2px solid #fff;
+
+        }
+
+        .ul-list2 li .con:hover .desc,
+        .ul-list2 li .con:hover .tit,
+        .ul-list2 li .con:hover .brand {
+            color: #fff;
+        }
+
+        .ul-list2 li .con:hover .pic img {
+            filter: saturate(1000%);
+        }
+
+        /*row-a3*/
+        .row-a3 {
+            background: url("images/row-a3bg_02.png") no-repeat center;
+            background-size: cover;
+            padding-bottom: 100px;
+        }
+
+        .row-a3 .g-tit-h2 {
+            color: #bdbdbd;
+        }
+
+        .row-a3 .g-tit-h3 {
+            color: #000;
+        }
+
+        .m-history {
+            background: #fff;
+            padding: 100px;
+            position: relative;
+        }
+
+        .nav-year {
+            padding: 0 20px;
+            margin: 0 50px;
+        }
+
+        .nav-year .item {
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .nav-year .item span {
+            position: relative;
+            color: #666;
+            display: block;
+            padding: 20px 40px;
+            font-size: 16px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .nav-year .item span::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-year .slick-prev {
+            font-size: 0;
+            right: -50px;
+            background: url("images/icon-next_05.png") no-repeat center;
+
+        }
+
+        .nav-year .slick-next {
+            font-size: 0;
+            left: -50px;
+            background: url("images/icon-prve_03.png") no-repeat center;
+        }
+
+        .nav-year .slick-arrow {
+            position: absolute;
+            top: 85%;
+            transform: translateY(-50%);
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-size: contain;
+            outline: none;
+            border: none;
+            background-color: transparent;
+        }
+
+        .nav-year .slick-current span {
+            color: #009fa8;
+        }
+
+        .nav-year .slick-current span::after {
+            background: #009fa8;
+        }
+
+        .slick-for {
+            margin-top: 30px;
+        }
+
+        .slick-for .item {
+            overflow: hidden;
+        }
+
+        .slick-for .item .con {
+            overflow: hidden;
+            background: #f8f8f8;
+        }
+
+        .slick-for .item .pic {
+            float: left;
+            position: relative;
+            height: 0;
+            padding-top: 36%;
+            width: 50%;
+        }
+
+        .slick-for .item .pic img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .slick-for .item .txt {
+            box-sizing: border-box;
+            float: right;
+            width: 50%;
+            padding: 30px;
+        }
+
+        .slick-for .item .txt .tit {
+            font-size: 30px;
+            color: #333;
+            margin: 30px 0 20px;
+        }
+
+        .slick-for .item .txt .desc {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .row-a4 {
+            padding-bottom: 100px;
+        }
+
+        .m-slick2 {
+
+        }
+
+        .slick-list1 {
+            width: 80px;
+            margin: 30px auto;
+        }
+
+        .slick-list1 .item {
+            text-align: center;
+        }
+
+        .slick-list1 span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #ccc;
+            border-radius: 50%;
+        }
+
+        .slick-list1 .slick-prev {
+            font-size: 0;
+            right: 100px;
+            background: url("images/row-a4-l_03.jpg") no-repeat center;
+
+        }
+
+        .slick-list1 .slick-next {
+            font-size: 0;
+            left: 100px;
+            background: url("images/row-a4-r_03.png") no-repeat center;
+        }
+
+        .slick-list1 .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: inline-block;
+            width: 80px;
+            height: 20px;
+            background-size: cover;
+            outline: none;
+            border: none;
+            background-color: transparent;
+        }
+
+        .slick-list1 .slick-current span {
+            background: #009fa8;
+        }
+
+        .m-slick2 .slick-list2 {
+
+        }
+
+        .m-slick2 .slick-list2 .item {
+            text-align: center;
+        }
+
+        .m-slick2 .slick-list2 {
+
+        }
+
+        .m-slick2 .item .con {
+            padding: 20px 30px;
+            background: #f1f1f1;
+            margin: 0 20px;
+            border: 1px solid #ccc;
+        }
+
+        .m-slick2 .slick-list2 .pic {
+            position: relative;
+            height: 0;
+            padding-top: 100%;
+
+        }
+
+        .m-slick2 .slick-list2 .pic img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .m-slick2 .slick-list2 .tit {
+            font-size: 18px;
+            color: #666;
+            font-weight: normal;
+            line-height: 2;
+        }
+
+        .row-a5 {
+            background: #f1f1f1;
+        }
+
+        .m-info {
+            overflow: hidden;
+        }
+
+        .m-info .info-l {
+            float: left;
+            width: 49%;
+        }
+
+        .m-info .ul-inp {
+            width:100%;
+        }
+
+        .m-info .ul-inp li {
+            width:100%;
+            overflow: hidden;
+        }
+
+        .m-info .ul-inp li input ,
+        .m-info .ul-inp li select
+        {
+            width: 100%;
+            border: none;
+            outline: none;
+            height: 100%;
+            color: #666;
+            font-size: 16px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        /*.m-info .ul-inp li select option{*/
+            /*display: inline-block;*/
+            /*padding-right: 20px;*/
+        /*}*/
+        .info-r {
+            float: right;
+            width: 50%;
+            height: 100%;
+        }
+
+        .info-r textarea {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 20px 20px 207px;
+        }
+
+        .info-r button {
+            width: 100%;
+            background: #0e979f;
+            padding: 15px 0;
+            color: #fff;
+            border: none;
+            outline: none;
+            margin-top: 16px;
+        }
+
+        .m-contact {
+
+        }
+
+        .ul-list4 {
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .ul-list4 li {
+            float: left;
+            padding: 10px 0;
+            margin: 0 20px;
+
+        }
+
+        .ul-list4 li .icon {
+            color: #666;
+            display: inline-block;
+            font-size: 14px;
+            background-size: contain;
+            padding-left: 30px;
+            height:30px;
+            width: 90%;
+        }
+        .ul-list4 li .icon.c2{
+            background: url("images/call.png") left top no-repeat;
+        }
+        .ul-list4 li .icon.c1{
+            background: url("images/icon-08-03_03.png") left top no-repeat;
+        }
+        .ul-list4 li .icon.c4{
+            background: url("images/update.png") left top no-repeat;
+        }
+
+        @media only screen and (max-width: 1199px) {
+            .ul-list4 li {
+                box-sizing: border-box;
+                width: 50%;
+
+                margin: 0;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .ban {
+                padding-top: 40%;
+            }
+        }
+
+        .navsub {
+
+        }
+
+        .navsub .ul-nav-sub {
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navsub li {
+            float: left;
+            width: 25%;
+            text-align: center;
+        }
+
+        /*.navsub li:first-child .con {*/
+        /*background: #1d8354;*/
+        /*color: #fff;*/
+        /*}*/
+
+        /*.navsub li:first-child .con::before {*/
+        /*filter: brightness(4.3);*/
+        /*}*/
+
+        .navsub li .pic {
+            display: inline-block;
+            content: "";
+            width: 46px;
+            height: 40px;
+            color: #aac540;
+            vertical-align: middle;
+        }
+
+        .navsub li .pic img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .navsub li .txt {
+            margin-left: 10px;
+        }
+
+        .navsub li .txt .tit {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navsub li .txt .desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1;
+        }
+
+        .navsub li .con {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+            line-height: 3;
+            background: #fff;
+            border-right: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .navsub li:hover .con .pic img {
+            filter: brightness(1000%);
+        }
+
+        .navsub li .con:hover {
+            background: #0e979f;
+
+            border: none;
+        }
+
+        .navsub li .con:hover .tit,
+        .navsub li .con:hover .desc {
+            color: #fff;
+        }
+
+        /*footer*/
+        .footer {
+            background: #1a1a1a;
+            padding: 30px 0;
+        }
+
+        .footer .wp {
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .footer .tit-l {
+            text-align: left;
+            flex: 25%;
+        }
+
+        .footer .tit-l p {
+            display: inline-block;
+        }
+
+        .tit-l .icons {
+            text-align: left;
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .tit-l .icons a {
+            display: inline-block;
+            margin-right:20px;
+        }
+
+        .footer .links {
+            flex: 55%;
+            border-left: 1px solid #484848;
+            border-right: 1px solid #484848;
+        }
+
+        .footer .ul-list5 {
+            display: flex;
+        }
+
+        .footer .ul-list5 li {
+            flex: 20%;
+        }
+
+        .ul-list5 .tit {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #fff;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        .ul-list5 .tit::after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            content: " ";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #0e979f;
+            margin-right: 10px;
+        }
+
+        .ul-list5 a p {
+            color: #b9b9b9;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .ul-list5 a:hover p {
+            color: #0e979f;
+        }
+
+        .footer {
+            text-align: center;
+        }
+
+        .footer .qr {
+            flex: 20%;
+            text-align: left;
+            padding-left: 40px;
+        }
+
+        .footer .qr .tit {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .footer .qr .phone {
+            margin-top: 20px;
+            color: #0e979f;
+            font-size: 24px;
+        }
+
+        .footer .qr .tel {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .footer .qr .more {
+            margin-top: 30px;
+            display: block;
+            line-height: 46px;
+            height: 46px;
+            color: #666;
+            border: 1px solid #a9aaa9;
+            padding-left: 20px;
+        }
+
+        .footer .qr .more em {
+            float: right;
+            display: block;
+            width: 46px;
+            line-height: 46px;
+            height: 46px;
+            border-top: 1px solid #a9aaa9;
+            font-size: 30px;
+            text-align: center;
+            transform: rotate(-90deg);
+        }
+
+        .footer-end {
+            background: #212121;
+        }
+
+        .m-tel {
+            height: 90px;
+            width: 100%;
+            line-height: 90px;
+            text-align: left;
+        }
+
+        .m-tel p {
+            color: #a9aaa9;
+            font-size: 14px;
+        }
+        .m-tel p i{
+            margin-left: 10px;
+            display: inline-block;
+            width: 50px;
+            height: 12px;
+
+            background: url("images/copy-img.png") center no-repeat;
+            background-size: contain;
+        }
+
+          .footer-end .m-tel p span {
+              font-size: 14px;
+            display: inline-block;
+            float: right;
+        }
+
+        @media only screen and (max-width: 1260px) {
+            .ul-list2 li .con {
+                padding: 14px;
+            }
+        }
+
+        @media only screen and (max-width: 1199px) {
+            .menuBtn {
+                display: block;
+            }
+
+            .menuBtn .open {
+
+            }
+
+            .icon {
+                margin-right: 5px;
+            }
+
+            .header.samll {
+                background: rgba(0, 0, 0, .6);
+                height: 50%;
+            }
+
+            .nav {
+                display: none;
+                position: fixed;
+                right: 5%;
+                top: -6%;
+            }
+
+            .nav li:last-child .v1 {
+                color: #fff;
+            }
+
+            .ul-nva {
+                margin-top: 70px;
+                text-align: center;
+            }
+
+            .nav li {
+                float: none;
+                margin: 0;
+            }
+
+            .nav li .v1 {
+                padding: 0 15px;
+                transition: .3s;
+                line-height: 30px;
+                color: #fff;
+            }
+
+            .nav li .v1:hover {
+                background: #fff;
+                color: #000;
+            }
+
+            .ul-nav li .con {
+                font-size: 16px;
+            }
+
+            .m-list1 .txt {
+                padding: 20px;
+            }
+
+            .m-list1 .txt .desc {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            .ul-list2 li {
+                width: 33.3%;
+            }
+
+            .ul-list2 li .con {
+                margin: 10px 25px;
+            }
+
+        }
+
+        @media only screen and (max-width: 989px) {
+            .m-list1 .tit-1 {
+                font-size: 30px;
+            }
+
+            .m-list1 .tit-2 {
+                font-size: 20px;
+            }
+
+            .m-list1 .tit-3 {
+                padding: 10px 0;
+            }
+
+            .m-list1 .tit-3::before {
+                margin-bottom: 10px;
+            }
+
+            .m-list1 .txt .desc {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+
+            .slick-for .item .txt {
+                padding: 20px;
+            }
+
+            .slick-for .item .txt .tit {
+                font-size: 24px;
+                margin: 10px;
+            }
+
+            .nav-year {
+                margin: 0;
+            }
+
+            .nav-year .item span {
+                padding: 20px;
+            }
+
+            .ul-list4 li {
+                width: 100%;
+            }
+
+            .footer .tit-l,
+            .footer .links {
+                display: none;
+
+
+            }
+
+            .footer .qr {
+                border: none;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .footer .qr .more {
+                display: inline-block;
+                text-align: center;
+
+            }
+
+            .footer .qr .more em {
+                margin-left: 20px;
+            }
+
+            .footer-end {
+                display: none;
+            }
+
+            .navsub li {
+                width: 50%;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+
+        @media only screen and (max-width: 866px) {
+            .m-list1 .pic {
+                text-align: center;
+                float: none;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .m-list1 .txt {
+                text-align: center;
+            }
+
+            .m-list1 .tit-3::before {
+
+                margin: 0 auto;
+            }
+
+            .m-list1 .txt .desc {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+
+            .slick-for .item .txt .desc {
+                font-size: 14px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .ul-list2 li {
+                width: 50%;
+
+            }
+
+            .slick-for .item .pic {
+                width: 100%;
+                float: none;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .slick-for .item .txt {
+                width: 100%;
+                float: none;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .m-info .info-l,
+            .info-r {
+                width: 100%;
+                float: none;
+
+                margin: 0 auto;
+            }
+
+            .curso .so input {
+                padding: 5px 40px 5px 10px;
+            }
+
+            .m-cur .wp {
+                width: 95%;
+                margin: 0 10px;
+            }
+
+            .m-history {
+                padding: 34px;
+            }
+            .m-sidebar{
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 565px) {
+            .wp {
+                width: 95%;
+                margin: 0 10px;
+                box-sizing: border-box;
+            }
+
+            .m-list1 .txt {
+                padding: 0;
+            }
+
+            .curso .cur {
+                float: none;
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .curso .so {
+                display: inline-block;
+                float: none;
+                width: 80%;
+            }
+
+            .curso .so input {
+                float: left;
+                padding: 0 0 0 10px;
+            }
+
+            .curso .so button {
+                float: right;
+            }
+
+        }
+        @media only screen and (max-width: 375px) {
+            .wp {
+                width: 98%;
+                margin: 0 10px;
+                box-sizing: border-box;
+            }
+            .curso .so input{
+                float: none;
+                padding-left: 10px;
+            }
+            .m-list1 .txt {
+                padding: 0;
+            }
+            .ban{
+                padding-top: 60%;
+            }
+
+        }
+
+    </style>
+
+
+</head>
+<body>
+<!--电梯导航-->
+<div class="m-sidebar">
+    <ul class="ul-nav-ele">
+        <li>
+            <a href="#" class="con">
+                <img src="images/bar01.png" alt="">
+                <h3 class="tit">官方商城</h3>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="con">
+                <img src="images/bar02.png" alt="">
+                <h3 class="tit">官方商城</h3>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="con">
+                <img src="images/bar03.png" alt="">
+                <h3 class="tit">官方商城</h3>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="con">
+                <img src="images/bar04.png" alt="">
+                <h3 class="tit">官方商城</h3>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="con">
+                <img src="images/bar05.png" alt="">
+                <h3 class="tit">官方商城</h3>
+            </a>
+        </li>
+        <li class="back">
+            <a href="#" class="con  ">
+                <img src="images/bar06.png" alt="">
+                <h3 class="tit">返回顶部</h3>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--头部导航-->
+<div class="header fix">
+    <span class="menuBtn"></span>
+    <div class="loge1"><a href="#"><img src="images/lmt-logo_03.png" alt=""></a></div>
+    <div class="icon">
+        <div class="so"><a href="#" class="so-a"><img src="images/pic-so_03.png" alt=""> <span
+                class="txt">官方商城</span></a></div>
+        <div class="tel"><a href="#" class="tel-a"><img src="images/pic-tel_03.png" alt=""><span class="txt">招商热线：400-833-980</span></a>
+        </div>
+    </div>
+    <div class="nav">
+        <ul class="ul-nva fix">
+            <li><a href="#" class="v1">首页</a></li>
+            <li><a href="#" class="v1">设计之家</a></li>
+            <li><a href="#" class="v1">设计系统</a></li>
+            <li><a href="#" class="v1">设计体验</a></li>
+            <li><a href="#" class="v1">招商加盟</a></li>
+            <li><a href="#" class="v1">品牌动态</a></li>
+            <li><a href="#" class="v1">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+<!--内页ban-->
+<div class="ban">
+</div>
+<!--面包屑导航-->
+<div class="m-cur">
+    <div class="wp ">
+        <div class="curso fix">
+            <div class="cur">
+                <ul class="ul-cur">
+                    <li><a href="#"><h3 class="tit">当前位置：</h3></a></li>
+                    <li><a href="#">首页 ></a></li>
+                    <li><a href="#">产品展示 ></a></li>
+                    <li><span>门系列</span></li>
+                </ul>
+            </div>
+            <div class="so">
+                <form action="">
+                    <input type="text" placeholder="请输入搜索关键词">
+                    <button><i></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--m-nav2-->
+    <div class="wp ">
+        <div class="m-nav2 fix">
+            <div class="nav2-l "><a href="#">全部</a></div>
+            <div class="nav2-r">
+                <a href="#" class=" nav-a">工程案例</a>
+                <a href="#" class="nav-a on">工程案例</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row-a1">
+    <!--左图右文列表top Wall-->
+    <div class="wp">
+        <div class="m-list1">
+            <div class="pic "><img src="images/pic-08-02_03.jpg" alt=""></div>
+            <div class="txt">
+                <h3 class="tit-1">lanmute Top wall</h3>
+                <h4 class="tit-2">中国集成顶墙行业十大领军品牌</h4>
+                <h4 class="tit-3">蓝姆特顶墙</h4>
+                <p class="desc">
+                    佛山市蓝姆特家居科技有限公司，成立于2007年，专业专注于全屋顶墙定制领域，行业标准起草参编单位，集研发、设计、制造与服务为一
+                    佛山市蓝姆特家居科技有限公司，成立于2007年，专业专注于全屋顶墙定制领域，行业标准起草参编单位，集研发、设计、制造与服务为一
+
+                </p>
+                <p class="desc">
+                    佛山市蓝姆特家居科技有限公司，成立于2007年，专业专注于全屋顶墙定制领域，行业标准起草参编单位，集研发、设计、制造与服务为一
+                    佛山市蓝姆特家居科技有限公司，成立于2007年，专业专注于全屋顶墙定制领域，行业标准起草参编单位，集研发、设计、制造与服务为一
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--品牌文化-->
+<div class="row-a2">
+    <div class="wp">
+        <div class="g-tit">
+            <h2 class="g-tit-h2">
+                Brand Culture
+            </h2>
+            <h3 class="g-tit-h3">
+                品牌文化
+            </h3>
+        </div>
+        <ul class="ul-list2">
+            <li>
+                <a href="#" class="con">
+                    <span class="brand">蓝姆特</span>
+                    <h3 class="tit">愿景</h3>
+                    <div class="pic"><img src="images/b-icon01.png" alt=""></div>
+                    <p class="desc">corporate vision</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="con">
+                    <span class="brand">蓝姆特</span>
+                    <h3 class="tit">愿景</h3>
+                    <div class="pic"><img src="images/b-icon02.png" alt=""></div>
+                    <p class="desc">corporate vision</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="con">
+                    <span class="brand">蓝姆特</span>
+                    <h3 class="tit">愿景</h3>
+                    <div class="pic"><img src="images/b-icon03.png" alt=""></div>
+                    <p class="desc">corporate vision</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="con">
+                    <span class="brand">蓝姆特</span>
+                    <h3 class="tit">愿景</h3>
+                    <div class="pic"><img src="images/b-icon04.png" alt=""></div>
+                    <p class="desc">corporate vision</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="con">
+                    <span class="brand">蓝姆特</span>
+                    <h3 class="tit">愿景</h3>
+                    <div class="pic"><img src="images/b-icon05.png" alt=""></div>
+                    <p class="desc">corporate vision</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="con">
+                    <span class="brand">蓝姆特</span>
+                    <h3 class="tit">愿景</h3>
+                    <div class="pic"><img src="images/b-icon06.png" alt=""></div>
+                    <p class="desc">corporate vision</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+<!--品牌历程-->
+<div class="row-a3">
+    <div class="wp">
+        <div class="g-tit">
+            <h2 class="g-tit-h2">
+                Brand Culture
+            </h2>
+            <h3 class="g-tit-h3">
+                品牌历程
+            </h3>
+        </div>
+
+        <div class="m-history">
+            <div class="nav-year">
+                <div class="item"><span>1980</span></div>
+                <div class="item"><span>1986</span></div>
+                <div class="item"><span>2004</span></div>
+                <div class="item"><span>2005</span></div>
+                <div class="item"><span>2007</span></div>
+                <div class="item"><span>2008</span></div>
+                <div class="item"><span>2009</span></div>
+                <div class="item"><span>2010</span></div>
+            </div>
+            <div class="slick-for">
+                <div class="item">
+                    <div class="con">
+                        <div class="pic"><img src="images/pic-row-a3_03.jpg" alt=""></div>
+                        <div class="txt">
+                            <h3 class="tit">2015上行</h3>
+                            <div class="desc">
+                                品牌步入稳步上行期，汉堡系列、海德堡阳光房系列两大高端品类首面市，
+                                成功开启高端家装市场，力推艺术高雅人居典范，备受市场追棒
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="con">
+                        <div class="pic"><img src="images/pic-row-a3_03.jpg" alt=""></div>
+                        <div class="txt">
+                            <h3 class="tit">2016上行</h3>
+                            <div class="desc">
+                                品牌步入稳步上行期，汉堡系列、海德堡阳光房系列两大高端品类首面市，
+                                成功开启高端家装市场，力推艺术高雅人居典范，备受市场追棒
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="con">
+                        <div class="pic"><img src="images/pic-row-a3_03.jpg" alt=""></div>
+                        <div class="txt">
+                            <h3 class="tit">2017上行</h3>
+                            <div class="desc">
+                                品牌步入稳步上行期，汉堡系列、海德堡阳光房系列两大高端品类首面市，
+                                成功开启高端家装市场，力推艺术高雅人居典范，备受市场追棒
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="con">
+                        <div class="pic"><img src="images/pic-row-a3_03.jpg" alt=""></div>
+                        <div class="txt">
+                            <h3 class="tit">2015上行</h3>
+                            <div class="desc">
+                                品牌步入稳步上行期，汉堡系列、海德堡阳光房系列两大高端品类首面市，
+                                成功开启高端家装市场，力推艺术高雅人居典范，备受市场追棒
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+<!--品牌荣耀-->
+<div class="row-a4">
+    <div class="wp">
+        <div class="g-tit">
+            <h2 class="g-tit-h2">
+                Brand Culture
+            </h2>
+            <h3 class="g-tit-h3">
+                品牌荣耀
+            </h3>
+        </div>
+
+        <div class="m-slick2">
+            <div class="slick-list1">
+                <div class="item"><span></span></div>
+                <div class="item"><span></span></div>
+                <div class="item"><span></span></div>
+                <div class="item"><span></span></div>
+                <div class="item"><span></span></div>
+            </div>
+            <div class="slick-list2">
+                <div class="item">
+                    <div class="con">
+                        <div class="pic"><img src="images/pic-row-a3bg_03.jpg" alt=""></div>
+
+                    </div>
+                    <h3 class="tit">2015上行</h3>
+                </div>
+                <div class="item">
+                    <div class="con">
+                        <div class="pic"><img src="images/pic-row-a3bg_03.jpg" alt=""></div>
+
+                    </div>
+                    <h3 class="tit">2015上行</h3>
+                </div>
+                <div class="item">
+                    <div class="con">
+                        <div class="pic"><img src="images/pic-row-a3bg_03.jpg" alt=""></div>
+
+                    </div>
+                    <h3 class="tit">2015上行</h3>
+                </div>
+                <div class="item">
+                    <div class="con">
+                        <div class="pic"><img src="images/pic-row-a3bg_03.jpg" alt=""></div>
+
+                    </div>
+                    <h3 class="tit">2015上行</h3>
+                </div>
+                <div class="item">
+                    <div class="con">
+                        <div class="pic"><img src="images/pic-row-a3bg_03.jpg" alt=""></div>
+
+                    </div>
+                    <h3 class="tit">2015上行</h3>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+<!--合作留言-->
+<div class="row-a5">
+    <div class="wp">
+        <div class="g-tit">
+            <h2 class="g-tit-h2">
+                Cooperation message
+            </h2>
+            <h3 class="g-tit-h3">
+                合作留言
+            </h3>
+        </div>
+        <div class="m-info">
+            <form action="">
+            <div class="info-l">
+                <ul class="ul-inp">
+                    <li><input type="text" placeholder="联系姓名"></li>
+                    <li><input type="text" placeholder="联系电话"></li>
+                    <li><select><option>广东省</option></select></li>
+                    <li><select><option>佛山市</option></select></li>
+                    <li><select><option>禅城区</option></select></li>
+                </ul>
+            </div>
+            <div class="info-r">
+                <textarea>留言内容</textarea>
+                <button>提交留言</button>
+            </div>
+            </form>
+        </div>
+        <div class="m-contact">
+            <ul class="ul-list4">
+                <li><a href="#" class=" icon c1">公司地址：广东佛山南海里水新联工业区北区光明大道6-8号</a></li>
+                <li><a href="#"   class=" icon c2">电话：0757-81181267 </a></li>
+                <li><a href="#"  class=" icon c3"> 传真：0757-81181267</a></li>
+                <li><a href="#"  class=" icon c4"> 邮箱：hongkonglmt@163.com</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row-a6">
+    <div class="navsub">
+        <div class="wp">
+            <ul class="ul-nav-sub">
+                <li>
+                    <a href="#" class="con c1">
+                        <div class="pic"><img src="images/footer-icon1.png" alt=""></div>
+                        <div class="txt">
+                            <h3 class="tit">官方商城</h3>
+                            <p class="desc">Official mall</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="con c1">
+                        <div class="pic"><img src="images/footer-icon2.png" alt=""></div>
+                        <div class="txt">
+                            <h3 class="tit">官方商城</h3>
+                            <p class="desc">Official mall</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="con c1">
+                        <div class="pic"><img src="images/footer-icon3.png" alt=""></div>
+                        <div class="txt">
+                            <h3 class="tit">官方商城</h3>
+                            <p class="desc">Official mall</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="con c1">
+                        <div class="pic"><img src="images/footer-icon4.png" alt=""></div>
+                        <div class="txt">
+                            <h3 class="tit">官方商城</h3>
+                            <p class="desc">Official mall</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<!--底部导航-->
+<div class="footer">
+    <div class="wp fix">
+        <div class="tit-l">
+            <p class="p1"><img src="images/fooder-logo_03.png" alt=""></p>
+            <div class="icons">
+                <a href="#"><img src="images/wechat.png" alt=""></a>
+                <a href="#"><img src="images/weibo.png" alt=""></a>
+                <a href="#"><img src="images/QQkongjian.png" alt=""></a>
+                <a href="#"><img src="images/TX_weibo.png" alt=""></a>
+            </div>
+        </div>
+        <div class="links">
+            <ul class="ul-list5">
+                <li><h3 class="tit">设计之家</h3>
+                    <a href="#"><p>123</p></a>
+                    <a href="#"><p>123</p></a>
+                    <a href="#"><p>123</p></a>
+                </li>
+                <li><h3 class="tit">设计之家</h3>
+                    <a href="#"><p>123</p></a>
+                    <a href="#"><p>123</p></a>
+                    <a href="#"><p>123</p></a>
+                </li>
+                <li><h3 class="tit">设计之家</h3>
+                    <a href="#"><p>123</p></a>
+                    <a href="#"><p>123</p></a>
+                    <a href="#"><p>123</p></a>
+                </li>
+                <li><h3 class="tit">设计之家</h3>
+                    <a href="#"><p>123</p></a>
+                    <a href="#"><p>123</p></a>
+                    <a href="#"><p>123</p></a>
+                </li>
+                <li><h3 class="tit">设计之家</h3>
+                    <a href="#"><p>123</p></a>
+                    <a href="#"><p>123</p></a>
+                    <a href="#"><p>123</p></a>
+                </li>
+            </ul>
+        </div>
+        <div class="qr">
+            <h3 class="tit">联系我们</h3>
+            <p class="phone">400-685-8537</p>
+            <p class="tel">全国统一服务热线</p>
+            <a href="#" class="more">友情链接 <em> ></em></a>
+        </div>
+
+    </div>
+
+</div>
+<div class="footer-end">
+    <div class="wp">
+        <div class="m-tel">
+            <p>Copyright © 2020 佛山市蓝姆特家居科技有限公司 版权所有 法律申明 粤ICP备05011690 <i></i> <span>技术支持：准度科技</span></p>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // 手机导航
+    $('.menuBtn').append('<b></b><b></b><b></b>');
+    $('.menuBtn').click(function (event) {
+
+        $(this).toggleClass('open');
+        $('.header').toggleClass('samll');
+        $('.nav').stop().slideToggle();
+        $('.tel').stop().slideToggle();
+        $('.so').stop().slideToggle();
+    });
+
+    var _winw = $(window).width();
+    if (_winw > 959) {
+        $('.nav li').hover(function () {
+            $(this).find('.sub').stop().slideDown();
+//            if ($(this).find('.sub').length) {
+//                $(this).addClass('ok');
+//                $('.header').addClass('on');
+//            } else {
+//                $('.header').removeClass('on');
+//            }
+        }, function () {
+            $(this).removeClass('ok');
+            $(this).find('.sub').stop().slideUp();
+        });
+//        $('.nav').mouseleave(function (event) {
+//            if ($('.header').hasClass('on')) {
+//                $('.header').removeClass('on');
+//            }
+//        });
+    } else {
+
+//        $('.nav .v1').click(function () {
+//            if ($(this).siblings('.sub').length) {
+//                    $(this).parents('li').siblings('li').find('.sub').stop().slideUp();
+//                $(this).parents('li').siblings('li').removeClass('on');
+//                $(this).parents('li').toggleClass('on');
+//                $(this).siblings('.sub').stop().slideToggle();
+//                return false;
+//            }
+//        });
+    }
+</script>
+<script>
+    let h1 = $('.ban').offset().top;
+    let h2 = $('.m-sidebar').offset().top;
+    let h3 = $('.row-a1').offset().top;
+    console.log(h2);
+    console.log(h1);
+    console.log(h3);
+    console.log(h2 - h1);
+    $(window).on('scroll', function () {
+
+        if ($(document).scrollTop() >= h1) {
+            $('.m-sidebar').css(
+                {
+                    position: 'fixed',
+                    top: h2 - h1 + 'px',
+                }
+            )
+        }
+
+        else {
+            $('.m-sidebar').css(
+                {
+                    position: 'absolute',
+                    top: h2 + 'px'
+                }
+            )
+        }
+        if ($(document).scrollTop() >= h3) {
+            $('.m-sidebar .back').fadeIn();
+        }
+        else {
+            $('.m-sidebar .back').fadeOut();
+        }
+
+    });
+    $('.m-sidebar .back').on("click", function () {
+        //通过jquery的animate函数设置页面的滚动距离
+        //通过jquery的animate方法设置元素样式时，可以产生动画效果
+        $('html,body').animate({
+            scrollTop: 0
+        });
+    });
+</script>
+<script>
+    $('.nav-year').slick({
+        focusOnSelect: true,
+        //被切换的子项始终位于slick中心
+        slidesToShow: 7,
+        centerMode: true,
+        //一般和centerMode: true搭配使用，更好看
+        centerPadding: '0',
+        asNavFor: ".slick-for",
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 5
+
+                }
+            },
+            {
+                breakpoint: 479,
+                settings: {
+                    slidesToShow: 3,
+                    arrows: false
+
+                }
+            }
+        ]
+    });
+    $('.slick-for').slick({
+        arrows: false,
+        fade: true,
+        asNavFor: ".nav-year"
+    });
+    $('.slick-list1').slick({
+        //被切换的子项始终位于slick中心
+        slidesToShow: 4,
+        centerMode: true,
+        //一般和centerMode: true搭配使用，更好看
+        centerPadding: '0',
+        asNavFor: ".slick-list2"
+    });
+    $('.slick-list2').slick({
+        slidesToShow: 4,
+        arrows: false,
+        asNavFor: ".slick-list1",
+        responsive: [
+            {
+                breakpoint: 989,
+                settings: {
+                    slidesToShow: 3
+
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: false
+
+                }
+            },
+            {
+                breakpoint: 456,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false
+
+                }
+            }
+        ]
+    });
+</script>
+
+</body>
+</html>

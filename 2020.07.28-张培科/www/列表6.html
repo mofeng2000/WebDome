@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="format-detection" content="telephone=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!-- 如果是pc请删除下面一行 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <title>学会1个举一反三10个</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="http://x.5811.com.cn/css/cui.css"/>
+  <link rel="stylesheet" href="http://x.5811.com.cn/css/cui-rel.css"/>
+  <!--<script type="text/javascript" src="http://x.5811.com.cn/js/jquery.js"></script>-->
+</head>
+<style>
+  .wp {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  a{
+    color: #666;
+  }
+  a:hover {
+    color: #0a6aa1;
+  }
+  body {
+    /*background: #ccc;*/
+  }
+  .ul-imgtxt1 {
+    margin: 0 -20px;
+  }
+  .ul-imgtxt1 li {
+    float: left;
+    width: 50%;
+  overflow: hidden;
+  }
+  .ul-imgtxt1 .con {
+    position: relative;
+    display: block;
+    margin:  20px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,.3);
+  }
+
+  .ul-imgtxt1 .pic {
+    position: relative;
+    padding-top: 55%;
+    height: 0;
+  }
+  /*.ul-imgtxt1 .pic a{*/
+    /*width: 100%;*/
+  /*}*/
+  .ul-imgtxt1 .pic img {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    width: 100%;
+    max-height: 100%;
+  }
+  .ul-imgtxt1 .txt{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;;
+    overflow: hidden;
+    color: #fff;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.2);
+    opacity: 0;
+  }
+  .ul-imgtxt1 .tag{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 12px;
+  }
+  .ul-imgtxt1 .tag .tag-a2{
+    margin-bottom: 15px;
+  }
+  .ul-imgtxt1 .tag::after{
+    content: " ";
+    display: block;
+    width: 2em;
+    height: 2px;
+    background: #fff;
+  }
+
+  .ul-imgtxt1 .tit{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;;
+  }
+  .ul-imgtxt1 .icon{
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+  }
+
+  /*鼠标经过效果*/
+  .ul-imgtxt1 .pic img,
+  .ul-imgtxt1 .txt
+  {
+    transition : .3s ease-in-out;
+    -webkit-transition : .3s ease-in-out;
+  }
+  .ul-imgtxt1 .con:hover .pic  img{
+  transform: translate(-50%,-50%) scale(1.05);
+    -webkit-transform:translate(-50%,-50%) scale(1.05);
+  }
+  .ul-imgtxt1 .con:hover .txt{
+    opacity: 1;
+  }
+
+  /*媒体查询*/
+  @media only screen and (max-width: 1440px) {
+    .ul-imgtxt1 .tit {
+      font-size: 22px;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .ul-imgtxt1 .tit {
+      font-size: 18px;
+    }
+  }
+
+  @media only screen and (max-width: 990px) {
+    .ul-imgtxt1 .tit {
+      font-size: 16px;
+    }
+    .ul-imgtxt1 li {
+      width: auto;
+      float: none;
+    }
+    .ul-imgtxt1 .con {
+      margin: 15px 0;
+    }
+  }
+
+  @media only screen and (max-width: 789px) {
+    .ul-imgtxt1 li {
+      width: auto;
+      float: none;
+    }
+  }
+
+  @media only screen and (max-width: 460px) {
+    .ul-imgtxt1 li {
+      width: auto;
+      float: none;
+    }
+  }
+
+
+</style>
+<body>
+<div class="wp">
+  <ul class="ul-imgtxt1">
+      <li>
+        <div class="con">
+        <div class="pic"><a href="#"><img src="images/6.1.jpg" alt=""></a></div>
+        <div class="txt">
+            <div class="tag">
+              <p class="tag-a1">ahava trave</p>
+                <p class="tag-a2">photo</p>
+
+            </div>
+            <div class="tit">
+              <h3 class="tit-a1" >三亚店</h3>
+              <h4 class="tit-a2">sanya store</h4>
+            </div>
+            <div class="icon"><img src="images/icon6.png" alt=""></div>
+          </div>
+        </div>
+      </li>
+    <li>
+      <div class="con">
+        <div class="pic"><a href="#"><img src="images/6.1.jpg" alt=""></a></div>
+        <div class="txt">
+          <div class="tag">
+            <p class="tag-a1">ahava trave</p>
+            <p class="tag-a2">photo</p>
+
+          </div>
+          <div class="tit">
+            <h3 class="tit-a1" >三亚店</h3>
+            <h4 class="tit-a2">sanya store</h4>
+          </div>
+          <div class="icon"><img src="images/icon6.png" alt=""></div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="con">
+        <div class="pic"><a href="#"><img src="images/6.1.jpg" alt=""></a></div>
+        <div class="txt">
+          <div class="tag">
+            <p class="tag-a1">ahava trave</p>
+            <p class="tag-a2">photo</p>
+
+          </div>
+          <div class="tit">
+            <h3 class="tit-a1" >三亚店</h3>
+            <h4 class="tit-a2">sanya store</h4>
+          </div>
+          <div class="icon"><img src="images/icon6.png" alt=""></div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="con">
+        <div class="pic"><a href="#"><img src="images/6.1.jpg" alt=""></a></div>
+        <div class="txt">
+          <div class="tag">
+            <p class="tag-a1">ahava trave</p>
+            <p class="tag-a2">photo</p>
+
+          </div>
+          <div class="tit">
+            <h3 class="tit-a1" >三亚店</h3>
+            <h4 class="tit-a2">sanya store</h4>
+          </div>
+          <div class="icon"><img src="images/icon6.png" alt=""></div>
+        </div>
+      </div>
+    </li>
+    </ul>
+</div>
+
+</body>
+</html>

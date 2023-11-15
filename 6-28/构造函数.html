@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class obj{
+        constructor(x,y){
+            this.x=x;
+            this.y=y
+        }
+        sum(){
+            return this.x+this.y
+        }
+    }
+    var js=new obj(1,2);
+    console.log(js.sum());
+    class obj2 extends obj{
+        constructor(x,y,z){
+       super(x,y);
+            this.z=z
+        }
+
+        sum(){
+            return this.x+"+"+this.y+"+"+"="+(this.x+this.y)
+        }
+        sum2(){
+            return this.x+"+"+this.y+"+"+this.z+"="+(super.sum()+this.z)
+        }
+    }
+    var js2=new obj2(1,2,3);
+    console.log(js2.sum2());
+
+
+
+</script>
+
+</body>
+</html>

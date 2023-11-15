@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta name="format-detection" content="telephone=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 如果是pc请删除下面一行 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+        <title>CSS限制字符行数加省略号</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+          <link rel="stylesheet" href="http://x.5811.com.cn/css/cui.css" />
+          <link rel="stylesheet" href="http://x.5811.com.cn/css/cui-rel.css" />
+          <!--<script type="text/javascript" src="http://x.5811.com.cn/js/jquery.js"></script>-->
+		<style>
+			.wp{
+        width: 90%;
+        margin: 0 auto;
+      }
+      .ul-list{
+        display: flex;
+        margin-right: 20px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .ul-list li{
+       flex: 1;
+        float: left;
+        font-size: 12px;
+      }
+      .ul-list .pic{
+        width: 100%;
+      }
+      .ul-list .pic img{
+        width: 100%;
+      }
+      .ul-list .con{
+        margin-right: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+      }
+      .ul-list .con:hover{
+        border: 1px solid #0d8ddb;
+      }
+      .ul-list .con:hover .btn{
+        background: #0d8ddb;
+      }
+      .ul-list .txt{
+        /*display: -webkit-box;*/
+        /*-webkit-box-orient: vertical;*/
+        /*-webkit-line-clamp:2;*/
+        /*overflow:hidden;*/
+        /*text-overflow: ellipsis;*/
+        margin-bottom: 10px;
+      }
+      .ul-list .tit{
+        font-size: 18px;
+        font-weight: normal;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 20px 0;
+
+      }
+      .ul-list .desc{
+        /*height: 100px;*/
+        /*限制文本显示几行*/
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp:2;
+        overflow:hidden;
+        text-overflow: ellipsis;
+
+      }
+      .ul-list .btn{
+        color: #fff;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        background: #ccc;
+
+      }
+
+		</style>
+    </head>
+<body>
+
+<div class="wp">
+  <ul class="ul-list">
+    <li><div class="con">
+      <div class="pic"><img src="images/lb4.png" alt=""></div>
+      <div class="txt">
+        <h3 class="tit">贝乐赞助大众女子队</h3>
+        <p class="desc">CSS限制字符行数加省略号CSS限制字符行数加数加省略号
+          CSS限制字符行数加省略号CSS限制字符行数加数加省略号</p>
+        <span class="btn">+</span>
+      </div>
+    </div></li>
+    <li><div class="con">
+      <div class="pic"><img src="images/lb4.png" alt=""></div>
+      <div class="txt">
+        <h3 class="tit">诚信</h3>
+        <p class="desc">CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行字符行数加省略号
+          CSS限制字符行数加省略号CSS限制字符行数加数加省略号</p>
+        <span class="btn">+</span>
+      </div>
+    </div></li>
+    <li><div class="con">
+      <div class="pic"><img src="images/lb4.png" alt=""></div>
+      <div class="txt">
+        <h3 class="tit">诚信</h3>
+        <p class="desc">CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号数加省略号
+          CSS限制字符行数加省略号CSS限制字符行数加数加省略号</p>
+        <span class="btn">+</span>
+      </div>
+    </div></li>
+  </ul>
+</div>
+
+</body>
+</html>

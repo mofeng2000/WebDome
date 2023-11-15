@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function shor(arr) {
+        var num=0;
+        for (var i=0;i<arr.length-1;i++){
+            for (var j=0;j<arr.length-1-i;j++){
+                if(arr[j]>arr[j+1]){
+                    num=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=num;
+                }
+            }
+        }
+        return arr
+    }
+    console.log(shor([2,6,77,52,25,7,99]))
+</script>
+</body>
+</html>

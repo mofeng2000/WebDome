@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div{
+        background: orangered;
+    }
+</style>
+<body>
+<div class="con">
+    <div class="div">1</div>
+    <div class="div">1</div>
+    <div class="div">1</div>
+    <div class="div">1</div>
+    <div class="div">1</div>
+</div>
+<div class="div">333</div>
+
+<script>
+
+    var items=document.querySelector(".con").getElementsByClassName("div")
+    var sum=0;
+    for (let i = 0; i < items.length; i++) {
+        //items[i].style.display="none";
+        sum+=parseInt(items[i].innerHTML);
+        console.log(sum);
+    }
+</script>
+</body>
+</html>

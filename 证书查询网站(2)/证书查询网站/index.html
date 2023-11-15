@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <title>证书查询</title>
+    <link rel="stylesheet" type="text/css" href="css/zp-style.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/hm.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+    <!-- cpx -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/m-cpx.css" />
+    <script type="text/javascript" src="js/m-cpx.js"></script>
+    <script type="text/javascript">
+        /*
+        验证表单，至少输入*个查询条件；
+        strFormId为表单Id，nMinValid为需要的条件个数；
+        在有效标签加入valid="valid"属性。
+        */
+        function checkFormValid(strFormId, nMinValid) {
+            var objForm = document.getElementById(strFormId);
+            var arrayFormChilds = objForm.getElementsByTagName("input");
+            var nValid = 0;
+
+            for (var n = 0; n < arrayFormChilds.length; n++) {
+                if (arrayFormChilds[n].getAttribute("valid")) {
+                    // 去除字符串内所有的空格
+                    var value = arrayFormChilds[n].value.replace(/\s*/g, "");
+                    if (value.length > 0) {
+                        nValid++;
+                    }
+                }
+            }
+
+            if (nValid < nMinValid) {
+                window.alert("请至少输入" + nMinValid + "个查询条件！");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="row-a1">
+            <div id="header">
+                <div id="logo" style="border: 0;">
+                    <div class="logo-img"><img src="images/logo.png" /></div>
+                    <div class="logo-txt">
+                        <p class="desc">中华人民共和国人力资源和社会保障部</p>
+                        <h2 class="tit">职业技能人才鉴定认证服务平台</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row-aa row-a2">
+            <div id="ban">
+                <a href="#" target="_blank" class="txt">
+                    <h3 class="tit1">citt.osta.org.cn</h3>
+                    <h3 class="tit2">职业技能人才在线教育培训中心</h3>
+                </a>
+                <!--页头-->
+            </div>
+        </div>
+        <div class="row-aa row-a3">
+            <div id="center">
+                <div class="tab">
+                    <span
+                        style="font-size:16px;color:#0d7ccb;line-height:38px;border-bottom:3px solid #0d7ccb;padding-bottom:8px;">&nbsp;&nbsp;<b>培训项目</b></span>
+                    <a href="index.php?g=&m=list&a=index&id=19&cid=19"><span
+                            style="float:right;width:60px;height:24px;background
+                                    :url(images/more.png) no-repeat 100% 100%;font-size:14px;color:#feffff;background-size:100%;text-align:center;line-height:24px;margin:12px 0;">更多+</span></a>
+                    <div class="clear"></div>
+                </div>
+                <div id="left">
+
+                    <div class="banner">
+                        <a href="#" class="item">
+                            <img src="images/zsys_a.jpg">
+                        </a>
+                        <a href="#" class="item">
+                            <img src="images/zsys_b.jpg">
+                        </a>
+                        <a href="#" class="item">
+                            <img src="images/zsys_a.jpg">
+                        </a>
+                        <a href="#" class="item">
+                            <img src="images/zsys_b.jpg">
+                        </a>
+                    </div>
+                    <!--左栏-->
+                </div>
+                <div id="right">
+                    <form method="post" id="Info" name="Info" onsubmit="return checkFormValid('Info', 2);">
+                        <input type="hidden" name="csrfmiddlewaretoken"
+                            value="sgi5aJuqwSjdfutu23N8BiKmaunwIf8AO35TltdApQwfVV8o5R5pqI7fjNMxp4wu">
+                        <div id="search_box">
+                            <div id="search_title">证书查询</div>
+                            <div id="search_con">
+                                <p><label>姓　　名：</label><input type="text" id="Name" name="Name" valid="valid"></p>
+                                <p><label>身份证号：</label><input type="text" id="CID" name="CID" valid="valid"></p>
+                                <p><label>证书编号：</label><input type="text" id="CertificateID" name="CertificateID"
+                                        valid="valid">
+                                </p>
+                                <p style="color: #808080;">注：任意输入以上两项内容即可查询。</p>
+                                <div id="search_bt"><input type="image" src="images/btn_search.jpg"></div>
+                            </div>
+                            <div id="search_bottom"></div>
+                        </div>
+                    </form>
+
+                    <!--查询区-->
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div id="center2">
+                <div class="clear"></div>
+                <!--中栏-->
+            </div>
+        </div>
+        <div class="row-a row-a4">
+            <div class="wp">
+                <div class="cont">
+                    <div class="new_con">
+                        <div class="bg">
+                            <div class="fl">
+                                <img src="images/newcon_fl.gif" />
+                            </div>
+                            <div class="fl">
+                                <div class="fl con_new1 con_newpub"></div>
+                                <div class="fl con_new2 con_newpub"></div>
+                                <div class="fl con_new3 con_newpub"></div>
+                            </div>
+                            <div class="fr">
+                                <img src="images/newcon_fr.gif" />
+                            </div>
+                        </div>
+                        <div class="tab_btn">
+                            <div id="area1" class="cxsj_hreef_s cxsj_hreef_s1">人社部备案机构（用人单位）</div>
+                            <div id="area2" class="cxsj_hreef_s2">人社部备案机构（社会培训评价组织）</div>
+                            <div id="area3" class="cxsj_hreef_s3">省级人社部门备案机构</div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div id="con_area_1" class="area_list" style="display: block;">
+                            <table>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=cnpc"
+                                            target="_blank">中国石油天然气集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=crrc"
+                                            target="_blank">中国中车股份有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=sinopec"
+                                            target="_blank">中国石油化工集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=cnooc"
+                                            target="_blank">中国海洋石油集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=cnnc"
+                                            target="_blank">中国核工业集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=ccccltd"
+                                            target="_blank">中国交通建设集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=crcc"
+                                            target="_blank">中国铁建股份有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=crecg"
+                                            target="_blank">中国中铁股份有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=cssc"
+                                            target="_blank">中国船舶集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=avic"
+                                            target="_blank">中国航空工业集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=nhrdc"
+                                            target="_blank">中国兵器工业集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=railway"
+                                            target="_blank">中国国家铁路集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=casc"
+                                            target="_blank">中国航天科技集团有限公司</a></td>
+                                    <td><a href="">中国航天科工集团有限公司</a></td>
+                                    <td><a href="">中国兵器装备集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=cscec"
+                                            target="_blank">中国建筑集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=crsc"
+                                            target="_blank">中国铁路通信信号集团有限公司</a></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="con_area_2" class="area_list" style="display: none;">
+                            <table>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_bjcram"
+                                            target="_blank">北京市成人按摩职业技能培训学校</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_xdfw"
+                                            target="_blank">北京市石景山区现代服务职业技能培训学校</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_ygdj"
+                                            target="_blank">济南阳光大姐服务有限责任公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_zjcx"
+                                            target="_blank">中教畅享（北京）科技有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_jlwy"
+                                            target="_blank">湖南省金领玮业职业培训学校</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_bdqn"
+                                            target="_blank">北京阿博泰克北大青鸟信息技术有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_hd"
+                                            target="_blank">浙江花都美容美发培训中心</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_bmc"
+                                            target="_blank">四川博茗茶产业技能培训中心</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_xhjy"
+                                            target="_blank">安徽新华教育集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_jhyy"
+                                            target="_blank">成都市均衡营养保健技能培训学校</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_lx"
+                                            target="_blank">山东蓝翔技师学院</a></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="con_area_3" class="area_list area_list1" style="display: none;">
+                            <table>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?bj" target="_blank">北京</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?tj" target="_blank">天津</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hb" target="_blank">河北</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?sx" target="_blank">山西</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?nm" target="_blank">内蒙</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?ln" target="_blank">辽宁</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?jl" target="_blank">吉林</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hlj" target="_blank">黑龙江</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?sh" target="_blank">上海</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?js" target="_blank">江苏</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?zj" target="_blank">浙江</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?ah" target="_blank">安徽</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?fj" target="_blank">福建</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?jx" target="_blank">江西</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?sd" target="_blank">山东</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hn" target="_blank">河南</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hubei" target="_blank">湖北</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hunan" target="_blank">湖南</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?gd" target="_blank">广东</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?gx" target="_blank">广西</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hainan" target="_blank">海南</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?cq" target="_blank">重庆</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?sc" target="_blank">四川</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?gz" target="_blank">贵州</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?yn" target="_blank">云南</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?shanxi" target="_blank">陕西</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?gs" target="_blank">甘肃</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?qh" target="_blank">青海</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?nx" target="_blank">宁夏</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?xj" target="_blank">新疆</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?bt" target="_blank">兵团</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?xz" target="_blank">西藏</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-a row-a5">
+            <div class="wp">
+                <div class="cont">
+                    <div class="new_con">
+                        <div class="bg">
+                            <div class="fl">
+                                <img src="images/newcon_fl.gif" />
+                            </div>
+                            <div class="fl">
+                                <div class="fl con_new1 con_newpub"></div>
+                                <div class="fl con_new2 con_newpub"></div>
+                                <div class="fl con_new3 con_newpub"></div>
+                            </div>
+                            <div class="fr">
+                                <img src="images/newcon_fr.gif" />
+                            </div>
+                        </div>
+                        <div class="tab_btn">
+                            <div id="area1" class="cxsj_hreef_s cxsj_hreef_s1">人社部备案机构（用人单位）</div>
+                            <div id="area2" class="cxsj_hreef_s2">人社部备案机构（社会培训评价组织）</div>
+                            <div id="area3" class="cxsj_hreef_s3">省级人社部门备案机构</div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div id="con_area_1" class="area_list" style="display: block;">
+                            <table>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=cnpc"
+                                            target="_blank">中国石油天然气集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=crrc"
+                                            target="_blank">中国中车股份有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=sinopec"
+                                            target="_blank">中国石油化工集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=cnooc"
+                                            target="_blank">中国海洋石油集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=cnnc"
+                                            target="_blank">中国核工业集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=ccccltd"
+                                            target="_blank">中国交通建设集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=crcc"
+                                            target="_blank">中国铁建股份有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=crecg"
+                                            target="_blank">中国中铁股份有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=cssc"
+                                            target="_blank">中国船舶集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=avic"
+                                            target="_blank">中国航空工业集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=nhrdc"
+                                            target="_blank">中国兵器工业集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=railway"
+                                            target="_blank">中国国家铁路集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=casc"
+                                            target="_blank">中国航天科技集团有限公司</a></td>
+                                    <td><a href="">中国航天科工集团有限公司</a></td>
+                                    <td><a href="">中国兵器装备集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=cscec"
+                                            target="_blank">中国建筑集团有限公司</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/publicity_detail.html?name=crsc"
+                                            target="_blank">中国铁路通信信号集团有限公司</a></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="con_area_2" class="area_list" style="display: none;">
+                            <table>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_bjcram"
+                                            target="_blank">美容师</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_xdfw"
+                                            target="_blank">美发师</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_ygdj"
+                                            target="_blank">康复理疗师</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_zjcx"
+                                            target="_blank">健康管理师</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_jlwy"
+                                            target="_blank">营养师</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_bdqn"
+                                            target="_blank">保育员</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_hd"
+                                            target="_blank">浙江花都美容美发培训中心</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_bmc"
+                                            target="_blank">四川博茗茶产业技能培训中心</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_xhjy"
+                                            target="_blank">安徽新华教育集团有限公司</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_jhyy"
+                                            target="_blank">成都市均衡营养保健技能培训学校</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/third_party_sub_detail.html?name=thirdparty_lx"
+                                            target="_blank">山东蓝翔技师学院</a></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="con_area_3" class="area_list area_list1" style="display: none;">
+                            <table>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?bj" target="_blank">北京</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?tj" target="_blank">天津</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hb" target="_blank">河北</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?sx" target="_blank">山西</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?nm" target="_blank">内蒙</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?ln" target="_blank">辽宁</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?jl" target="_blank">吉林</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hlj" target="_blank">黑龙江</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?sh" target="_blank">上海</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?js" target="_blank">江苏</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?zj" target="_blank">浙江</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?ah" target="_blank">安徽</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?fj" target="_blank">福建</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?jx" target="_blank">江西</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?sd" target="_blank">山东</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hn" target="_blank">河南</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hubei" target="_blank">湖北</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hunan" target="_blank">湖南</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?gd" target="_blank">广东</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?gx" target="_blank">广西</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?hainan" target="_blank">海南</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?cq" target="_blank">重庆</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?sc" target="_blank">四川</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?gz" target="_blank">贵州</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?yn" target="_blank">云南</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?shanxi" target="_blank">陕西</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?gs" target="_blank">甘肃</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?qh" target="_blank">青海</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?nx" target="_blank">宁夏</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?xj" target="_blank">新疆</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?bt" target="_blank">兵团</a></td>
+                                    <td><a href="http://pjjg.osta.org.cn/pjjg.html?xz" target="_blank">西藏</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-aa row-a6">
+            <div class="wp">
+                <div class="main">
+                    <div class="left">
+                        <p
+                            style="width:100%;height:50px;line-height:50px;text-align:center;font-size:21px;color:white;background:#0d7ccb;">
+                            中医培训</p>
+                        <ul>
+
+                        </ul>
+                        <div class="tab">
+                            <span
+                                style="font-size:16px;color:#0d7ccb;line-height:38px;border-bottom:3px solid #0d7ccb;padding-bottom:8px;">&nbsp;&nbsp;<b>培训项目</b></span>
+                            <a href="index.php?g=&m=list&a=index&id=19&cid=19"><span
+                                    style="float:right;width:60px;height:24px;background
+                                    :url(images/more.png) no-repeat 100% 100%;font-size:14px;color:#feffff;background-size:100%;text-align:center;line-height:24px;margin:12px 0;">更多+</span></a>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="leftobj">
+                            <a href=""><img src="images/zyzj.jpg" height="97" width="193" alt="" /></a>
+                            <a href=""><img src="images/bjzm.jpg" height="97" width="193" alt="" /></a>
+                        </div>
+                    </div>
+
+                    <div class="indexnewsright">
+                        <div class="tab">
+                            <a href="javascript:void();"><span
+                                    style="font-size:16px;color:#0d7ccb;line-height:38px;border-bottom:3px solid #0d7ccb;padding-bottom:8px;">&nbsp;&nbsp;<b>培训项目</b></span></a>
+                            <a href="index.php?g=&m=list&a=index&id=19"><span
+                                    style="float:right;width:60px;height:24px;background
+                                        :url(images/more.png) no-repeat 100% 100%;font-size:14px;color:#feffff;background-size:100%;text-align:center;line-height:24px;margin:12px 0;">更多+</span></a>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="indextrain">
+                            <ul>
+                                <li><a href="index.php?g=&m=article&a=index&id=33&cid=19">
+                                        <img src="images/58e5a21cec82e.jpg" />
+                                        <div class="indextrainame">
+                                            <b>中医小儿保健推拿...</b>
+                                        </div>
+                                    </a></li>
+                                <li><a href="index.php?g=&m=article&a=index&id=31&cid=19">
+                                        <img src="images/58e5a28e31975.jpg" />
+                                        <div class="indextrainame">
+                                            <b>中医康复理疗...</b>
+                                        </div>
+                                    </a></li>
+                                <li><a href="index.php?g=&m=article&a=index&id=23&cid=19">
+                                        <img src="images/58e5a3bb8583b.jpg" />
+                                        <div class="indextrainame">
+                                            <b>中医催乳...</b>
+                                        </div>
+                                    </a></li>
+                                <li><a href="index.php?g=&m=article&a=index&id=22&cid=19">
+                                        <img src="images/58e5a3e129f63.jpg" />
+                                        <div class="indextrainame">
+                                            <b>中药调剂...</b>
+                                        </div>
+                                    </a></li>
+                                <li><a href="index.php?g=&m=article&a=index&id=19&cid=19">
+                                        <img src="images/58e5a434e8b25.jpg" />
+                                        <div class="indextrainame">
+                                            <b>中医针灸...</b>
+                                        </div>
+                                    </a></li>
+                                <li><a href="index.php?g=&m=article&a=index&id=20&cid=19">
+                                        <img src="images/58e5a457dd40a.jpg" />
+                                        <div class="indextrainame">
+                                            <b>保健按摩...</b>
+                                        </div>
+                                    </a></li>
+                                <div class="clear"></div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#"><h3 class="zp-g-tit1">项目简介</h3></a>
+        <div class="row-aa row-a7">
+            <div class="tab">
+                <span
+                    style="font-size:16px;color:#0d7ccb;line-height:38px;border-bottom:3px solid #0d7ccb;padding-bottom:8px;">&nbsp;&nbsp;<b>培训项目</b></span>
+                <a href="index.php?g=&m=list&a=index&id=19&cid=19"><span
+                        style="float:right;width:60px;height:24px;background
+                                    :url(images/more.png) no-repeat 100% 100%;font-size:14px;color:#feffff;background-size:100%;text-align:center;line-height:24px;margin:12px 0;">更多+</span></a>
+                <div class="clear"></div>
+            </div>
+            <div class="banner2">
+                <div href="#" class="item">
+                    <ul class="ul-imgs">
+                        <li>
+                            <div class="pic"><img src="images/pic1.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic2.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic3.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic4.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic1.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic2.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic3.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic4.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic1.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic2.png"></div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div href="#" class="item">
+                    <ul class="ul-imgs">
+                        <li>
+                            <div class="pic"><img src="images/pic1.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic2.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic3.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic4.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic1.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic2.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic3.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic4.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic1.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic2.png"></div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div href="#" class="item">
+                    <ul class="ul-imgs">
+                        <li>
+                            <div class="pic"><img src="images/pic1.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic2.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic3.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic4.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic1.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic2.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic3.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic4.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic1.png"></div>
+                        </li>
+                        <li>
+                            <div class="pic"><img src="images/pic2.png"></div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="con_footer"></div>
+        <div id="footer">
+            <div class="for">
+                <p class="p1">版权所有：</p>
+                <p class="p2">中国就业培训技术指导中心<br />人力资源和社会保障部职业技能鉴定中心</p>
+                <p class="p4 clearfix" style="width:700px;">
+                    技术支持：<a href="http://www.pthl.net" target="_blank">北京普天合力通讯技术服务有限公司</a> 　 电话支持：010-85282055 <br />
+                    <img class="fd-pic" src="images/blue_error.png" alt="">
+                    <script>
+                        var _hmt = _hmt || [];
+                        (function () {
+                            var hm = document.createElement("script");
+                            hm.src = "//hm.baidu.com/hm.js?5e21f0d47312f3be133220d325fc2d4d";
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(hm, s);
+                        })();
+                    </script>
+
+            </div>
+
+            <!--版权-->
+        </div>
+    </div>
+    <script>
+        $('.banner').slick({
+            dots: false,
+            arrows: true,
+            autoplay: true,
+            slidesToShow: 2,
+            autoplaySpeed: 3000
+        });
+        $('.banner2').slick({
+            dots: false,
+            arrows: true,
+            autoplay: true,
+            slidesToShow: 1,
+            autoplaySpeed: 3000
+        });
+    </script>
+</body>
+
+</html>

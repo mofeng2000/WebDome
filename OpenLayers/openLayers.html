@@ -1,0 +1,467 @@
+<html lang="en">
+<head>
+    <meta charSet="utf-8">
+    <!--注意：openlayers 原版的比较慢，这里引起自己服务器版-->
+    <link rel="stylesheet" href="css/ol.css" type="text/css">
+    <style>
+        /* 注意：这里必须给高度，否则地图初始化之后不显示；一般是计算得到高度，然后才初始化地图 */
+        .map {
+            height: 600px;
+            width: 100%;
+            float: left;
+        }
+
+        /*// 设置拾取坐标位置*/
+
+        .custom-mouse-position {
+            width: 130px;
+            height: auto;
+            position: fixed;
+            bottom: 50px;
+            border: 2px solid orange;
+            left: 20px;
+            z-index: 1;
+            background: orangered;
+        }
+
+        .mapSwitch {
+            position: absolute;
+            top: 80px;
+            right: 50px;
+        }
+        a:link{text-decoration:none;}/*点击前*/
+        a:visited{text-decoration:none;}/*点击后*/
+        a:active{text-decoration:none;}/*点击中*/
+        a:hover{text-decoration:none; }/*鼠标悬浮*/
+
+    </style>
+    <!--注意：openlayers 原版的比较慢，这里引起自己服务器版-->
+    <script src="js/ol.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/turf.min.js"></script>
+<!--    <script src="tiandituLayers.js"></script>-->
+    <title>OpenLayers example</title>
+</head>
+<body>
+<h2>OpenLayers feature topology</h2>
+<!--地图容器，需要指定 id -->
+<div id="map" class="map"></div>
+<div class="mapSwitch">
+    <a href="#" class="normal active">地图</a>
+    <a href="#" class="mix">混合</a>
+</div>
+
+<label>Shape type &nbsp;</label>
+<select id="type">
+    <option value="Point">Point</option>
+    <option value="LineString">LineString</option>
+    <option value="Polygon">Polygon</option>
+    <option value="Circle">Circle</option>
+    <option value="Square">Square</option>
+    <option value="Box">Box</option>
+    <option value="None">None</option>
+</select>
+<script type="text/javascript">
+
+    // 设置标注样式
+    let labelStyle = new ol.style.Style({
+        text: new ol.style.Text({
+            font: 'bold 20px serif',
+            text: '北京',
+            fill: new ol.style.Fill({
+                color: 'rgba(255, 0, 0, 1)'
+            })
+        })
+    });
+    // 创建矢量源
+    let vectorSource = new ol.source.Vector();
+    // 创建矢量图层
+    let vectorLayer = new ol.layer.Vector({
+        source: vectorSource
+    });
+    // 用于充当标注的要素
+    let labelFeature = new ol.Feature({
+        geometry: new ol.geom.Point([12956325, 4851028])
+    });
+    // 添加标注的样式
+    labelFeature.setStyle(labelStyle);
+    // 将标注要素添加到矢量图层中
+    vectorSource.addFeature(labelFeature);
+
+    // 创建坐标拾取控件
+    let mousePositionControl = new ol.control.MousePosition({
+        // 字符串格式为：保留小数点后两位
+        coordinateFormat: new ol.coordinate.createStringXY(2),
+        // 设置WGS84坐标系
+        projection: 'EPSG:4326',
+        // 设置类名称，方便使用css修改
+        className: 'custom-mouse-position',
+        // 鼠标离开地图后使用空格代替
+        undefinedHTML: '&nbsp;',
+    });
+
+    var map = new ol.Map({
+        // 地图容器
+        target: 'map',
+        // 地图图层，比如底图、矢量图等
+        layers: [
+            // getIMG_CLayer(),
+            // getIBO_CLayer(),
+            // getCIA_CLayer(),
+            new ol.layer.Tile({
+                source: new ol.source.XYZ({
+                    crossOrigin: 'Anonymous',
+                    // 高德普通地图
+                    url: 'http://webrd03.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scale=1&style=8'
+                }),
+                visible: true
+            }),
+            new ol.layer.Tile({
+                source: new ol.source.XYZ({
+                    crossOrigin: 'Anonymous',
+                    // 高德混合地图
+                    url: 'http://webst02.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}'
+                }),
+                visible: false
+            }),
+            vectorLayer
+        ],
+        // 地图视野
+        view: new ol.View({
+            projection: "EPSG:4326",
+            // 定位
+            center: [115.67724700667199, 37.73879478106912],
+            // 缩放
+            zoom: 6,
+            maxZoom: 18,
+            minZoom: 1,
+        }),
+        controls: ol.control.defaults().extend([
+            // 添加坐标拾取控件
+            new ol.control.ScaleLine({
+                // 设置单位
+                units: 'metric',
+                // 设置比例尺
+                bar: true,
+                // 设置比例尺步数
+                steps: 4,
+                // 设置比例尺上方渲染文本比例
+                text: true,
+                // 设置最小像素宽度
+                minWidth: 140
+            }),
+            mousePositionControl
+        ])
+    });
+    // 设置点击事件
+    $('.normal').click(function () {
+        if (!$(this).hasClass('active')) {
+            $(this).addClass('active').siblings().removeClass('active');
+            map.getLayers().item(1).setVisible(false);
+            map.getLayers().item(0).setVisible(true);
+        }
+    })
+    $('.mix').click(function () {
+        if (!$(this).hasClass('active')) {
+            $(this).addClass('active').siblings().removeClass('active');
+            map.getLayers().item(0).setVisible(false);
+            map.getLayers().item(1).setVisible(true);
+        }
+    })
+    //设置画图样式
+    let typeSelect = document.getElementById('type');
+    let draw;
+
+    function addInteraction() {
+        let type = typeSelect.value;
+        if (type !== 'None') {
+            let geometryFunction;
+            switch (type) {
+                case "Square":
+                    type = 'Circle';
+                    // 生成规则四边形的图形函数
+                    geometryFunction = ol.interaction.Draw.createRegularPolygon(4);
+                    break;
+                case "Box":
+                    type = 'Circle';
+                    // 生成盒形状的图形函数
+                    geometryFunction = ol.interaction.Draw.createBox();
+                    break;
+                default:
+                    break;
+            }
+            // 初始化Draw绘图控件
+            draw = new ol.interaction.Draw({
+                source: vectorSource,
+                type: type,
+                geometryFunction: geometryFunction
+            });
+            // 将Draw绘图控件加入Map对象
+            map.addInteraction(draw);
+        }
+    }
+
+    typeSelect.addEventListener('change', () => {
+        // 移除Draw绘图控件
+        map.removeInteraction(draw);
+        addInteraction();
+    });
+    addInteraction();
+    var defaultStyle = new ol.style.Style({
+        //边框样式
+        stroke: new ol.style.Stroke({
+            color: 'white',
+            width: 2,
+        }),
+        //填充样式
+        fill: new ol.style.Fill({
+            color: 'rgba(33, 255, 255, 0.7)',
+        }),
+        image: new ol.style.Circle({
+            radius: 5,
+            fill: new ol.style.Fill({
+                color: 'white',
+            })
+        })
+    })
+    // 初始化图层
+    var layer = initVectorLayer();
+    // 点线面数组
+    var features = [];
+
+    addFeatures();
+    // 添加点线面
+    function addFeatures() {
+        //
+        // features.push(getFeatureByWKT("POLYGON((112.80630306271966 46.27140545436643,116.23403743771966 44.33781170436643,117.81606868771966 40.29484295436643,117.90395931271966 38.36124920436643,117.81606868771966 35.02140545436643,116.14614681271966 32.38468670436643,113.50942806271966 33.26359295436643,111.75161556271966 34.58195232936643,110.60903743771966 35.46085857936643,113.28970150021968 36.03214764186642,111.35610775021968 36.33976482936642,110.91665462521968 36.91105389186642,111.22427181271968 37.52628826686642,112.10317806271968 37.30656170436642,112.41079525021968 37.78996014186642,112.32290462521968 38.36124920436642,111.44399837521968 38.66886639186642,110.52114681271968 39.10831951686642,110.38931087521968 39.81144451686642,111.09243587521968 40.07511639186642,112.19106868771968 40.38273357936642,112.49868587521968 41.04191326686642,111.88345150021968 41.21769451686642,111.26821712521968 40.86613201686642,110.43325618771968 40.91007732936642,110.65298275021968 41.39347576686642,110.47720150021968 42.66788982936642,111.79556087521968 42.75578045436642,110.38931087521968 43.19523357936642,110.56509212521968 44.24992107936642,111.44399837521968 43.76652264186642,111.79556087521968 44.16203045436642,111.09243587521968 44.60148357936642,111.22427181271968 45.30460857936642,112.10317806271968 44.95304607936642,112.67446712521968 45.26066326686642,111.75161556271968 45.78800701686642,111.88345150021968 46.40324139186642,112.14712337521968 47.94132732936642,112.45474056271968 47.15031170436642,113.99282650021968 47.28214764186642,113.28970150021968 46.79874920436642,114.95962337521968 46.71085857936642,112.80630306271966 46.27140545436643))"));
+        // features.push(getFeatureByWKT("POLYGON((124.1455078125 44.03320312500001,114.6533203125 37.26562500000001,129.990234375 28.212890625,136.8896484375 42.01171875,133.1982421875 45.5712890625,124.1455078125 44.03320312500001))"));
+        // features.push(getFeatureByWKT("POLYGON((125.48696587513709 40.418890353749546,124.32241509388709 39.715765353749546,125.17934868763709 39.188421603749546,124.73989556263709 38.023870822499546,125.81655571888709 37.694280978749546,126.58559868763709 37.079046603749546,125.92641900013709 36.639593478749546,126.43179009388709 35.694769259999546,125.55288384388709 34.486273166249546,127.33266900013709 33.871038791249546,129.3761260313871 34.793890353749546,129.8814971251371 36.046331759999546,129.3321807188871 37.914007541249546,128.2335479063871 39.254339572499546,127.61831353138709 40.155218478749546,128.0357940001371 40.968206759999546,126.62954400013709 40.968206759999546,125.94839165638709 41.034124728749546,125.48696587513709 40.418890353749546))"));
+
+        layer.getSource().addFeatures(features);
+
+        map.getView().fit(layer.getSource().getExtent(), {
+            duration: 1,//动画的持续时间,
+            callback: null,
+        });
+    }
+
+    /**
+     * @todo 矢量图层
+     * @returns {VectorLayer}
+     * @constructor
+     */
+    function initVectorLayer() {
+        //实例化一个矢量图层Vector作为绘制层
+        let source = new ol.source.Vector();
+        //创建一个图层
+        let customVectorLayer = new ol.layer.Vector({
+            source: source,
+            zIndex: 2,
+            //设置样式
+            style: defaultStyle,
+        });
+        //将绘制层添加到地图容器中
+        map.addLayer(customVectorLayer);
+
+        return customVectorLayer;
+    }
+
+    /**
+     * @todo wkt格式数据转化成图形对象
+     * @param {string} wkt   "POINT(112.7197265625,39.18164062499999)" 格式数据
+     * @param {string|Projection} sourceCode 源投影坐标系
+     * @param {string|Projection} targetCode 目标投影坐标系
+     * @returns {Feature}
+     */
+    function getFeatureByWKT(wkt, sourceCode, targetCode) {
+        try {
+            let view = map.getView();
+            if (!wkt) {
+                return null;
+            }
+            let format = new ol.format.WKT();
+
+            let feature;
+
+            feature = format.readFeature(wkt, {
+                featureProjection: targetCode || view.getProjection(),
+                dataProjection: sourceCode || view.getProjection(),
+            });
+
+            return feature;
+        } catch (e) {
+            console.log(e);
+            return null;
+        }
+    }
+
+    /**
+     *  todo 通过feature获取geojson字符串
+     * @param feature
+     * @param code
+     * @param sourceCode
+     * @returns {null|*}
+     */
+    function getGeoJsonByFeature(feature, sourceCode, targetCode) {
+
+        if (!feature) {
+            return null;
+        }
+
+        let view = map.getView();
+
+        let geojson;
+
+        if (feature instanceof Array) {
+
+            geojson = (new ol.format.GeoJSON()).writeFeatures(feature, {
+                dataProjection: sourceCode || view.getProjection(),    // 设定JSON数据使用的坐标系
+                featureProjection: targetCode || view.getProjection() // 设定当前地图使用的feature的坐标系
+            });
+
+        } else {
+
+            geojson = (new ol.format.GeoJSON()).writeFeature(feature, {
+                dataProjection: sourceCode || view.getProjection(),    // 设定JSON数据使用的坐标系
+                featureProjection: targetCode || view.getProjection() // 设定当前地图使用的feature的坐标系
+            });
+        }
+
+        return geojson;
+    }
+
+    /**
+     * @todo 图形对象转化成GeoJson格式数据(postgis)
+     * @param {string|object} geojson geojson字符串或者对象
+     * @param {string|Projection} sourceCode 源投影坐标系
+     * @param {string|Projection} targetCode 目标投影坐标系
+     * @returns {Feature}
+     */
+    function getFeatureByGeoJson(geojson, sourceCode, targetCode) {
+
+        let view = map.getView();
+
+        if (!geojson) {
+            return null;
+        }
+
+        let feature;
+
+        if ((typeof geojson) == 'string') {
+            // 替换 null 字符
+            while (geojson.indexOf('null') != -1) {
+                // geojson = geojson
+                geojson = geojson.replace("null", "");
+            }
+        }
+
+        feature = (new ol.format.GeoJSON()).readFeature(geojson, {
+            dataProjection: sourceCode || view.getProjection(),    // 设定JSON数据使用的坐标系
+            featureProjection: targetCode || view.getProjection() // 设定当前地图使用的feature的坐标系
+        });
+
+        return feature;
+    }
+
+    // 渐变色
+    // 基础线样式参考默认样式即可
+    function lineStyle() {
+        //渐变色线
+        let styleLine = [];
+        let steps = 10;
+        // 渐变色原理，其实就是多个样式共同使用
+        for (let i = 0; i < steps; i++) {
+            styleLine.push(
+                new ol.style.Style({
+                    stroke: new ol.style.Stroke({
+                        color: [0, 255, 255, 1 / (steps - i)],
+                        // color: [0, 255, 255, 1 / (steps - i)],
+                        width: (steps - i) * 2 - 1
+                    }),
+                    //填充样式
+                    fill: new ol.style.Fill({
+                        color: 'rgba(0, 0, 255, 0.05)',
+                    }),
+                })
+            );
+        }
+        return styleLine;
+    }
+
+    // 保存对象，用来删除
+    var tempFeatures = [];
+
+    // 联合
+    function turfCommon(type) {
+
+        restore();
+        // 注意，turf 需要传入 geojson 格式对象
+        let geoObj1 = JSON.parse(getGeoJsonByFeature(features[0]));
+        let geoObj2 = JSON.parse(getGeoJsonByFeature(features[1]));
+        let geoObj3 = JSON.parse(getGeoJsonByFeature(features[2]));
+
+        // geojson 对象
+        let unionObj;
+
+        switch (type) {
+            // 联合，两个多边形联合成为一个多边形
+            case 'union':
+                unionObj = turf.union(geoObj1, geoObj2);
+                alert('两个多边形联合成为一个多边形！')
+                break;
+            // 交叉，多边形A跟多边形B重合的部分
+            case 'intersect':
+                unionObj = turf.intersect(geoObj1, geoObj2);
+                alert('多边形A跟多边形B重合的部分！')
+                break;
+            // 差异，多边形A去除与多边形B重合的部分
+            case 'difference':
+                unionObj = turf.difference(geoObj1, geoObj2);
+                alert('多边形A去除与多边形B重合的部分！')
+                break;
+            // 挖洞，多边形挖去多边形C部分
+            case 'hole':
+                unionObj = turf.difference(geoObj2, geoObj3);
+                alert('多边形B挖去多边形C部分！')
+                break;
+            // 抽稀，多边形A简化
+            case 'simplify':
+                let options = {tolerance: 100, highQuality: true, mutate: false};
+                unionObj = turf.simplify(geoObj1, options);
+                alert('多边形A简化！')
+                break;
+            // 缓冲，多边形A的周边范围
+            case 'buffer':
+                unionObj = turf.buffer(geoObj1, 50, {units: 'kilometers'});
+                alert('多边形A的周边范围！')
+                break;
+        }
+
+        // 获取图形要素 feature
+        let tempFeature = getFeatureByGeoJson(unionObj);
+
+        // 设置样式
+        tempFeature.setStyle(lineStyle())
+
+        tempFeatures.push(tempFeature);
+
+        layer.getSource().addFeatures([tempFeature]);
+    }
+
+    // 还原样式
+    function restore() {
+        for (let i = 0; i < tempFeatures.length; i++) {
+            layer.getSource().removeFeature(tempFeatures[i])
+        }
+    }
+</script>
+<!--<button id="unionFeature" onClick="turfCommon('union')">联合</button>-->
+<!--<button id="difference" onClick="turfCommon('difference')">差异</button>-->
+<!--<button id="intersect" onClick="turfCommon('intersect')">相交</button>-->
+<!--<button id="hole" onClick="turfCommon('hole')">挖洞</button>-->
+<!--<button id="simplify" onClick="turfCommon('simplify')">抽稀</button>-->
+<!--<button id="buffer" onClick="turfCommon('buffer')">缓冲</button>-->
+<!--<button id="restore" onClick="restore()">还原</button>-->
+</body>
+</html>
+

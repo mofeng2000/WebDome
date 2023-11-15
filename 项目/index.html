@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="bootstrap-3.3.2-dist/css/bootstrap.min.css">
+    <script src="jQuary/jQuerymin.js"></script>
+    <script src="bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/fullpage.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!--<style>-->
+        <!--.section{text-align: center;font: 50px "Microsoft YaHei";color: #fff4e8;}-->
+    <!--</style>-->
+
+    <script src="js/fullpage.js"></script>
+    <script src="js/run.js"></script>
+    <script>
+        $(function () {
+            $('#dowebok').fullpage({
+
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="dowebok">
+    <div class="section">
+        <img src="imges/index/logo.png" alt="">
+        <div class="sliderbar">
+            <span class="span">展开菜单栏</span>
+            <div class="con">
+                <div class="title">
+                    <div class="row">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <a class="navbar-brand" href="#">欢迎进入御泥坊</a>
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+                                        <li><a href="#">护肤</a></li>
+                                        <li><a href="#">彩妆</a></li>
+                                        <li><a href="#">男士</a></li>
+                                        <li><a href="#">走进御泥坊</a></li>
+                                        <li><a href="#">新品试用</a></li>
+                                        <li><a href="#">问题反馈</a></li>
+                                        <li><a href="#">加入我们</a></li>
+                                    </ul>
+                                    <form class="navbar-form navbar-left">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="搜索你喜欢的东西">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">搜索</button>
+                                    </form>
+                                    <ul class="nav navbar-nav navbar-left">
+                                        <li><a href="#"  data-toggle="modal" data-target="#myModalD">登录</a></li>
+                                        <li><a href="#"data-toggle="modal" data-target="#myModalZ" >注册</a></li>
+                                    </ul>
+                                    <div class="modal fade" id="myModalZ" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title">注册用户信息</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <span for="exampleInputEmail1">邮箱:</span>
+                                                            <input type="email" class="form-control" id="exampleInputEmail11" placeholder="邮箱地址">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <span for="exampleInputPassword1">密码:</span>
+                                                            <input type="password" class="form-control" id="exampleInputPassword11" placeholder="密码">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <span for="exampleInputPassword1">再次输入密码:</span>
+                                                            <input type="password" class="form-control" id="exampleInputPassword12" placeholder="密码">
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <span>
+                                                                <input type="checkbox">记住密码
+                                                            </span>
+
+                                                        </div>
+                                                        <button type="submit" class="btn btn-default">注册</button>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <div class="modal fade" id="myModalD" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title">展示用户信息</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <span for="exampleInputEmail1">邮箱:</span>
+                                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="邮箱地址">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <span for="exampleInputPassword1">密码:</span>
+                                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码">
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <span>
+                                                                <input type="checkbox">记住密码
+                                                            </span>
+
+                                                        </div>
+                                                        <button type="submit" class="btn btn-default">登录</button>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var sliderbar=document.querySelector(".sliderbar");
+            var con=document.querySelector(".con");
+            var span=document.querySelector("span");
+
+            sliderbar.addEventListener("mouseover",function () {
+                run(con,-1500,function () {
+                    span.innerHTML="收起菜单栏"
+                });
+            });
+
+            sliderbar.addEventListener("mouseout",function () {
+                run(con,0,function () {
+                    span.innerHTML="展开菜单栏"
+                });
+            });
+
+        </script>
+    </div>
+    <div class="section">
+        <div class="tab">
+            <div class="tab_list">
+                <ul>
+                    <li class="current">商品介绍</li>
+                    <li>规格与包装</li>
+                    <li>售后保障</li>
+                </ul>
+            </div>
+            <div class="tab_con">
+                <div class="item" style="display: block;">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="upload/index/index1.png" alt="">
+                                <p>净肤绿豆泥浆面膜</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index5.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index3.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index4.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index2.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="upload/index/index6.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index7.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index8.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index9.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index10.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="upload/index/index11.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index12.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index13.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index14.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="upload/index/index15.png" alt="">
+                            <p>净肤绿豆泥浆面膜</p></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $('.tab_list li').click(function () {
+                    //点击谁谁谁的class样式获得current同时删除兄弟的class
+                    $(this).addClass("current").siblings().removeClass();
+                    //获得当前li的索引号
+                    var index=$(this).index();
+                    //对应显示内容
+                    $('.tab_con div').eq(index).show().siblings().hide();
+                })
+            })
+        </script>
+    </div>
+    <div class="section">
+
+    </div>
+    <div class="section">
+        <div class="w">
+            <div class="h">
+                <h3>联系我们</h3>
+                <h4>Contact us</h4>
+            </div>
+            <div class="l">
+                <ul>
+                    <li>服务热线 400-831-5500</li>
+                    <li>传真: 0731-82285158转605</li>
+                    <li>长沙高新开发区岳麓西大道588号芯城科技园御家汇大楼</li>
+                </ul>
+            </div>
+            <div class="r">
+                <ul class="clearfix">
+                    <li>
+                        <img src="imges/index/g_imgwb.png" alt="">
+                        <p>御泥坊官方微博</p>
+                    </li>
+                    <li>
+                        <img src="imges/index/g_imgwx.png" alt="">
+                        <p>御泥坊官方微信</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="g_fotrnavlist clearfix">
+                <div class="g_fotrnitm g_fotrnitm1 fl"><a href="javascript:;">合作平台</a></div>
+                <div class="g_fotrnitm g_fotrnitm2 fl"><a href="javascript:;">直营门店</a></div>
+                <div class="g_fotrnitm g_fotrnitm3 fl"><a href="javascript:;">防伪查验</a></div>
+                <div class="g_fotrnitm g_fotrnitm4 fl"><a href="javascript:;">问题反馈</a></div>
+                <div class="g_fotrnitm g_fotrnitm5 fl"><a href="javascript:;">加入我们</a></div>
+                <div class="g_fotrnitm g_fotrnitm5 fl"><a href="javascript:;">隐私声明</a></div>
+            </div>
+        </div>
+        <!--底部-->
+        <footer>
+            <div class="w">
+                <div class="foot_image">
+                    <img src="imges/logo0.png" alt="">
+                </div>
+                <p>Copyright ©2013 湖南御泥坊化妆品有限公司 湘ICP备13006696号-1</p>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
+</html>
+
+

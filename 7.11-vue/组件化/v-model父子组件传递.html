@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpn :cnum1="num1" :cnum2="num2" @num1change="num1change" @num2change="num2change"></cpn>
+</div>
+<template id="cpn">
+        <div>
+            <h2>props:{{cnum1}}</h2>
+            <h2>data:{{dnum1}}</h2>
+            <input type="text"  :value="dnum1" @input="inpnum1"  >
+            <h2>props:{{cnum2}}</h2>
+            <h2>data:{{dnum2}}</h2>
+            <input type="text" :value="dnum2" @input="inpnum2" >
+        </div>
+</template>
+<script src="../vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+               num1:0,
+               num2:1
+            },
+            methods:{
+                num1change(value){
+                    console.log(value);
+                this.num1=parseFloat(value)
+            },
+            num2change(value){
+                console.log(value);
+                this.num2=parseFloat(value)
+            }
+        },
+        components:{
+                cpn:{
+                    template:'#cpn',
+                    //父传子用 props
+                    props:{
+                        cnum1:Number,
+                        cnum2:Number
+                    },
+                    data(){
+                        return{
+                            dnum1:this.cnum1,
+                            dnum2:this.cnum2
+                        }
+                    },
+                    methods:{
+                        inpnum1(event){
+                            this.dnum1=event.target.value;
+                            this.$emit('num1change',this.dnum1)
+
+                            this.dnum2=this.dnum1*100
+                            this.$emit('num2change',this.dnum2)
+                        },
+                        inpnum2(event){
+                            this.dnum2=event.target.value;
+                            this.$emit('num2change',this.dnum2)
+                            this.dnum1=this.dnum2/100
+                            this.$emit('num1change',this.dnum1)
+                        }
+                    }
+                }
+        }
+
+        }
+    )
+</script>
+
+</body>
+</html>

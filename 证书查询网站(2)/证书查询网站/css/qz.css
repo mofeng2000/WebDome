@@ -1,0 +1,203 @@
+body {
+  background-color: #f0f0f0;
+}
+*:focus {
+  outline: none;
+  border: none;
+  background-color: inherit;
+}
+#wrap {
+  max-width: 1200px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+/* 头部 */
+#header {
+  width: 100%;
+  overflow: hidden;
+  height: 80px;
+}
+#header .logo {
+  margin-left: 30px;
+  width: 800px;
+}
+/*  */
+
+.con_footer {
+  width: 100%;
+  margin: 0px;
+  clear: both;
+  overflow: hidden;
+  height: 8px;
+  background: #439bcf;
+  border-top: 2px solid #00558f;
+}
+#footer {
+  background: #f2f2f2;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+.for {
+  width: 620px;
+  margin: 10px auto;
+}
+.for a {
+  color: #5e5f5f;
+}
+.for span,
+.for img {
+  vertical-align: middle;
+}
+#footer .p1 {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 180px;
+}
+#footer .p2 {
+  float: left;
+  height: 35px;
+  padding-left: 10px;
+  padding-top: 5px;
+  line-height: 1.4em;
+}
+#footer .p3 {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+}
+#footer .p4 {
+  text-align: center;
+  width: 100%;
+  float: left;
+}
+#footer a {
+  color: #2ea0fb;
+  font-size: 14px;
+}
+#footer .fd-pic{
+  max-width: 80px;
+  max-height: 80px;
+}
+.row-table {
+  box-sizing: border-box;
+  padding: 20px 20px;
+  background-color: #ecf0ef;
+  border-top: 3px solid #2b5f89;
+  position: relative;
+  z-index: 3;
+}
+.row-table .row-table-200 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 2;
+  background: linear-gradient(to bottom, #3a8fc4, #348bc2, #81bdd7, #ecf0ef);
+}
+.row-table .con {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  padding: 8px 35px;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.m-tit {
+  padding: 32px 32px 0;
+  background-color: #3381bf;
+  color: #f4fdfd;
+  font-size: 20px;
+  line-height: 1.9;
+  overflow: hidden;
+}
+.m-tit .pic {
+  float: right;
+  margin-top: -32px;
+  max-width: 228px;
+  max-height: 179px;
+}
+.m-tit .pic img {
+  width: 228px;
+  height: 179px;
+}
+.m-tit .tit {
+  float: left;
+}
+.m-tit .tit1 {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.m-table {
+  padding: 25px 30px;
+}
+.m-tit2 {
+  color: #315c7b;
+  font-size: 18px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.m-tit2 .tit {
+  float: left;
+}
+/* 人物基本信息照片 */
+.m-tit2 .pic-people {
+  float: right;
+  width: 94px;
+  height: 132px;
+  overflow: hidden;
+}
+.m-tit2 .pic-people img {
+  width: 100%;
+  height: 100%;
+}
+.row-table .table1 {
+  background-color: #f3f8fb;
+  margin-bottom: 20px;
+}
+
+.m-table table {
+  border: 1px solid #d6dadd;
+  margin-bottom: 30px;
+}
+.m-table table td {
+  height: 40px;
+  padding: 0 10px;
+  border-right: 1px solid #d6dadd;
+  border-bottom: 1px solid #d6dadd;
+}
+.m-table .name {
+  font-size: 16px;
+  color: #656d70;
+  width: 177px;
+  text-align: right;
+  letter-spacing: 2px;
+}
+.m-table .name2 {
+  letter-spacing: 5px;
+}
+.m-table .info {
+  font-size: 16px;
+  color: #8a8a8a;
+  width: 370px;
+  text-align: left;
+  background-color: #fff;
+}
+.desc {
+  text-align: center;
+  font-size: 18px;
+  color: #3a4244;
+  line-height: 1.8;
+}
+.desc p {
+  letter-spacing: 1px;
+}

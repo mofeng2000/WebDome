@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模块名称</title>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 如果是pc请删除下面一行 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!-- 下面是初始化框架必须引入 -->
+    <link rel="stylesheet" href="css/cui.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <style>
+        *, :after, :before {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: 0 !important;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: #8699D3;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index: 99;
+            height: 80px;
+            padding: 0 3.38%
+        }
+
+        .header .fixed {
+            border-bottom: 1px solid #e5e5e5
+        }
+
+        .logo {
+            float: left;
+            line-height: 80px;
+            overflow: hidden
+        }
+
+        .logo img {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        .nav {
+            float: right;
+            /*border-left: 1px solid #e5e5e5*/
+        }
+
+        .nav li {
+            float: left;
+            width: 136px;
+            text-align: center;
+            position: relative
+        }
+
+        .nav li .v1 {
+            display: block;
+            color: #999;
+            font-size: 12px;
+            height: 80px;
+            padding-top: 24px;
+            text-transform: uppercase;
+        }
+
+        .nav li.on .v1, .nav li:hover .v1 {
+            background-color: #0d8ddb;
+            color: #fff;
+            border-color: transparent
+        }
+
+        .nav li.on p, .nav li:hover p {
+            color: #fff;
+            font-weight: 400;
+
+        }
+         .nav li:hover .sub a{
+            border-bottom: 1px solid #0d6fb8;
+        }
+        .nav li p {
+            font-size: 16px;
+            color: #333
+        }
+
+        .nav li .sub {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            /*border-radius: 0 0 12px 12px;*/
+            z-index: 99
+        }
+
+        .nav li .sub a {
+            position: relative;
+            display: block;
+            font-size: 14px;
+            color: #333;
+            line-height: 43px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .nav li .sub a:hover {
+            color: #333
+        }
+        .nav li .sub a:hover::after{
+            content: " ";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #0d6fb8;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: rotate(45deg) translate(0 ,60%);
+            border-radius: 5px;
+        }
+        .menuBtn {
+            display: none;
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn b {
+            display: block;
+            height: 4px;
+            background-color: #0d6fb8;
+            margin: 4px 0;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn.open b {
+            display: none;
+            margin: -5px 0 0;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 30px
+        }
+
+        .menuBtn.open b:first-child {
+            display: block;
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg)
+        }
+
+        .menuBtn.open b:last-child {
+            display: block;
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg)
+        }
+
+        @media only screen and (max-width: 1500px) {
+            .header {
+                height: 80px
+            }
+
+            .logo {
+                line-height: 80px;
+                width: 160px
+            }
+
+            .nav li .v1 {
+                height: 80px;
+                padding-top: 16px
+            }
+        }
+
+        @media only screen and (max-width: 1199px) {
+            .header {
+                height: 50px
+            }
+
+            .logo {
+                line-height: 50px;
+                width: 130px
+            }
+
+            .nav {
+                position: fixed;
+                top: 50px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 99;
+                background-color: #fff;
+                border-top: 1px solid #eee;
+                display: none
+            }
+
+            .nav li:hover .v1 {
+                background-color: #fff;
+                color: #999
+            }
+
+            .nav li.on .v1 {
+                background-color: #0d6fb8;
+                color: #fff;
+                border-color: transparent
+            }
+
+            .nav li:hover p {
+                color: #333
+            }
+
+            .nav li .v1 {
+                position: relative;
+                height: auto;
+                padding: 10px 0
+            }
+
+            .nav li .v1 i {
+                display: block;
+                width: 32px;
+                height: 32px;
+                position: absolute;
+                right: 30px;
+                top: 15px;
+                background: url(images/so.png) center center no-repeat;
+                -o-background-size: 16px 16px;
+                background-size: 16px 16px
+            }
+
+            .nav li.on .v1 i {
+                background-image: url(../images/s2.png)
+            }
+
+            .nav li.on p {
+                color: #fff;
+                font-weight: 700
+            }
+
+            .nav li {
+                float: none;
+                padding-top: 0;
+                margin: 0;
+                width: auto
+            }
+
+            .nav li .sub {
+                position: static;
+                padding: 0;
+                text-align: center;
+                border-radius: 0;
+                background-color: #eee
+            }
+
+            .nav li .sub a {
+                line-height: 30px
+            }
+
+            .menuBtn {
+                display: block
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <span class="menuBtn"></span>
+    <div class="logo">
+        <a href=""><img src="images/logo-w1.png" alt=""/></a>
+    </div>
+    <ul class="nav">
+        <li class="on">
+            <a href="index.html" class="v1">
+                <p>网站首页</p>
+            </a>
+        </li>
+        <li class="">
+            <a href="" class="v1">
+                <p> 关于我们</p>
+                <i></i>
+            </a>
+            <div class="sub">
+                <a href="">公司简介</a>
+                <a href="">企业文化</a>
+                <a href="">荣誉资质</a>
+                <a href="">新闻动态</a>
+            </div>
+        </li>
+        <li class="">
+            <a href="" class="v1">
+                <p>产品中心</p>
+                <i></i>
+            </a>
+            <div class="sub">
+                <a href="">动物繁殖</a>
+                <a href="">疾病防控</a>
+                <a href="">宠物疾病</a>
+            </div>
+        </li>
+        <li class="">
+            <a href="" class="v1">
+                <p>技术平台</p>
+                <i></i>
+            </a>
+            <div class="sub">
+                <a href="">细胞株筛选平台</a>
+                <a href="">药效评价平台</a>
+                <a href="">中试生产平台</a>
+            </div>
+        </li>
+        <li class="">
+            <a href="" class="v1">
+                <p>企业合作</p>
+                <i></i>
+            </a>
+            <div class="sub">
+                <a href="">商务联系</a>
+                <a href="">商业伙伴</a>
+                <a href="">学术合作</a>
+            </div>
+        </li>
+        <li class="">
+            <a href="" class="v1">
+                <p>诚聘英才</p>
+                <i></i>
+            </a>
+            <div class="sub">
+                <a href="">用人理念</a>
+                <a href="">全职招聘</a>
+                <a href="">兼职招聘</a>
+                <a href="">专家招聘</a>
+                <a href="">人在伟杰信</a>
+            </div>
+        </li>
+        <li class="">
+            <a href="#" class="v1">
+                <p>联系我们</p>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    // 手机导航
+    $('.menuBtn').append('<b></b><b></b><b></b>');
+    $('.menuBtn').click(function (event) {
+        $(this).toggleClass('open');
+        $('.nav').stop().slideToggle();
+    });
+
+    var _winw = $(window).width();
+    if (_winw > 959) {
+        $('.nav li').hover(function () {
+            $(this).find('.sub').stop().slideDown();
+//            if ($(this).find('.sub').length) {
+//                $(this).addClass('ok');
+//                $('.header').addClass('on');
+//            } else {
+//                $('.header').removeClass('on');
+//            }
+        }, function () {
+            $(this).removeClass('ok');
+            $(this).find('.sub').stop().slideUp();
+        });
+//        $('.nav').mouseleave(function (event) {
+//            if ($('.header').hasClass('on')) {
+//                $('.header').removeClass('on');
+//            }
+//        });
+    } else {
+
+//        $('.nav .v1').click(function () {
+//            if ($(this).siblings('.sub').length) {
+//                    $(this).parents('li').siblings('li').find('.sub').stop().slideUp();
+//                $(this).parents('li').siblings('li').removeClass('on');
+//                $(this).parents('li').toggleClass('on');
+//                $(this).siblings('.sub').stop().slideToggle();
+//                return false;
+//            }
+//        });
+    }
+</script>
+</body>
+</html>

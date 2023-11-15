@@ -1,0 +1,42 @@
+.head{
+    position: relative;
+    width: 1000px;
+    height: 160px;
+    margin-top: 38px;
+    background: url("../imges/welcome/g_kpdh1.png") no-repeat;
+}
+.head img{
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    transform: translate(-50%);
+}
+
+/*Big Picture start*/
+.big_picture{
+    /*background:rgba(0,0,0,.1);*/
+    height: 580px;
+    line-height: 700px;
+    margin-top:5px;
+    padding-top: 20px;
+}
+video{
+    display: block;
+    width: 1000px;
+    margin: auto;
+    border-radius: 20px;
+}
+/*Big Picture end*/
+.come_in{
+    position: relative;
+}
+.come_in a{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 26px;
+    display: inline-block;
+    border: 1px solid red;
+    padding:10px 15px;
+    border-radius: 40px;
+}

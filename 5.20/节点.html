@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<span>6</span>
+<div class="box1"><span></span></div><div class="box">
+    <ul>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</div><div class="box2"></div>
+<script>
+    var box=document.querySelector(".box");
+    //获取父节点
+    console.dir(box.parentNode);
+
+    //获取子节点
+    console.dir(box.childNodes);
+    console.dir(box.children);
+    console.dir(box.querySelector("ul").childNodes);//：返回值里面包含了所有的子节点，包括元素节点，文本节点等。
+    console.dir(box.querySelector("ul").children);//，返回所有的子元素节点。它只返回子元素节点，其余节点不返 回 （这个是我们重点掌握的）
+    //兄弟节点
+    console.dir(box.nextSibling);
+    console.dir(box.previousSibling);
+    console.dir(box.nextElementSibling);
+    console.dir(box.previousElementSibling);
+
+    // 创建节点
+    var box2=document.querySelector(".box2");
+    var p=document.createElement("p");
+    var p1=document.createElement("p");
+    p.innerHTML="666";
+    p1.innerHTML="999";
+    //添加节点 1. node.appendChild(child).
+    box2.append(p);
+    // node.insertBefore(child, 指定元素)
+    box2.insertBefore(p1,box2.children[0]);
+    // 复制节点(克隆节点)
+
+    console.dir(  box2.cloneNode(true));
+
+
+</script>
+
+</body>
+</html>

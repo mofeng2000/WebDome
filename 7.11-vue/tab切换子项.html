@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab切换</title>
+</head>
+<style>
+    ul{
+        display: flex;
+        list-style: none;
+    }
+    ul li{
+        flex: 1;
+    }
+    a{
+        width: 100%;
+        text-align: center;
+        display: block;
+        font-size: 30px;
+       background: #666;
+        color: red;
+        text-decoration: none;
+        border: 1px solid #dd524d;
+    }
+    a.on{
+        background: orange;
+        color: #fff;
+    }
+    img{
+        width: 300px;
+        vertical-align: middle;
+        height: 300px;
+    }
+</style>
+<body>
+<div id="app">
+<h1 class="" style="color: red">
+    {{message}}
+</h1>
+<ul>
+    <li v-for="(item,index) in fruit">
+        <a href="#" @click="change(index)" :class="{on:isshow===index}">{{item.name}}</a>
+        <p>{{item.src}}</p>
+    </li>
+
+</ul>
+    <img :src="fruit[isshow].src" alt=""  >
+</div>
+<script src="vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: "Tab选项卡",
+                isshow:0,
+                fruit:[
+                    {name:'苹果',src:'images/apple.jpeg'},
+                    {name:'柚子',src:'images/grapefruit.jpg'},
+                    {name:'西瓜',src:'images/watermelon.jpg'},
+                ]
+            },
+        methods:{
+            change(index){
+                console.log(index);
+                this.isshow=index
+            }
+
+        }
+        }
+    )
+</script>
+
+</body>
+</html>

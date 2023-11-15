@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'icommon';
+    src: url('../fonts/icomoon.svg?7kkyc2');
+    src: url('../fonts/icomoon.svg?7kkyc2#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?7kkc2') format('truetype'),
+    url('../fonts/icomoon.woff?7kkc2') format('woff'),
+    url('../fonts/icomoon.svg?7kkc2#icommon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.icommon {
+    font-family: 'icommon';
+    font-size: 30px;
+}
+.w{
+    width: 1200px;
+    margin: 0 auto;
+}
+.mod_copyright{
+    width: 1200px;
+    height: 120px;
+    text-align: center;
+
+    margin-top: 57px;
+    padding-top: 20px;
+}
+.mod_copyright_p{
+
+    padding-left: 5px;
+
+    margin-bottom: 6px;
+}
+.mod_copyright_p a{
+    margin: 0 10px;
+}
+.header{
+    height: 58px;
+    margin-top: 25px;
+    border-bottom: 2px solid #b1191a;
+}
+.daohang{
+    font-size: 14px;
+    color: #4d4d4d;
+    height: 487px;
+}
+.daohang_bt{
+    margin-top: 20px;
+    height: 40px;
+    line-height: 40px;
+    background: #ececec;
+    border: 1px solid #cccccc;
+}
+.daohang_bt h3{
+    padding-left: 5px;
+    float: left;
+    color: #333333;
+    font-size: 18px;
+    
+}
+.daohang_bt span{
+    float: right;
+}
+.daohang_bt span a{
+    color: #c81623;
+}
+.daohang_bg{
+    height: 422px;
+    padding-top: 50px;
+    padding-left: 310px;
+    border: 1px solid #cccccc;
+    /*text-align: center;*/
+}
+.daohang_bg li{
+    height: 36px;
+    line-height: 36px;
+    margin-bottom: 20px;
+}
+.daohang_bg li input{
+    width: 240px;
+    height: 34px;
+    border: 1px solid #cccccc;
+    outline:none;
+}
+.daohang_bg li label{
+
+    display: inline-block;
+    width: 92px;
+    height: 100%;
+    color: #4c4c4c;
+    text-align: right;
+}
+.daohang_bg li i{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    background: #df3033;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 14px;
+    margin:0  5px;
+
+}
+.mima_qd{
+    padding-left: 165px;
+}
+.mima_qd span{
+    display: inline-block;
+    height: 14px;
+    width: 34px;
+    color: white;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+}
+.mima_qd_red{
+    background: #de1111;
+}
+.mima_qd_lv{
+    background: #40b83f;
+}
+.mima_qd_or{
+    background: #f79100;
+}
+.daohang_bg .daohang_bg_xk{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: #00a4ff;
+
+}
+.daohang_bg_zt{
+    padding-left: 100px;
+}
+.daohang_bg_zt span a{
+    color: #1ba1e6;
+    font-weight: 600;
+}
+.daohang_bg button{
+    width: 200px;
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    color: white;
+    background: #c81623;
+    margin-left: 120px;
+}

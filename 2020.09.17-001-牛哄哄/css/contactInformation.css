@@ -1,0 +1,85 @@
+.main {
+    padding: 60px 0;
+}
+.contact {
+    overflow: hidden;
+}
+.contact .col-l {
+    width: 29%;
+    background: url(../images/img-3/m-bg.png) no-repeat center;
+    background-size: cover;
+}
+.ul-list3 {
+    border-top: 3px solid #e77610;
+    padding: 50px 40px 100px;
+}
+.ul-list3 .con {
+    margin-bottom: 30px;
+}
+.ul-list3 .pic {
+    float: left;
+    width: 69px;
+    height: 69px;
+    line-height: 69px;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+    background: #fff;
+    border-radius: 34px;
+    margin-right: 30px;
+}
+.ul-list3 .pic img {
+    display: inline-block;
+    vertical-align: middle;
+}
+.ul-list3 .txt {
+    overflow: hidden;
+}
+.ul-list3 .tit {
+    color: #999;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.ul-list3 .desc {
+    color: #333;
+    line-height: 24px;
+}
+.ul-list3 .desc::after {
+    content: " ";
+    display: block;
+    width: 29px;
+    height: 1px;
+    background: #111111;
+    margin-top: 10px;
+}
+.contact .col-r {
+    width: 68%;
+}
+
+.m-map{overflow: hidden;}
+
+.m-map #allmap{height: 629px;}
+
+.m-map #allmap img{max-width: none;}
+
+.m-map .BMapLabel{width: 360px;height: 109px;padding-top: 15px !important;text-align: center;
+
+    background-color: transparent !important;border: 0 !important;
+
+    background: url(../images/map-bg.png) no-repeat center center;
+
+}
+
+@media only screen and (max-width:1625px) {
+    .contact .col-r,
+    .contact .col-l {
+        float: none;
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+@media only screen and (max-width:769px) {
+    .contact .col-r,
+    .contact .col-l {
+        width: 100%;
+    }
+}

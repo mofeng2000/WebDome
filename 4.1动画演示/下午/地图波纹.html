@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background: #333;
+        }
+
+        @keyframes bowen {
+
+            40% {
+                width: 20px;
+                height: 20px;
+            }
+            70% {
+                width: 40px;
+                height: 40px;
+            }
+            100% {
+                width: 60px;
+                height: 60px;
+            }
+
+        }
+
+        .china {
+            position: relative;
+            width: 747px;
+            height: 617px;
+            background: url("map.png");
+            margin: 0 auto;
+        }
+
+        .city1,
+        .city2,
+        .city3 {
+            position: absolute;
+            top: 227px;
+            right: 190px;
+            width: 8px;
+            height: 8px;
+            /*border: 1px solid orange;*/
+            /*border-radius: 50%;*/
+        }
+
+        .city2 {
+            top: 498px;
+            right: 79px;
+
+        }
+
+        .city3 {
+            top: 543px;
+            right: 192px;
+        }
+
+        .dian {
+            width: 100%;
+            height: 100%;
+            background: #09f;
+            border-radius: 50%;
+        }
+
+        .bw1,
+        .bw2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            animation-name: bowen;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            border: solid 1px transparent;
+            box-shadow: 0 0 12px #09f;
+            border-radius: 50%;
+        }
+
+        .bw2 {
+            animation-delay: .4s;
+        }
+    </style>
+</head>
+<body>
+<div class="china">
+
+    <div class="city1">
+        <div class="dian"></div>
+        <div class="bw1"></div>
+        <div class="bw2"></div>
+    </div>
+    <div class="city2">
+        <div class="dian"></div>
+        <div class="bw1"></div>
+        <div class="bw2"></div>
+    </div>
+    <div class="city3">
+        <div class="dian"></div>
+        <div class="bw1"></div>
+        <div class="bw2"></div>
+    </div>
+
+</div>
+</body>
+</html>

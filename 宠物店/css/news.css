@@ -1,0 +1,31 @@
+
+.list_new{
+    background-color:whitesmoke;
+    margin: 50px auto;
+    padding-top: 20px;
+    width: 1000px;
+}
+
+.news_list {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #EEEEEE;
+}
+.new_pic img {
+    min-width: 160px;
+    min-height: 160px;
+}
+.news_list h2 a {
+    color: #444444;
+}
+.news_list h2 a:hover {
+    color: greenyellow;
+}
+
+.new_body{
+    padding-left: 30px;
+}
+.new_body p{
+    width: 800px;
+    font-size: 12px;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    ul {
+        display: flex;
+        width: 200px;
+        height: 20px;
+        list-style: none;
+    }
+
+    ul li {
+        width: 60px;
+
+        text-align: center;
+    }
+
+    ul li.on {
+        background: red;
+    }
+</style>
+<body>
+<div id="app">
+    {{message}}
+    <cpn1 :data="message" :moves="move" @itemclick="cpnclick(arguments)" @iteminfo="iteminfo(arguments)"></cpn1>
+    <cpn2 :cpnisshow="isshow" :cpnisindex="isindex"></cpn2>
+</div>
+<template id="cpn1">
+    <div>
+        <h1>{{data}}</h1>
+        <ul>
+            <li v-for="(item , index) in moves" @click="liBtn(index)" :class="{on:index===ison}">
+                <!--{{moves}}<br>-->
+                <!--{{moves[index]}} <br>-->
+                {{item}}<br>
+                <!--{{index}}<br>-->
+            </li>
+        </ul>
+    </div>
+</template>
+<template id="cpn2">
+    <ul>
+        <li v-for="item in cpnisshow" >
+            <p>01</p>
+            <p>02</p>
+            <p>03</p>
+            <p>04</p>
+            <p>05</p>
+            <p>06</p>
+            <p>07</p>
+            <p>08</p>
+            <p>09</p>
+            <p>010</p>
+            <p>011</p>
+            <p>012</p>
+            <p>013</p>
+            <p>014</p>
+            <p>015</p>
+        </li>
+
+    </ul>
+</template>
+<script src="vue.min.js"></script>
+<script>
+    const cpn1 = {
+        template: '#cpn1',
+        data() {
+            return {
+                ison: 0
+            }
+        },
+
+        props: {
+            data: null,
+            moves: [],
+            move: ['123', 456, '789'],
+
+        },
+        methods: {
+            liBtn(index) {
+                this.ison = index;
+                //子组件发射信息
+                this.$emit('itemclick',index,this.moves)
+            }
+
+        },
+        mounted: function () {
+                //子组件发射信息
+                this.$emit('iteminfo',this.move,this.ison)
+        }
+    }
+    const cpn2 = {
+        template: '#cpn2',
+        data() {
+            return {
+                isindex: 0
+            }
+        },
+        props: {
+            cpnisshow:[],
+            cpnisindex:0
+        },
+        mounted(){
+            this.isindex=this.cpnisindex
+        }
+    }
+    //vue实例也相当于一个最大的组件
+    const app = new Vue({
+            el: '#app',
+            data: {
+                message: "666 ",
+                move: ['123', 456, '789'],
+                isshow: [],
+                isindex: null,
+
+            },
+            //注册组件
+            components: {
+                cpn1,
+                cpn2
+            },
+            methods: {
+                cpnclick(msg) {
+                   // console.log('cpnclick');
+                   // console.log(msg[0]);
+                 // console.log(msg[1]);
+                    this.isindex = msg[0];
+                    this.isshow=msg[1]
+                }
+            },
+        created:{
+            iteminfo(msg){
+                this.isindex = msg[0];
+                this.isshow=msg[1]
+            }
+
+        }
+
+
+        }
+    )
+</script>
+</body>
+</html>

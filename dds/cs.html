@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>00</title>
+    <script type="text/javascript" charset="utf-8">
+
+        function test1(){
+            alert("绑定HTML元素属性");
+        }
+
+        function test2(){
+            alert("绑定DOM对象属性");
+        }
+
+
+    </script>
+</head>
+<body>
+<audio controls="controls" autoplay="autoplay">
+    <source src="song.ogg" type="audio/ogg" />
+    <source src="song.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+</audio>
+<audio id="bgm" src="raw/musicXZQ.mp3" type="audio/mpeg" loop="loop">无法加载BGM</audio>
+<a href="http://www.baidu.com" onclick="return false">点击我</a>
+<input type="button" value="测试1" id="mytest1" onclick="test1()"/>
+<button type="button" id="test2"><b>测试2</b></button>
+
+<script type="text/javascript">
+
+    document.getElementById("test2").onclick="test1()";
+</script>
+
+
+</body>
+
+</html>

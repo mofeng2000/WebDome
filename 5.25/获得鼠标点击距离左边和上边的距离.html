@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+<script>
+    var box=document.querySelector(".box");
+    box.addEventListener("mousemove",function (e) {
+        var x =e.pageX-this.offsetLeft;
+        var y =e.pageY-this.offsetTop;
+
+        box.innerHTML="鼠标距离左"+x+"鼠标距离上"+y;
+
+
+    })
+
+</script>
+</body>
+</html>

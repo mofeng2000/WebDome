@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="alert('传统事件1')">传统事件1</button>
+<button >传统事件2</button>
+<button>传统事件3</button>
+<button>传统事件4</button>
+<SCRIPT>
+
+    var btn=document.querySelectorAll("button");
+    btn[1].onclick=function () {
+        alert("传统事件2");
+    };
+//    // addEventListener 事件监听方式
+//    btn[2].addEventListener("click",function () {
+//        alert("传统事件3 666")
+//    });
+//    btn[2].addEventListener("click",function () {
+//        alert("传统事件3 999")
+//    });
+//    btn[2].addEventListener("click",function () {
+//        alert("传统事件3 555")
+//    });
+    //IE8 及早期版本支持 attachEvent 事件监听方式
+
+    btn[3].attachEvent("onclick",function () {
+        alert("传统事件4")
+    });
+
+
+    // 注册事件兼容性解决方案
+//    function addEventListener(element, eventName, fn) {
+//        // 判断当前浏览器是否支持 addEventListener 方法
+//        if (element.addEventListener) {
+//            element.addEventListener(eventName, fn); // 第三个参数 默认是false
+//        } else if (element.attachEvent) {
+//            element.attachEvent('on' + eventName, fn);
+//        } else {
+//// 相当于 element.onclick = fn;
+//            element['on' + eventName] = fn;
+//        }
+//    }
+
+</SCRIPT>
+</body>
+</html>

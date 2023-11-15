@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpn :cmessage="message" :cmovies="movies"></cpn>
+    <!--<cpn ></cpn>-->
+</div>
+<template id="cpn1">
+    <div>
+        <ul>
+            <li v-for="item in cmovies">{{item}}</li>
+        </ul>
+        <h2>{{cmessage}}</h2>
+    </div>
+</template>
+<script src="../vue.min.js"></script>
+<script>
+    //父传子 props
+    const cpn = {
+        template: '#cpn1',
+       // props: ['cmovies', 'cmessage']
+        //自定义验证
+        props:{
+            validator:function (value) {
+                //这个值必须是下面的字符串之一，否则报错
+                return ['success','warning','danger'.indexOf(value)!==-1]
+            }
+        }
+//        props:{
+//            //1.类型限制
+////            cmovies:Array,
+////            cmessage:String
+//           // 2.提供一些默认值
+//            cmovies:{
+//                type:Array,
+//                default:[]
+//            },
+//            cmessage:{
+//                type:String ,
+//                default:'abc',//default 默认值
+//                required:true
+//            }
+//        }
+    };
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: "你好！",
+                movies: ['123', '456', '789']
+            },
+            components: {
+                cpn
+            }
+        }
+    )
+</script>
+
+</body>
+</html>

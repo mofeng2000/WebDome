@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .box{
+
+            width: 200px;
+            height: 200px;
+            border: 2px solid orange;
+            background: pink;
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+</div>
+<script>
+    window.onload=function () {
+        var box=document.querySelector(".box");
+        console.log(box.clientTop);//上边框
+        console.log(box.clientLeft);//左边框
+        console.log(box.clientWidth);//不包括边框 元素宽度
+        console.log(box.clientHeight);//不包括边框 元素高度
+    };
+    (function () {
+
+    })();//立即执行函数
+    (function () {
+
+    }());//
+
+
+</script>
+</body>
+</html>

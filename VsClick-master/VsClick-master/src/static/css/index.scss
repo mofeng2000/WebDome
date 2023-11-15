@@ -1,0 +1,15 @@
+.vsClick {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.vsClick-dom {
+  position: absolute;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}

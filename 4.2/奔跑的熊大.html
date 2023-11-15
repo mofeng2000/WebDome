@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>奔跑的熊大</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+
+            background: #e6eef0;
+        }
+        @keyframes yidong{
+            100%{
+                background-position: -1600px 0;
+            }
+        }
+        @keyframes tuying{
+            100%{
+                left: 50%;
+              transform: translateX(-50%);
+
+            }
+        }
+        @keyframes bgyidong{
+            100%{
+                background-position: -3840px 0;
+            }
+        }
+        .bengjin_hie{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 569px;
+            animation:yidong 10s linear infinite;
+            background: url("bg2.png")repeat-x;
+        }
+        .bengjin_bai{
+            position: absolute;
+            top: 250px;
+            left: 0;
+            width: 100%;
+            height: 336px;
+            animation:yidong 6s linear infinite ;
+            background: url("bg1.png") repeat-x;
+        }
+        .bear{
+            position: absolute;
+            top: 470px;
+            left: 0;
+            width: 200px;
+            height: 100px;
+            background: url("bear.png") no-repeat;
+            animation:yidong 1s steps(8) infinite,tuying 5s forwards;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="bengjin_hie"></div>
+<div class="bengjin_bai"></div>
+<div class="bear"></div>
+
+
+
+
+</body>
+</html>

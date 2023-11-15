@@ -1,0 +1,90 @@
+body {
+  color: #666;
+  font-size: 14px;
+  font-family: "微软雅黑", "Microsoft Yahei";
+  background: #ffffff;
+}
+
+@media only screen and (max-width: 1900px) {
+
+}
+
+@media only screen and (max-width: 1400px) {
+  .ul-list1.title {
+    font-size: 16px;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .ul-list1.txt {
+    padding: 15px;
+  }
+
+}
+
+@media only screen and (max-width: 990px) {
+  .ul-list1 li {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .ul-list1 li {
+    float: none;
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*.w{*/
+/*width: 1260px;*/
+/*margin: 0 auto;*/
+/*}*/
+.wp {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+a {
+  color: #666;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #106cc1 !important;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a:hover {
+  outline: 0 none !important;
+}
+
+.flr:after{
+display:block;clear:both;content:"";visibility:hidden;height:0}
+
+.clearfloat{zoom:1}
+
+
+h1, h2, h3, h3, h4, h5, h6 {
+  font-weight: normal;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            margin: 20% 50% ;
+        }
+        .box img{
+            width: 225px;
+            height: 137px;
+        }
+        .box img:hover{
+            transform: scale(2,2);
+            /*转变宽度为原来的大小的2倍，和其原始大小3倍的高度。整数为增大 小数为减小*/
+            /*-webkit-transform: rotate(30deg); !* Safari and Chrome *!*/
+            transition: all .2s ;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="scale.jpg" alt="">
+
+</div>
+</body>
+</html>

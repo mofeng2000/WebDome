@@ -1,0 +1,367 @@
+@font-face {
+    font-family: 'icommon';
+    src: url('../fonts/icomoon.svg?7kkyc2');
+    src: url('../fonts/icomoon.svg?7kkyc2#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?7kkc2') format('truetype'),
+    url('../fonts/icomoon.woff?7kkc2') format('woff'),
+    url('../fonts/icomoon.svg?7kkc2#icommon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.icommon {
+    font-family: 'icommon';
+    font-size: 30px;
+}
+.shortcut{
+    width: 100%;
+    height: 30px;
+    background: #f1f1f1;
+
+}
+.w{
+    width: 1200px;
+    margin: 0 auto;
+}
+.shortcut_l{
+    float: left;
+}
+.shortcut_l ul li{
+    margin-top: 8px;
+    float: left;
+    margin-right: 14px;
+}
+.color_red{
+    color: #c81623;
+}
+.shortcut_r{
+    float: right;
+}
+.shortcut_r ul li {
+    float: left;
+    margin-right: 15px;
+    margin-top: 8px;
+}
+.shortcut_r i{
+ font-family:icommon ;
+    font-size: 16px;
+    line-height: 26px;
+    float: left;
+
+}
+.shortcut_r .spacer{
+    width: 1px;
+    height: 14px;
+    background:#666666;
+    margin: 10px  14px 0 ;
+}
+.header{
+    position: relative;
+    height: 82px;
+}
+.logo{
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 240px;
+    height: 61px;
+
+}
+.logo h1 a{
+    display: block;
+    width: 240px;
+    height: 61px;
+    background: url("../img/logo.png") no-repeat;
+    font-size: 0;
+}
+.miaosha{
+    position: absolute;
+    top: 42px;
+    left: 200px;
+    border-left: 1px solid #b1191a;
+    padding-left: 15px;
+}
+.search{
+    position: absolute;
+    top: 24px;
+    left: 350px;
+    width: 538px;
+    height: 35px;
+
+}
+.search input{
+    width: 456px;
+    height: 35px;
+    border: solid 2px #b1191a;
+    font-size: 14px;
+    color: #666666;
+    padding-left: 12px;
+
+}
+.search button{
+    position: absolute;
+    top: 0;
+    left: 468px;
+    background: #b1191a;
+    width: 83px;
+    height: 39px;
+}
+.hotwords{
+    position: absolute;
+    top: 70px;
+    left: 360px;
+    width: 500px;
+    height: 12px;
+
+}
+.hotwords a{
+    margin-right: 10px;
+}
+.shopcar{
+position: absolute;
+    top: 27px;
+    right: 65px;
+    width: 140px;
+    height: 46px;
+    border: 1px solid #dfdfdf;
+    background: #f7f7f7;
+
+}
+.shopcar a{
+height: 46px;
+    line-height: 46px;
+}
+.shopcar i{
+    font-family:icommon ;
+    font-size: 18px;
+    color: #d95151;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+.shopcar span{
+    position: absolute;
+    top: -5px;
+    left: 105px;
+
+    height:14px;
+    padding:0 5px;
+    line-height: 16px;
+    color: white;
+    text-align: center;
+   background: #e60012;
+    border-radius:7px 7px 7px 0 ;
+}
+.nav{
+    margin-top: 25px;
+    height: 45px;
+    border-bottom:2px solid #b1191a ;
+}
+.nvaquan{
+    width: 209px;
+    height: 45px;
+float: left;
+}
+.nvaquan .dt{
+    width: 209px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    background: #b1191a;
+    font-size: 16px;
+}
+.nvaquan .dt a{
+    font-size: 14px;
+    color: white;
+}
+.nvaquan .dd{
+    width: 209px;
+    height: 466px;
+    background: #c81623;
+
+}
+.nvaquan .dd ul li{
+    width: 209px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    margin-left: 1px;
+    margin-top: 1px;
+
+
+}
+.nvaquan .dd ul li a{
+
+    font-size: 14px;
+    color: white;
+
+}
+.nvaquan .dd ul li i{
+
+    font-family: icommon;
+    font-size: 14px;
+    color: white;
+    float: right;
+    padding-right: 20px;
+
+
+
+}
+.nvaquan .dd ul li:hover{
+    background: white;
+}
+.nvaquan .dd ul li:hover a{
+ color: #c81623;
+}
+.navkuai{
+    float: left;
+    height: 46px;
+}
+.navkuai ul li {
+    padding-left: 15px;:;
+    float: left;
+    margin: 0 5px 0 30px;
+}
+.navkuai ul li a{
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+font-size: 16px;
+    color: #333333;
+}
+.navkuai ul li a:hover{
+    color: #c81623;
+}
+
+/*<!--footer statrt-->*/
+.footer{
+    position: relative;
+    background: #f5f5f5;
+    height: 420px;
+}
+.mod_service{
+    position: relative;
+    height: 111px;
+    width: 1200px;
+    /*background: orange;*/
+}
+.mod_bg{
+    height: 50px;
+    width: 50px;
+}
+.mod_zheng{
+    position: absolute;
+    top: 30px;
+    left: 35px;
+
+    background: url("../img/icons.png") no-repeat -253px -3px;
+}
+.service_zheng{
+    position: absolute;
+    top: 35px;
+    left: 85px;
+    margin-left: 5px;
+}
+.service_h4{
+    font-size: 14px;
+    color:#333333;
+    margin-bottom: 3px;
+}
+.service_span{
+    font-size: 12px;
+    color: #666666;
+}
+.mod_wuliu{
+    position: absolute;
+    top: 30px;
+    left: 278px;
+    background: url("../img/icons.png") no-repeat -255px -53px;
+}
+.service_wuliu{
+    position: absolute;
+    top: 35px;
+    left: 333px;
+}
+.mod_wuyou{
+    position: absolute;
+    top: 30px;
+    left: 526px;
+    background: url("../img/icons.png") no-repeat -256px -105px;
+}
+.service_wuyou{
+    position: absolute;
+    top: 35px;
+    left: 583px;
+}
+.mod_tese{
+    position: absolute;
+    top: 30px;
+    right: 390px;
+    background: url("../img/icons.png") no-repeat -258px -156px;
+}
+.service_tese{
+    position: absolute;
+    top: 35px;
+    right: 288px;
+}
+.mod_service_help{
+    position: absolute;
+    top: 30px;
+    right: 135px;
+    background: url("../img/icons.png") no-repeat -257px -209px;
+}
+.service_help{
+    position: absolute;
+    top: 35px;
+    right: 54px;
+}
+.mod_help{
+    float: left;
+    height: 190px;
+    width: 1200px;
+
+}
+.mod_dl{
+    float: left;
+    height: 160px;
+    width: 135px;
+    margin: 20px 0 12px 65px ;
+}
+.mod_dl dt{
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 5px;
+
+}
+.mod_dl dd{
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 2px; ;
+}
+.mod_dt{
+    margin-left: 10px;
+    padding-bottom: 3px;
+}
+.mod_dd{
+    margin-left: 10px;
+    padding-top: 3px;
+
+}
+.mod_copyright{
+    width: 1200px;
+    height: 120px;
+    text-align: center;
+    margin-top: 210px;
+
+}
+.mod_copyright_p{
+
+    padding-left: 5px;
+
+    margin-bottom: 6px;
+}
+.mod_copyright_p a{
+   margin: 0 10px;
+}
+
+
+
+/*<!--footer end-->*/

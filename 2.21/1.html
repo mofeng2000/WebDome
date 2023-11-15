@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div {
+        color: #0a6aa1;
+    }
+
+    #id {
+        color: red;
+    }
+
+    .item {
+        color: orange;
+    }
+</style>
+<body>
+
+<div>1</div>
+<div class="item">12</div>
+<div id="id">123</div>
+<button id="a"> 123</button>
+<a href="javascript:" id="b">456</a>
+<script>
+    console.log(document)
+    console.log(window)
+    var a = document.getElementById('a');
+    a.onclick = function () {
+        if (confirm("是否删除")) {
+            location.href = "https://www.baidu.com"
+        } else {
+            console.log(123)
+        }
+    }
+    var b = document.getElementById('b');
+    b.onclick = function () {
+        if (confirm("是否删除")) {
+            location.href = "https://www.mi.com"
+        } else {
+            console.log(456)
+        }
+    }
+</script>
+</body>
+</html>

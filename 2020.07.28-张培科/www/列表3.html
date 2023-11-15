@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta name="format-detection" content="telephone=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 如果是pc请删除下面一行 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+        <title>CSS限制字符行数加省略号</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+          <link rel="stylesheet" href="http://x.5811.com.cn/css/cui.css" />
+          <link rel="stylesheet" href="http://x.5811.com.cn/css/cui-rel.css" />
+          <!--<script type="text/javascript" src="http://x.5811.com.cn/js/jquery.js"></script>-->
+		<style>
+			.wp{
+        width: 90%;
+        margin: 0 auto;
+      }
+      .ul-list{
+        /*display: flex;*/
+        margin-right:-20px;
+        overflow: hidden;
+      }
+      .ul-list li{
+       /*flex: 1;*/
+        width: 25%;
+        float: left;
+      }
+      .ul-list .con{
+        margin-right: 20px;
+        padding: 20px;
+        border:  1px solid #ccc;
+
+      }
+      .ul-list .tit{
+        font-size: 18px;
+        font-weight: normal;
+        width: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #8b0000 ;
+      }
+      .ul-list .desc{
+        /*height: 100px;*/
+        /*限制文本显示几行*/
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp:4;
+        overflow:hidden;
+        text-overflow: ellipsis;
+      }
+		</style>
+    </head>
+<body>
+
+<div class="wp">
+  <ul class="ul-list">
+    <li><div class="con">
+      <h3 class="tit">诚信</h3>
+      <p class="desc">CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号
+        CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号
+        CSS限制字符行数加省略号</p>
+    </div></li>
+    <li><div class="con">
+      <h3 class="tit">诚信</h3>
+      <p class="desc">CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号
+        CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号
+        CSS限制字符行数加省略号</p>
+    </div></li>
+    <li><div class="con">
+      <h3 class="tit">诚信</h3>
+      <p class="desc">CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号
+        CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号
+        CSS限制字符行数加省略号</p>
+    </div></li>
+    <li><div class="con">
+      <h3 class="tit">诚信</h3>
+      <p class="desc">CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号
+        CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号CSS限制字符行数加省略号
+        CSS限制字符行数加省略号</p>
+    </div></li>
+  </ul>
+</div>
+
+</body>
+</html>

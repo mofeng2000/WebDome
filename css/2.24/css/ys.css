@@ -1,0 +1,17 @@
+body{
+    background-image: url(../images/bg2.jpg);
+}
+h1{
+    color: lawngreen;
+}
+h2{
+    color: red;
+}
+h3{
+    color: black;
+    font-size: 18px;
+}
+p{
+  color: blue;
+    text-indent: 2em;
+}

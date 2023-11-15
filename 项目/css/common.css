@@ -1,0 +1,27 @@
+/*公共样式*/
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.red{
+    color: #c81623;
+}
+/*版心*/
+.w {
+    width: 1400px;
+    margin: 0 auto;
+}
+/*底部*/
+footer{
+    height: 350px;
+    margin-top: 100px;
+    padding-top: 50px;
+    text-align: center;
+    background-color: #c81623;
+}
+footer p{
+    font-size: 16px;
+    margin-top: 50px;
+}

@@ -1,0 +1,58 @@
+/*show start*/
+.show{
+    height: 900px;
+    background: rgba(193,166,111,.2);
+}
+.show_hd{
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    text-align: center;
+    line-height: 80px;
+    font-size: 22px;
+}
+.show ul{
+    height: 730px;
+    width: 1400px;
+}
+.show ul li{
+   float: left;
+    margin: 30px 45px;
+}
+.show ul li img{
+    width: 370px;
+    height: 350px;
+    box-shadow: 5px 5px 10px 0 rgba(0,0,0,.3);
+    transition: all .2s;
+}
+.show ul li:hover img{
+    transform: scale(1.1,1.1);
+}
+/*show end*/
+
+/*know start*/
+.know,
+.service,
+.specialty{
+    margin-top: 30px;
+    font-size: 18px;
+}
+.know i,
+.service i,
+.specialty i{
+    display: inline-block;
+    background: #d86526;
+    padding: 3px 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+.service i{
+    background: #DF61AB;
+}
+.specialty i{
+    background: #01A2E6;
+}
+/*know end*/

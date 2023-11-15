@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">{{message}}
+    <button v-on:click="sum">666</button>
+    {{sum}}</div>
+<script src="vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: " "
+            },
+            methods:{
+                sum:function () {
+                    let c=[10,30,20,110,120,60,40];
+//                    //filter过滤数组，return true是添加，flase过滤除去
+//                    var newc=c.filter(function (n) {
+//                        return n<100
+//                    });
+//                    //map计算加减乘除
+//                    var  new2c=newc.map(function (n) {
+//                        return n*2
+//                    });
+//                    //计算reduce总和
+//                    var new3c=new2c.reduce(function (p1,n) {
+//                        return p1+n
+//                    },0);
+                   // console.log(new3c)
+                    let todal=c.filter( function (t) { return t<100 })
+                        .map(function (t) { return t*2 }).reduce(function (p1,t) { return p1+t  },0)
+
+
+                    console.log(todal)
+                }
+            }
+        }
+    )
+</script>
+</body>
+</html>

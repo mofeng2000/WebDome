@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插槽</title>
+</head>
+<body>
+<div id="app">
+    <cpn><span slot="666">ttt</span> </cpn>
+</div>
+<template id="cpn">
+    <div>
+        <!--<slot></slot>-->
+        <slot><button>555</button></slot>
+        <!--具名插槽使用-->
+        <slot name="666"><button>666</button></slot>
+        <slot><button>888</button></slot>
+
+    </div>
+</template>
+<script src="../vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: " "
+            },
+        components:{
+                cpn:{
+                    template:'#cpn'
+                }
+        }
+        }
+    )
+</script>
+</body>
+</html>

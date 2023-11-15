@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in day">{{item}}</li>
+    </ul>
+    <button @click="btnClick">+</button>
+</div>
+<script src="vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: " ",
+                day: [
+                    666, 888, 999
+                ]
+            },
+            methods: {
+                btnClick: function () {
+                    //追加数组
+//                    this.day.push('qwer'),
+                    //删除最后一位数组
+//                    this.day.pop('qwer')
+                    //删除第一位数组
+//                 this.day.shift('qwer')
+                    //删除第一位数组
+                    //this.day.unshift('qwer');
+                    // splice(index,len,[item])它也可以用来删除/替换/添加数组内某一个或者几个值（该方法会改变原始数组） splice()
+                  //删除 this.day.splice(0,1)
+                   //替换 this.day.splice(1,1,777)
+                    //添加
+                    this.day.splice(1,0,777);
+                       console.log(day)
+                    //排序：sort()方法 和反转：reverse() 方法
+                    //sort()
+                 //  this.day.sort()
+                    // reverse()
+                   // this.reverse()
+
+                }
+            }
+        }
+    )
+</script>
+</body>
+</html>

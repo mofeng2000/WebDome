@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            /*background: rgba(0,0,0,.3);*/
+            margin: 100px auto;
+            /*display: flex;*/
+            width: 315px;
+            box-sizing: border-box;
+        }
+        .box input{
+            /*box-sizing: border-box;*/
+            width: 32%;
+            height: 50px;
+            padding: 0;
+            font-size: 16px;
+            background: #cdcdcd;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="box">
+    <!--<form name="myForm" action="#" onsubmit="return validateForm()" method="post">-->
+        <p  id="xianshi"  style="background: white ;width: 100% ;height: 50px"> 1 </p>
+    <input type="button"    value="1" id="1">
+    <input type="button" value=2  id="2">
+    <input type="button" value=3   id="3">
+    <input type="button" value=4 id="4">
+    <input type="button" value=5  id="5">
+    <input type="button" value=6  id="6">
+    <input type="button" value=7  id="7">
+    <input type="button" value=8 id="8">
+    <input type="button" value=9  id="9">
+    <input type="button" value=0 id="0">
+    <input type="button" value="+"  id="11">
+    <input type="button" value="-" id="12">
+    <input type="button" value="*"   id="13">
+    <input type="button" value="/"  id="14">
+    <input type="button" value="%"   id="15">
+
+<!--</form>-->
+</div>
+
+<script>
+    var xian=document.getElementById("xianshi");
+    var box=document.querySelector(".box");
+
+   box.addEventListener('click',function (e) {
+       var but=document.querySelectorAll("input");
+
+    if(arr!==null){
+        return e.target.value;
+   }
+   }
+   );
+   console.log(arr);
+
+    var arr=box.function;
+
+    xian.innerHTML= arr;
+
+</script>
+</body>
+
+</html>

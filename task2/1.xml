@@ -1,0 +1,68 @@
+<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
+<AlgCompt>\t<DataTransModel>File</DataTransModel>\t<Artificial>ElementAlg</Artificial>\t<DllName>
+    Add.exe</DllName>\t<ChsName>加</ChsName>\t<AlgorithmDesc>加</AlgorithmDesc>\t<Version>1.1</Version>\t<AlgorithmClass>
+    几何类产品_正射产品</AlgorithmClass>\t<AlgorithmLevel>3</AlgorithmLevel>\t<AlgorithmName>Add</AlgorithmName>\t<AlgoirthmID>
+    Add_华科_1.0</AlgoirthmID>\t<Author>华科</Author>\t<Type>算法</Type>\t<InputTestFileName>
+    TS2_MOC1_20181129_L1A0000112916_6400_4_123_456-1.c.tif#TS2_MOC1_20181129_L1A0000112916_6400_4_123_456-2.c.tif#TS2_MOC1_20181129_L1A0000112916_6400_4_123_456-3.c.tif#TS2_MOC1_20181129_L1A0000112916_6400_4_123_456-4.c.tif#GF1_PMS1_20181129_L1A0000114399_6400_4_123_456-1.c.tif#GF1_PMS1_20181129_L1A0000114399_6400_4_123_456-2.c.tif#GF1_PMS1_20181129_L1A0000114399_6400_4_123_456-3.c.tif#GF1_PMS1_20181129_L1A0000114399_6400_4_123_456-4.c.tif</InputTestFileName>\t<InputTestFilePath>
+    Add\\Input</InputTestFilePath>\t<OutputTestFileName>
+    Add_PL_20181207145419_0001-0-1.c.tif#Add_PL_20181207145419_0001-0-2.c.tif#Add_PL_20181207145419_0001-0-3.c.tif#Add_PL_20181207145419_0001-0-4.c.tif</OutputTestFileName>\t<OutputTestFilePath>
+    Add</OutputTestFilePath>\t
+    <Environment>\t\t<IsCluster>0</IsCluster>\t\t<ClusterNum>5</ClusterNum>\t\t<OperatingSystem>
+        windows7</OperatingSystem>\t\t<CPU>单核</CPU>\t\t<Memory>1GB</Memory>\t\t<Storage>10GB</Storage>\t\t<NetworkCard>
+        无需求</NetworkCard>\t\t<Bandwidth/>\t\t<GPU>无需求</GPU>\t
+    </Environment>
+    \t<Utility Satellite=\"GF1\" Sensor=\"PAN,MSS\" Resolution=\"0.1\"/>\t<Utility Satellite=\"GF2\" Sensor=\"PAN,MSS\"
+    Resolution=\"25\"/>\t<Inputs ParameterNum=\"8\">\t\t
+    <Parameter>\t\t\t<ParaName>1.1</ParaName>\t\t\t<ParaChsName>输入瓦片的第一波段</ParaChsName>\t\t\t<Description>
+        输入瓦片的第一波段</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>1.c.tif</DataType>\t\t\t<ParaSource>
+        Cal</ParaSource>\t\t\t<OptionValue/>\t\t\t<ParaValue/>\t\t
+    </Parameter>
+    \t\t
+    <Parameter>\t\t\t<ParaName>1.2</ParaName>\t\t\t<ParaChsName>输入瓦片的第二波段</ParaChsName>\t\t\t<Description>
+        输入瓦片的第二波段</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>2.c.tif</DataType>\t\t\t<ParaSource>
+        Cal</ParaSource>\t\t\t<OptionValue/>\t\t\t<ParaValue/>\t\t
+    </Parameter>
+    \t\t
+    <Parameter>\t\t\t<ParaName>1.3</ParaName>\t\t\t<ParaChsName>输入瓦片的第三波段</ParaChsName>\t\t\t<Description>
+        输入瓦片的第三波段</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>3.c.tif</DataType>\t\t\t<ParaSource>
+        Cal</ParaSource>\t\t\t<OptionValue/>\t\t\t<ParaValue/>\t\t
+    </Parameter>
+    \t\t
+    <Parameter>\t\t\t<ParaName>1.4</ParaName>\t\t\t<ParaChsName>输入瓦片的第四波段</ParaChsName>\t\t\t<Description>
+        输入瓦片的第四波段</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>4.c.tif</DataType>\t\t\t<ParaSource>
+        Cal</ParaSource>\t\t\t<OptionValue/>\t\t\t<ParaValue/>\t\t
+    </Parameter>
+    \t\t
+    <Parameter>\t\t\t<ParaName>2.1</ParaName>\t\t\t<ParaChsName>输入瓦片的第一波段</ParaChsName>\t\t\t<Description>
+        输入瓦片的第一波段</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>1.c.tif</DataType>\t\t\t<ParaSource>
+        Cal</ParaSource>\t\t\t<OptionValue/>\t\t\t<ParaValue/>\t\t
+    </Parameter>
+    \t\t
+    <Parameter>\t\t\t<ParaName>2.2</ParaName>\t\t\t<ParaChsName>输入瓦片的第二波段</ParaChsName>\t\t\t<Description>
+        输入瓦片的第二波段</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>2.c.tif</DataType>\t\t\t<ParaSource>
+        Cal</ParaSource>\t\t\t<OptionValue/>\t\t\t<ParaValue/>\t\t
+    </Parameter>
+    \t\t
+    <Parameter>\t\t\t<ParaName>2.3</ParaName>\t\t\t<ParaChsName>输入瓦片的第三波段</ParaChsName>\t\t\t<Description>
+        输入瓦片的第三波段</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>3.c.tif</DataType>\t\t\t<ParaSource>
+        Cal</ParaSource>\t\t\t<OptionValue/>\t\t\t<ParaValue/>\t\t
+    </Parameter>
+    \t\t
+    <Parameter>\t\t\t<ParaName>2.4</ParaName>\t\t\t<ParaChsName>输入瓦片的第四波段</ParaChsName>\t\t\t<Description>
+        输入瓦片的第四波段</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>4.c.tif</DataType>\t\t\t<ParaSource>
+        Cal</ParaSource>\t\t\t<OptionValue/>\t\t\t<ParaValue/>\t\t
+    </Parameter>
+    \t
+</Inputs>\t<Outputs ParameterNum=\"4\">\t\t<Parameter>\t\t\t<ParaName>1</ParaName>\t\t\t<ParaChsName>第一波段</ParaChsName>\t\t\t<Description>
+    输出图像</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>1.p.tif</DataType>\t\t\t<ParaSource>
+    Cal</ParaSource>\t\t\t<ParaValue/>\t\t\t<MaxValue/>\t\t\t<MinValue/>\t\t\t<NoDataValue/>\t\t
+</Parameter>\t\t<Parameter>\t\t\t<ParaName>2</ParaName>\t\t\t<ParaChsName>第二波段</ParaChsName>\t\t\t<Description>
+    输出图像</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>2.p.tif</DataType>\t\t\t<ParaSource>
+    Cal</ParaSource>\t\t\t<ParaValue/>\t\t\t<MaxValue/>\t\t\t<MinValue/>\t\t\t<NoDataValue/>\t\t
+</Parameter>\t\t<Parameter>\t\t\t<ParaName>3</ParaName>\t\t\t<ParaChsName>第三波段</ParaChsName>\t\t\t<Description>
+    输出图像</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>3.p.tif</DataType>\t\t\t<ParaSource>
+    Cal</ParaSource>\t\t\t<ParaValue/>\t\t\t<MaxValue/>\t\t\t<MinValue/>\t\t\t<NoDataValue/>\t\t
+</Parameter>\t\t<Parameter>\t\t\t<ParaName>4</ParaName>\t\t\t<ParaChsName>第四波段</ParaChsName>\t\t\t<Description>
+    输出图像</Description>\t\t\t<ParaType>Tile</ParaType>\t\t\t<DataType>4.p.tif</DataType>\t\t\t<ParaSource>
+    Cal</ParaSource>\t\t\t<ParaValue/>\t\t\t<MaxValue/>\t\t\t<MinValue/>\t\t\t<NoDataValue/>\t\t
+</Parameter>\t</Outputs><AlgorithmAlias>Add1</AlgorithmAlias></AlgCompt>

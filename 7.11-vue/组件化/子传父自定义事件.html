@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<cpn @itemclick="cpnclick"> </cpn>
+</div>
+
+<template id="cpn">
+    <div>
+       <!--<ul>-->
+           <!--<li v-for="item in info">{{item}}</li>-->
+       <!--</ul>-->
+        <button v-for="item in info" @click="btnclick(item)">{{item.name}}</button>
+    </div>
+</template>
+<script src="../vue.min.js"></script>
+<script>
+    //子组件
+    const cpn = {
+        template:'#cpn',
+        data(){
+            return{
+                info:[
+                    {id:0 ,name:'手机'},
+                    {id:1 ,name:'电脑'},
+                    {id:2 ,name:'手表'},
+                    {id:3 ,name:'手环'},
+                ]
+            }
+        },
+        methods:{
+            btnclick(item){
+                console.log(item);
+                console.log(item.name);
+                console.log(item.id);
+                //发射给父组件事件
+                this.$emit('itemclick',item)
+            }
+        }
+    };
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: " "
+            },
+        //父组件
+        components:{=
+                cpn
+        },
+        methods:{
+            cpnclick(item){
+                console.log(item)
+        }
+        }
+        }
+    )
+</script>
+</body>
+</html>

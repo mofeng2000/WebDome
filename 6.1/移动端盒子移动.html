@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+</div>
+<script>
+    var div=document.querySelector(".box");
+    var divLeft=0;
+    var divTop=0;
+    var handLeft=0;
+    var handTop=0;
+    div.addEventListener("touchstart",function (e) {
+      divLeft=this.offsetLeft;
+       divTop=this.offsetTop;
+        handLeft=e.targetTouches[0].pageX;
+        handTop=e.targetTouches[0].pageY;
+
+    });
+    div.addEventListener("touchmove",function (e) {
+        var moveX=e.targetTouches[0].pageX-handLeft;
+        var moveY=e.targetTouches[0].pageY-handTop;
+        div.style.left=moveX+divLeft+"px";
+        div.style.top=moveY+divTop+"px";
+        e.preventDefault();
+    })
+
+
+</script>
+</body>
+</html>

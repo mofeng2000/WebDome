@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            /*border: 2px solid orange;*/
+            background: pink;
+            overflow: auto;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box">
+
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容
+    我是内容我是内容我是内容我是内容我是内容
+</div>
+
+<script>
+    window.onload=function () {
+        var box=document.querySelector(".box");
+        console.log(box.scrollHeight);//返回内容真实的高度
+        console.log(box.scrollWidth);//返回内容真实的宽度
+
+        box.addEventListener("scroll",function () //得到隐藏内容的方法
+        {
+            console.log(box.scrollLeft);//得到隐藏内容的左侧距离
+            console.log(box.scrollTop);//得到隐藏内容的上侧距离
+
+        })
+
+    };
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            display: flex;
+            width: 600px;
+            height: 600px;
+            background: orange;
+            /*flex-direction: column;*/
+            flex-direction: row;
+            flex-wrap: wrap;
+            /*主轴单行行排列*/
+            justify-content:center;
+            /*侧轴单行行排列*/
+            /*align-items: center;*/
+            /*align-items: flex-start;*/
+            /*align-items: flex-end;*/
+            align-items:stretch;
+
+            /*侧轴多行排列*/
+            /*align-content: center;*/
+            /*align-content: flex-start;*/
+            /*align-content: flex-end;*/
+            /*align-content: space-around;*/
+            /*align-content: space-between;*/
+             /*align-content:stretch;*/
+
+        }
+        span{
+            width: 150px;
+            height: 150px;
+            background: deepskyblue;
+            margin: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+</div>
+</body>
+</html>

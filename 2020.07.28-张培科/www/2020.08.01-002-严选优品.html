@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>严选优品</title>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 如果是pc请删除下面一行 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!-- 下面是初始化框架必须引入 -->
+    <link rel="stylesheet" href="css/cui.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+    <link href="css/slick.css" rel="stylesheet">
+    <script src="js/jquery.countup.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <link href="css/animate.min.css" rel="stylesheet">
+
+    <style>
+        *, :after, :before {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: 0 !important;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+
+        .wp {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        body {
+
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index: 99;
+            padding: 0 3.38%;
+        }
+
+        .header .fixed {
+            border-bottom: 1px solid #e5e5e5
+        }
+
+        .logo {
+            float: left;
+            line-height: 80px;
+            overflow: hidden
+        }
+
+        .logo img {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        .nav {
+            float: right;
+            /*border-left: 1px solid #e5e5e5*/
+        }
+
+        .nav li {
+            float: left;
+            width: 136px;
+            text-align: center;
+            position: relative
+        }
+
+        .nav li .v1 {
+            display: block;
+            color: #999;
+            font-size: 12px;
+            line-height: 55px;
+            text-transform: uppercase;
+        }
+
+        .nav li.on .v1, .nav li:hover .v1 {
+            background-color: #666;
+            color: #fff;
+            border-color: transparent
+        }
+
+        .nav li.on p, .nav li:hover p {
+            color: #fff;
+            font-weight: 400;
+
+        }
+
+        .nav li:hover .sub a {
+            border-bottom: 1px solid #0d6fb8;
+        }
+
+        .nav li p {
+            font-size: 16px;
+            line-height: 75px;
+            color: #333
+        }
+
+        .nav li .sub {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            /*border-radius: 0 0 12px 12px;*/
+            overflow: hidden;
+            z-index: 99
+        }
+
+        .nav li .sub a {
+            position: relative;
+            display: block;
+            font-size: 14px;
+            color: #333;
+            line-height: 43px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .nav li .sub a:hover {
+            color: #333
+        }
+
+        .nav li .sub a:hover::after {
+            content: " ";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #0d6fb8;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: rotate(45deg) translate(0, 60%);
+            border-radius: 5px;
+        }
+
+        .menuBtn {
+            display: none;
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn b {
+            display: block;
+            height: 4px;
+            background-color: #0d6fb8;
+            margin: 4px 0;
+            transition: .3s;
+            -ms-transition: .3s;
+            -moz-transition: .3s;
+            -webkit-transition: .3s;
+            -o-transition: .3s
+        }
+
+        .menuBtn.open b {
+            display: none;
+            margin: -5px 0 0;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 30px
+        }
+
+        .menuBtn.open b:first-child {
+            display: block;
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg)
+        }
+
+        .menuBtn.open b:last-child {
+            display: block;
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg)
+        }
+
+        @media only screen and (max-width: 1500px) {
+            .header {
+                height: 80px
+            }
+
+            .logo {
+                line-height: 60px;
+                width: 160px
+            }
+
+            .nav li .v1 {
+                height: 60px;
+                padding-top: 16px
+            }
+        }
+
+        @media only screen and (max-width: 1199px) {
+            .header {
+                height: 50px
+            }
+
+            .logo {
+                line-height: 50px;
+                width: 130px
+            }
+
+            .nav {
+                position: fixed;
+                top: 50px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 99;
+                background-color: #fff;
+                border-top: 1px solid #eee;
+                display: none;
+            }
+
+            .nav li:hover .v1 {
+                background-color: #fff;
+                color: #999
+            }
+
+            .nav li.on .v1 {
+                background-color: #0d6fb8;
+                color: #fff;
+                border-color: transparent
+            }
+
+            .nav li:hover p {
+                color: #333
+            }
+
+            .nav li .v1 {
+                position: relative;
+                height: auto;
+                padding: 10px 0
+            }
+
+            .nav li .v1 i {
+                display: block;
+                width: 32px;
+                height: 32px;
+                position: absolute;
+                right: 30px;
+                top: 15px;
+                background: url(images/so.png) center center no-repeat;
+                -o-background-size: 16px 16px;
+                background-size: 16px 16px
+            }
+
+            .nav li.on .v1 i {
+                background-image: url(../images/s2.png)
+            }
+
+            .nav li.on p {
+                color: #fff;
+                font-weight: 700
+            }
+
+            .nav li {
+                float: none;
+                padding-top: 0;
+                margin: 0;
+                width: auto
+            }
+
+            .nav li .sub {
+                position: static;
+                padding: 0;
+                text-align: center;
+                border-radius: 0;
+                background-color: #eee
+            }
+
+            .nav li .sub a {
+                line-height: 30px
+            }
+
+            .menuBtn {
+                display: block
+            }
+        }
+
+        /*<!--內图-->*/
+        .banner-a1 {
+        overflow: hidden;
+        }
+
+        .banner-a1 .ban-img {
+            display: block;
+            height: 0;
+            padding-top: 30%;
+            background-image: url("images/pic-yxpy01.png");
+            background-size: cover;
+        }
+
+
+        /*tab区*/
+        .tab{
+        overflow: hidden;
+        }
+        .tab .tab-list{
+            width: 60%;
+            margin: 20px auto;
+        }
+        .tab .tab-list li{
+            text-align: center;
+            float: left;
+            width: 25%;
+        }
+        .tab  .con{
+            margin:10px;
+        }
+       .tab .tab-pic img{
+            width: 100%;
+            height: 100%;
+        }
+        a{
+            color: #333;
+        }
+
+        .tab  a {
+            font-size: 20px;
+            padding-bottom: 5px;
+        }
+        .tab .current{
+            color: #e65359;
+            border-bottom: 2px solid #cd0303 ;
+        }
+        .tab .item{
+
+        }
+        .tab .imgtxt1{
+            overflow: hidden;
+        }
+        .tab .imgtxt1 li{
+            float: left;
+            width: 25%;
+            text-align: center;
+        }
+        .tab .imgtxt1 li .con{
+            display: block;
+            /*margin:20px;*/
+        }
+       .tab  .tit{
+           margin-bottom: 30px;
+           line-height: 40px;
+           font-weight: 400;
+           color: #333;
+           font-size: 1.4vw;
+       }
+
+        @media only screen and (max-width: 1200px) {
+            .tab  .tab-list li a{
+            font-size: 18px;
+            }
+        }
+        @media only screen and (max-width: 990px) {
+            .tab  .tab-list{
+                text-align: center;
+                margin: 0 auto;
+            }
+            .tab  .tab-list li {
+                float: none;
+                margin: 10px ;
+                width: 100%;
+            }
+            .tab  .tab-list li a{
+                line-height: 30px;
+            }
+        }
+        /*页码*/
+
+
+        .pages ul li a:hover, .pages ul .on a{
+            color: #fff!important;
+            background: #ba201e!important;
+        }
+        .pages{text-align: center;margin: 20px 0 55px;overflow: hidden;}
+        .pages ul li{display: inline-block;}
+        .pages ul li a{padding:0 12px ;height: 30px;line-height: 30px;display: block;font-weight: normal;font-family: "arial";font-size: 14px;
+            color: #707070;background: #ddd;
+        }
+        .pages ul li a:hover,.pages ul .on a{color: #e9e9e9;background: #333333;}
+        .pages .btn{float: right;}
+        .pages .btn a{width: 70px;height: 24px;line-height: 24px;text-align: center;}
+
+        /*footer区*/
+        .footer {
+            padding-top: 50px;
+            background: #f5f5f5 ;
+            color: #c2c2c2;
+        }
+        .ft-hd{
+            padding-bottom: 30px;
+            padding-top: 30px;
+            border-bottom: 1px solid #999 ;
+        }
+        .footer .col-l{
+            width: 70%;
+        }
+        .footer .col-l .link{
+            text-align: center;
+            float: left;
+            width: 25%;
+        }
+        .footer .col-l .link a{
+            overflow:hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin: 5px 0;
+        }
+        .footer .col-l .link .link-img{
+           display: inline-block;
+            float: left;
+            margin: 10px 5px ;
+
+        }
+        .footer .tit{
+            color: #666;
+            font-weight: 400;
+            font-size: 20px;
+        }
+        .footer .link a{
+            color: #999;
+            display: block;
+            font-size: 14px;
+            line-height: 30px;
+        }
+        .footer .link:nth-child(4) .tit a{
+            font-weight: 400;
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .footer .col-r{
+            width: 30%;
+            line-height: 40px;
+        }
+        .footer  .fd-qr-desc{
+            color: #666;
+            overflow:hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+        .footer .link a:hover {
+            color: #0d8ddb;
+        }
+        @media only screen and (max-width: 960px) {
+            .footer .col-l{
+                width: 100%!important;
+                float: none;
+            }
+            .footer .col-r{
+                width: 100%;
+                text-align: center;
+            }
+            .footer .fd-qr {
+                float: none;
+                width: auto;
+                text-align: center;
+            }
+            .fd-qr {
+                text-align: center;
+                float: none;
+                padding: 10px;
+
+            }
+
+            .footer .fd-qr .fd-qr-a1,
+            .footer .fd-qr .fd-qr-a2{
+                float: none;
+                display: inline-block;
+            }
+            .footer .fd-qr-a2 {
+
+                vertical-align: top;
+
+            }
+        }
+        @media only screen and (max-width: 750px) {
+
+        }
+
+
+    </style>
+</head>
+<body>
+<!--头部区域-->
+<div class="header">
+    <div class="wp">
+        <span class="menuBtn"></span>
+        <div class="logo">
+            <a href=""><img src="images/pic-yxyp-loge_03.png" alt=""/></a>
+        </div>
+        <ul class="nav">
+            <li class="">
+                <a href="#" class="v1">
+                    <p>首页</p>
+                </a>
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p> 九牛之人</p>
+                </a>
+
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p>美国爱加被</p>
+                </a>
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p>公益慈善</p>
+                </a>
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p>招商合作</p>
+                </a>
+            </li>
+            <li class="">
+                <a href="" class="v1">
+                    <p>联系我们</p>
+                    <i></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--內图-->
+<div class="banner-a1">
+    <a href="#" class="ban-img"></a>
+</div>
+<!--tab切换区-->
+<div class="tab">
+        <div class="wp">
+        <div class="tab-list fix">
+            <ul class="tab-ul-list">
+                <li>   <a href=" #" class="current">全部</a></li>
+                <li> <a href="#" >亮洁皙颜系列</a></li>
+                <li>  <a href="javascript:void(0)">都市护颜系列</a></li>
+                <li> <a href="javascript:void(0)">沁润健颜系列</a></li>
+            </ul>
+        </div>
+        <div class="tab-pic">
+            <div class="item ">
+            <ul class="imgtxt1">
+                <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.3s" >
+                    <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                    <div class="txt"><h3 class="tit">1水动力活力霜</h3></div>
+                </a>
+                </li>
+                <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.4s">
+                    <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                    <div class="txt"><h3 class="tit">2水动力活力霜</h3></div>
+                </a>
+                </li>
+                <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.5s">
+                    <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                    <div class="txt"><h3 class="tit">3水动力活力霜</h3></div>
+                </a>
+                </li>
+                <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.6s">
+                    <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                    <div class="txt"><h3 class="tit">4水动力活力霜</h3></div>
+                </a>
+                </li>
+            </ul>
+        </div>
+            <div class="item">
+                <ul class="imgtxt1">
+                    <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.3s">
+                        <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                        <div class="txt"><h3 class="tit">5水动力活力霜</h3></div>
+                    </a>
+                    </li>
+                    <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.4s">
+                        <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                        <div class="txt"><h3 class="tit">6水动力活力霜</h3></div>
+                    </a>
+                    </li>
+                    <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.5s">
+                        <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                        <div class="txt"><h3 class="tit">7水动力活力霜</h3></div>
+                    </a>
+                    </li>
+                    <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.6s">
+                        <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                        <div class="txt"><h3 class="tit">8水动力活力霜</h3></div>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="item wow fadeInUp" style="animation-duration:1s ;animation-delay:0.5s">
+                <ul class="imgtxt1">
+                    <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.3s">
+                        <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                        <div class="txt"><h3 class="tit">9水动力活力霜</h3></div>
+                    </a>
+                    </li>
+                    <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.4s">
+                        <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                        <div class="txt"><h3 class="tit">10水动力活力霜</h3></div>
+                    </a>
+                    </li>
+                    <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.5s">
+                        <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                        <div class="txt"><h3 class="tit">11水动力活力霜</h3></div>
+                    </a>
+                    </li>
+                    <li><a href="#" class="con wow fadeInUp" style="animation-duration:1s ;animation-delay:0.6s">
+                        <div class="pic"><img src="images/pic-yxyp01_07.jpg" alt=""></div>
+                        <div class="txt"><h3 class="tit">12水动力活力霜</h3></div>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            <div class="pages">
+                <ul class="pages-ul">
+                    <li><a href=""><</a></li>
+                    <li class="on "><a href="#">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">></a></li>
+                </ul>
+            </div>
+    </div>
+
+</div>
+<!--footer区-->
+<div class="footer">
+    <div class="wp">
+        <div class="ft-hd fix">
+            <div class="col-l fix">
+                <div class="link">
+                    <h3 class="tit"><img src="images/pic-yxyp-loge_03.png" alt=""></h3>
+                    <a href="#">。2019九牛之人Al Rights</a>
+                    <a href="#">关于我们</a>
+                    <a href="#" class="link-img"><img src="images/icon-yxpy01.png" alt=""></a>
+                    <a href="#"  class="link-img"><img src="images/icon-yxpy02.png" alt=""></a>
+                    <a href="#"  class="link-img"><img src="images/icon-yxpy03.png" alt=""></a>
+                </div>
+                <div class="link">
+                    <h3 class="tit">九牛之人</h3>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                </div>
+                <div class="link">
+                    <h3 class="tit">美国爱咖倍</h3>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                    <a href="#">关于我们</a>
+                </div>
+                <div class="link">
+                    <h3 class="tit"><a href="#">公益慈善</a></h3>
+                    <h3 class="tit"><a href="#">公益慈善1</a></h3>
+                    <h3 class="tit"><a href="#">公益慈善2</a></h3>
+
+                </div>
+            </div>
+            <div class="col-r">
+                <div class="fd-qr r">
+                    <div class="fd-qr-a1 l"><img src="images/img3-01.jpg" alt="">
+                        <p class="fd-qr-desc">微信公众号</p>
+                        <p class="fd-qr-desc">地址:上海市沪青平公路3938弄20号大楼</p>
+                        <p class="fd-qr-desc">电话: +86-21- 669989</p>
+                        <p class="fd-qr-desc">邮箱:jonew@junizhiren.com</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+        $(function () {
+            $('.tab-ul-list li a').click(function () {
+                $(this).addClass('current').parent().siblings().children().removeClass('current');
+
+                var index=$(this).parent().index();
+                $('.tab-pic .item').eq(index-1).show().siblings().hide();
+
+            })
+        })
+</script>
+<script>
+    // 手机导航
+    $('.menuBtn').append('<b></b><b></b><b></b>');
+    $('.menuBtn').click(function (event) {
+        $(this).toggleClass('open');
+        $('.nav').stop().slideToggle();
+    });
+
+    var _winw = $(window).width();
+    if (_winw > 959) {
+        $('.nav li').hover(function () {
+            $(this).find('.sub').stop().slideDown();
+            if ($(this).find('.sub').length) {
+                $(this).addClass('ok');
+                $('.header').addClass('on');
+            } else {
+                $('.header').removeClass('on');
+            }
+        }, function () {
+            $(this).removeClass('ok');
+            $(this).find('.sub').stop().slideUp();
+        });
+        $('.nav').mouseleave(function (event) {
+            if ($('.header').hasClass('on')) {
+                $('.header').removeClass('on');
+            }
+        });
+    } else {
+
+        $('.nav .v1').click(function () {
+            if ($(this).siblings('.sub').length) {
+                $(this).parents('li').siblings('li').find('.sub').stop().slideUp();
+                $(this).parents('li').siblings('li').removeClass('on');
+                $(this).parents('li').toggleClass('on');
+                $(this).siblings('.sub').stop().slideToggle();
+                return false;
+            }
+        });
+    }
+</script>
+<script>
+    $('.counter').countUp();
+
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 0,
+        mobile: false,
+        live: true
+    });
+    if (!(/msie[6|7|8|9]/i.test(navigation.userAgent))) {
+        wow.init();
+    }
+
+</script>
+
+</body>
+</html>

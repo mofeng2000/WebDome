@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button class="app">按钮{{message}}</button>
+<ul class="app2">
+  <li v-for="item in num">{{item}}</li>
+</ul>
+<div class="box1" v-if="see">888</div>
+<script src="vue.min.js"></script>
+<script>
+  var app=new Vue({
+    el:'.app',
+    data:{
+      message:666
+    }
+  });
+  var app2=new Vue({
+    el:'.app2',
+    data:{
+      num:[111,222,333]
+    }
+  });
+  var box1=new Vue({
+    el:'.box1',
+    data:{
+      num:[111,222,333],
+      see:false
+    }
+  });
+</script>
+
+</body>
+</html>

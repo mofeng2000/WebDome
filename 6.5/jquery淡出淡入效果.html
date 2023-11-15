@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuerymin.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: pink;
+
+        }
+    </style>
+</head>
+<body>
+
+<button>淡出</button>
+<button>淡入</button>
+<button>淡入淡入效果切换</button>
+<button>修改透明度</button>
+<div></div>
+<script>
+    $(function () {
+        $('button').eq(0).click(function () {
+            $('div').fadeIn();//淡入 定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)
+        });
+        $('button').eq(1).click(function () {
+            $('div').fadeOut();//淡出 ，默认是“swing”，可用参数“linear”
+        });
+        $('button').eq(2).click(function () {
+            $('div').fadeToggle();//淡入淡入效果切换
+        });
+        $('button').eq(3).click(function () {
+            $('div').fadeTo(1000,0.1);
+        })
+
+
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+        .son{
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            background: orange;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="son">
+
+    </div>
+</div>
+
+<script>
+    //true 捕获
+    //flase 冒泡
+    // 捕获阶段
+
+    var son=document.querySelectorAll(".son");
+    var box=document.querySelector(".box");
+    //，捕获阶段由 DOM 最顶层节点开始，然后逐级向下传播到到最具体的元素接收的过程。
+    son.addEventListener("click",function () {
+        alert("123")
+    },true);
+    box.addEventListener("click",function () {
+        alert("456")
+    },true);
+    document.body.addEventListener("click",function () {
+        alert("789")
+    },true);
+
+    //  冒泡事件开始时由最具体的元素接收，然后逐级向上传播到到 DOM 最顶层节点的过程
+
+    son.addEventListener("click",function () {
+        alert("123")
+    },false);
+    box.addEventListener("click",function () {
+        alert("456")
+    },false);
+    document.body.addEventListener("click",function () {
+        alert("789")
+    },false);
+
+</script>
+</body>
+</html>

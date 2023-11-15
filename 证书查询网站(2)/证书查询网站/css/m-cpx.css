@@ -1,0 +1,406 @@
+.wp {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.row-a{
+	margin-bottom: 15px;
+}
+
+.row-a6 .main {
+	max-width: 1200px;
+	margin: 15px auto;
+	overflow: hidden;
+}
+
+/*left star*/
+.row-a6 .left {
+	width: 18%;
+	float: left;
+}
+
+.row-a6 .left ul li {
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	font-size: 16px;
+	color: #525252;
+	border-bottom: 1px solid #dedfdf;
+	background: #f6f6f6;
+}
+
+.row-a6 .left ul li:hover {
+	color: #0d7ccb;
+}
+
+.row-a6 .leftobj {
+	width: 100%;
+	height: 245px;
+	background: #f6f6f6;
+	text-align: center;
+}
+
+.row-a6 .leftobj img {
+	padding: 10px 0;
+}
+
+
+.row-a6 .indexnewsright {
+	overflow: hidden;
+	padding-left: 12px;
+}
+
+.row-a6 .indexnewsbox {
+	width: 100%;
+	height: 345px;
+	margin-top: 5px;
+}
+
+.row-a6 .indexnewsbox ul {
+	margin: 0;
+}
+
+.row-a6 .indexnewsbox ul li {
+	width: 100%;
+	line-height: 36px;
+	font-size: 14px;
+	border-bottom: 1px solid #e0e0e0;
+	vertical-align: top;
+}
+
+.row-a6 .indexnewsbox ul li a {
+	color: #6f6f6f;
+}
+
+.row-a6 .tab {
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.row-a6 .indextrain {
+	width: 100%;
+	height: 222px;
+	padding: 10px 0;
+}
+
+.row-a6 .indextrain ul li {
+	width: 25%;
+	height: 130px;
+	float: left;
+	position: relative;
+
+}
+
+.row-a6 .indextrain ul li a {
+	display: block;
+	padding: 3px;
+}
+
+.row-a6 .indextrain ul li img {
+	display: block;
+	width: 100%;
+}
+
+.row-a6 .indextrainame {
+	width: 136px;
+	height: 46px;
+	position: absolute;
+	bottom: 46px;
+	overflow: hidden;
+	left: 0;
+	margin: 0 53px;
+	background: #503413;
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	text-align: center;
+	line-height: 46px;
+	color: white;
+	font-size: 18px;
+}
+
+.row-a6 .indexmavin {
+	width: 100%;
+	padding: 20px 0;
+}
+
+.row-a6 .indexmavin ul li {
+	width: 150px;
+	float: left;
+	margin: 0 10px;
+}
+
+.row-a6 .indexmavin ul li p {
+	text-align: center;
+	font-size: 14px;
+	color: #565656;
+	line-height: 40px;
+}
+
+.row-a6 .indexvideo {
+	width: 100%;
+	padding: 10px 0;
+	height: 203px;
+}
+
+.row-a6 .indexvideo ul li {
+	width: 200px;
+	height: 179px;
+	padding: 10px;
+	float: left;
+	border: 1px solid #dfdfdf;
+	margin: 0 8px;
+}
+
+
+
+.row-a4 .cont {
+	background-color: #f3f2f0;
+	margin: 10px auto 0;
+}
+
+.row-a4 .cont .new_con {
+	max-width: 1200px;
+	height: 105px;
+	overflow: hidden;
+	margin: -10px auto 0;
+	background: #F7FDFF;
+}
+
+.row-a4 .cont .new_con .bg {
+	height: 90px;
+	overflow: hidden;
+}
+
+.row-a4 .cont .new_con .bg .con_newpub {
+	overflow: hidden;
+	width: 387px;
+	height: 90px;
+	background-size: 100% !important;
+}
+
+.row-a4 .cont .new_con .bg .con_new1 {
+	background: url(../images/con1.gif) no-repeat top left;
+}
+
+.row-a4 .cont .new_con .bg .con_new2 {
+	background: url(../images/con2.gif) no-repeat top left;
+}
+
+.row-a4 .cont .new_con .bg .con_new3 {
+	background: url(../images/con3.jpg) no-repeat top left;
+	width: 386px;
+}
+
+.row-a4 .cont .new_con .tab_btn {
+	max-width: 1200px;
+	margin-top: -94px;
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+.row-a4 .cont .new_con .tab_btn div {
+	background: url(../images/u106.png) no-repeat top left;
+	background-size: 100%;
+	margin-top: 60px;
+	width: 33.3%;
+	height: 38px;
+	cursor: pointer;
+	font-weight: 700;
+	color: #026eac;
+	font-size: 16px;
+	line-height: 38px;
+	text-align: center;
+	float: left;
+	/*margin-left: 7px;*/
+}
+
+.row-a4 .cont .new_con .tab_btn div:first-child {
+	/*margin-left: 25px;*/
+}
+
+.row-a4 .cont .new_con .tab_btn .cxsj_hreef_s {
+	background: url(../images/u104.png) no-repeat top left;
+	background-size: 100% 100%;
+	height: 52px;
+	color: #fff;
+}
+
+.row-a4 .cont .content {
+	max-width: 1200px;
+	margin: 0 auto;
+	background-color: white;
+	padding-top: 10px;
+}
+
+.row-a4 .cont .content .area_list {
+	width: 100%;
+	/*padding-bottom: 20px;*/
+	min-height: 300px;
+}
+
+.row-a4 .cont .content .area_list table {
+
+	width: 100%;
+}
+
+.row-a4 .cont .content .area_list table tr td {
+	padding-left: 9px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #333;
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	border: 1px solid #f3f2f0;
+}
+
+.row-a4 .cont .content .area_list table tr td span {
+	color: #999;
+}
+
+.row-a4 .cont .content .area_list1 table tr td {
+	padding-left: 0;
+	text-align: center;
+	width: 123px;
+}
+
+.row-a4 .cont .content .area_list table tr td a {
+	color: #333;
+}
+
+.row-a4 .cont .content .area_list table tr td:hover {
+	background-color: #dbf7ff;
+}
+
+.row-a4 .cont .content .area_list table tr td:hover a {
+	color: #015293;
+}
+
+
+.row-a5 .cont {
+	background-color: #f3f2f0;
+	margin: 10px auto 0;
+}
+
+.row-a5 .cont .new_con {
+	max-width: 1200px;
+	height: 105px;
+	overflow: hidden;
+	margin: -10px auto 0;
+	background: #F7FDFF;
+}
+
+.row-a5 .cont .new_con .bg {
+	height: 90px;
+	overflow: hidden;
+}
+
+.row-a5 .cont .new_con .bg .con_newpub {
+	overflow: hidden;
+	width: 387px;
+	height: 90px;
+	background-size: 100% !important;
+}
+
+.row-a5 .cont .new_con .bg .con_new1 {
+	background: url(../images/con1.gif) no-repeat top left;
+}
+
+.row-a5 .cont .new_con .bg .con_new2 {
+	background: url(../images/con2.gif) no-repeat top left;
+}
+
+.row-a5 .cont .new_con .bg .con_new3 {
+	background: url(../images/con3.jpg) no-repeat top left;
+	width: 386px;
+}
+
+.row-a5 .cont .new_con .tab_btn {
+	max-width: 1200px;
+	margin-top: -94px;
+	float: left;
+	width: 100%;
+}
+
+.row-a5 .cont .new_con .tab_btn div {
+	background: url(../images/u106.png) no-repeat top left;
+	background-size: 100%;
+	margin-top: 60px;
+	width: 33.3%;
+	height: 38px;
+	cursor: pointer;
+	font-weight: 700;
+	color: #026eac;
+	font-size: 16px;
+	line-height: 38px;
+	text-align: center;
+	float: left;
+	/*margin-left: 7px;*/
+}
+
+.row-a5 .cont .new_con .tab_btn div:first-child {
+	/*margin-left: 25px;*/
+}
+
+.row-a5 .cont .new_con .tab_btn .cxsj_hreef_s {
+	background: url(../images/u104.png) no-repeat top left;
+	background-size: 100% 100%;
+	height: 52px;
+	color: #fff;
+}
+
+.row-a5 .cont .content {
+	max-width: 1200px;
+	margin: 0 auto;
+	background-color: white;
+	padding-top: 10px;
+}
+
+.row-a5 .cont .content .area_list {
+	width: 100%;
+	/*padding-bottom: 20px;*/
+	min-height: 300px;
+}
+
+.row-a5 .cont .content .area_list table {
+
+	width: 100%;
+}
+
+.row-a5 .cont .content .area_list table tr td {
+	padding-left: 9px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #333;
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	border: 1px solid #f3f2f0;
+}
+
+.row-a5 .cont .content .area_list table tr td span {
+	color: #999;
+}
+
+.row-a5 .cont .content .area_list1 table tr td {
+	padding-left: 0;
+	text-align: center;
+	width: 123px;
+}
+
+.row-a5 .cont .content .area_list table tr td a {
+	color: #333;
+}
+
+.row-a5 .cont .content .area_list table tr td:hover {
+	background-color: #dbf7ff;
+}
+
+.row-a5 .cont .content .area_list table tr td:hover a {
+	color: #015293;
+}

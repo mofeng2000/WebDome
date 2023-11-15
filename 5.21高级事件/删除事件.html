@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>1</button>
+<button>2</button>
+<button>3</button>
+
+<script>
+    //  删除事件的方式 传统注册方式
+
+    var btn=document.querySelectorAll("button");
+//    btn[0].onclick=function () {
+//        alert(1);
+//        btn[0].onclick=null;
+//    };
+//    btn[1].addEventListener("click",fn );
+//
+//    function fn() {
+//        alert(2);
+//        btn[1].removeEventListener("click",fn)
+//    }
+
+    //3 ie8以下
+    btn[2].attachEvent("onclick",fn1);
+    function fn1() {
+        alert(3);
+        btn[2].detachEvent("onclick",fn1)
+    }
+
+
+// 删除事件兼容性解决方案
+//
+//    function removeEventListener(element, eventName, fn) {
+//// 判断当前浏览器是否支持 removeEventListener 方法
+//        if (element.removeEventListener) {
+//            element.removeEventListener(eventName, fn); // 第三个参数 默认是false
+//        } else if (element.detachEvent) {
+//            element.detachEvent('on' + eventName, fn);
+//        } else {
+//            element['on' + eventName] = null;
+//        }
+//    }
+
+</script>
+</body>
+</html>

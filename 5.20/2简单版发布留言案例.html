@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--var textarea=document.querySelector("textarea");-->
+<!--//    var button=document.querySelector("button");-->
+<!--//    var ul=document.querySelector("ul");-->
+<!--//    button.onclick=function () {-->
+<!--//        var text1=textarea.value;-->
+<!--//        if(text1==="")//判断输入内容是否为空-->
+<!--//        {-->
+<!--//            alert("内容为空，请输入内容在评论")-->
+<!--//        }-->
+<!--//        else {-->
+<!--//            var li=document.createElement("li");-->
+<!--//            // 阻止链接跳转需要添加 javascript:void(0); 或者  javascript:;-->
+<!--//            li.innerHTML=text1+"<a href='javascript:;'>删除</a>";//-->
+<!--//            ul.appendChild(li);-->
+<!--//            li.children[0].onclick=function () {-->
+<!--//                var del=this.parentNode;-->
+<!--//                ul.removeChild(del);-->
+<!--//            };-->
+<!--//        }-->
+<!--////        ul.insertBefore(li,ul.children[0]);-->
+<!--//-->
+<!--//    };-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 100px;
+        }
+
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+
+        ul {
+            margin-top: 50px;
+        }
+
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+<textarea name="" id=""></textarea>
+<button>发布</button>
+<ul>
+
+</ul>
+
+<script>
+    var textarea = document.querySelector("textarea");
+    var button = document.querySelector("button");
+    var ul = document.querySelector("ul");
+
+    button.onclick = function () {
+        var text = textarea.value;
+        if (text === "") {
+            alert("输入为空，请重新输入")
+        }
+        else {
+            var li = document.createElement("li");
+            li.innerHTML = text + "<a href='javascript:;'>删除</a>";
+//            ul.append(li);///最新的评论在下边
+            ul.insertBefore(li,ul.children[0]);//最新的评论在上边
+            li.children[0].onclick = function () {
+                ul.removeChild(li);
+            };
+
+        }
+
+    }
+
+
+</script>
+
+</body>
+
+</html>

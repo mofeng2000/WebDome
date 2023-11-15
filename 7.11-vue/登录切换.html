@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div v-if="is" key="a">
+        <span>用户账号</span>
+        <input type="text" placeholder="用户账号">
+    </div>
+    <div v-else key="b">
+        <span>邮箱账号</span>
+        <input type="text" placeholder="邮箱账号">
+    </div>
+    <button @click="isShow">切换登录</button>
+</div>
+<script src="vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: "用户账号",
+                is:true
+            },
+        methods:{
+            isShow:function () {
+                this.is=!this.is
+            }
+        }
+
+        }
+    )
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .father {
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: pink;
+            text-align: center;
+        }
+        
+        .son {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            background-color: purple;
+            line-height: 200px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">son儿子</div>
+    </div>
+    <script>
+
+        var son=document.querySelector(".son");
+        var box=document.querySelector(".father");
+//        //，捕获阶段由 DOM 最顶层节点开始，然后逐级向下传播到到最具体的元素接收的过程。
+//        son.addEventListener("click",function () {
+//            alert("123")
+//        },true);
+//        box.addEventListener("click",function () {
+//            alert("456")
+//        },true);
+//        document.body.addEventListener("click",function () {
+//            alert("789")
+//        },true);
+
+        //  冒泡事件开始时由最具体的元素接收，然后逐级向上传播到到 DOM 最顶层节点的过程
+//
+//        son.addEventListener("click",function () {
+//            alert("123")
+//        },false);
+//        box.addEventListener("click",function () {
+//            alert("456")
+//        },false);
+//        document.body.addEventListener("click",function () {
+//            alert("789")
+//        },false);
+
+
+        //6阻止事件冒泡
+        son.addEventListener("click",function (e) {
+                    alert("123");
+               e.stopPropagation();//阻止事件冒泡 阻止点击儿子事件，从而引发父亲标签的事件
+                },false);
+        box.addEventListener("click",function () {
+                    alert("456")
+                },false);
+
+        // 非标准写法：IE 6-8  利用事件对象 cancelBubble 属  e.cancelBubble = true;
+        //阻止事件冒泡的兼容性解决方案
+//        if(e && e.stopPropagation){
+//            e.stopPropagation();
+//        }else{
+//            window.event.cancelBubble = true;
+//        }
+    </script>
+</body>
+
+</html>

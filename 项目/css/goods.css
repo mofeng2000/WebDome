@@ -1,0 +1,106 @@
+/*商品分类*/
+.product{
+    position: relative;
+}
+.product ul{
+    margin-top: 50px;
+}
+.product li{
+    float: left;
+    font-size: 22px;
+    margin: 10px 50px 0 0;
+    color: #333;
+ }
+.product ul li:nth-child(1){
+    padding: 10px 40px;
+    color: red;
+    border: 1px solid red;
+    margin-top: 0;
+}
+.product ul li:nth-child(2) a{
+    color: red;
+}
+.product .box{
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    padding: 10px 40px;
+    border: 1px solid #d9d9d9;
+}
+.product .box1{
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    padding: 10px 40px;
+    border: 1px solid #d9d9d9;
+}
+.product img{
+    margin: 0 -5px;
+}
+
+/*搜索*/
+.search{
+    margin-top: 50px;
+    font-size: 18px;
+    color: #a5a5a5;
+}
+.search span{
+    margin-left: 100px;
+}
+.search a{
+    margin: 0 20px;
+    color: #a5a5a5;
+}
+.search input{
+    width: 50%;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #a5a5a5;
+    color: #d9d9d9;
+}
+button{
+    width: 24px;
+    height: 24px;
+    background: url("../upload/skin_care/w_sou.jpg");
+}
+
+/*商品*/
+.goods li{
+    float: left;
+}
+.goods li p{
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+/*页面*/
+.page{
+   margin: 50px auto;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

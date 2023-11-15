@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button{
+            width: 100px;
+            height: 100px;
+            background: orange;
+        }
+        button[datafld]{
+            width: 200px;
+            height: 100px;
+            background: blue;
+        }
+        button[class^="icon"]{
+            width: 200px;
+            height: 200px;
+            background: black;
+        }
+        button[class$="icon"]{
+              width: 300px;
+              height: 200px;
+              background: red;
+          }
+        button[class*="s"]{
+            width: 300px;
+            height: 300px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<button datafld="datafld">
+    确定
+</button>
+<button>
+    确定
+</button>
+<button class="icon_wd">
+    确定
+</button>
+<button class="wd_icon">
+    确定
+</button><button class="_wd__sicon_wd">
+    确定
+</button>
+</body>
+</html>

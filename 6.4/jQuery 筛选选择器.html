@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuerymin.js"></script>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<ol>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+</ol>
+<div class="facher">
+    <div class="son1"></div>
+    <div class="son3"></div>
+    <div class="son4"></div>
+    <div class="son2 box"><div class="son3"></div></div>
+</div>
+<script>
+    console.log( $("li:first"));//获取第一个li
+    console.log( $("li:last"));//获取最后一个li
+    console.log($("li:eq(1)"));//获取第二li eq(0)下标从0开始
+    console.log($("li:odd"));//获取li奇数
+    console.log($("li:even"));//获取li偶数
+    console.log($(".son1").parent());//获取父级元素
+    console.log($(".facher").children("div"));//获取父级元素
+    console.log($(".facher").find("div"));//获取后代元素
+    console.log($(".son2").siblings("div"));//获取兄弟元素，不包括自己
+    console.log($(".son2").hasClass("box"));//
+    console.log($(".facher").eq(1));//
+
+
+
+
+</script>
+</body>
+</html>

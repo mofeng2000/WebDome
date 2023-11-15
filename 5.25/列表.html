@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    点我去首页
+</p>
+<button>后退</button>
+<script>
+    document.querySelector("p").onclick=function () {
+        location.assign("首页.html");
+
+    };
+    document.querySelector("button").onclick=function () {
+        window.history.back();
+    }
+</script>
+</body>
+</html>

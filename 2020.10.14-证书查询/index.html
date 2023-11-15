@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9"/>
+    <title>证书查询</title>
+    <link rel="stylesheet" type="text/css" href="css/zp-style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/hm.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript">
+        /*
+        验证表单，至少输入*个查询条件；
+        strFormId为表单Id，nMinValid为需要的条件个数；
+        在有效标签加入valid="valid"属性。
+        */
+        function checkFormValid(strFormId, nMinValid) {
+            var objForm = document.getElementById(strFormId);
+            var arrayFormChilds = objForm.getElementsByTagName("input");
+            var nValid = 0;
+
+            for (var n = 0; n < arrayFormChilds.length; n++) {
+                if (arrayFormChilds[n].getAttribute("valid")) {
+                    // 去除字符串内所有的空格
+                    var value = arrayFormChilds[n].value.replace(/\s*/g, "");
+                    if (value.length > 0) {
+                        nValid++;
+                    }
+                }
+            }
+
+            if (nValid < nMinValid) {
+                window.alert("请至少输入" + nMinValid + "个查询条件！");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+
+    <div class="row-a1">
+        <div id="header">
+            <div id="logo" style="border: 0;">
+                <div class="logo-img"><img src="images/logo.png"/></div>
+                <div class="logo-txt">
+                    <p class="desc">中华人民共和国人力资源和社会保障部</p>
+                    <h2 class="tit">职业技能人才鉴定认证服务平台</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row-a2">
+        <div id="ban">
+            <a href="#" target="_blank" class="txt">
+                <h3 class="tit1">citt.osta.org.cn</h3>
+                <h3 class="tit2">职业技能人才在线教育培训中心</h3>
+            </a>
+            <!--页头-->
+        </div>
+    </div>
+    <div class="row-a3">
+        <div id="center">
+            <div id="left">
+                <div id="zsys_title">
+                    <h2 class="tit">证书样式 <span>ZhengshuYangshi</span></h2>
+                </div>
+                <div class="banner">
+                    <a href="#" class="item">
+                        <img src="images/zsys_a.jpg">
+                    </a>
+                    <a href="#" class="item">
+                        <img src="images/zsys_b.jpg">
+                    </a>
+                    <a href="#" class="item">
+                        <img src="images/zsys_a.jpg">
+                    </a>
+                    <a href="#" class="item">
+                        <img src="images/zsys_b.jpg">
+                    </a>
+                </div>
+                <!--左栏-->
+            </div>
+            <div id="right">
+                <form method="post" id="Info" name="Info" onsubmit="return checkFormValid('Info', 2);">
+                    <input type="hidden" name="csrfmiddlewaretoken"
+                           value="sgi5aJuqwSjdfutu23N8BiKmaunwIf8AO35TltdApQwfVV8o5R5pqI7fjNMxp4wu">
+                    <div id="search_box">
+                        <div id="search_title">证书查询</div>
+                        <div id="search_con">
+                            <p><label>姓　　名：</label><input type="text" id="Name" name="Name" valid="valid"></p>
+                            <p><label>身份证号：</label><input type="text" id="CID" name="CID" valid="valid"></p>
+                            <p><label>证书编号：</label><input type="text" id="CertificateID" name="CertificateID"
+                                                          valid="valid">
+                            </p>
+                            <p style="color: #808080;">注：任意输入以上两项内容即可查询。</p>
+                            <div id="search_bt"><input type="image" src="images/btn_search.jpg"></div>
+                        </div>
+                        <div id="search_bottom"></div>
+                    </div>
+                </form>
+
+                <!--查询区-->
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="center2">
+            <div class="clear"></div>
+            <!--中栏-->
+        </div>
+    </div>
+    <div class="row-a7">
+        <div class="banner2">
+            <div href="#" class="item">
+                <ul class="ul-imgs">
+                    <li>
+                        <div class="pic"><img src="images/pic1.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic2.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic3.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic4.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic1.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic2.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic3.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic4.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic1.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic2.png"></div>
+                    </li>
+                </ul>
+
+            </div>
+            <div href="#" class="item">
+                <ul class="ul-imgs">
+                    <li>
+                        <div class="pic"><img src="images/pic1.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic2.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic3.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic4.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic1.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic2.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic3.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic4.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic1.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic2.png"></div>
+                    </li>
+                </ul>
+
+            </div>
+            <div href="#" class="item">
+                <ul class="ul-imgs">
+                    <li>
+                        <div class="pic"><img src="images/pic1.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic2.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic3.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic4.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic1.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic2.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic3.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic4.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic1.png"></div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="images/pic2.png"></div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" style="height: 175px">
+        <table align="center">
+            <tbody>
+            <tr>
+                <td style="width: 75px;">版权所有</td>
+                <td style="width: 300px;">中国就业培训技术指导中心<br> 人力资源和社会保障部职业技能鉴定中心</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>
+            技术支持：北京普天合力通讯技术服务有限公司　 电子邮件：<a href="mailto:support@pthl.net" target="_blank">support@pthl.net</a>　　电话：010-85282055<br/>
+            <script type="text/javascript">
+                document.write(unescape("%3Cspan%20id%3D%27_ideConac%27%20%3E%3C/span%3E%3Cscript%20type%3D%27text/javascript%27%20src%3D%27http%3A//dcs.conac.cn/js/33/000/0000/60498324/CA330000000604983240002.js%27%20%3E%3C%5C/script%3E"));
+            </script>
+        </p>
+        <script>
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?961f0dc20f9c7796797af324f0e1e99b";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+        <!--版权-->
+    </div>
+</div>
+<script>
+    $('.banner').slick({
+        dots: false,
+        arrows: true,
+        autoplay: true,
+        slidesToShow: 2,
+        autoplaySpeed: 3000
+    });
+    $('.banner2').slick({
+        dots: false,
+        arrows: true,
+        autoplay: true,
+        slidesToShow: 1,
+        autoplaySpeed: 3000
+    });
+</script>
+</body>
+</html>

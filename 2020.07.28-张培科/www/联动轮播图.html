@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/cui.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link href="css/slick.css" rel="stylesheet">
+    <style>
+        .m-slick2 {
+
+        }
+
+        .slick-list1 {
+            width: 80px;
+            margin: 30px auto;
+        }
+
+        .slick-list1 .item {
+            text-align: center;
+        }
+
+        .slick-list1 span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #ccc;
+            border-radius: 50%;
+        }
+
+        .slick-list1 .slick-prev {
+            font-size: 0;
+            right: 100px;
+            background: url("images/row-a4-l_03.jpg") no-repeat center;
+
+        }
+
+        .slick-list1 .slick-next {
+            font-size: 0;
+            left: 100px;
+            background: url("images/row-a4-r_03.png") no-repeat center;
+        }
+
+        .slick-list1 .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: inline-block;
+            width: 80px;
+            height: 20px;
+            background-size: cover;
+            outline: none;
+            border: none;
+            background-color: transparent;
+        }
+
+        .slick-list1 .slick-current span {
+            background: #009fa8;
+        }
+
+        .m-slick2 .slick-list2 {
+
+        }
+
+        .m-slick2 .slick-list2 .item {
+            text-align: center;
+        }
+
+        .m-slick2 .slick-list2 {
+
+        }
+
+        .m-slick2 .item .con {
+            padding: 20px 30px;
+            background: #f1f1f1;
+            margin: 0 20px;
+            border: 1px solid #ccc;
+        }
+
+        .m-slick2 .slick-list2 .pic {
+            position: relative;
+            height: 0;
+            padding-top: 100%;
+        }
+
+        .m-slick2 .slick-list2 .pic img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .m-slick2 .slick-list2 .tit {
+            font-size: 18px;
+            color: #666;
+            font-weight: normal;
+            line-height: 2;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wp">
+    <div class="m-slick2">
+        <div class="slick-list1">
+            <div class="item"><span></span></div>
+            <div class="item"><span></span></div>
+            <div class="item"><span></span></div>
+            <div class="item"><span></span></div>
+            <div class="item"><span></span></div>
+        </div>
+        <div class="slick-list2">
+            <div class="item">
+                <div class="con">
+                    <div class="pic"><img src="images/pic-row-a3bg_03.jpg" alt=""></div>
+
+                </div>
+                <h3 class="tit">2015上行</h3>
+            </div>
+            <div class="item">
+                <div class="con">
+                    <div class="pic"><img src="images/pic-row-a3bg_03.jpg" alt=""></div>
+
+                </div>
+                <h3 class="tit">2015上行</h3>
+            </div>
+            <div class="item">
+                <div class="con">
+                    <div class="pic"><img src="images/pic-row-a3bg_03.jpg" alt=""></div>
+
+                </div>
+                <h3 class="tit">2015上行</h3>
+            </div>
+            <div class="item">
+                <div class="con">
+                    <div class="pic"><img src="images/pic-row-a3bg_03.jpg" alt=""></div>
+
+                </div>
+                <h3 class="tit">2015上行</h3>
+            </div>
+            <div class="item">
+                <div class="con">
+                    <div class="pic"><img src="images/pic-row-a3bg_03.jpg" alt=""></div>
+
+                </div>
+                <h3 class="tit">2015上行</h3>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $('.slick-list1').slick({
+        //被切换的子项始终位于slick中心
+        slidesToShow: 4,
+        centerMode: true,
+        //一般和centerMode: true搭配使用，更好看
+        centerPadding: '0',
+        asNavFor: ".slick-list2"
+    });
+    $('.slick-list2').slick({
+        slidesToShow: 4,
+        arrows: false,
+        asNavFor: ".slick-list1",
+        responsive: [
+            {
+                breakpoint: 989,
+                settings: {
+                    slidesToShow: 3
+
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: false
+
+                }
+            },
+            {
+                breakpoint: 456,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false
+
+                }
+            }
+        ]}
+        )
+</script>
+</body>
+</html>

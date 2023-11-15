@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font-size: 20px;
+        }
+        span{
+            color: red;;
+
+        }
+
+    </style>
+</head>
+<body>
+<p><span id=""></span>欢迎您</p>
+<script>
+    var span=document.querySelector("span");
+    var str=location.search.substring(1);
+    console.log(str);
+    span.innerHTML=str.split("=")[1];
+
+//    console.log(location.href);
+</script>
+</body>
+</html>

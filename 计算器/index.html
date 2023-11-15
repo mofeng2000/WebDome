@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background: rebeccapurple;
+    }
+
+    .box.on {
+        background: orangered;
+    }
+</style>
+<body>
+<form action="">
+
+</form>
+<button id="btn1">把数据添加到 div 元素</button><br />
+<button id="btn2">获取已添加到 div 元素的数据</button>
+<div class="box1">123</div>
+<div data-test="this is test" ></div>
+<script>
+
+    //$(function(){
+    // 文档就绪
+    //});
+    $(document).ready(function () {
+        $('<ul class="ul-list">\n' +
+            '    <li><a href="#">1</a></li>\n' +
+            '    <li><a href="#">2</a></li>\n' +
+            '    <li><a href="#">3</a></li>\n' +
+            '</ul>').appendTo("body");
+        $("<div>", {
+            "class": "test",
+            text: "Click me!",
+            click: function () {
+                $(this).toggleClass("test");
+            }
+        }).appendTo("body");
+        $("<input type='checkbox'>");
+        $('<button class="btn">666</button>').appendTo("body");
+
+        $('<div>', {
+            'class': 'box',
+            text: '你好',
+            // click:function (){
+            //     $(this).toggleClass('box');
+            // }
+            hover: function () {
+                $(this).toggleClass('on')
+            }
+        }).appendTo("body");
+
+        $('<a>', {
+            id: "link",
+            href: 'http://www.baidu.com'
+        }).appendTo('.box')
+        $('<img>', {
+            src: '1.jpg',
+            "class": "myimg"
+        }).appendTo('#link')
+        // $('.box1').data('num',123)
+        // console.log($('.box1').data('num', 123));
+        $(".box1").data("test",'888');
+        alert($('.box1').data('num'))
+        alert($('.box1').data('test'))
+        console.log( $("div").data("test"))
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("div").data("greeting", "Hello World");
+            });
+            $("#btn2").click(function(){
+                alert($("div").data("greeting"));
+            });
+        });
+        // $("<input>", {
+        //     type: "text",
+        //     val: "Test",
+        //     focusin: function () {
+        //         $(this).addClass("active");
+        //     },
+        //     focusout: function () {
+        //         $(this).removeClass("active");
+        //     }
+        // }).appendTo("form");
+
+
+        // $(".ul-list li").length;
+        // console.log($(".ul-list li").length);
+        // $("ul")
+        //     .append("<li>" + $("ul").selector + "</li>")
+        //     .append("<li>" + $("ul li").selector + "</li>")
+        //     .append("<li>" + $("div#foo ul:not([class])").selector + "</li>");
+        // console.log($('.ul-list').get());
+        // console.log($('.ul-list').get().reverse());
+        //
+        // $('li').index(document.getElementById('bar')); //1，传递一个DOM对象，返回这个对象在原先集合中的索引位置
+        // $('li').index($('#bar')); //1，传递一个jQuery对象
+        // $('li').index($('li:gt(0)')); //1，传递一组jQuery对象，返回这个对象中第一个元素在原先集合中的索引位置
+        // $('#bar').index('li'); //1，传递一个选择器，返回#bar在所有li中的索引位置
+        // $('#bar').index(); //1，不传递参数，返回这个元素在同辈中的索引位置。
+        // $('.box').data('num')//undefined
+     //undefined
+        // $('.box').data('num',123)//undefined
+        // $('.box').removeData('num',123)//undefined
+
+    });
+</script>
+</body>
+</html>

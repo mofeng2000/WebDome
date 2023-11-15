@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .box{
+            display: flex;
+            width: 600px;
+            height: 400px;
+            background: orange;
+            /*默认值指定轴x为主轴，y为副轴*/
+            /*flex-direction: row;*/
+            /*!*默认值指定轴x为主轴，y为副轴 反向展示*/
+           /*flex-direction: row-reverse;*/
+            /*默认值指定y轴为主轴，x为副轴*/
+           /*flex-direction: column;*/
+            /*默认值指定y轴为主轴，为副轴反向展示*/
+           /*flex-direction: column-reverse;*/
+            /*justify-content: center;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: flex-start;*/
+            /*justify-content: space-around;*/
+            /*justify-content: space-between;*/
+            align-items: center;
+        }
+        span.box1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 5px;
+            flex: 1;
+            
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <span class="box1">1</span><span>2</span><span>3</span>
+</div>
+</body>
+</html>

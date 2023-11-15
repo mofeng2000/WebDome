@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="border" width="301" align="center">
+    <tbody>
+
+    <tr>
+        <td valign="center" align="middle">
+
+            <table width="100%" border="1" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td align="middle" width="100%" bgcolor="#FF0000">
+                        <input style="WIDTH: 260px; HEIGHT: 30px; FONT-FACE: verdana" onfocus="display(document.racunalo.rezultat.value)" size="14" name="rezultat"><font size="2"> </font> </td></tr></tbody></table>
+            <table border="1">
+                <tbody>
+                <tr>
+                    <td valign="center" align="middle" colspan="6" bgcolor="#993333" height="57">
+                        <font color="#FFFFFF"><select onchange="if (document.racunalo.oldrezultat.value != '') {zaokruzi(document.racunalo.oldrezultat.value)}; document.racunalo.zadatak.focus()" size="1" name="izaZareza"> <option value="-1">选择小数点位数</option> <option value="0">0</option> <option value="1">1</option>
+                            <option value="2">2</option> <option value="3">3</option> <option value="4">4</option>
+                            <option value="5">5</option> <option value="6">6</option> <option value="7">7</option>
+                            <option value="8">8</option> <option value="9">9</option> <option value="10" selected="selected">
+                                10</option>
+                            <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option>
+                        </select><font size="2">
+                        </font> </font>
+                        <font color="#FFFFFF" face="verdana" size="2"><input title="弧度" onclick="document.racunalo.zadatak.focus()" type="radio" name="stupnjevi"></font><a onmouseover="self.status='Radians'; return true" title="Radians" href="javascript:document.racunalo.stupnjevi[0].click()"><font face="verdana" color="#FFFFFF" size="2">Rad</font></a><font face="Arial" color="#FFFFFF" size="2"> 弧度<input title="Stupnjevi" onclick="document.racunalo.zadatak.focus()" type="radio" checked="" name="stupnjevi"></font><a onmouseover="self.status='Degrees'; return true" title="度" href="javascript:document.racunalo.stupnjevi[1].click()"><font face="verdana" color="#FFFFFF" size="2">Deg度</font></a><font color="#FFFFFF" size="2">
+                        &nbsp;&nbsp;</font><font size="2">
+                    </font>
+                        <font color="#FFFFFF" size="2"></font></td></tr>
+                <tr>
+                    <td colspan="6" bgcolor="#993333"></td></tr>
+                <tr>
+                    <td valign="center" align="middle" width="100%" colspan="6" bgcolor="#993333">
+                        <font color="#FFFFFF" face="verdana" size="3"><input onkeydown="if (event.keyCode==13) {enter.click()}" style="FONT-WEIGHT: bold; FONT-SIZE: 10pt; WIDTH: 260px; HEIGHT: 25px" onchange="enter.click()" size="17" name="zadatak"></font><font color="#FFFFFF" face="verdana" size="2">
+                    </font></td></tr>
+                <tr>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input title="平方根" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(3)" type="button" value="√" name="sqrt" width="38" height="28">  <font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input title="N次方根" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px; text-indent:-3" onclick="izracunaj(22)" type="button" value="n次方" name="root" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="自然对数" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(5)" type="button" value="ln" name="ln" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="常用对数" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(8)" type="button" value="log" name="log" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="正切" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(14)" type="button" value="tan" name="tan" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="反正切" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(10)" type="button" value="atan" name="atan" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td></tr>
+                <tr>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="平方" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(2)" type="button" value="x^2" name="kvadrat" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="乘方或几次幂" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(21)" type="button" value="x^y" name="potencija" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="自然反对数" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(6)" type="button" value="e^x" name="aln" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="常用反对数" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(9)" type="button" value="10^x" name="alog" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="余弦" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(15)" type="button" value="cos" name="cos" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input title="反余弦" style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(11)" type="button" value="acos" name="acos" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td></tr>
+                <tr>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="正负号变换" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(4)" type="button" value="+/-" name="sign" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(7)" type="button" value="1/x" name="1/x" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="阶乘" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(20)" type="button" value="x!" name="fact" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="百分比" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(17)" type="button" value="%" name="postotak" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="正弦" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(16)" type="button" value="sin" name="sin" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="反正弦" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 28px" onclick="izracunaj(12)" type="button" value="asin" name="asin" width="38" height="28"><font size="2">
+                    </font>
+                    </font>
+                    </td></tr>
+                <tr>
+                    <td colspan="6" bgcolor="#993333"></td></tr>
+                <tr>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj(7)" type="button" value="7" name="7" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj(8)" type="button" value="8" name="8" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj(9)" type="button" value="9" name="9" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj('/')" type="button" value="÷" name="djeljeno" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="记忆输出" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="memory(2)" type="button" value="MR" name="MR" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input title="记忆储存" style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="memory(1); return false;" type="button" value="MS" name="MS" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td></tr>
+                <tr>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj(4)" type="button" value="4" name="4" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj(5)" type="button" value="5" name="5" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj(6)" type="button" value="6" name="6" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj('*')" type="button" value="×" name="puta" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td colspan="2" bgcolor="#993333">
+                        <input title="Clear screen" style="FONT-SIZE: 10pt; BACKGROUND: #FF9933; WIDTH: 81; COLOR: #FFFFFF; HEIGHT: 25; FONT-FACE: verdana" onclick="memory(3)" type="button" value="清除 重算" name="Cls"><font size="2" color="#FFFFFF">
+                    </font>
+                    </td></tr>
+                <tr>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj(1)" type="button" value="1" name="1" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj(2)" type="button" value="2" name="2" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj(3)" type="button" value="3" name="3" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj('-')" type="button" value="-" name="minus" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj('(')" type="button" value="(" name="lijevo" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj(')')" type="button" value=")" name="desno" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td></tr>
+                <tr>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj(0)" type="button" value="0" name="0" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj('.')" type="button" value="." name="." width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF"><input style="FONT-SIZE: 10pt; BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj('e')" type="button" value="E" name="exp" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td bgcolor="#993333"><font color="#FFFFFF">
+                        <input style="BACKGROUND: #cdcdcd; WIDTH: 38px; HEIGHT: 32px" onclick="dodajBroj('+')" type="button" value="+" name="plus" width="38" height="32"><font size="2">
+                    </font>
+                    </font>
+                    </td>
+                    <td colspan="2" bgcolor="#993333">
+                        <font color="#FFFFFF">
+                            <input style="BACKGROUND: #cdcdcd; WIDTH: 83px; HEIGHT: 32px" onclick="izracunaj(1)" type="button" value="=" name="enter" width="82" height="32"><font size="2">
+                        </font>
+                        </font>
+                    </td></tr></tbody></table></td></tr></tbody></table>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <!--<li v-for="item in moive">{{item}}</li>-->
+        <!---->
+        <!--<li v-for="(item,index) in moive">{{index+1}}{{item}}</li>-->
+
+        <!--<li v-for="(item,index) in info">{{item}}</li>-->
+        <li v-for="(item,key) in info">{{key}}-{{item}}</li>
+        <li v-for="(item,key,index) in info">{{index+1}}-{{item}}{{key}}</li>
+    </ul>
+</div>
+<script src="../vue.min.js"></script>
+<script>
+    const app1 = new Vue({
+            el: '#app',
+            data: {
+                message: " ",
+//                遍历数组
+               // moive: [1,2,3,4]
+                //便利对象
+                info:{
+                    name:"zpk",
+                    age:18,
+                    height:166
+
+                }
+            }
+        }
+    )
+</script>
+</body>
+</html>

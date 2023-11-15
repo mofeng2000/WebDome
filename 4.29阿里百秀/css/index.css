@@ -1,0 +1,151 @@
+@media screen and (min-width: 1280px){
+    .container{
+        width: 1208px;
+    }
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    color: #666666;
+    text-decoration:none;!important;
+}
+
+a:hover{
+    text-decoration:none;!important;
+}
+.loge{
+    background: #429ad9;
+}
+ .loge img{
+    max-width: 100%;
+}
+ .loge_span{
+     height: 50px;
+     line-height: 50px;
+     font-size: 18px;
+     color: white;
+     text-align: center;
+ }
+ .loge_nav li a{
+     display: block;
+     height: 41px;
+     line-height: 41px;
+     color: #666666;
+     font-size: 16px;
+     padding-left: 30px;
+    overflow: hidden;
+     text-overflow:ellipsis;
+     text-decoration:none;!important;
+ }
+ .loge_nav li a:hover{
+     color: #333;
+ }
+
+
+.loge_nav li a:before{
+    margin-right:5px;
+    padding-top: 10px;
+
+}
+.row-a3 .carousel-inner img{
+    width: 100%;
+height: 266px!important;
+
+}
+.row-a3 ul>li{
+    width: 25%;
+    height: 128px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+float: left;
+}
+.row-a3 ul>li:nth-child(1){
+    width: 50%;
+    height: 266px;
+}
+
+/*.news ul>li{*/
+  /**/
+/*}*/
+.row-a3 li>a{
+    position: relative;
+    display: block;
+    height: 100%;
+}
+.row-a3 li a img{
+    width: 100%;
+    height: 100%;
+}
+.albx{
+font-size: 20px;
+    line-height: 41px;
+}
+.carousel-inner .item p,
+.row-a3 li a p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    padding: 0 10px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: white;
+}
+@media screen and (max-width: 991px) {
+    .loge_nav li {
+        float: left;
+        width: 20%;
+    }
+    article {
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .loge_nav li a {
+        font-size: 12px!important;
+    }
+    .row-a3 li:nth-child(1) {
+        width: 100% !important;
+    }
+    .row-a3 li {
+        width: 50%!important;
+    }
+    .publish h3 {
+        font-size: 20px;
+    }
+}
+.publish .row{
+    border-top: 1px solid #333;
+}
+.row .col-sm-9{
+    padding: 0 0;
+}
+.col-sm-9 .fz{
+    font-size: 12px;
+}
+.pic img{
+    width: 100%;
+    margin-top: 8px;
+}
+
+.hezuo a:nth-child(1) img{
+    width: 100%;
+
+}
+.hezuo a:nth-child(2){
+    text-decoration: none;
+    display: block;
+    border: 1px solid #333;
+    margin-top: 20px;
+}
+.hezuo a:nth-child(2) span{
+    margin-left: 20px;
+border-bottom: 20px;
+}
+.hezuo a:nth-child(2) p{
+    font-size: 12px;
+}

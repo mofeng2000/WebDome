@@ -1,0 +1,87 @@
+body{
+    color: rgb(30, 30, 30);
+    background: #f4f4f4;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: rgb(209, 209, 209);
+
+
+}
+.container{
+    width: 100%;
+}
+.navbar-brand{
+    padding: 0 0!important;
+}
+.loge img{
+    display: inline-block!important;
+    width: 100%;
+    height: 100%;
+}
+.lunbo{
+    display: flex;
+    margin:5px 200px;
+}
+.navbar{
+    margin-bottom: 5px!important;
+}
+.lunbotu{
+    width: 680px;
+    height: 310px;
+    flex: 1;
+}
+.item{
+    width: 100%;
+    height: 310px;
+}
+ .carousel-inner .item img{
+    display: block;
+    width: 100%;
+    height: 100% !important;
+}
+.indexnew{
+    width: 310px;
+    height: 310px;
+    color: white;
+    background: rgb(30, 30, 30);
+    margin-left: 5px;
+}
+.indexnew ul{
+    margin-left: 5px;
+    width: 100%;
+}
+.indexnewti{
+
+    text-align: center;
+    line-height: 30px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    margin-bottom: 5px;
+}
+.indexnewti .hover{
+    font-size: 16px;
+}
+.indexnew ul li{
+    height: 27px;
+    line-height: 25px;
+}
+.indexnew a{
+    font-size: 14px;
+    display: block;
+    color: rgb(209, 209, 209);
+    text-decoration: none;
+}
+.indexnew ul li span{
+    float: right;
+    color: #a1a1a1;
+    font-size: 12px;
+    line-height: 25px;
+    height: 25px;
+    margin-top: -25px;
+    overflow: hidden;;
+    margin-right: 10px;
+}

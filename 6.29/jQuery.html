@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+
+.wd{
+    color: yellow;
+}
+    .box1{
+        width: 100px;
+        height: 100px;
+        background: red ;
+    }
+    .flag{
+        background: orange;
+    }
+    .box2[id]{
+    color: yellow;
+    }
+
+.box2[id='555']{
+    color: orange;
+}
+.box2[id^='5']{
+    color: orange;
+}
+.box2[id$='5']{
+    color: orange;
+}
+.box2[id*='555']{
+    color: orange;
+}
+    div:first-child{
+
+    }
+div:last-child{
+
+}
+    div:nth-child(1){
+
+    }
+    div:first-of-type{
+
+    }
+div:last-of-type{
+
+}
+    div::before{
+    content: "8";
+    }
+    div::after{
+        content: "9";
+    }
+</style>
+</head>
+<body>
+<p >我无敌</p>
+<span > 我无敌2 </span>
+<button>切换</button>
+<div class="box1">666</div>
+<div class="box2" id="555">555</div>
+
+<script src="jquery.min.js">
+</script>
+<script>
+
+    $(function () {
+        $('p').css('color','red')
+//        $('span').css({'color':'red','font-size':'20px'})
+//        $('span').addClass("wd");
+//        $('span').removeClass("wd");
+//        $('span').click(function () {
+////            $('span').toggleClass("wd");
+//            $('span').toggle()
+//        });
+        $('button').click(function () {
+//            $('span').toggleClass("wd");
+//            $(this).toggleClass("flag")
+            $('.box1').toggle()
+        })
+
+
+
+
+    })
+</script>
+</body>
+</html>

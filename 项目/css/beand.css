@@ -1,0 +1,78 @@
+.content{
+    height: 500px;
+    margin-top: 50px;
+}
+.content h3{
+    font-size: 36px;
+    color: #CF152C;
+    font-weight: normal;
+    margin-bottom: 50px;
+}
+.content li{
+    float: left;
+}
+.content li:nth-child(1){
+    width: 50%;
+}
+.content li:nth-child(2){
+    font-size: 22px;
+}
+.content li p{
+    margin-bottom: 30px;
+}
+
+/*user*/
+.user{
+    margin-top: 50px;
+}
+.user_introduce{
+    position: relative;
+    margin: 240px 0;
+}
+.user_introduce .g-tit{
+    position: absolute;
+    top: 50px;
+    left: 550px;
+    background-color: white;
+    padding: 50px;
+    height: 210px;
+}
+.user_introduce h4{
+    font-size: 26px;
+    font-weight: normal;
+    color:#CF152C ;
+}
+.user_introduce  p{
+    font-size: 16px;
+    margin: 20px 0;
+}
+.user_introduce .two{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 300px;
+}
+.user_introduce .two img{
+    width: 100%;
+}
+.user_introduce .three{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    height: 300px;
+}
+.user_introduce .three img{
+    width: 100%;
+}
+.user_introduce .four{
+    text-align: right;
+}
+.user_introduce .introduce1{
+    position: absolute;
+    top: 50px;
+    left: 400px;
+    background-color: white;
+    padding: 50px;
+}

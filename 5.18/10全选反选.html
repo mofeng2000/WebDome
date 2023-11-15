@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<!--//    var j_ck = document.querySelectorAll("#j_tb input");-->
+<!--//    var j_cbAll = document.querySelector("#j_cbAll");-->
+<!--//    j_cbAll.onclick = function () {-->
+<!--//        var ischeck = j_cbAll.checked;-->
+<!--//        for (var i = 0; i < j_ck.length; i++) {-->
+<!--//            j_ck[i].checked = ischeck;-->
+<!--//        }-->
+<!--//    };-->
+<!--//    for (var i = 0; i < j_ck.length; i++) {-->
+<!--//        j_ck[i].onclick = function () {-->
+<!--//            var flag = true;-->
+<!--//            for (var i = 0; i < j_ck.length; i++) {-->
+<!--//-->
+<!--//                if (j_ck[i].checked === false) {-->
+<!--//                    flag = false;-->
+<!--//                    break;-->
+<!--//                }-->
+<!--//            }-->
+<!--//            j_cbAll.checked = flag;-->
+<!--//        };-->
+<!--//    }-->
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="wrap">
+    <table>
+        <thead>
+        <tr>
+            <th>
+                <input type="checkbox" id="j_cbAll"/>
+            </th>
+            <th>商品</th>
+            <th>价钱</th>
+        </tr>
+        </thead>
+        <tbody id="j_tb">
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>iPhone8</td>
+            <td>8000</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>iPad Pro</td>
+            <td>5000</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>iPad Air</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>Apple Watch</td>
+            <td>2000</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<script>
+var j_cbAll=document.querySelector("#j_cbAll");
+var j_cek=document.querySelectorAll("#j_tb input");
+
+    j_cbAll.onclick=function () {
+        var iscek=j_cbAll.checked;//获取全选按钮的属性
+        for (var i=0;i<j_cek.length;i++){
+            j_cek[i].checked=iscek;//给所有的input，添加全选按钮的属性
+        }
+
+    };
+
+    for (var i=0;i<j_cek.length;i++){
+        j_cek[i].onclick=function () {
+            var flag=true;//设置一个标记，记录当前状态
+            for(var i=0;i<j_cek.length;i++)//循环判断，input的checked属性
+            {
+                if(j_cek[i].checked===false){
+                    flag=false;//给标记赋值，
+                    break;//循环结束，
+                }
+            }
+            j_cbAll.checked=flag;//接受标记的值
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+
+</html>

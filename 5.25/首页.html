@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    点我去列表页
+</p>
+<button>前进</button>
+<script>
+
+    document.querySelector("p").onclick=function () {
+        location.assign("列表.html");
+
+    };
+    document.querySelector("button").onclick=function () {
+        window.history.forward();
+    }
+</script>
+
+</body>
+</html>

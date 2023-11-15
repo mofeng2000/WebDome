@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //事件除了使用鼠标触发，还可以使用键盘触发， 注意给文档 document 添加键盘事件
+    //：  onkeydown 和 onkeyup  不区分字母大小写，onkeypress 区分字母大小写。
+    document.addEventListener("keyup",function (e) {
+
+        console.log("键盘上某个键按下");
+        console.log(e.key);
+        console.log(e.keyCode);
+    });
+    document.addEventListener("keydown",function (e) {
+
+        console.log("键盘上某个键按下,");
+        console.log(e.key);
+        console.log(e.keyCode);
+    });
+    //onkeypress 和前面2个的区别是，它不识别功能键，比如左右箭头，shift 等。
+    document.addEventListener("keypress",function (e) {
+
+        console.log("键盘上某个键按下,有松开");
+        console.log(e.key);
+        console.log(e.keyCode);
+    })
+
+</script>
+</body>
+</html>

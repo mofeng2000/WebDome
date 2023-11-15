@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 如果是pc请删除下面一行 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!-- 下面是初始化框架必须引入 -->
+    <link rel="stylesheet" href="http://x.5811.com.cn/css/cui.css"/>
+    <link rel="stylesheet" href="http://x.5811.com.cn/css/cui-rel.css"/>
+    <script type="text/javascript" src="http://x.5811.com.cn/js/jquery.js"></script>
+
+    <script src="https://cdn.bootcss.com/slick-carousel/1.6.0/slick.min.js"></script>
+    <link href="https://cdn.bootcss.com/slick-carousel/1.6.0/slick.min.css" rel="stylesheet">
+
+    <STYLE>
+        .banner {
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .banner .item {
+            display: block;
+
+        }
+
+        .banner .item {
+            width: 100%;
+            position: relative;
+        }
+
+        .banner .item .tit {
+            position: absolute;
+            left: 0;
+            top: 20vw;
+            text-align: center;
+            width: 100%;
+            color: #fff;
+            font-size: 3vw;
+        }
+
+        .banner .slick-arrow {
+            position: absolute;
+            width: 33px;
+            height: 62px;
+            top: 40%;
+            border: 0;
+            font-size: 0;
+            cursor: pointer;
+            background-color: transparent;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 2;
+            outline: none;
+        }
+
+        .banner .slick-prev {
+            left: 10%;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23fff'%2F%3E%3C%2Fsvg%3E")
+        }
+
+        .banner .slick-next {
+            right: 10%;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23fff'%2F%3E%3C%2Fsvg%3E")
+        }
+
+        .banner .slick-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 3
+        }
+
+        .banner .slick-dots li {
+            display: inline-block;
+            margin: 0 10px
+        }
+
+        .banner .slick-dots button {
+            width: 10px;
+            height: 14px;
+            background: none;
+            font-size: 0;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            border: 1px solid #fff;
+        }
+
+        .banner .slick-dots li.slick-active button {
+            background: #fff
+        }
+
+        @media only screen and (max-width: 1600px) {
+            .banner .slick-arrow {
+                width: 20px;
+                height: 40px;
+            }
+        }
+    </STYLE>
+</head>
+<body>
+<div class="banner">
+
+    <a href="###" class="item">
+        <div class="tit">这里是一个标题</div>
+        <img src="https://picsum.photos/id/2/1920/500">
+        <span class="info">666</span>
+    </a>
+    <a href="###" class="item">
+       <div class="pic">
+           <img src="https://picsum.photos/id/23/1920/500">
+       </div>
+
+        <div class="text">这里是一个标题</div>
+    </a>
+    <a href="###" class="item">
+        <img src="https://picsum.photos/id/244/1920/500">
+        <div class="text">这里是一个标题</div>
+    </a>
+</div>
+<script>
+    $('.banner').slick({
+        //是否显示分页条
+        dots: true,
+        arrows: true,
+        autoplay: true,
+        slidesToShow: 1,
+        autoplaySpeed: 3000
+    });
+</script>
+<!--<script>-->
+<!--$('.ul-a2,.ul-a3').slick({-->
+<!--//是否显示分页条-->
+<!--//dots: true,-->
+<!--//是否自动播放-->
+<!--autoplay: false,-->
+<!--//自动播放速度-->
+<!--autoplaySpeed: 3000,-->
+<!--//页面显示多少个item-->
+<!--slidesToShow: 3,-->
+<!--//一次滑动多少个item-->
+<!--slidesToScroll:1,-->
+<!--//点击翻页按钮时，切换的速度-->
+<!--speed:30,-->
+<!--//不同屏幕下，重设轮播样式-->
+<!--responsive: [-->
+<!--{-->
+<!--breakpoint: 1199,-->
+<!--settings: {-->
+<!--slidesToShow: 3,-->
+<!--arrows: false-->
+<!--}-->
+<!--},-->
+<!--{-->
+<!--breakpoint: 959,-->
+<!--settings: {-->
+<!--slidesToShow: 2,-->
+<!--arrows: false-->
+<!--}-->
+<!--},-->
+<!--{-->
+<!--breakpoint: 768,-->
+<!--settings: {-->
+<!--slidesToShow: 1,-->
+<!--arrows: false-->
+<!--}-->
+<!--}-->
+<!--]-->
+<!--});-->
+<!--</script>-->
+
+</body>
+</html>
